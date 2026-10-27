@@ -6,73 +6,63 @@ import {
   useVideoConfig,
 } from "remotion";
 
-// ──────────────────────────────────────────────
-// CẤU HÌNH VIDEO - Theme: Green Tech
-// ──────────────────────────────────────────────
+// Theme: Pink Modern | Level: 1
 const VIDEO_CONFIG = {
   fps: 30,
   width: 1080,
   height: 1920,
   scenes: [
     {
-        "text": "Bí mật đầu tư BĐS: Mua khi thị trường sợ hãi",
-        "highlight": "hãi",
+        "text": "Từ khóa thành công: Kỷ luật",
+        "highlight": "luật",
         "duration": 3,
-        "color": "#00ff88"
+        "color": "#ff80ab"
     },
     {
-        "text": "Bán khi thị trường tham lam",
-        "highlight": "Bán",
-        "duration": 3,
-        "color": "#e0ffe0"
-    },
-    {
-        "text": "Kiên nhẫn là chìa khóa",
+        "text": "Không phải động lực",
         "highlight": "",
         "duration": 3,
-        "color": "#00ff88"
+        "color": "#ffffff"
     },
     {
-        "text": "Lịch sử luôn lặp lại",
-        "highlight": "",
+        "text": "Kỷ luật là làm việc ngay cả khi không muốn",
+        "highlight": "ngay",
         "duration": 3,
-        "color": "#e0ffe0"
+        "color": "#ff80ab"
+    },
+    {
+        "text": "Thành công đến từ thói quen nhỏ mỗi ngày",
+        "highlight": "quen",
+        "duration": 3,
+        "color": "#ffffff"
     },
     {
         "text": "Đăng ký để học ngay",
         "highlight": "Đăng ký",
         "duration": 3,
-        "color": "#00ff88"
+        "color": "#ff4081"
     }
 ],
 };
 
-// ──────────────────────────────────────────────
-// HELPER: Animate text word-by-word
-// ──────────────────────────────────────────────
-type WordProps = {
+const Word: React.FC<{
   word: string;
   isHighlighted: boolean;
   index: number;
   baseFrame: number;
   fps: number;
-};
-
-const Word: React.FC<WordProps> = ({ word, isHighlighted, index, baseFrame, fps }) => {
+}> = ({ word, isHighlighted, index, baseFrame, fps }) => {
   const delay = index * 3;
   const localFrame = Math.max(0, baseFrame - delay);
-
   const opacity = interpolate(localFrame, [0, 15], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
-
   const y = spring({
     frame: localFrame,
     fps,
     config: { damping: 14, stiffness: 120, mass: 0.5 },
   });
-
   const scale = interpolate(localFrame, [0, 20], [0.7, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
@@ -84,10 +74,10 @@ const Word: React.FC<WordProps> = ({ word, isHighlighted, index, baseFrame, fps 
         display: "inline-block",
         opacity,
         transform: `translateY(${(1 - y) * 40}px) scale(${scale})`,
-        color: isHighlighted ? "#00ff88" : "inherit",
+        color: isHighlighted ? "#ff4081" : "inherit",
         fontWeight: isHighlighted ? 900 : 600,
         textShadow: isHighlighted
-          ? "0 0 30px #00ff8880"
+          ? "0 0 30px #ff408180"
           : "none",
         marginRight: "0.25em",
       }}
@@ -97,44 +87,30 @@ const Word: React.FC<WordProps> = ({ word, isHighlighted, index, baseFrame, fps 
   );
 };
 
-// ──────────────────────────────────────────────
-// HELPER: Background
-// ──────────────────────────────────────────────
 const Background: React.FC = () => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
-
   const gradientShift = interpolate(frame, [0, durationInFrames], [0, 360], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
-
-  const orb1Y = spring({
-    frame,
-    fps: 30,
-    config: { damping: 10, stiffness: 30 },
-  });
-  const orb2Y = spring({
-    frame: frame + 100,
-    fps: 30,
-    config: { damping: 12, stiffness: 25 },
-  });
+  const orb1Y = spring({ frame, fps: 30, config: { damping: 10, stiffness: 30 } });
+  const orb2Y = spring({ frame: frame + 100, fps: 30, config: { damping: 12, stiffness: 25 } });
 
   return (
     <AbsoluteFill
       style={{
-        background: `linear-gradient(${gradientShift * 0.1}deg, #001a0f)`,
+        background: `linear-gradient(${gradientShift * 0.1}deg, #1a001a)`,
         overflow: "hidden",
       }}
     >
-      {/* Decorative orbs */}
       <div
         style={{
           position: "absolute",
           width: 400,
           height: 400,
           borderRadius: "50%",
-          background: "radial-gradient(circle, #00ff8833, transparent 70%)",
+          background: "radial-gradient(circle, #ff408133, transparent 70%)",
           top: "15%",
           left: "50%",
           transform: `translate(-50%, 0) translateY(${orb1Y * 60}px)`,
@@ -147,7 +123,7 @@ const Background: React.FC = () => {
           width: 300,
           height: 300,
           borderRadius: "50%",
-          background: "radial-gradient(circle, #00ff8822, transparent 70%)",
+          background: "radial-gradient(circle, #ff80ab22, transparent 70%)",
           bottom: "25%",
           right: "10%",
           transform: `translateY(${orb2Y * 50}px)`,
@@ -158,13 +134,9 @@ const Background: React.FC = () => {
   );
 };
 
-// ──────────────────────────────────────────────
-// MAIN COMPONENT
-// ──────────────────────────────────────────────
 export const Video: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
-
   const sceneDurationFrames = VIDEO_CONFIG.scenes[0].duration * fps;
   const currentIndex = Math.min(
     Math.floor(frame / sceneDurationFrames),
@@ -177,12 +149,7 @@ export const Video: React.FC = () => {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
-  const containerY = spring({
-    frame: localFrame,
-    fps,
-    config: { damping: 15, stiffness: 100 },
-  });
-
+  const containerY = spring({ frame: localFrame, fps, config: { damping: 15, stiffness: 100 } });
   const exitProgress = currentIndex < VIDEO_CONFIG.scenes.length - 1
     ? interpolate(localFrame, [sceneDurationFrames - 15, sceneDurationFrames], [0, 1], {
         extrapolateLeft: "clamp",
@@ -204,7 +171,6 @@ export const Video: React.FC = () => {
   return (
     <AbsoluteFill>
       <Background />
-
       <AbsoluteFill
         style={{
           justifyContent: "center",
@@ -216,7 +182,7 @@ export const Video: React.FC = () => {
       >
         <div
           style={{
-            fontSize: 66,
+            fontSize: 68,
             fontWeight: 700,
             lineHeight: 1.3,
             textAlign: "center",
@@ -239,7 +205,6 @@ export const Video: React.FC = () => {
         </div>
       </AbsoluteFill>
 
-      {/* Progress bar */}
       <div
         style={{
           position: "absolute",
@@ -256,14 +221,13 @@ export const Video: React.FC = () => {
           style={{
             width: progressWidth,
             height: "100%",
-            background: "linear-gradient(90deg, #00ff88, #00ff88)",
+            background: "linear-gradient(90deg, #ff4081, #ff80ab)",
             borderRadius: 2,
-            boxShadow: `0 0 10px #00ff8880`,
+            boxShadow: `0 0 10px #ff408180`,
           }}
         />
       </div>
 
-      {/* Watermark */}
       <div
         style={{
           position: "absolute",
