@@ -1,0 +1,312 @@
+import {
+  AbsoluteFill,
+  useCurrentFrame,
+  interpolate,
+  spring,
+  useVideoConfig,
+} from "remotion";
+
+// ──────────────────────────────────────────────
+// CẤU HÌNH VIDEO — Chỉnh sửa đoạn này thôi
+// ──────────────────────────────────────────────
+const VIDEO_CONFIG = {
+  fps: 30,
+  width: 1080,
+  height: 1920,
+  scenes: [
+    {
+      text: "Bạn có biết?",
+      highlight: "",
+      duration: 3, // giây
+      color: "#ffffff",
+    },
+    {
+      text: "Người bình thường đọc 200 từ/phút",
+      highlight: "200",
+      duration: 3,
+      color: "#e0e0e0",
+    },
+    {
+      text: "Với speed reading, bạn đọc 1000 từ/phút",
+      highlight: "1000",
+      duration: 3,
+      color: "#ffffff",
+    },
+    {
+      text: "Một cuốn sách chỉ trong 3 phút",
+      highlight: "3 phút",
+      duration: 3,
+      color: "#00d4ff",
+    },
+    {
+      text: "Đăng ký để học ngay",
+      highlight: "",
+      duration: 3,
+      color: "#ffd700",
+    },
+  ],
+};
+
+// ──────────────────────────────────────────────
+// HELPER: Animate text word-by-word
+// ──────────────────────────────────────────────
+type WordProps = {
+  word: string;
+  isHighlighted: boolean;
+  index: number;
+  baseFrame: number;
+  fps: number;
+};
+
+const Word: React.FC<WordProps> = ({
+  word,
+  isHighlighted,
+  index,
+  baseFrame,
+  fps,
+}) => {
+  const delay = index * 3; // mỗi chữ delay 3 frame
+  const localFrame = Math.max(0, baseFrame - delay);
+
+  const opacity = interpolate(localFrame, [0, 15], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  const y = spring({
+    frame: localFrame,
+    fps,
+    config: { damping: 14, stiffness: 120, mass: 0.5 },
+  });
+
+  const scale = interpolate(localFrame, [0, 20], [0.7, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  return (
+    <span
+      style={{
+        display: "inline-block",
+        opacity,
+        transform: `translateY(${(1 - y) * 40}px) scale(${scale})`,
+        color: isHighlighted ? "#ffd700" : "inherit",
+        fontWeight: isHighlighted ? 900 : 600,
+        textShadow: isHighlighted
+          ? "0 0 30px rgba(255, 215, 0, 0.8)"
+          : "none",
+        marginRight: "0.25em",
+        transition: "none",
+      }}
+    >
+      {word}
+    </span>
+  );
+};
+
+// ──────────────────────────────────────────────
+// HELPER: Decorative background elements
+// ──────────────────────────────────────────────
+const Background: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { durationInFrames } = useVideoConfig();
+
+  // Hiệu ứng gradient chuyển động nhẹ
+  const gradientShift = interpolate(frame, [0, durationInFrames], [0, 360], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  // Các hình tròn trang trí chuyển động chậm
+  const orb1Y = spring({
+    frame,
+    fps: 30,
+    config: { damping: 10, stiffness: 30 },
+  });
+  const orb2Y = spring({
+    frame: frame + 100,
+    fps: 30,
+    config: { damping: 12, stiffness: 25 },
+  });
+
+  return (
+    <AbsoluteFill
+      style={{
+        background: `linear-gradient(${gradientShift * 0.1}deg, #0f0c29, #1a1a3e, #24243e, #0f0c29)`,
+        overflow: "hidden",
+      }}
+    >
+      {/* Orb 1 - tím */}
+      <div
+        style={{
+          position: "absolute",
+          width: 400,
+          height: 400,
+          borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(120, 80, 255, 0.3), transparent 70%)",
+          top: "15%",
+          left: "50%",
+          transform: `translate(-50%, 0) translateY(${orb1Y * 60}px)`,
+          filter: "blur(40px)",
+        }}
+      />
+      {/* Orb 2 - xanh cyan */}
+      <div
+        style={{
+          position: "absolute",
+          width: 300,
+          height: 300,
+          borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(0, 212, 255, 0.25), transparent 70%)",
+          bottom: "25%",
+          right: "10%",
+          transform: `translateY(${orb2Y * 50}px)`,
+          filter: "blur(50px)",
+        }}
+      />
+      {/* Orb 3 - tím nhạt */}
+      <div
+        style={{
+          position: "absolute",
+          width: 250,
+          height: 250,
+          borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(180, 120, 255, 0.2), transparent 70%)",
+          top: "60%",
+          left: "5%",
+          transform: `translateY(${(1 - orb1Y) * 40}px)`,
+          filter: "blur(35px)",
+        }}
+      />
+    </AbsoluteFill>
+  );
+};
+
+// ──────────────────────────────────────────────
+// MAIN COMPONENT
+// ──────────────────────────────────────────────
+export const Video: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps, durationInFrames } = useVideoConfig();
+
+  // Tính scene hiện tại
+  const sceneDurationFrames = VIDEO_CONFIG.scenes[0].duration * fps;
+  const currentIndex = Math.min(
+    Math.floor(frame / sceneDurationFrames),
+    VIDEO_CONFIG.scenes.length - 1
+  );
+  const currentScene = VIDEO_CONFIG.scenes[currentIndex];
+  const localFrame = frame - currentIndex * sceneDurationFrames;
+
+  // Animation cho toàn bộ text container
+  const containerOpacity = interpolate(localFrame, [0, 10], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const containerY = spring({
+    frame: localFrame,
+    fps,
+    config: { damping: 15, stiffness: 100 },
+  });
+
+  // Exit animation - scene cuối thì không cần
+  const exitProgress = currentIndex < VIDEO_CONFIG.scenes.length - 1
+    ? interpolate(localFrame, [sceneDurationFrames - 15, sceneDurationFrames], [0, 1], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp",
+      })
+    : 0;
+
+  // Chia text thành words để animate từng chữ
+  const words = currentScene.text.split(" ");
+  const highlightWords = currentScene.highlight
+    ? currentScene.highlight.split(" ")
+    : [];
+
+  // Progress bar ở dưới cùng
+  const progress = frame / durationInFrames;
+  const progressWidth = interpolate(progress, [0, 1], ["0%", "100%"], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  return (
+    <AbsoluteFill>
+      <Background />
+
+      {/* Main text container */}
+      <AbsoluteFill
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          padding: 60,
+          opacity: 1 - exitProgress * 0.5,
+          transform: `translateY(${(1 - containerY) * 30}px)`,
+        }}
+      >
+        <div
+          style={{
+            fontSize: 72,
+            fontWeight: 700,
+            lineHeight: 1.3,
+            textAlign: "center",
+            maxWidth: 1000,
+            fontFamily: "Inter, Arial, sans-serif",
+            color: currentScene.color,
+            textShadow: `0 0 40px ${currentScene.color}40, 0 4px 20px rgba(0,0,0,0.5)`,
+          }}
+        >
+          {words.map((word, i) => (
+            <Word
+              key={i}
+              word={word}
+              isHighlighted={highlightWords.includes(word)}
+              index={i}
+              baseFrame={localFrame}
+              fps={fps}
+            />
+          ))}
+        </div>
+      </AbsoluteFill>
+
+      {/* Progress bar */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 40,
+          left: 40,
+          right: 40,
+          height: 4,
+          background: "rgba(255,255,255,0.1)",
+          borderRadius: 2,
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            width: progressWidth,
+            height: "100%",
+            background: "linear-gradient(90deg, #00d4ff, #a855f7)",
+            borderRadius: 2,
+            boxShadow: "0 0 10px rgba(0, 212, 255, 0.5)",
+          }}
+        />
+      </div>
+
+      {/* Watermark nhỏ */}
+      <div
+        style={{
+          position: "absolute",
+          top: 60,
+          right: 60,
+          fontSize: 24,
+          color: "rgba(255,255,255,0.3)",
+          fontFamily: "Inter, Arial, sans-serif",
+          fontWeight: 600,
+        }}
+      >
+        Văn Hỉ Official
+      </div>
+    </AbsoluteFill>
+  );
+};
