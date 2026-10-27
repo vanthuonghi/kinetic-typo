@@ -10,7 +10,7 @@ import os
 
 SCRIPT_FILE = "script.txt"
 OUTPUT_FILE = "voiceover.mp3"
-VOICE = "vi-VN-NamMinhNeural"  # Nam: NamMinhNeural | Nữ: HoaiMyNeural
+VOICE = os.environ.get("TTS_VOICE", "vi-VN-NamMinhNeural")  # Nam: NamMinhNeural | Nữ: HoaiMyNeural
 
 
 async def main():

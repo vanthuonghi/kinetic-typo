@@ -9,6 +9,8 @@ jobs:
   render:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      TTS_VOICE: ${{ vars.TTS_VOICE || 'vi-VN-NamMinhNeural' }}
 
     steps:
       - name: Checkout code
