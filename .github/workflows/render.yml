@@ -35,7 +35,7 @@ jobs:
         run: python3 scripts/generate-tts.py
 
       - name: Render video
-        run: npx remotion render src/Video.tsx Video out/video.mp4 --codec h264 --crf 18
+        run: npx remotion render src/Root.tsx Video out/video.mp4 --codec h264 --crf 18
 
       - name: Upload video artifact
         uses: actions/upload-artifact@v4
