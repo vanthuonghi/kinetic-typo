@@ -2,28 +2,34 @@ import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig } fr
 
 const VIDEO_CONFIG = { fps: 30, width: 1080, height: 1920, scenes: [
     {
-        "text": "Nghịch lý sáng tạo: Hạn chế tạo ra sự sáng tạo",
-        "highlight": "sáng",
-        "duration": 3,
-        "color": "#00d4ff"
-    },
-    {
-        "text": "Khi bạn có quá nhiều lựa chọn, bạn không chọn gì cả",
-        "highlight": "không",
+        "text": "Từ khóa thành công: Kỷ luật",
+        "highlight": "khóa",
         "duration": 3,
         "color": "#ffffff"
     },
     {
-        "text": "Đặt giới hạn, tạo áp lực nhẹ, sáng tạo sẽ bùng nổ",
-        "highlight": "sáng",
+        "text": "Không phải động lực",
+        "highlight": "",
         "duration": 3,
-        "color": "#00d4ff"
+        "color": "#e0e0e0"
+    },
+    {
+        "text": "Kỷ luật là làm việc ngay cả khi không muốn",
+        "highlight": "luật",
+        "duration": 3,
+        "color": "#ffffff"
+    },
+    {
+        "text": "Thành công đến từ thói quen nhỏ mỗi ngày",
+        "highlight": "thói",
+        "duration": 3,
+        "color": "#e0e0e0"
     },
     {
         "text": "Đăng ký để học ngay",
         "highlight": "Đăng ký",
         "duration": 3,
-        "color": "#ff006e"
+        "color": "#ffd700"
     }
 ] };
 
@@ -200,7 +206,7 @@ export const Video = () => {
   const EffectComponent = effects[currentIndex % effects.length];
   return (
     <AbsoluteFill>
-      <Background theme='neon-blue' />
+      <Background theme='gradient-purple' />
       <AbsoluteFill
         style={{
           justifyContent: 'center',
