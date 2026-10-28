@@ -2,34 +2,28 @@ import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig } fr
 
 const VIDEO_CONFIG = { fps: 30, width: 1080, height: 1920, scenes: [
     {
-        "text": "Phương pháp 80/20: 20% nỗ lực mang lại 80% kết quả",
-        "highlight": "mang",
+        "text": "Nghịch lý sáng tạo: Hạn chế tạo ra sự sáng tạo",
+        "highlight": "sáng",
         "duration": 3,
-        "color": "#ffcc80"
+        "color": "#00d4ff"
     },
     {
-        "text": "Tập trung vào việc quan trọng",
-        "highlight": "trung",
+        "text": "Khi bạn có quá nhiều lựa chọn, bạn không chọn gì cả",
+        "highlight": "không",
         "duration": 3,
         "color": "#ffffff"
     },
     {
-        "text": "Loại bỏ việc không cần thiết",
-        "highlight": "việc",
+        "text": "Đặt giới hạn, tạo áp lực nhẹ, sáng tạo sẽ bùng nổ",
+        "highlight": "sáng",
         "duration": 3,
-        "color": "#ffcc80"
-    },
-    {
-        "text": "Hiệu quả tăng gấp đôi",
-        "highlight": "",
-        "duration": 3,
-        "color": "#ffffff"
+        "color": "#00d4ff"
     },
     {
         "text": "Đăng ký để học ngay",
         "highlight": "Đăng ký",
         "duration": 3,
-        "color": "#ff9800"
+        "color": "#ff006e"
     }
 ] };
 
@@ -43,7 +37,7 @@ const SlideText = ({ text, color }) => {
   return (
     <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center' }}>
       <div style={{ transform: `translateX(${slideX}px)`, opacity, textAlign: 'center' }}>
-        <div style={{ color, fontSize: 76, fontWeight: 800, lineHeight: 1.2, fontFamily: 'Inter, Arial, sans-serif', textShadow: `0 0 40px ${color}40` }}>{text}</div>
+        <div style={{ color, fontSize: 100, fontWeight: 900, lineHeight: 1.15, fontFamily: 'Inter, Helvetica Neue, Arial, sans-serif', textShadow: `0 0 0 3px ${color}40, 0 0 20px ${color}60, 0 2px 10px rgba(0,0,0,0.8)` }}>{text}</div>
       </div>
     </AbsoluteFill>
   );
@@ -64,7 +58,7 @@ const KineticSlam = ({ text, color }) => {
     <AbsoluteFill style={{ backgroundColor: '#0a0a0a', justifyContent: 'center', alignItems: 'center' }}>
       <AbsoluteFill style={{ backgroundColor: '#fff', opacity: flashOpacity }} />
       <div style={{ position: 'absolute', width: 200, height: 200, borderRadius: '50%', border: `4px solid ${color}`, transform: `scale(${ringScale})`, opacity: ringOpacity }} />
-      <div style={{ fontSize: 120, fontWeight: 900, fontFamily: 'Arial Black, Impact, sans-serif', color, textTransform: 'uppercase', letterSpacing: 10, transform: `translateY(${translateY}px) scaleX(${scaleX}) scaleY(${scaleY})`, textShadow: `0 4px 30px ${color}` }}>{text}</div>
+      <div style={{ fontSize: 140, fontWeight: 900, fontFamily: 'Arial Black, Impact, sans-serif', color, textTransform: 'uppercase', letterSpacing: 12, transform: `translateY(${translateY}px) scaleX(${scaleX}) scaleY(${scaleY})`, textShadow: `0 4px 30px ${color}` }}>{text}</div>
     </AbsoluteFill>
   );
 };
@@ -105,9 +99,9 @@ const TextGlitch = ({ text, color }) => {
   const skew = glitchActive ? (random(`gs-${frame}`) - 0.5) * 8 : 0;
   return (
     <AbsoluteFill style={{ backgroundColor: '#000', justifyContent: 'center', alignItems: 'center' }}>
-      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: `translate(-50%, -50%) translate(${offsetX + 3}px, ${offsetY}px)`, fontSize: 120, fontWeight: 900, color: 'rgba(255,0,0,0.8)', mixBlendMode: 'screen', opacity: glitchActive ? 1 : 0 }}>{text}</div>
-      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: `translate(-50%, -50%) translate(${-offsetX - 3}px, ${-offsetY}px)`, fontSize: 120, fontWeight: 900, color: 'rgba(0,255,255,0.8)', mixBlendMode: 'screen', opacity: glitchActive ? 1 : 0 }}>{text}</div>
-      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: `translate(-50%, -50%) translate(${offsetX}px, ${offsetY}px) skewX(${skew}deg) scale(${entryProgress})`, fontSize: 120, fontWeight: 900, color }}>
+      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: `translate(-50%, -50%) translate(${offsetX + 3}px, ${offsetY}px)`, fontSize: 140, fontWeight: 900, color: 'rgba(255,0,0,0.9)', mixBlendMode: 'screen', opacity: glitchActive ? 1 : 0 }}>{text}</div>
+      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: `translate(-50%, -50%) translate(${-offsetX - 3}px, ${-offsetY}px)`, fontSize: 140, fontWeight: 900, color: 'rgba(0,255,255,0.9)', mixBlendMode: 'screen', opacity: glitchActive ? 1 : 0 }}>{text}</div>
+      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: `translate(-50%, -50%) translate(${offsetX}px, ${offsetY}px) skewX(${skew}deg) scale(${entryProgress})`, fontSize: 140, fontWeight: 900, color }}>
         {text}
       </div>
       {glitchActive && (
@@ -130,7 +124,7 @@ const TextTypewriter = ({ text, color }) => {
           <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#ffbd2e' }} />
           <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#27ca40' }} />
         </div>
-        <div style={{ fontFamily: 'monospace', fontSize: 40, color }}>
+        <div style={{ fontFamily: 'monospace', fontSize: 56, color }}>
           <span style={{ color: '#38bdf8' }}>$ </span>
           {displayText}
           <span style={{ display: 'inline-block', width: 18, height: 40, background: color || '#38bdf8', marginLeft: 4, opacity: cursorVisible ? 1 : 0 }} />
@@ -152,7 +146,7 @@ const TextHighlight = ({ text, color }) => {
           const wordStart = i * framesPerWord;
           const progress = clamp((frame - wordStart) / (framesPerWord * 0.6), 0, 1);
           return (
-            <span key={i} style={{ position: 'relative', display: 'inline-block', fontSize: 56, fontWeight: 700, color: '#fff', padding: '4px 10px' }}>
+            <span key={i} style={{ position: 'relative', display: 'inline-block', fontSize: 72, fontWeight: 800, color: '#fff', padding: '6px 14px' }}>
               <span style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: `${progress * 100}%`, background: `linear-gradient(135deg, ${color}, #a855f7)`, borderRadius: 6, opacity: progress > 0 ? 0.9 : 0, zIndex: 0 }} />
               <span style={{ position: 'relative', zIndex: 1 }}>{word}</span>
             </span>
@@ -206,7 +200,7 @@ export const Video = () => {
   const EffectComponent = effects[currentIndex % effects.length];
   return (
     <AbsoluteFill>
-      <Background theme='warm-orange' />
+      <Background theme='neon-blue' />
       <AbsoluteFill
         style={{
           justifyContent: 'center',
