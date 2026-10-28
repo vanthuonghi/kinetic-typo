@@ -2,34 +2,28 @@ import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig } fr
 
 const VIDEO_CONFIG = { fps: 30, width: 1080, height: 1920, scenes: [
     {
-        "text": "Quy tắc vàng giao tiếp: Lắng nghe nhiều hơn nói",
-        "highlight": "vàng",
-        "duration": 3,
-        "color": "#ff80ab"
-    },
-    {
-        "text": "Đặt câu hỏi mở",
-        "highlight": "",
+        "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
+        "highlight": "Người",
         "duration": 3,
         "color": "#ffffff"
     },
     {
-        "text": "Thấu hiểu trước khi được thấu hiểu",
-        "highlight": "thấu",
+        "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
+        "highlight": "phút",
         "duration": 3,
-        "color": "#ff80ab"
+        "color": "#e0e0e0"
     },
     {
-        "text": "Kết nối thật sự bắt đầu từ sự quan tâm",
-        "highlight": "thật",
+        "text": "Một cuốn sách chỉ trong 3 phút",
+        "highlight": "trong",
         "duration": 3,
         "color": "#ffffff"
     },
     {
         "text": "Đăng ký để học ngay",
-        "highlight": "Đăng ký",
+        "highlight": "",
         "duration": 3,
-        "color": "#ff4081"
+        "color": "#e0e0e0"
     }
 ] };
 
@@ -45,9 +39,9 @@ const Word: React.FC<{ word: string; isHighlighted: boolean; index: number; base
         display: "inline-block",
         opacity,
         transform: `translateY(${(1 - y) * 40}px) scale(${scale})`,
-        color: isHighlighted ? "#ff4081" : "inherit",
+        color: isHighlighted ? "#ffd700" : "inherit",
         fontWeight: isHighlighted ? 900 : 600,
-        textShadow: isHighlighted ? "0 0 30px #ff408180" : "none",
+        textShadow: isHighlighted ? "0 0 30px #ffd70080" : "none",
         marginRight: "0.25em",
       }}
     >
@@ -65,7 +59,7 @@ const Background: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        background: `linear-gradient(${gradientShift * 0.1}deg, #1a001a)`,
+        background: `linear-gradient(${gradientShift * 0.1}deg, linear-gradient(135deg, #0f0c29, #1a1a3e, #24243e))`,
         overflow: "hidden",
       }}
     >
@@ -75,7 +69,7 @@ const Background: React.FC = () => {
           width: 400,
           height: 400,
           borderRadius: "50%",
-          background: "radial-gradient(circle, #ff408133, transparent 70%)",
+          background: "radial-gradient(circle, #ffd70033, transparent 70%)",
           top: "15%",
           left: "50%",
           transform: `translate(-50%, 0) translateY(${orb1Y * 60}px)`,
@@ -88,7 +82,7 @@ const Background: React.FC = () => {
           width: 300,
           height: 300,
           borderRadius: "50%",
-          background: "radial-gradient(circle, #ff80ab22, transparent 70%)",
+          background: "radial-gradient(circle, #ffffff22, transparent 70%)",
           bottom: "25%",
           right: "10%",
           transform: `translateY(${orb2Y * 50}px)`,
@@ -130,7 +124,7 @@ export const Video: React.FC = () => {
       >
         <div
           style={{
-            fontSize: 68,
+            fontSize: 72,
             fontWeight: 700,
             lineHeight: 1.3,
             textAlign: "center",
@@ -162,9 +156,9 @@ export const Video: React.FC = () => {
           style={{
             width: progressWidth,
             height: "100%",
-            background: "linear-gradient(90deg, #ff4081, #ff80ab)",
+            background: "linear-gradient(90deg, #ffd700, #ffffff)",
             borderRadius: 2,
-            boxShadow: `0 0 10px #ff408180`,
+            boxShadow: `0 0 10px #ffd70080`,
           }}
         />
       </div>
