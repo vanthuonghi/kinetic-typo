@@ -45,11 +45,14 @@ jobs:
       - name: Render video
         run: npx remotion render src/Root.tsx Video out/video.mp4 --codec h264 --crf 18
 
+      - name: Merge audio into video
+        run: ffmpeg -y -i out/video.mp4 -i public/voiceover.mp3 -filter_complex "[1:a]volume=1[a1]" -map 0:v -map "[a1]" -c:v copy -c:a aac -shortest out/video-final.mp4
+
       - name: Upload video artifact
         uses: actions/upload-artifact@v4
         with:
           name: video-15s
-          path: out/video.mp4
+          path: out/video-final.mp4
           retention-days: 7
 
       - name: Summary
