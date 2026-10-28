@@ -2,26 +2,26 @@ import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig } fr
 
 const VIDEO_CONFIG = { fps: 30, width: 1080, height: 1920, scenes: [
     {
-        "text": "Thời gian là tài sản quý nhất",
-        "highlight": "Thời",
+        "text": "Phương pháp 80/20: 20% nỗ lực mang lại 80% kết quả",
+        "highlight": "mang",
         "duration": 3,
-        "color": "#90e0ef"
+        "color": "#ffcc80"
     },
     {
-        "text": "Mỗi ngày có 86400 giây",
-        "highlight": "",
+        "text": "Tập trung vào việc quan trọng",
+        "highlight": "trung",
         "duration": 3,
         "color": "#ffffff"
     },
     {
-        "text": "Bạn chi tiêu cho điều gì? Đầu tư vào sức khỏe, học tập, mối quan hệ",
-        "highlight": "tiêu",
+        "text": "Loại bỏ việc không cần thiết",
+        "highlight": "việc",
         "duration": 3,
-        "color": "#90e0ef"
+        "color": "#ffcc80"
     },
     {
-        "text": "Không bao giờ lấy lại được thời gian đã qua",
-        "highlight": "gian",
+        "text": "Hiệu quả tăng gấp đôi",
+        "highlight": "",
         "duration": 3,
         "color": "#ffffff"
     },
@@ -29,7 +29,7 @@ const VIDEO_CONFIG = { fps: 30, width: 1080, height: 1920, scenes: [
         "text": "Đăng ký để học ngay",
         "highlight": "Đăng ký",
         "duration": 3,
-        "color": "#00b4d8"
+        "color": "#ff9800"
     }
 ] };
 
@@ -206,7 +206,7 @@ export const Video = () => {
   const EffectComponent = effects[currentIndex % effects.length];
   return (
     <AbsoluteFill>
-      <Background theme='ocean-blue' />
+      <Background theme='warm-orange' />
       <AbsoluteFill
         style={{
           justifyContent: 'center',
