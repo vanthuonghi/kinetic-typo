@@ -2,34 +2,34 @@ import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig } fr
 
 const VIDEO_CONFIG = { fps: 30, width: 1080, height: 1920, scenes: [
     {
-        "text": "Từ khóa thành công: Kỷ luật",
-        "highlight": "khóa",
+        "text": "Bí mật đầu tư BĐS: Mua khi thị trường sợ hãi",
+        "highlight": "trường",
         "duration": 3,
         "color": "#ffffff"
     },
     {
-        "text": "Không phải động lực",
+        "text": "Bán khi thị trường tham lam",
+        "highlight": "trường",
+        "duration": 3,
+        "color": "#f5f5f5"
+    },
+    {
+        "text": "Kiên nhẫn là chìa khóa",
         "highlight": "",
         "duration": 3,
-        "color": "#e0e0e0"
-    },
-    {
-        "text": "Kỷ luật là làm việc ngay cả khi không muốn",
-        "highlight": "luật",
-        "duration": 3,
         "color": "#ffffff"
     },
     {
-        "text": "Thành công đến từ thói quen nhỏ mỗi ngày",
-        "highlight": "thói",
+        "text": "Lịch sử luôn lặp lại",
+        "highlight": "",
         "duration": 3,
-        "color": "#e0e0e0"
+        "color": "#f5f5f5"
     },
     {
         "text": "Đăng ký để học ngay",
         "highlight": "Đăng ký",
         "duration": 3,
-        "color": "#ffd700"
+        "color": "#00d4ff"
     }
 ] };
 
@@ -206,7 +206,7 @@ export const Video = () => {
   const EffectComponent = effects[currentIndex % effects.length];
   return (
     <AbsoluteFill>
-      <Background theme='gradient-purple' />
+      <Background theme='dark-minimal' />
       <AbsoluteFill
         style={{
           justifyContent: 'center',
