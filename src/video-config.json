@@ -1,50 +1,43 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "dark-minimal",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#0a0a0a",
+      "#0a0a0a",
+      "#0a0a0a"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#00d4ff",
+    "muted": "#f5f5f5"
   },
   "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Tư duy tăng trưởng: Thất bại không phải là kết thúc",
-      "highlight": "Thất",
+      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Mỗi lỗi sai là bài học",
-      "highlight": "",
+      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
+      "highlight": "speed",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Kỹ năng phát triển qua thực hành",
-      "highlight": "phát",
+      "text": "Một cuốn sách chỉ trong 3 phút",
+      "highlight": "trong",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "Bạn có thể cải thiện bất kỳ điều gì",
-      "highlight": "điều",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
