@@ -557,41 +557,57 @@ const transitionFor = (index: number): TransitionName => {
   return TRANSITIONS[(index + offset) % TRANSITIONS.length];
 };
 
-const CtaCard: React.FC<{ fontSize: number }> = ({ fontSize }) => (
-  <AbsoluteFill
-    style={{
-      justifyContent: "center",
-      alignItems: "center",
-      paddingTop: 120,
-      paddingBottom: 420,
-    }}
-  >
-    <div
+const CtaScene: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
+  const { lines, fontSize: fs } = layoutScene(scene.text, fontSize * 0.62);
+
+  return (
+    <AbsoluteFill
       style={{
-        display: "flex",
+        justifyContent: "center",
         alignItems: "center",
-        gap: 18,
-        padding: "26px 46px",
-        borderRadius: 999,
-        background: `linear-gradient(135deg, ${THEME.accent}, ${THEME.muted})`,
-        boxShadow: `0 18px 60px ${THEME.accent}55`,
+        paddingLeft: 84,
+        paddingRight: 84,
+        paddingTop: 300,
+        paddingBottom: 470,
+        gap: 44,
       }}
     >
-      <div style={{ fontSize: fontSize * 0.5, lineHeight: 1 }}>▶</div>
+      <div style={{ maxWidth: 912, ...textStyle(fs, THEME.text) }}>
+        {lines.map((line, li) => (
+          <div key={li} style={{ whiteSpace: "nowrap" }}>
+            {line.join(" ")}
+          </div>
+        ))}
+      </div>
+
       <div
         style={{
-          fontSize: fontSize * 0.4,
-          fontWeight: 900,
-          letterSpacing: "0.01em",
-          color: "#0b0b0b",
-          fontFamily: "'Helvetica Neue', Arial, sans-serif",
+          display: "flex",
+          alignItems: "center",
+          gap: 18,
+          padding: "26px 46px",
+          borderRadius: 999,
+          background: `linear-gradient(135deg, ${THEME.accent}, ${THEME.muted})`,
+          boxShadow: `0 18px 60px ${THEME.accent}55`,
         }}
       >
-        Theo dõi {BRAND}
+        <div style={{ fontSize: fs * 0.72, lineHeight: 1 }}>▶</div>
+        <div
+          style={{
+            fontSize: fs * 0.62,
+            fontWeight: 900,
+            letterSpacing: "0.01em",
+            color: "#0b0b0b",
+            fontFamily: "'Helvetica Neue', Arial, sans-serif",
+            whiteSpace: "nowrap",
+          }}
+        >
+          Theo dõi {BRAND}
+        </div>
       </div>
-    </div>
-  </AbsoluteFill>
-);
+    </AbsoluteFill>
+  );
+};
 
 const SceneLayer: React.FC<{ scene: Scene; index: number; total: number }> = ({
   scene,
@@ -638,9 +654,12 @@ const SceneLayer: React.FC<{ scene: Scene; index: number; total: number }> = ({
       style={{ opacity: opacity * (1 - exit), transform, clipPath }}
     >
       <AbsoluteFill style={{ transform: `scale(${drift})` }}>
-        <Effect scene={scene} fontSize={fontSize} />
+        {scene.kind === "cta" ? (
+          <CtaScene scene={scene} fontSize={fontSize} />
+        ) : (
+          <Effect scene={scene} fontSize={fontSize} />
+        )}
       </AbsoluteFill>
-      {scene.kind === "cta" && <CtaCard fontSize={fontSize} />}
     </AbsoluteFill>
   );
 };
