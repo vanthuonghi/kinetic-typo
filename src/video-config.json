@@ -1,42 +1,42 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "neon-blue",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
+    "text": "#00d4ff",
+    "accent": "#ff006e",
     "muted": "#ffffff"
   },
-  "effect": "word-rise",
+  "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Bí mật đầu tư BĐS: Mua khi thị trường sợ hãi",
-      "highlight": "trường",
+      "text": "Phương pháp 80/20: 20% nỗ lực mang lại 80% kết quả",
+      "highlight": "Phương",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Bán khi thị trường tham lam",
-      "highlight": "tham",
+      "text": "Tập trung vào việc quan trọng",
+      "highlight": "quan",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Kiên nhẫn là chìa khóa",
-      "highlight": "",
+      "text": "Loại bỏ việc không cần thiết",
+      "highlight": "không",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Lịch sử luôn lặp lại",
+      "text": "Hiệu quả tăng gấp đôi",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
