@@ -1,254 +1,566 @@
-import { AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig } from 'remotion';
+import React from "react";
+import {
+  AbsoluteFill,
+  Audio,
+  interpolate,
+  Sequence,
+  spring,
+  staticFile,
+  useCurrentFrame,
+  useVideoConfig,
+} from "remotion";
+import rawConfig from "./video-config.json";
 
-const VIDEO_CONFIG = { fps: 30, width: 1080, height: 1920, scenes: [
-    {
-        "text": "Bí mật đầu tư BĐS: Mua khi thị trường sợ hãi",
-        "highlight": "trường",
-        "duration": 3,
-        "color": "#ffffff"
-    },
-    {
-        "text": "Bán khi thị trường tham lam",
-        "highlight": "trường",
-        "duration": 3,
-        "color": "#f5f5f5"
-    },
-    {
-        "text": "Kiên nhẫn là chìa khóa",
-        "highlight": "",
-        "duration": 3,
-        "color": "#ffffff"
-    },
-    {
-        "text": "Lịch sử luôn lặp lại",
-        "highlight": "",
-        "duration": 3,
-        "color": "#f5f5f5"
-    },
-    {
-        "text": "Đăng ký để học ngay",
-        "highlight": "Đăng ký",
-        "duration": 3,
-        "color": "#00d4ff"
-    }
-] };
+/* ------------------------------------------------------------------ */
+/* Types                                                               */
+/* ------------------------------------------------------------------ */
 
-const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
-
-const SlideText = ({ text, color }) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const opacity = spring({ frame, fps, from: 0, to: 1, durationInFrames: 25 });
-  const slideX = spring({ frame, fps, from: 180, to: 0, durationInFrames: 30, config: { damping: 12, mass: 0.5 } });
-  return (
-    <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center' }}>
-      <div style={{ transform: `translateX(${slideX}px)`, opacity, textAlign: 'center' }}>
-        <div style={{ color, fontSize: 100, fontWeight: 900, lineHeight: 1.15, fontFamily: 'Inter, Helvetica Neue, Arial, sans-serif', textShadow: `0 0 0 3px ${color}40, 0 0 20px ${color}60, 0 2px 10px rgba(0,0,0,0.8)` }}>{text}</div>
-      </div>
-    </AbsoluteFill>
-  );
+type Scene = {
+  text: string;
+  highlight?: string;
+  startMs: number;
+  endMs: number;
 };
 
-const KineticSlam = ({ text, color }) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const drop = spring({ fps, frame, config: { damping: 12, stiffness: 80, mass: 1.5 } });
-  const translateY = interpolate(drop, [0, 1], [-500, 0]);
-  const scaleX = interpolate(drop, [0, 0.8, 1], [1, 1, 1.12], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const scaleY = interpolate(drop, [0, 0.8, 1], [1, 1, 0.9], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const shock = interpolate(frame, [8, 40], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const ringScale = interpolate(shock, [0, 1], [0, 8]);
-  const ringOpacity = interpolate(shock, [0, 0.3, 1], [0, 0.6, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const flashOpacity = interpolate(frame, [6, 10, 18], [0, 0.25, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  return (
-    <AbsoluteFill style={{ backgroundColor: '#0a0a0a', justifyContent: 'center', alignItems: 'center' }}>
-      <AbsoluteFill style={{ backgroundColor: '#fff', opacity: flashOpacity }} />
-      <div style={{ position: 'absolute', width: 200, height: 200, borderRadius: '50%', border: `4px solid ${color}`, transform: `scale(${ringScale})`, opacity: ringOpacity }} />
-      <div style={{ fontSize: 140, fontWeight: 900, fontFamily: 'Arial Black, Impact, sans-serif', color, textTransform: 'uppercase', letterSpacing: 12, transform: `translateY(${translateY}px) scaleX(${scaleX}) scaleY(${scaleY})`, textShadow: `0 4px 30px ${color}` }}>{text}</div>
-    </AbsoluteFill>
-  );
+type Theme = {
+  id: string;
+  bg: string[];
+  text: string;
+  accent: string;
+  muted: string;
 };
 
-const KineticWave = ({ text, color }) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const letters = text.split('');
-  return (
-    <AbsoluteFill style={{ backgroundColor: '#0d1117', justifyContent: 'center', alignItems: 'center' }}>
-      <div style={{ display: 'flex', gap: 4 }}>
-        {letters.map((letter, i) => {
-          const delay = i * 3;
-          const entrance = spring({ fps, frame: Math.max(0, frame - delay), config: { damping: 10, stiffness: 100 } });
-          const translateY = interpolate(entrance, [0, 1], [200, 0]);
-          const opacity = interpolate(entrance, [0, 0.3], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-          const waveFrame = Math.max(0, frame - delay - 15);
-          const waveY = Math.sin(waveFrame * 0.15) * 15 * Math.min(entrance, 1);
-          const hue = (i * 30 + frame * 2) % 360;
-          return (
-            <span key={i} style={{ fontSize: 100, fontWeight: 800, fontFamily: "'Helvetica Neue', Arial, sans-serif", color: `hsl(${hue}, 80%, 65%)`, display: 'inline-block', transform: `translateY(${translateY + waveY}px)`, opacity, textShadow: `0 0 30px hsla(${hue}, 90%, 60%, 0.6)` }}>
-              {letter === ' ' ? '\u00A0' : letter}
-            </span>
-          );
-        })}
-      </div>
-    </AbsoluteFill>
-  );
+type EffectName =
+  | "word-rise"
+  | "line-mask"
+  | "slam"
+  | "wave"
+  | "typewriter"
+  | "sweep";
+
+type VideoConfig = {
+  theme: Theme;
+  effect: EffectName;
+  brand: string;
+  scenes: Scene[];
+  totalMs: number;
+  hasAudio?: boolean;
 };
 
-const TextGlitch = ({ text, color }) => {
-  const frame = useCurrentFrame();
-  const { random } = require('remotion');
-  const entryProgress = clamp(frame / 20, 0, 1);
-  const glitchActive = frame > 25 && random(`glitch-${frame}`) < 0.15;
-  const offsetX = glitchActive ? (random(`gx-${frame}`) - 0.5) * 30 : 0;
-  const offsetY = glitchActive ? (random(`gy-${frame}`) - 0.5) * 10 : 0;
-  const skew = glitchActive ? (random(`gs-${frame}`) - 0.5) * 8 : 0;
-  return (
-    <AbsoluteFill style={{ backgroundColor: '#000', justifyContent: 'center', alignItems: 'center' }}>
-      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: `translate(-50%, -50%) translate(${offsetX + 3}px, ${offsetY}px)`, fontSize: 140, fontWeight: 900, color: 'rgba(255,0,0,0.9)', mixBlendMode: 'screen', opacity: glitchActive ? 1 : 0 }}>{text}</div>
-      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: `translate(-50%, -50%) translate(${-offsetX - 3}px, ${-offsetY}px)`, fontSize: 140, fontWeight: 900, color: 'rgba(0,255,255,0.9)', mixBlendMode: 'screen', opacity: glitchActive ? 1 : 0 }}>{text}</div>
-      <div style={{ position: 'absolute', left: '50%', top: '50%', transform: `translate(-50%, -50%) translate(${offsetX}px, ${offsetY}px) skewX(${skew}deg) scale(${entryProgress})`, fontSize: 140, fontWeight: 900, color }}>
-        {text}
-      </div>
-      {glitchActive && (
-        <AbsoluteFill style={{ background: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.3) 2px, rgba(0,0,0,0.3) 4px)' }} />
-      )}
-    </AbsoluteFill>
-  );
+const CFG = rawConfig as unknown as VideoConfig;
+const THEME = CFG.theme;
+const BRAND = CFG.brand || "Văn Hỉ Official";
+
+/* ------------------------------------------------------------------ */
+/* Helpers                                                             */
+/* ------------------------------------------------------------------ */
+
+const clamp = (v: number, lo: number, hi: number) => Math.min(Math.max(v, lo), hi);
+
+const ease = (f: number, from: number, to: number, a = 0, b = 1) =>
+  interpolate(f, [from, to], [a, b], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+/** Font size tuned so Vietnamese lines stay readable on a phone screen. */
+const fitFontSize = (text: string): number => {
+  const n = text.trim().length;
+  if (n <= 14) return 124;
+  if (n <= 20) return 112;
+  if (n <= 28) return 100;
+  if (n <= 38) return 88;
+  if (n <= 50) return 78;
+  if (n <= 66) return 68;
+  if (n <= 84) return 60;
+  return 54;
 };
 
-const TextTypewriter = ({ text, color }) => {
-  const frame = useCurrentFrame();
-  const charsToShow = clamp(Math.floor(frame / 3), 0, text.length);
-  const displayText = text.slice(0, charsToShow);
-  const cursorVisible = Math.floor(frame / 15) % 2 === 0;
-  return (
-    <AbsoluteFill style={{ backgroundColor: '#0f172a', justifyContent: 'center', alignItems: 'center' }}>
-      <div style={{ width: 900, background: '#1e293b', borderRadius: 12, padding: 28, border: '1px solid #334155' }}>
-        <div style={{ display: 'flex', gap: 8, marginBottom: 20 }}>
-          <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#ff5f56' }} />
-          <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#ffbd2e' }} />
-          <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#27ca40' }} />
-        </div>
-        <div style={{ fontFamily: 'monospace', fontSize: 56, color }}>
-          <span style={{ color: '#38bdf8' }}>$ </span>
-          {displayText}
-          <span style={{ display: 'inline-block', width: 18, height: 40, background: color || '#38bdf8', marginLeft: 4, opacity: cursorVisible ? 1 : 0 }} />
-        </div>
-      </div>
-    </AbsoluteFill>
-  );
-};
+const stripAccent = (w: string) => w.replace(/[.,!?;:…"'()]/g, "").toLowerCase();
 
-const TextHighlight = ({ text, color }) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const words = text.split(' ');
-  const framesPerWord = Math.floor(fps * 0.8);
-  return (
-    <AbsoluteFill style={{ background: 'linear-gradient(180deg, #0f172a, #1e293b)', justifyContent: 'center', alignItems: 'center' }}>
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 16, maxWidth: 900, padding: 40 }}>
-        {words.map((word, i) => {
-          const wordStart = i * framesPerWord;
-          const progress = clamp((frame - wordStart) / (framesPerWord * 0.6), 0, 1);
-          return (
-            <span key={i} style={{ position: 'relative', display: 'inline-block', fontSize: 72, fontWeight: 800, color: '#fff', padding: '6px 14px' }}>
-              <span style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: `${progress * 100}%`, background: `linear-gradient(135deg, ${color}, #a855f7)`, borderRadius: 6, opacity: progress > 0 ? 0.9 : 0, zIndex: 0 }} />
-              <span style={{ position: 'relative', zIndex: 1 }}>{word}</span>
-            </span>
-          );
-        })}
-      </div>
-    </AbsoluteFill>
-  );
-};
+const splitWords = (text: string) => text.trim().split(/\s+/).filter(Boolean);
 
-const Background = ({ theme }) => {
+const highlightSet = (highlight?: string): Set<string> =>
+  new Set(splitWords(highlight || "").map(stripAccent).filter(Boolean));
+
+/** Text stays razor sharp: heavy weight, tight tracking, thin dark edge, no big blur. */
+const textStyle = (fontSize: number, color: string): React.CSSProperties => ({
+  fontSize,
+  fontWeight: 900,
+  lineHeight: 1.16,
+  letterSpacing: "-0.02em",
+  color,
+  textAlign: "center",
+  fontFamily:
+    "Inter, 'Helvetica Neue', 'Segoe UI', Roboto, 'Noto Sans', Arial, sans-serif",
+  WebkitTextStroke: "1.5px rgba(0,0,0,0.45)",
+  paintOrder: "stroke fill",
+  textShadow: "0 2px 6px rgba(0,0,0,0.55)",
+});
+
+/* ------------------------------------------------------------------ */
+/* Background                                                          */
+/* ------------------------------------------------------------------ */
+
+const Background: React.FC<{ fps: number }> = ({ fps }) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
-  const gradientShift = interpolate(frame, [0, durationInFrames], [0, 360], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const orb1Y = spring({ frame, fps: 30, config: { damping: 10, stiffness: 30 } });
-  const orb2Y = spring({ frame: frame + 100, fps: 30, config: { damping: 12, stiffness: 25 } });
-  const themes = {
-    'gradient-purple': { bg: 'linear-gradient(135deg, #1e1b4b, #4c1d95)', orb1: '#a855f733', orb2: '#7c3aed22' },
-    'dark-minimal': { bg: '#0a0a0a', orb1: '#ffffff10', orb2: '#ffffff08' },
-    'neon-blue': { bg: '#000000', orb1: '#00ffea20', orb2: '#0066ff18' },
-    'warm-orange': { bg: 'linear-gradient(135deg, #7c2d12, #9a3412)', orb1: '#ff7b0025', orb2: '#ff450018' },
-    'green-tech': { bg: 'linear-gradient(135deg, #022c22, #064e3b)', orb1: '#00ff8833', orb2: '#00ff8822' },
-    'luxury-gold': { bg: 'linear-gradient(135deg, #3b1f0b, #5c2d0e)', orb1: '#ffd70033', orb2: '#ffd70022' },
-    'ocean-blue': { bg: 'linear-gradient(135deg, #082f49, #075985)', orb1: '#38bdf830', orb2: '#0ea5e922' },
-    'pink-modern': { bg: 'linear-gradient(135deg, #4c0519, #9d174d)', orb1: '#ec489933', orb2: '#db277722' },
-  };
-  const t = themes[theme] || themes['luxury-gold'];
+  const t = frame / Math.max(1, durationInFrames);
+
+  const orbA = interpolate(t, [0, 1], [0.92, 1.06]);
+  const orbB = interpolate(t, [0, 1], [1.06, 0.94]);
+  const drift = Math.sin(frame / (fps * 3)) * 18;
+
+  const [c0, c1, c2] = [
+    THEME.bg[0] ?? "#000000",
+    THEME.bg[1] ?? THEME.bg[0] ?? "#000000",
+    THEME.bg[2] ?? THEME.bg[1] ?? "#000000",
+  ];
+
   return (
-    <AbsoluteFill style={{ background: t.bg, overflow: 'hidden' }}>
-      <div style={{ position: 'absolute', width: 400, height: 400, borderRadius: '50%', background: `radial-gradient(circle, ${t.orb1}, transparent 70%)`, top: '15%', left: '50%', transform: `translate(-50%, 0) translateY(${orb1Y * 60}px)`, filter: 'blur(40px)' }} />
-      <div style={{ position: 'absolute', width: 300, height: 300, borderRadius: '50%', background: `radial-gradient(circle, ${t.orb2}, transparent 70%)`, bottom: '25%', right: '10%', transform: `translateY(${orb2Y * 50}px)`, filter: 'blur(50px)' }} />
+    <AbsoluteFill style={{ backgroundColor: c0, overflow: "hidden" }}>
+      <AbsoluteFill
+        style={{
+          background: `linear-gradient(160deg, ${c0} 0%, ${c1} 52%, ${c2} 100%)`,
+        }}
+      />
+
+      {/* soft light pools – background only, never over the text plane */}
+      <div
+        style={{
+          position: "absolute",
+          width: 760,
+          height: 760,
+          borderRadius: "50%",
+          left: "50%",
+          top: "18%",
+          transform: `translate(-50%, 0) translateY(${drift}px) scale(${orbA})`,
+          background: `radial-gradient(circle, ${THEME.accent}44 0%, transparent 68%)`,
+          filter: "blur(70px)",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          width: 620,
+          height: 620,
+          borderRadius: "50%",
+          right: "-14%",
+          bottom: "12%",
+          transform: `scale(${orbB})`,
+          background: `radial-gradient(circle, ${THEME.muted}2e 0%, transparent 70%)`,
+          filter: "blur(80px)",
+        }}
+      />
+
+      {/* vignette keeps the centre calm and readable */}
+      <AbsoluteFill
+        style={{
+          background:
+            "radial-gradient(120% 90% at 50% 45%, transparent 45%, rgba(0,0,0,0.55) 100%)",
+        }}
+      />
     </AbsoluteFill>
   );
 };
 
-export const Video = () => {
+/* ------------------------------------------------------------------ */
+/* Text shell – shared typography for every effect                     */
+/* ------------------------------------------------------------------ */
+
+const TextShell: React.FC<{
+  children: React.ReactNode;
+  fontSize: number;
+  opacity?: number;
+  transform?: string;
+  clipPath?: string;
+}> = ({ children, fontSize, opacity = 1, transform, clipPath }) => (
+  <AbsoluteFill
+    style={{
+      justifyContent: "center",
+      alignItems: "center",
+      paddingLeft: 84,
+      paddingRight: 84,
+      paddingTop: 300,
+      paddingBottom: 520,
+    }}
+  >
+    <div
+      style={{
+        maxWidth: 912,
+        ...textStyle(fontSize, THEME.text),
+        opacity,
+        transform,
+        clipPath,
+      }}
+    >
+      {children}
+    </div>
+  </AbsoluteFill>
+);
+
+/* ------------------------------------------------------------------ */
+/* Effects                                                             */
+/* ------------------------------------------------------------------ */
+
+const HighlightUnderline: React.FC<{ progress: number }> = ({ progress }) => (
+  <span
+    style={{
+      position: "absolute",
+      left: 0,
+      right: 0,
+      bottom: -0.08,
+      height: 0.09,
+      borderRadius: 99,
+      background: THEME.accent,
+      transform: `scaleX(${clamp(progress, 0, 1)})`,
+      transformOrigin: "left center",
+      opacity: 0.95,
+    }}
+  />
+);
+
+const WordRise: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
-  const { fps, durationInFrames } = useVideoConfig();
-  const sceneDurationFrames = VIDEO_CONFIG.scenes[0].duration * fps;
-  const currentIndex = Math.min(Math.floor(frame / sceneDurationFrames), VIDEO_CONFIG.scenes.length - 1);
-  const currentScene = VIDEO_CONFIG.scenes[currentIndex];
-  const localFrame = frame - currentIndex * sceneDurationFrames;
-  const containerOpacity = interpolate(localFrame, [0, 10], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const containerY = spring({ frame: localFrame, fps, config: { damping: 15, stiffness: 100 } });
-  const exitProgress = currentIndex < VIDEO_CONFIG.scenes.length - 1
-    ? interpolate(localFrame, [sceneDurationFrames - 15, sceneDurationFrames], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' })
-    : 0;
-  const progress = frame / durationInFrames;
-  const progressWidth = interpolate(progress, [0, 1], ['0%', '100%'], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const effects = [SlideText, KineticSlam, KineticWave, TextGlitch, TextTypewriter, TextHighlight];
-  const EffectComponent = effects[currentIndex % effects.length];
+  const { fps } = useVideoConfig();
+  const words = splitWords(scene.text);
+  const hi = highlightSet(scene.highlight);
+
   return (
-    <AbsoluteFill>
-      <Background theme='dark-minimal' />
-      <AbsoluteFill
+    <TextShell fontSize={fontSize}>
+      {words.map((word, i) => {
+        const enter = spring({
+          frame,
+          fps,
+          delay: i * 3,
+          config: { damping: 14, stiffness: 130, mass: 0.7 },
+        });
+        const y = Math.round(interpolate(enter, [0, 1], [38, 0]));
+        const isHi = hi.has(stripAccent(word));
+        return (
+          <span
+            key={i}
+            style={{
+              display: "inline-block",
+              marginRight: "0.26em",
+              position: "relative",
+              opacity: enter,
+              transform: `translateY(${y}px)`,
+              color: isHi ? THEME.accent : undefined,
+            }}
+          >
+            {word}
+            {isHi && <HighlightUnderline progress={ease(frame, 10 + i * 3, 24 + i * 3)} />}
+          </span>
+        );
+      })}
+    </TextShell>
+  );
+};
+
+const LineMask: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
+  const frame = useCurrentFrame();
+  const p = ease(frame, 0, 20);
+  const y = Math.round(interpolate(p, [0, 1], [26, 0]));
+  const reveal = interpolate(p, [0, 1], [100, 0]);
+
+  const hi = highlightSet(scene.highlight);
+  const words = splitWords(scene.text);
+
+  return (
+    <TextShell fontSize={fontSize} clipPath={`inset(0% 0% ${reveal}% 0%)`} transform={`translateY(${y}px)`}>
+      {words.map((word, i) => (
+        <span
+          key={i}
+          style={{
+            display: "inline-block",
+            marginRight: "0.26em",
+            color: hi.has(stripAccent(word)) ? THEME.accent : undefined,
+          }}
+        >
+          {word}
+        </span>
+      ))}
+    </TextShell>
+  );
+};
+
+const Slam: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const drop = spring({ frame, fps, config: { damping: 11, stiffness: 150, mass: 1.1 } });
+  const y = Math.round(interpolate(drop, [0, 1], [-380, 0]));
+  const sx = interpolate(drop, [0, 0.85, 1], [1.16, 1.16, 1]);
+  const sy = interpolate(drop, [0, 0.85, 1], [0.86, 0.86, 1]);
+  const flash = interpolate(frame, [5, 9, 16], [0, 0.16, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  const hi = highlightSet(scene.highlight);
+
+  return (
+    <>
+      <AbsoluteFill style={{ backgroundColor: "#ffffff", opacity: flash }} />
+      <TextShell fontSize={fontSize} transform={`translateY(${y}px) scaleX(${sx}) scaleY(${sy})`}>
+        {splitWords(scene.text).map((word, i) => (
+          <span
+            key={i}
+            style={{
+              display: "inline-block",
+              marginRight: "0.24em",
+              color: hi.has(stripAccent(word)) ? THEME.accent : undefined,
+            }}
+          >
+            {word}
+          </span>
+        ))}
+      </TextShell>
+    </>
+  );
+};
+
+const Wave: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const letters = Array.from(scene.text);
+  const size = Math.min(fontSize, Math.floor(1000 / Math.max(8, letters.length)) + 26);
+
+  return (
+    <TextShell fontSize={size}>
+      <span style={{ display: "inline-flex", flexWrap: "wrap", justifyContent: "center" }}>
+        {letters.map((ch, i) => {
+          const enter = spring({
+            frame,
+            fps,
+            delay: i * 2,
+            config: { damping: 13, stiffness: 150, mass: 0.6 },
+          });
+          const base = Math.round(interpolate(enter, [0, 1], [46, 0]));
+          const wobble = enter >= 0.999 ? Math.sin((frame - i * 2) / 9) * 5 : 0;
+          return (
+            <span
+              key={i}
+              style={{
+                display: "inline-block",
+                opacity: enter,
+                transform: `translateY(${base + wobble}px)`,
+                color: THEME.accent,
+              }}
+            >
+              {ch === " " ? "\u00A0" : ch}
+            </span>
+          );
+        })}
+      </span>
+    </TextShell>
+  );
+};
+
+const Typewriter: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
+  const frame = useCurrentFrame();
+  const chars = Math.floor(ease(frame, 2, 2 + scene.text.length * 1.6, 0, scene.text.length));
+  const shown = scene.text.slice(0, chars);
+  const caretOn = Math.floor(frame / 12) % 2 === 0;
+
+  return (
+    <TextShell fontSize={fontSize}>
+      <span>{shown}</span>
+      <span
         style={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: 60,
-          opacity: 1 - exitProgress * 0.5,
-          transform: `translateY(${(1 - containerY) * 30}px)`,
+          display: "inline-block",
+          width: Math.round(fontSize * 0.09),
+          height: Math.round(fontSize * 0.92),
+          background: THEME.accent,
+          marginLeft: 6,
+          verticalAlign: "-0.08em",
+          opacity: caretOn ? 1 : 0,
+        }}
+      />
+    </TextShell>
+  );
+};
+
+const Sweep: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
+  const frame = useCurrentFrame();
+  const words = splitWords(scene.text);
+  const cursor = Math.floor(ease(frame, 4, 4 + words.length * 6, -1, words.length - 0.01));
+  const hi = highlightSet(scene.highlight);
+
+  return (
+    <TextShell fontSize={fontSize}>
+      {words.map((word, i) => {
+        const active = i <= cursor;
+        const isHi = hi.has(stripAccent(word));
+        return (
+          <span
+            key={i}
+            style={{
+              display: "inline-block",
+              marginRight: "0.26em",
+              position: "relative",
+              opacity: active ? 1 : 0.32,
+              color: active && isHi ? THEME.accent : undefined,
+              transform: active ? "translateY(0px)" : "translateY(4px)",
+            }}
+          >
+            {word}
+            {active && isHi && (
+              <HighlightUnderline progress={ease(frame, i * 6, i * 6 + 10)} />
+            )}
+          </span>
+        );
+      })}
+    </TextShell>
+  );
+};
+
+const EFFECTS: Record<EffectName, React.FC<{ scene: Scene; fontSize: number }>> = {
+  "word-rise": WordRise,
+  "line-mask": LineMask,
+  slam: Slam,
+  wave: Wave,
+  typewriter: Typewriter,
+  sweep: Sweep,
+};
+
+/* ------------------------------------------------------------------ */
+/* Scene wrapper                                                       */
+/* ------------------------------------------------------------------ */
+
+const SceneLayer: React.FC<{ scene: Scene; index: number; total: number }> = ({
+  scene,
+  index,
+  total,
+}) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const lengthMs = Math.max(400, scene.endMs - scene.startMs);
+  const lengthFrames = Math.max(1, Math.round((lengthMs / 1000) * fps));
+
+  const fadeIn = ease(frame, 0, 6);
+  const fadeOut = total > 1 && index < total - 1 ? 1 - ease(frame, lengthFrames - 7, lengthFrames) : 1;
+  const opacity = Math.min(fadeIn, fadeOut);
+
+  // gentle camera drift keeps the frame alive without softening the glyphs
+  const drift = interpolate(frame, [0, lengthFrames], [1, 1.025], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  const Effect = EFFECTS[CFG.effect] ?? WordRise;
+  const fontSize = fitFontSize(scene.text);
+
+  return (
+    <AbsoluteFill style={{ opacity }}>
+      <AbsoluteFill style={{ transform: `scale(${drift})` }}>
+        <Effect scene={scene} fontSize={fontSize} />
+      </AbsoluteFill>
+    </AbsoluteFill>
+  );
+};
+
+/* ------------------------------------------------------------------ */
+/* Chrome: progress bar + brand                                        */
+/* ------------------------------------------------------------------ */
+
+const Chrome: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { durationInFrames } = useVideoConfig();
+  const p = clamp(frame / Math.max(1, durationInFrames - 1), 0, 1);
+
+  return (
+    <>
+      <div
+        style={{
+          position: "absolute",
+          top: 150,
+          left: 84,
+          right: 84,
+          display: "flex",
+          alignItems: "center",
+          gap: 14,
+          opacity: 0.9,
         }}
       >
-        <EffectComponent text={currentScene.text} color={currentScene.color} />
-      </AbsoluteFill>
-
-      <div style={{
-        position: 'absolute',
-        bottom: 40,
-        left: 40,
-        right: 40,
-        height: 4,
-        background: 'rgba(255,255,255,0.1)',
-        borderRadius: 2,
-        overflow: 'hidden',
-      }}>
-        <div style={{
-          width: progressWidth,
-          height: '100%',
-          background: 'linear-gradient(90deg, #ffeb3b, #ffd700)',
-          borderRadius: 2,
-          boxShadow: `0 0 10px #ffeb3b80`,
-        }} />
+        <div
+          style={{
+            width: 10,
+            height: 10,
+            borderRadius: 99,
+            background: THEME.accent,
+            boxShadow: `0 0 12px ${THEME.accent}`,
+          }}
+        />
+        <div
+          style={{
+            fontSize: 30,
+            fontWeight: 700,
+            letterSpacing: "0.02em",
+            color: "rgba(255,255,255,0.82)",
+            fontFamily: "Inter, Arial, sans-serif",
+          }}
+        >
+          {BRAND}
+        </div>
       </div>
 
-      <div style={{
-        position: 'absolute',
-        top: 60,
-        right: 60,
-        fontSize: 24,
-        color: 'rgba(255,255,255,0.3)',
-        fontFamily: 'Inter, Arial, sans-serif',
-        fontWeight: 600,
-      }}>
-        Văn Hỉ Official
+      <div
+        style={{
+          position: "absolute",
+          left: 84,
+          right: 84,
+          bottom: 420,
+          height: 6,
+          borderRadius: 99,
+          background: "rgba(255,255,255,0.16)",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            width: `${p * 100}%`,
+            height: "100%",
+            borderRadius: 99,
+            background: `linear-gradient(90deg, ${THEME.accent}, ${THEME.muted})`,
+          }}
+        />
       </div>
+    </>
+  );
+};
+
+/* ------------------------------------------------------------------ */
+/* Root composition                                                    */
+/* ------------------------------------------------------------------ */
+
+export const Video: React.FC = () => {
+  const { fps } = useVideoConfig();
+  const scenes = CFG.scenes;
+
+  return (
+    <AbsoluteFill style={{ backgroundColor: "#000" }}>
+      {CFG.hasAudio !== false && <Audio src={staticFile("voiceover.mp3")} />}
+
+      <Background fps={fps} />
+
+      {scenes.map((scene, i) => {
+        const from = Math.round((scene.startMs / 1000) * fps);
+        const to = Math.round((scene.endMs / 1000) * fps);
+        const durationInFrames = Math.max(1, to - from);
+        return (
+          <Sequence
+            key={`${i}-${scene.startMs}`}
+            from={from}
+            durationInFrames={durationInFrames}
+            name={`Scene ${i + 1}`}
+          >
+            <SceneLayer scene={scene} index={i} total={scenes.length} />
+          </Sequence>
+        );
+      })}
+
+      <Chrome />
     </AbsoluteFill>
   );
 };

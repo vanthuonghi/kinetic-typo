@@ -1,14 +1,13 @@
 name: Render Video
-
 on:
   push:
     branches: [main, master]
-  workflow_dispatch: # Cho phép chạy thủ công từ GitHub UI
+  workflow_dispatch:
 
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
     env:
       TTS_VOICE: vi-VN-HoaiMyNeural
 
@@ -19,11 +18,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: "22"
           cache: "npm"
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -31,35 +33,26 @@ jobs:
           python-version: "3.11"
 
       - name: Install Edge TTS
-        run: pip install edge-tts
+        run: pip install edge-tts==7.3.1
 
-      - name: Install FFmpeg
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Set TTS voice in config
+        run: python3 -c "import json; p='src/video-config.json'; d=json.load(open(p)); d['voice']='${{ env.TTS_VOICE }}'; json.dump(d, open(p,'w'), ensure_ascii=False, indent=2)"
 
-      - name: Generate voiceover
-        run: python3 scripts/generate-tts.py
-
-      - name: Stage voiceover for Remotion
-        run: mkdir -p public && cp -f voiceover.mp3 public/voiceover.mp3
+      - name: Prepare audio + timings
+        run: python3 scripts/prepare.py
 
       - name: Render video
-        run: npx remotion render src/Root.tsx Video out/video.mp4 --codec h264 --crf 18
-
-      - name: Merge audio into video
-        run: ffmpeg -y -i out/video.mp4 -i public/voiceover.mp3 -filter_complex "[1:a]volume=1[a1]" -map 0:v -map "[a1]" -c:v copy -c:a aac -shortest out/video-final.mp4
+        run: npx remotion render src/Root.tsx Video out/video.mp4 --codec h264 --crf 18 --concurrency 4
 
       - name: Upload video artifact
         uses: actions/upload-artifact@v4
         with:
           name: video-15s
-          path: out/video-final.mp4
+          path: out/video.mp4
           retention-days: 7
 
       - name: Summary
         if: success()
         run: |
           echo "✅ Video rendered successfully!"
-          echo "📹 Download from: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          echo ""
-          echo "📋 Script đã dùng:"
-          cat script.txt
+          python3 -c "import json; d=json.load(open('src/video-config.json')); print('Scenes:', len(d['scenes']), 'TotalMs:', d['totalMs'])"

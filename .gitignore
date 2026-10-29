@@ -1,0 +1,13 @@
+node_modules/
+out/
+public/voiceover.mp3
+public/voiceover.vtt
+public/chunk_*.mp3
+public/chunk_*.txt
+public/w_*.mp3
+public/w_*.txt
+public/words.txt
+public/chunks.txt
+.remotion/
+*.log
+.DS_Store

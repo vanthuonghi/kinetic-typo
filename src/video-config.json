@@ -1,0 +1,50 @@
+{
+  "theme": {
+    "id": "ocean-blue",
+    "bg": [
+      "#001219",
+      "#005f73",
+      "#0a192f"
+    ],
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
+    "muted": "#ffffff"
+  },
+  "effect": "line-mask",
+  "brand": "Văn Hỉ Official",
+  "voice": "vi-VN-HoaiMyNeural",
+  "scenes": [
+    {
+      "text": "Tư duy tăng trưởng: Thất bại không phải là kết thúc",
+      "highlight": "thúc",
+      "startMs": 0,
+      "endMs": 0
+    },
+    {
+      "text": "Mỗi lỗi sai là bài học",
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0
+    },
+    {
+      "text": "Kỹ năng phát triển qua thực hành",
+      "highlight": "thực",
+      "startMs": 0,
+      "endMs": 0
+    },
+    {
+      "text": "Bạn có thể cải thiện bất kỳ điều gì",
+      "highlight": "điều",
+      "startMs": 0,
+      "endMs": 0
+    },
+    {
+      "text": "Đăng ký để học ngay",
+      "highlight": "Đăng ký",
+      "startMs": 0,
+      "endMs": 0
+    }
+  ],
+  "totalMs": 15000,
+  "hasAudio": true
+}
