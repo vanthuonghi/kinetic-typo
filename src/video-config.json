@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "gradient-purple",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
-  "effect": "word-rise",
+  "effect": "sweep",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Thời gian là tài sản quý nhất",
-      "highlight": "Thời",
+      "text": "Quy tắc vàng giao tiếp: Lắng nghe nhiều hơn nói",
+      "highlight": "nhiều",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Mỗi ngày có 86400 giây",
+      "text": "Đặt câu hỏi mở",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Bạn chi tiêu cho điều gì? Đầu tư vào sức khỏe, học tập, mối quan hệ",
-      "highlight": "điều",
+      "text": "Thấu hiểu trước khi được thấu hiểu",
+      "highlight": "trước",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Không bao giờ lấy lại được thời gian đã qua",
-      "highlight": "Không",
+      "text": "Kết nối thật sự bắt đầu từ sự quan tâm",
+      "highlight": "quan",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
