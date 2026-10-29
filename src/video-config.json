@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "dark-minimal",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#0a0a0a",
+      "#0a0a0a",
+      "#0a0a0a"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#ffffff",
+    "accent": "#00d4ff",
+    "muted": "#f5f5f5"
   },
-  "effect": "slam",
+  "effect": "line-mask",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Từ khóa thành công: Kỷ luật",
-      "highlight": "luật",
+      "text": "Phương pháp 80/20: 20% nỗ lực mang lại 80% kết quả",
+      "highlight": "Phương",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Không phải động lực",
+      "text": "Tập trung vào việc quan trọng",
+      "highlight": "trung",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Loại bỏ việc không cần thiết",
+      "highlight": "thiết",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Hiệu quả tăng gấp đôi",
       "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Kỷ luật là làm việc ngay cả khi không muốn",
-      "highlight": "muốn",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Thành công đến từ thói quen nhỏ mỗi ngày",
-      "highlight": "ngày",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
