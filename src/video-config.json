@@ -1,36 +1,43 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "ocean-blue",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
+    "muted": "#ffffff"
   },
-  "effect": "wave",
+  "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Nghịch lý sáng tạo: Hạn chế tạo ra sự sáng tạo",
-      "highlight": "sáng",
+      "text": "Từ khóa thành công: Kỷ luật",
+      "highlight": "thành",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Khi bạn có quá nhiều lựa chọn, bạn không chọn gì cả",
-      "highlight": "nhiều",
+      "text": "Không phải động lực",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Đặt giới hạn, tạo áp lực nhẹ, sáng tạo sẽ bùng nổ",
-      "highlight": "sáng",
+      "text": "Kỷ luật là làm việc ngay cả khi không muốn",
+      "highlight": "việc",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Thành công đến từ thói quen nhỏ mỗi ngày",
+      "highlight": "công",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
