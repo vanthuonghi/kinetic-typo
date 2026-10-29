@@ -1,36 +1,43 @@
 {
   "theme": {
-    "id": "green-tech",
+    "id": "gradient-purple",
     "bg": [
-      "#001a0f",
-      "#001a0f",
-      "#001a0f"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
-    "text": "#00ff88",
-    "accent": "#00ff88",
-    "muted": "#e0ffe0"
+    "text": "#ffffff",
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
   "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Nghịch lý sáng tạo: Hạn chế tạo ra sự sáng tạo",
-      "highlight": "sáng",
+      "text": "Quy tắc vàng giao tiếp: Lắng nghe nhiều hơn nói",
+      "highlight": "nhiều",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Khi bạn có quá nhiều lựa chọn, bạn không chọn gì cả",
-      "highlight": "không",
+      "text": "Đặt câu hỏi mở",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Đặt giới hạn, tạo áp lực nhẹ, sáng tạo sẽ bùng nổ",
-      "highlight": "giới",
+      "text": "Thấu hiểu trước khi được thấu hiểu",
+      "highlight": "Thấu",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Kết nối thật sự bắt đầu từ sự quan tâm",
+      "highlight": "thật",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
