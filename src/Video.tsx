@@ -15,28 +15,9 @@ import rawConfig from "./video-config.json";
 /* Types                                                               */
 /* ------------------------------------------------------------------ */
 
-type Scene = {
-  text: string;
-  highlight?: string;
-  startMs: number;
-  endMs: number;
-};
-
-type Theme = {
-  id: string;
-  bg: string[];
-  text: string;
-  accent: string;
-  muted: string;
-};
-
-type EffectName =
-  | "word-rise"
-  | "line-mask"
-  | "slam"
-  | "wave"
-  | "typewriter"
-  | "sweep";
+type Scene = { text: string; highlight?: string; startMs: number; endMs: number };
+type Theme = { id: string; bg: string[]; text: string; accent: string; muted: string };
+type EffectName = "word-rise" | "line-mask" | "slam" | "wave" | "typewriter" | "sweep";
 
 type VideoConfig = {
   theme: Theme;
@@ -71,61 +52,92 @@ const fitFontSize = (text: string): number => {
   if (n <= 28) return 100;
   if (n <= 38) return 88;
   if (n <= 50) return 78;
-  if (n <= 66) return 68;
-  if (n <= 84) return 60;
-  return 54;
+  if (n <= 66) return 66;
+  if (n <= 84) return 58;
+  return 52;
 };
 
-const stripAccent = (w: string) => w.replace(/[.,!?;:…"'()]/g, "").toLowerCase();
-
+const stripMarks = (w: string) => w.replace(/[.,!?;:…"'()]/g, "").toLowerCase();
 const splitWords = (text: string) => text.trim().split(/\s+/).filter(Boolean);
+const highlightSet = (highlight?: string) =>
+  new Set(splitWords(highlight || "").map(stripMarks).filter(Boolean));
 
-const highlightSet = (highlight?: string): Set<string> =>
-  new Set(splitWords(highlight || "").map(stripAccent).filter(Boolean));
+/**
+ * Break a sentence into balanced lines ourselves.
+ * Letting the browser wrap splits Vietnamese phrases in half
+ * ("Thất / bại"), which reads badly; owning the break keeps
+ * meaning groups intact and every line the same width.
+ */
+const wrapWords = (words: string[], limit: number): string[][] => {
+  const out: string[][] = [];
+  let cur: string[] = [];
+  let used = 0;
+  for (const w of words) {
+    const add = cur.length ? w.length + 1 : w.length;
+    if (cur.length && used + add > limit) {
+      out.push(cur);
+      cur = [w];
+      used = w.length;
+    } else {
+      cur.push(w);
+      used += add;
+    }
+  }
+  if (cur.length) out.push(cur);
+  return out;
+};
+
+const layoutLines = (text: string, fontSize: number): string[][] => {
+  const words = splitWords(text);
+  if (words.length <= 1) return [words];
+  const hardMax = Math.max(6, Math.floor(900 / (fontSize * 0.545)));
+  const total = text.trim().length;
+  const nLines = Math.max(1, Math.ceil(total / hardMax));
+  let limit = Math.ceil(total / nLines) + 2;
+  let lines = wrapWords(words, limit);
+  while (lines.length > nLines && limit < hardMax) {
+    limit += 2;
+    lines = wrapWords(words, limit);
+  }
+  return lines;
+};
 
 /** Text stays razor sharp: heavy weight, tight tracking, thin dark edge, no big blur. */
 const textStyle = (fontSize: number, color: string): React.CSSProperties => ({
   fontSize,
   fontWeight: 900,
-  lineHeight: 1.16,
+  lineHeight: 1.18,
   letterSpacing: "-0.02em",
   color,
   textAlign: "center",
-  fontFamily:
-    "Inter, 'Helvetica Neue', 'Segoe UI', Roboto, 'Noto Sans', Arial, sans-serif",
+  fontFamily: "'Helvetica Neue', 'Segoe UI', Roboto, 'Noto Sans', Arial, sans-serif",
   WebkitTextStroke: "1.5px rgba(0,0,0,0.45)",
   paintOrder: "stroke fill",
-  textShadow: "0 2px 6px rgba(0,0,0,0.55)",
+  textShadow: "0 2px 6px rgba(0,0,0,0.5)",
 });
 
 /* ------------------------------------------------------------------ */
 /* Background                                                          */
 /* ------------------------------------------------------------------ */
 
-const Background: React.FC<{ fps: number }> = ({ fps }) => {
+const Background: React.FC = () => {
   const frame = useCurrentFrame();
-  const { durationInFrames } = useVideoConfig();
+  const { durationInFrames, fps } = useVideoConfig();
   const t = frame / Math.max(1, durationInFrames);
 
   const orbA = interpolate(t, [0, 1], [0.92, 1.06]);
   const orbB = interpolate(t, [0, 1], [1.06, 0.94]);
   const drift = Math.sin(frame / (fps * 3)) * 18;
 
-  const [c0, c1, c2] = [
-    THEME.bg[0] ?? "#000000",
-    THEME.bg[1] ?? THEME.bg[0] ?? "#000000",
-    THEME.bg[2] ?? THEME.bg[1] ?? "#000000",
-  ];
+  const c0 = THEME.bg[0] ?? "#000000";
+  const c1 = THEME.bg[1] ?? c0;
+  const c2 = THEME.bg[2] ?? c1;
 
   return (
     <AbsoluteFill style={{ backgroundColor: c0, overflow: "hidden" }}>
       <AbsoluteFill
-        style={{
-          background: `linear-gradient(160deg, ${c0} 0%, ${c1} 52%, ${c2} 100%)`,
-        }}
+        style={{ background: `linear-gradient(160deg, ${c0} 0%, ${c1} 52%, ${c2} 100%)` }}
       />
-
-      {/* soft light pools – background only, never over the text plane */}
       <div
         style={{
           position: "absolute",
@@ -152,8 +164,6 @@ const Background: React.FC<{ fps: number }> = ({ fps }) => {
           filter: "blur(80px)",
         }}
       />
-
-      {/* vignette keeps the centre calm and readable */}
       <AbsoluteFill
         style={{
           background:
@@ -165,7 +175,7 @@ const Background: React.FC<{ fps: number }> = ({ fps }) => {
 };
 
 /* ------------------------------------------------------------------ */
-/* Text shell – shared typography for every effect                     */
+/* Text shell                                                          */
 /* ------------------------------------------------------------------ */
 
 const TextShell: React.FC<{
@@ -199,61 +209,96 @@ const TextShell: React.FC<{
   </AbsoluteFill>
 );
 
+/** Lines render as nowrap rows, so a phrase never breaks across two lines. */
+const LineRows: React.FC<{
+  lines: string[][];
+  renderWord: (word: string, index: number) => React.ReactNode;
+}> = ({ lines, renderWord }) => {
+  let k = 0;
+  return (
+    <>
+      {lines.map((line, li) => (
+        <div key={li} style={{ whiteSpace: "nowrap" }}>
+          {line.map((word, wi) => {
+            const node = renderWord(word, k);
+            k += 1;
+            return <React.Fragment key={wi}>{node}</React.Fragment>;
+          })}
+        </div>
+      ))}
+    </>
+  );
+};
+
 /* ------------------------------------------------------------------ */
-/* Effects                                                             */
+/* Shared word renderer                                                */
 /* ------------------------------------------------------------------ */
 
-const HighlightUnderline: React.FC<{ progress: number }> = ({ progress }) => (
+const wordSpan = (word: string, style: React.CSSProperties, extra?: React.ReactNode) => (
+  <span
+    style={{
+      display: "inline-block",
+      marginRight: "0.26em",
+      position: "relative",
+      ...style,
+    }}
+  >
+    {word}
+    {extra}
+  </span>
+);
+
+const Underline: React.FC<{ p: number }> = ({ p }) => (
   <span
     style={{
       position: "absolute",
       left: 0,
       right: 0,
-      bottom: -0.08,
-      height: 0.09,
+      bottom: "-0.06em",
+      height: "0.08em",
       borderRadius: 99,
       background: THEME.accent,
-      transform: `scaleX(${clamp(progress, 0, 1)})`,
+      transform: `scaleX(${clamp(p, 0, 1)})`,
       transformOrigin: "left center",
       opacity: 0.95,
     }}
   />
 );
 
+/* ------------------------------------------------------------------ */
+/* Effects                                                             */
+/* ------------------------------------------------------------------ */
+
 const WordRise: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const words = splitWords(scene.text);
   const hi = highlightSet(scene.highlight);
+  const lines = layoutLines(scene.text, fontSize);
 
   return (
     <TextShell fontSize={fontSize}>
-      {words.map((word, i) => {
-        const enter = spring({
-          frame,
-          fps,
-          delay: i * 3,
-          config: { damping: 14, stiffness: 130, mass: 0.7 },
-        });
-        const y = Math.round(interpolate(enter, [0, 1], [38, 0]));
-        const isHi = hi.has(stripAccent(word));
-        return (
-          <span
-            key={i}
-            style={{
-              display: "inline-block",
-              marginRight: "0.26em",
-              position: "relative",
+      <LineRows
+        lines={lines}
+        renderWord={(word, i) => {
+          const enter = spring({
+            frame,
+            fps,
+            delay: i * 3,
+            config: { damping: 14, stiffness: 130, mass: 0.7 },
+          });
+          const y = Math.round(interpolate(enter, [0, 1], [38, 0]));
+          const isHi = hi.has(stripMarks(word));
+          return wordSpan(
+            word,
+            {
               opacity: enter,
               transform: `translateY(${y}px)`,
               color: isHi ? THEME.accent : undefined,
-            }}
-          >
-            {word}
-            {isHi && <HighlightUnderline progress={ease(frame, 10 + i * 3, 24 + i * 3)} />}
-          </span>
-        );
-      })}
+            },
+            isHi ? <Underline p={ease(frame, 10 + i * 3, 24 + i * 3)} /> : null
+          );
+        }}
+      />
     </TextShell>
   );
 };
@@ -263,24 +308,21 @@ const LineMask: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSiz
   const p = ease(frame, 0, 20);
   const y = Math.round(interpolate(p, [0, 1], [26, 0]));
   const reveal = interpolate(p, [0, 1], [100, 0]);
-
   const hi = highlightSet(scene.highlight);
-  const words = splitWords(scene.text);
+  const lines = layoutLines(scene.text, fontSize);
 
   return (
-    <TextShell fontSize={fontSize} clipPath={`inset(0% 0% ${reveal}% 0%)`} transform={`translateY(${y}px)`}>
-      {words.map((word, i) => (
-        <span
-          key={i}
-          style={{
-            display: "inline-block",
-            marginRight: "0.26em",
-            color: hi.has(stripAccent(word)) ? THEME.accent : undefined,
-          }}
-        >
-          {word}
-        </span>
-      ))}
+    <TextShell
+      fontSize={fontSize}
+      clipPath={`inset(0% 0% ${reveal}% 0%)`}
+      transform={`translateY(${y}px)`}
+    >
+      <LineRows
+        lines={lines}
+        renderWord={(word) =>
+          wordSpan(word, { color: hi.has(stripMarks(word)) ? THEME.accent : undefined })
+        }
+      />
     </TextShell>
   );
 };
@@ -290,31 +332,24 @@ const Slam: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize })
   const { fps } = useVideoConfig();
   const drop = spring({ frame, fps, config: { damping: 11, stiffness: 150, mass: 1.1 } });
   const y = Math.round(interpolate(drop, [0, 1], [-380, 0]));
-  const sx = interpolate(drop, [0, 0.85, 1], [1.16, 1.16, 1]);
-  const sy = interpolate(drop, [0, 0.85, 1], [0.86, 0.86, 1]);
-  const flash = interpolate(frame, [5, 9, 16], [0, 0.16, 0], {
+  const sc = interpolate(drop, [0, 0.85, 1], [1.14, 1.14, 1]);
+  const flash = interpolate(frame, [5, 9, 16], [0, 0.14, 0], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
-
   const hi = highlightSet(scene.highlight);
+  const lines = layoutLines(scene.text, fontSize);
 
   return (
     <>
       <AbsoluteFill style={{ backgroundColor: "#ffffff", opacity: flash }} />
-      <TextShell fontSize={fontSize} transform={`translateY(${y}px) scaleX(${sx}) scaleY(${sy})`}>
-        {splitWords(scene.text).map((word, i) => (
-          <span
-            key={i}
-            style={{
-              display: "inline-block",
-              marginRight: "0.24em",
-              color: hi.has(stripAccent(word)) ? THEME.accent : undefined,
-            }}
-          >
-            {word}
-          </span>
-        ))}
+      <TextShell fontSize={fontSize} transform={`translateY(${y}px) scale(${sc})`}>
+        <LineRows
+          lines={lines}
+          renderWord={(word) =>
+            wordSpan(word, { color: hi.has(stripMarks(word)) ? THEME.accent : undefined })
+          }
+        />
       </TextShell>
     </>
   );
@@ -323,94 +358,111 @@ const Slam: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize })
 const Wave: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const letters = Array.from(scene.text);
-  const size = Math.min(fontSize, Math.floor(1000 / Math.max(8, letters.length)) + 26);
+  const lines = layoutLines(scene.text, fontSize);
 
   return (
-    <TextShell fontSize={size}>
-      <span style={{ display: "inline-flex", flexWrap: "wrap", justifyContent: "center" }}>
-        {letters.map((ch, i) => {
-          const enter = spring({
-            frame,
-            fps,
-            delay: i * 2,
-            config: { damping: 13, stiffness: 150, mass: 0.6 },
-          });
-          const base = Math.round(interpolate(enter, [0, 1], [46, 0]));
-          const wobble = enter >= 0.999 ? Math.sin((frame - i * 2) / 9) * 5 : 0;
-          return (
-            <span
-              key={i}
-              style={{
-                display: "inline-block",
-                opacity: enter,
-                transform: `translateY(${base + wobble}px)`,
-                color: THEME.accent,
-              }}
-            >
-              {ch === " " ? "\u00A0" : ch}
+    <TextShell fontSize={fontSize}>
+      {lines.map((line, li) => (
+        <div key={li} style={{ whiteSpace: "nowrap" }}>
+          {line.map((word, wi) => (
+            <span key={wi} style={{ display: "inline-block", marginRight: "0.26em" }}>
+              {Array.from(word).map((ch, ci) => {
+                const i = li * 24 + wi * 8 + ci;
+                const enter = spring({
+                  frame,
+                  fps,
+                  delay: i * 2,
+                  config: { damping: 13, stiffness: 150, mass: 0.6 },
+                });
+                const base = Math.round(interpolate(enter, [0, 1], [46, 0]));
+                const wobble = enter >= 0.999 ? Math.sin((frame - i * 2) / 9) * 4 : 0;
+                return (
+                  <span
+                    key={ci}
+                    style={{
+                      display: "inline-block",
+                      opacity: enter,
+                      transform: `translateY(${base + wobble}px)`,
+                      color: THEME.accent,
+                    }}
+                  >
+                    {ch}
+                  </span>
+                );
+              })}
             </span>
-          );
-        })}
-      </span>
+          ))}
+        </div>
+      ))}
     </TextShell>
   );
 };
 
 const Typewriter: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
-  const chars = Math.floor(ease(frame, 2, 2 + scene.text.length * 1.6, 0, scene.text.length));
+  const chars = Math.floor(ease(frame, 2, 2 + scene.text.length * 1.5, 0, scene.text.length));
   const shown = scene.text.slice(0, chars);
   const caretOn = Math.floor(frame / 12) % 2 === 0;
+  const lines = layoutLines(scene.text, fontSize);
+  const totalChars = lines.reduce((n, l) => n + l.join(" ").length + 1, 0);
 
+  let consumed = 0;
   return (
     <TextShell fontSize={fontSize}>
-      <span>{shown}</span>
-      <span
-        style={{
-          display: "inline-block",
-          width: Math.round(fontSize * 0.09),
-          height: Math.round(fontSize * 0.92),
-          background: THEME.accent,
-          marginLeft: 6,
-          verticalAlign: "-0.08em",
-          opacity: caretOn ? 1 : 0,
-        }}
-      />
+      {lines.map((line, li) => {
+        const lineText = line.join(" ");
+        const start = consumed;
+        consumed += lineText.length + 1;
+        const visible = clamp(chars - start, 0, lineText.length);
+        const isLast = chars <= start + lineText.length;
+        return (
+          <div key={li} style={{ whiteSpace: "nowrap" }}>
+            {lineText.slice(0, visible)}
+            {isLast && shown.length < totalChars && (
+              <span
+                style={{
+                  display: "inline-block",
+                  width: Math.round(fontSize * 0.08),
+                  height: Math.round(fontSize * 0.9),
+                  background: THEME.accent,
+                  marginLeft: 6,
+                  verticalAlign: "-0.08em",
+                  opacity: caretOn ? 1 : 0,
+                }}
+              />
+            )}
+          </div>
+        );
+      })}
     </TextShell>
   );
 };
 
 const Sweep: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
-  const words = splitWords(scene.text);
-  const cursor = Math.floor(ease(frame, 4, 4 + words.length * 6, -1, words.length - 0.01));
   const hi = highlightSet(scene.highlight);
+  const lines = layoutLines(scene.text, fontSize);
+  const totalWords = lines.reduce((n, l) => n + l.length, 0);
+  const cursor = Math.floor(ease(frame, 4, 4 + totalWords * 6, -1, totalWords - 0.01));
 
   return (
     <TextShell fontSize={fontSize}>
-      {words.map((word, i) => {
-        const active = i <= cursor;
-        const isHi = hi.has(stripAccent(word));
-        return (
-          <span
-            key={i}
-            style={{
-              display: "inline-block",
-              marginRight: "0.26em",
-              position: "relative",
-              opacity: active ? 1 : 0.32,
+      <LineRows
+        lines={lines}
+        renderWord={(word, i) => {
+          const active = i <= cursor;
+          const isHi = hi.has(stripMarks(word));
+          return wordSpan(
+            word,
+            {
+              opacity: active ? 1 : 0.3,
               color: active && isHi ? THEME.accent : undefined,
               transform: active ? "translateY(0px)" : "translateY(4px)",
-            }}
-          >
-            {word}
-            {active && isHi && (
-              <HighlightUnderline progress={ease(frame, i * 6, i * 6 + 10)} />
-            )}
-          </span>
-        );
-      })}
+            },
+            active && isHi ? <Underline p={ease(frame, i * 6, i * 6 + 10)} /> : null
+          );
+        }}
+      />
     </TextShell>
   );
 };
@@ -438,12 +490,13 @@ const SceneLayer: React.FC<{ scene: Scene; index: number; total: number }> = ({
   const lengthMs = Math.max(400, scene.endMs - scene.startMs);
   const lengthFrames = Math.max(1, Math.round((lengthMs / 1000) * fps));
 
-  const fadeIn = ease(frame, 0, 6);
-  const fadeOut = total > 1 && index < total - 1 ? 1 - ease(frame, lengthFrames - 7, lengthFrames) : 1;
+  const fadeIn = ease(frame, 0, 5);
+  const fadeOut =
+    total > 1 && index < total - 1 ? 1 - ease(frame, lengthFrames - 6, lengthFrames) : 1;
   const opacity = Math.min(fadeIn, fadeOut);
 
-  // gentle camera drift keeps the frame alive without softening the glyphs
-  const drift = interpolate(frame, [0, lengthFrames], [1, 1.025], {
+  // gentle drift keeps the frame alive without softening the glyphs
+  const drift = interpolate(frame, [0, lengthFrames], [1, 1.02], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
@@ -461,7 +514,7 @@ const SceneLayer: React.FC<{ scene: Scene; index: number; total: number }> = ({
 };
 
 /* ------------------------------------------------------------------ */
-/* Chrome: progress bar + brand                                        */
+/* Chrome: brand + progress                                            */
 /* ------------------------------------------------------------------ */
 
 const Chrome: React.FC = () => {
@@ -476,11 +529,10 @@ const Chrome: React.FC = () => {
           position: "absolute",
           top: 150,
           left: 84,
-          right: 84,
           display: "flex",
           alignItems: "center",
           gap: 14,
-          opacity: 0.9,
+          opacity: 0.92,
         }}
       >
         <div
@@ -498,7 +550,7 @@ const Chrome: React.FC = () => {
             fontWeight: 700,
             letterSpacing: "0.02em",
             color: "rgba(255,255,255,0.82)",
-            fontFamily: "Inter, Arial, sans-serif",
+            fontFamily: "'Helvetica Neue', Arial, sans-serif",
           }}
         >
           {BRAND}
@@ -541,9 +593,7 @@ export const Video: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
       {CFG.hasAudio !== false && <Audio src={staticFile("voiceover.mp3")} />}
-
-      <Background fps={fps} />
-
+      <Background />
       {scenes.map((scene, i) => {
         const from = Math.round((scene.startMs / 1000) * fps);
         const to = Math.round((scene.endMs / 1000) * fps);
@@ -559,7 +609,6 @@ export const Video: React.FC = () => {
           </Sequence>
         );
       })}
-
       <Chrome />
     </AbsoluteFill>
   );

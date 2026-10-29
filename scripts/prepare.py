@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Prepare TTS audio + timings for the Remotion render.
 
-Generates one audio chunk per WORD (Edge TTS fails on some 2-word combos),
-concatenates them with ffmpeg, and writes real per-scene timings into
-video-config.json.
+Speech is generated scene by scene. Edge TTS intermittently returns no audio
+for some Vietnamese word pairs, so each scene falls back: whole sentence ->
+halves -> per word. Every clip is trimmed of leading/trailing silence so the
+pace stays natural instead of word-by-word staccato.
 """
 import json
 import subprocess
@@ -14,6 +15,13 @@ CONFIG = ROOT / "src" / "video-config.json"
 PUBLIC = ROOT / "public"
 MP3 = PUBLIC / "voiceover.mp3"
 
+SUFFIXES = ["", ",", ".", " ."]
+
+
+def sh(cmd, **kw):
+    return subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, **kw)
+
+
 def dur_ms(path):
     out = subprocess.check_output(
         ["ffprobe", "-v", "error", "-show_entries", "format=duration",
@@ -22,17 +30,82 @@ def dur_ms(path):
     ).strip()
     return int(float(out) * 1000)
 
-def gen_word(w, wf, txt):
-    for suffix in [",", ".", " ,", " .", ""]:
-        txt.write_text(w + suffix, encoding="utf-8")
-        r = subprocess.run(
-            ["edge-tts", "--voice", "vi-VN-NamMinhNeural", "--file", str(txt),
-             "--write-media", str(wf)],
-            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-        )
-        if r.returncode == 0 and wf.exists() and wf.stat().st_size > 0:
+
+def trim_silence(src, dst):
+    """Strip leading/trailing silence so scenes butt up against each other."""
+    af = ("silenceremove=start_periods=1:start_silence=0.03:start_threshold=-42dB,"
+          "areverse,"
+          "silenceremove=start_periods=1:start_silence=0.03:start_threshold=-42dB,"
+          "areverse")
+    r = sh(["ffmpeg", "-y", "-i", str(src), "-af", af, "-c:a", "libmp3lame",
+            "-q:a", "4", str(dst)])
+    if r.returncode != 0 or not dst.exists() or dst.stat().st_size == 0:
+        dst.write_bytes(src.read_bytes())
+
+
+def speak(text, voice, out_path, tmp_dir, tag):
+    """Render one piece of text, trying a few punctuation variants."""
+    txt = tmp_dir / f"{tag}.txt"
+    for i, suffix in enumerate(SUFFIXES):
+        raw = tmp_dir / f"{tag}_{i}.mp3"
+        txt.write_text(text + suffix, encoding="utf-8")
+        r = sh(["edge-tts", "--voice", voice, "--file", str(txt),
+                "--write-media", str(raw)])
+        if r.returncode == 0 and raw.exists() and raw.stat().st_size > 0:
+            trim_silence(raw, out_path)
+            raw.unlink(missing_ok=True)
+            txt.unlink(missing_ok=True)
             return True
+        raw.unlink(missing_ok=True)
+    txt.unlink(missing_ok=True)
     return False
+
+
+def concat(files, out_path, tmp_dir, tag):
+    listfile = tmp_dir / f"{tag}.lst"
+    listfile.write_text("".join(f"file '{f.name}'\n" for f in files), encoding="utf-8")
+    r = sh(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(listfile),
+            "-c:a", "libmp3lame", "-q:a", "4", str(out_path)])
+    listfile.unlink(missing_ok=True)
+    return r.returncode == 0 and out_path.exists() and out_path.stat().st_size > 0
+
+
+def speak_scene(text, voice, out_path, tmp_dir, tag):
+    """Whole sentence, else halves, else word by word."""
+    if speak(text, voice, out_path, tmp_dir, f"{tag}_full"):
+        return True
+
+    words = text.split()
+    mid = len(words) // 2
+    if mid > 0:
+        parts = []
+        ok = True
+        for j, h in enumerate([" ".join(words[:mid]), " ".join(words[mid:])]):
+            p = tmp_dir / f"{tag}_h{j}.mp3"
+            if not speak(h, voice, p, tmp_dir, f"{tag}_h{j}"):
+                ok = False
+                break
+            parts.append(p)
+        if ok and parts and concat(parts, out_path, tmp_dir, f"{tag}_hl"):
+            for p in parts:
+                p.unlink(missing_ok=True)
+            return True
+        for p in parts:
+            p.unlink(missing_ok=True)
+
+    parts = []
+    for j, w in enumerate(words):
+        p = tmp_dir / f"{tag}_w{j}.mp3"
+        if not speak(w, voice, p, tmp_dir, f"{tag}_w{j}"):
+            for q in parts:
+                q.unlink(missing_ok=True)
+            return False
+        parts.append(p)
+    ok = concat(parts, out_path, tmp_dir, f"{tag}_wd")
+    for p in parts:
+        p.unlink(missing_ok=True)
+    return ok
+
 
 def main():
     PUBLIC.mkdir(parents=True, exist_ok=True)
@@ -40,62 +113,37 @@ def main():
     scenes = cfg["scenes"]
     voice = cfg.get("voice", "vi-VN-NamMinhNeural")
 
-    all_words = []
-    scene_word_counts = []
-    for s in scenes:
-        words = s["text"].split()
-        scene_word_counts.append(len(words))
-        all_words.extend(words)
+    tmp_dir = PUBLIC / "_tts"
+    tmp_dir.mkdir(exist_ok=True)
 
-    word_files = []
-    for i, w in enumerate(all_words):
-        wf = PUBLIC / f"w_{i}.mp3"
-        txt = PUBLIC / f"w_{i}.txt"
-        # use voice from config
-        ok = False
-        for suffix in [",", ".", " ,", " .", ""]:
-            txt.write_text(w + suffix, encoding="utf-8")
-            r = subprocess.run(
-                ["edge-tts", "--voice", voice, "--file", str(txt),
-                 "--write-media", str(wf)],
-                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-            )
-            if r.returncode == 0 and wf.exists() and wf.stat().st_size > 0:
-                ok = True
-                break
-        if not ok:
-            raise RuntimeError(f"edge-tts failed for word: {w!r}")
-        word_files.append(wf)
+    clips = []
+    for i, s in enumerate(scenes):
+        clip = tmp_dir / f"scene_{i}.mp3"
+        if not speak_scene(s["text"], voice, clip, tmp_dir, f"s{i}"):
+            raise RuntimeError(f"edge-tts failed for scene {i}: {s['text']!r}")
+        clips.append(clip)
 
-    listfile = PUBLIC / "words.txt"
-    listfile.write_text("".join(f"file '{w.name}'\n" for w in word_files), encoding="utf-8")
-    subprocess.run(
-        ["ffmpeg", "-y", "-f", "concat", "-safe", "0",
-         "-i", str(listfile), "-c", "copy", str(MP3)],
-        check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-    )
+    if not concat(clips, MP3, tmp_dir, "all"):
+        raise RuntimeError("could not build voiceover.mp3")
 
-    word_durs = [dur_ms(wf) for wf in word_files]
-
-    GAP = 80
+    GAP = 110
     cursor = 0
-    idx = 0
-    for s, cnt in zip(scenes, scene_word_counts):
-        d = sum(word_durs[idx:idx + cnt])
+    for s, c in zip(scenes, clips):
+        d = dur_ms(c)
         s["startMs"] = cursor
         s["endMs"] = cursor + d
         cursor += d + GAP
-        idx += cnt
-    cfg["totalMs"] = cursor - GAP + 250
+    cfg["totalMs"] = cursor - GAP + 300
     cfg["hasAudio"] = True
     CONFIG.write_text(json.dumps(cfg, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"Prepared {len(scenes)} scenes, {len(all_words)} words, totalMs={cfg['totalMs']}")
+    print(f"Prepared {len(scenes)} scenes, totalMs={cfg['totalMs']}")
 
-    for wf in word_files:
-        wf.unlink(missing_ok=True)
-    for i in range(len(all_words)):
-        (PUBLIC / f"w_{i}.txt").unlink(missing_ok=True)
-    listfile.unlink(missing_ok=True)
+    for c in clips:
+        c.unlink(missing_ok=True)
+    for f in tmp_dir.glob("*"):
+        f.unlink(missing_ok=True)
+    tmp_dir.rmdir()
+
 
 if __name__ == "__main__":
     main()
