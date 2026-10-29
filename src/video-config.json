@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "warm-orange",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#1a0000",
+      "#2d1b00",
+      "#1a0f00"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#ffcc80",
+    "accent": "#ff9800",
+    "muted": "#ffffff"
   },
-  "effect": "slam",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Thời gian là tài sản quý nhất",
-      "highlight": "nhất",
+      "text": "Bí mật đầu tư BĐS: Mua khi thị trường sợ hãi",
+      "highlight": "trường",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Mỗi ngày có 86400 giây",
+      "text": "Bán khi thị trường tham lam",
+      "highlight": "tham",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Kiên nhẫn là chìa khóa",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Bạn chi tiêu cho điều gì? Đầu tư vào sức khỏe, học tập, mối quan hệ",
-      "highlight": "điều",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Không bao giờ lấy lại được thời gian đã qua",
-      "highlight": "được",
+      "text": "Lịch sử luôn lặp lại",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
