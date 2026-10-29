@@ -1,50 +1,50 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "pink-modern",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
+    "text": "#ff80ab",
+    "accent": "#ff4081",
     "muted": "#ffffff"
   },
-  "effect": "line-mask",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Tư duy tăng trưởng: Thất bại không phải là kết thúc",
-      "highlight": "thúc",
+      "text": "Quy tắc vàng giao tiếp: Lắng nghe nhiều hơn nói",
+      "highlight": "nghe",
       "startMs": 0,
-      "endMs": 2808
+      "endMs": 0
     },
     {
-      "text": "Mỗi lỗi sai là bài học",
+      "text": "Đặt câu hỏi mở",
       "highlight": "",
-      "startMs": 2918,
-      "endMs": 4382
+      "startMs": 0,
+      "endMs": 0
     },
     {
-      "text": "Kỹ năng phát triển qua thực hành",
-      "highlight": "thực",
-      "startMs": 4492,
-      "endMs": 6196
+      "text": "Thấu hiểu trước khi được thấu hiểu",
+      "highlight": "hiểu",
+      "startMs": 0,
+      "endMs": 0
     },
     {
-      "text": "Bạn có thể cải thiện bất kỳ điều gì",
-      "highlight": "điều",
-      "startMs": 6306,
-      "endMs": 8466
+      "text": "Kết nối thật sự bắt đầu từ sự quan tâm",
+      "highlight": "quan",
+      "startMs": 0,
+      "endMs": 0
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 8576,
-      "endMs": 9920
+      "startMs": 0,
+      "endMs": 0
     }
   ],
-  "totalMs": 10220,
+  "totalMs": 15000,
   "hasAudio": true
 }
