@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "dark-minimal",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#0a0a0a",
+      "#0a0a0a",
+      "#0a0a0a"
     ],
     "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "accent": "#00d4ff",
+    "muted": "#f5f5f5"
   },
-  "effect": "typewriter",
+  "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Quy tắc vàng giao tiếp: Lắng nghe nhiều hơn nói",
-      "highlight": "nhiều",
+      "text": "Tư duy tăng trưởng: Thất bại không phải là kết thúc",
+      "highlight": "phải",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Đặt câu hỏi mở",
+      "text": "Mỗi lỗi sai là bài học",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Thấu hiểu trước khi được thấu hiểu",
-      "highlight": "Thấu",
+      "text": "Kỹ năng phát triển qua thực hành",
+      "highlight": "thực",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Kết nối thật sự bắt đầu từ sự quan tâm",
-      "highlight": "thật",
+      "text": "Bạn có thể cải thiện bất kỳ điều gì",
+      "highlight": "thiện",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
