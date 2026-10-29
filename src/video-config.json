@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "dark-minimal",
+    "id": "pink-modern",
     "bg": [
-      "#0a0a0a",
-      "#0a0a0a",
-      "#0a0a0a"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#ffffff",
-    "accent": "#00d4ff",
-    "muted": "#f5f5f5"
+    "text": "#ff80ab",
+    "accent": "#ff4081",
+    "muted": "#ffffff"
   },
-  "effect": "line-mask",
+  "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Phương pháp 80/20: 20% nỗ lực mang lại 80% kết quả",
-      "highlight": "Phương",
+      "text": "Tư duy tăng trưởng: Thất bại không phải là kết thúc",
+      "highlight": "tăng",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Tập trung vào việc quan trọng",
-      "highlight": "trung",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Loại bỏ việc không cần thiết",
-      "highlight": "thiết",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Hiệu quả tăng gấp đôi",
+      "text": "Mỗi lỗi sai là bài học",
       "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Kỹ năng phát triển qua thực hành",
+      "highlight": "phát",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn có thể cải thiện bất kỳ điều gì",
+      "highlight": "điều",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
