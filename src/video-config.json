@@ -1,50 +1,176 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "neon-blue",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
+    "text": "#00d4ff",
+    "accent": "#ff006e",
     "muted": "#ffffff"
   },
-  "effect": "word-rise",
+  "effect": "karaoke",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Quy tắc vàng giao tiếp: Lắng nghe nhiều hơn nói",
-      "highlight": "nghe",
+      "text": "Học nhanh hơn: Đọc 1000 từ mỗi phút",
+      "highlight": "phút",
       "startMs": 0,
-      "endMs": 0
+      "endMs": 3395,
+      "kind": "hook",
+      "words": [
+        {
+          "t": "Học",
+          "s": 90,
+          "e": 453
+        },
+        {
+          "t": "nhanh",
+          "s": 453,
+          "e": 816
+        },
+        {
+          "t": "hơn:",
+          "s": 816,
+          "e": 1578
+        },
+        {
+          "t": "Đọc",
+          "s": 1578,
+          "e": 1941
+        },
+        {
+          "t": "1000",
+          "s": 1941,
+          "e": 2304
+        },
+        {
+          "t": "từ",
+          "s": 2304,
+          "e": 2667
+        },
+        {
+          "t": "mỗi",
+          "s": 2667,
+          "e": 3030
+        },
+        {
+          "t": "phút",
+          "s": 3030,
+          "e": 3393
+        }
+      ]
     },
     {
-      "text": "Đặt câu hỏi mở",
+      "text": "Mắt bạn nhìn theo cụm từ",
+      "highlight": "theo",
+      "startMs": 3505,
+      "endMs": 6091,
+      "kind": "body",
+      "words": [
+        {
+          "t": "Mắt",
+          "s": 3595,
+          "e": 4011
+        },
+        {
+          "t": "bạn",
+          "s": 4011,
+          "e": 4427
+        },
+        {
+          "t": "nhìn",
+          "s": 4427,
+          "e": 4843
+        },
+        {
+          "t": "theo",
+          "s": 4843,
+          "e": 5259
+        },
+        {
+          "t": "cụm",
+          "s": 5259,
+          "e": 5675
+        },
+        {
+          "t": "từ",
+          "s": 5675,
+          "e": 6091
+        }
+      ]
+    },
+    {
+      "text": "Não xử lý ý nghĩa",
       "highlight": "",
-      "startMs": 0,
-      "endMs": 0
-    },
-    {
-      "text": "Thấu hiểu trước khi được thấu hiểu",
-      "highlight": "hiểu",
-      "startMs": 0,
-      "endMs": 0
-    },
-    {
-      "text": "Kết nối thật sự bắt đầu từ sự quan tâm",
-      "highlight": "quan",
-      "startMs": 0,
-      "endMs": 0
+      "startMs": 6201,
+      "endMs": 8813,
+      "kind": "body",
+      "words": [
+        {
+          "t": "Não",
+          "s": 6291,
+          "e": 6795
+        },
+        {
+          "t": "xử",
+          "s": 6795,
+          "e": 7299
+        },
+        {
+          "t": "lý",
+          "s": 7299,
+          "e": 7803
+        },
+        {
+          "t": "ý",
+          "s": 7803,
+          "e": 8307
+        },
+        {
+          "t": "nghĩa",
+          "s": 8307,
+          "e": 8811
+        }
+      ]
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
-      "startMs": 0,
-      "endMs": 0
+      "highlight": "",
+      "startMs": 8923,
+      "endMs": 11221,
+      "kind": "cta",
+      "words": [
+        {
+          "t": "Đăng",
+          "s": 9013,
+          "e": 9454
+        },
+        {
+          "t": "ký",
+          "s": 9454,
+          "e": 9895
+        },
+        {
+          "t": "để",
+          "s": 9895,
+          "e": 10336
+        },
+        {
+          "t": "học",
+          "s": 10336,
+          "e": 10777
+        },
+        {
+          "t": "ngay",
+          "s": 10777,
+          "e": 11218
+        }
+      ]
     }
   ],
-  "totalMs": 15000,
+  "totalMs": 11521,
   "hasAudio": true
 }

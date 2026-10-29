@@ -41,6 +41,9 @@ jobs:
       - name: Prepare audio + timings
         run: python3 scripts/prepare.py
 
+      - name: Quality gate
+        run: python3 scripts/check_quality.py
+
       - name: Render video
         run: npx remotion render src/Root.tsx Video out/video.mp4 --codec h264 --crf 18 --concurrency 4
 

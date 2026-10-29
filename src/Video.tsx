@@ -15,9 +15,26 @@ import rawConfig from "./video-config.json";
 /* Types                                                               */
 /* ------------------------------------------------------------------ */
 
-type Scene = { text: string; highlight?: string; startMs: number; endMs: number };
+type Word = { t: string; s: number; e: number };
+
+type Scene = {
+  text: string;
+  highlight?: string;
+  startMs: number;
+  endMs: number;
+  kind?: "hook" | "body" | "cta";
+  words?: Word[];
+};
+
 type Theme = { id: string; bg: string[]; text: string; accent: string; muted: string };
-type EffectName = "word-rise" | "line-mask" | "slam" | "wave" | "typewriter" | "sweep";
+type EffectName =
+  | "word-rise"
+  | "line-mask"
+  | "slam"
+  | "wave"
+  | "typewriter"
+  | "sweep"
+  | "karaoke";
 
 type VideoConfig = {
   theme: Theme;
@@ -62,12 +79,6 @@ const splitWords = (text: string) => text.trim().split(/\s+/).filter(Boolean);
 const highlightSet = (highlight?: string) =>
   new Set(splitWords(highlight || "").map(stripMarks).filter(Boolean));
 
-/**
- * Break a sentence into balanced lines ourselves.
- * Letting the browser wrap splits Vietnamese phrases in half
- * ("Thất / bại"), which reads badly; owning the break keeps
- * meaning groups intact and every line the same width.
- */
 const wrapWords = (words: string[], limit: number): string[][] => {
   const out: string[][] = [];
   let cur: string[] = [];
@@ -103,9 +114,9 @@ const splitPhrases = (text: string): string[][] => {
 };
 
 /**
- * Lay out a scene: break at punctuation first (a colon or comma is a real
- * pause in speech), then shrink the type a little if one phrase still
- * overflows, and only wrap inside a phrase as a last resort.
+ * Lay out a scene: break at punctuation first (a colon is a real pause in
+ * speech), shrink the type a little if one phrase still overflows, and only
+ * wrap inside a phrase as a last resort.
  */
 const layoutScene = (text: string, base: number): { lines: string[][]; fontSize: number } => {
   const phrases = splitPhrases(text);
@@ -131,7 +142,7 @@ const layoutScene = (text: string, base: number): { lines: string[][]; fontSize:
   return { lines, fontSize };
 };
 
-/** Text stays razor sharp: heavy weight, tight tracking, thin dark edge, no big blur. */
+/** Heavy weight, tight tracking, thin dark edge: stays crisp on a phone. */
 const textStyle = (fontSize: number, color: string): React.CSSProperties => ({
   fontSize,
   fontWeight: 900,
@@ -154,8 +165,8 @@ const Background: React.FC = () => {
   const { durationInFrames, fps } = useVideoConfig();
   const t = frame / Math.max(1, durationInFrames);
 
-  const orbA = interpolate(t, [0, 1], [0.92, 1.06]);
-  const orbB = interpolate(t, [0, 1], [1.06, 0.94]);
+  const orbA = interpolate(t, [0, 1], [0.9, 1.08]);
+  const orbB = interpolate(t, [0, 1], [1.08, 0.92]);
   const drift = Math.sin(frame / (fps * 3)) * 18;
 
   const c0 = THEME.bg[0] ?? "#000000";
@@ -258,10 +269,6 @@ const LineRows: React.FC<{
     </>
   );
 };
-
-/* ------------------------------------------------------------------ */
-/* Shared word renderer                                                */
-/* ------------------------------------------------------------------ */
 
 const wordSpan = (word: string, style: React.CSSProperties, extra?: React.ReactNode) => (
   <span
@@ -430,10 +437,8 @@ const Wave: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize })
 const Typewriter: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
   const chars = Math.floor(ease(frame, 2, 2 + scene.text.length * 1.5, 0, scene.text.length));
-  const shown = scene.text.slice(0, chars);
   const caretOn = Math.floor(frame / 12) % 2 === 0;
   const { lines, fontSize: fs } = layoutScene(scene.text, fontSize);
-  const totalChars = lines.reduce((n, l) => n + l.join(" ").length + 1, 0);
 
   let consumed = 0;
   return (
@@ -447,7 +452,7 @@ const Typewriter: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontS
         return (
           <div key={li} style={{ whiteSpace: "nowrap" }}>
             {lineText.slice(0, visible)}
-            {isLast && shown.length < totalChars && (
+            {isLast && (
               <span
                 style={{
                   display: "inline-block",
@@ -496,6 +501,38 @@ const Sweep: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }
   );
 };
 
+/**
+ * Karaoke: the whole line sits dim on screen and each word lights up at the
+ * moment the voice reaches it (timings come from prepare.py).
+ */
+const Karaoke: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const { lines, fontSize: fs } = layoutScene(scene.text, fontSize);
+  const nowMs = (frame / fps) * 1000 + scene.startMs;
+  const words = scene.words && scene.words.length ? scene.words : [];
+
+  return (
+    <TextShell fontSize={fs}>
+      <LineRows
+        lines={lines}
+        renderWord={(word, i) => {
+          const w = words[i];
+          const p = w ? clamp((nowMs - w.s) / Math.max(70, w.e - w.s), 0, 1) : 1;
+          const active = p > 0 && p < 1;
+          return wordSpan(word, {
+            color: `rgba(255,255,255,${0.34 + 0.66 * p})`,
+            transform: `translateY(${active ? -3 : 0}px) scale(${1 + 0.05 * Math.sin(p * Math.PI)})`,
+            textShadow: active
+              ? `0 0 18px ${THEME.accent}, 0 2px 6px rgba(0,0,0,0.5)`
+              : "0 2px 6px rgba(0,0,0,0.5)",
+          });
+        }}
+      />
+    </TextShell>
+  );
+};
+
 const EFFECTS: Record<EffectName, React.FC<{ scene: Scene; fontSize: number }>> = {
   "word-rise": WordRise,
   "line-mask": LineMask,
@@ -503,11 +540,58 @@ const EFFECTS: Record<EffectName, React.FC<{ scene: Scene; fontSize: number }>> 
   wave: Wave,
   typewriter: Typewriter,
   sweep: Sweep,
+  karaoke: Karaoke,
 };
 
 /* ------------------------------------------------------------------ */
-/* Scene wrapper                                                       */
+/* Scene wrapper + transitions                                         */
 /* ------------------------------------------------------------------ */
+
+type TransitionName = "fade" | "slide-up" | "wipe" | "punch";
+
+const TRANSITIONS: TransitionName[] = ["slide-up", "wipe", "fade", "punch"];
+
+const transitionFor = (index: number): TransitionName => {
+  const keys = Object.keys(EFFECTS);
+  const offset = Math.max(0, keys.indexOf(CFG.effect));
+  return TRANSITIONS[(index + offset) % TRANSITIONS.length];
+};
+
+const CtaCard: React.FC<{ fontSize: number }> = ({ fontSize }) => (
+  <AbsoluteFill
+    style={{
+      justifyContent: "center",
+      alignItems: "center",
+      paddingTop: 120,
+      paddingBottom: 420,
+    }}
+  >
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: 18,
+        padding: "26px 46px",
+        borderRadius: 999,
+        background: `linear-gradient(135deg, ${THEME.accent}, ${THEME.muted})`,
+        boxShadow: `0 18px 60px ${THEME.accent}55`,
+      }}
+    >
+      <div style={{ fontSize: fontSize * 0.5, lineHeight: 1 }}>▶</div>
+      <div
+        style={{
+          fontSize: fontSize * 0.4,
+          fontWeight: 900,
+          letterSpacing: "0.01em",
+          color: "#0b0b0b",
+          fontFamily: "'Helvetica Neue', Arial, sans-serif",
+        }}
+      >
+        Theo dõi {BRAND}
+      </div>
+    </div>
+  </AbsoluteFill>
+);
 
 const SceneLayer: React.FC<{ scene: Scene; index: number; total: number }> = ({
   scene,
@@ -519,25 +603,44 @@ const SceneLayer: React.FC<{ scene: Scene; index: number; total: number }> = ({
   const lengthMs = Math.max(400, scene.endMs - scene.startMs);
   const lengthFrames = Math.max(1, Math.round((lengthMs / 1000) * fps));
 
-  const fadeIn = ease(frame, 0, 5);
-  const fadeOut =
-    total > 1 && index < total - 1 ? 1 - ease(frame, lengthFrames - 6, lengthFrames) : 1;
-  const opacity = Math.min(fadeIn, fadeOut);
+  const enter = spring({ frame, fps, config: { damping: 18, stiffness: 130, mass: 0.8 } });
+  const exit = total > 1 && index < total - 1 ? ease(frame, lengthFrames - 6, lengthFrames) : 0;
+  const kind = transitionFor(index);
 
-  // gentle drift keeps the frame alive without softening the glyphs
+  let opacity = 1;
+  let transform = "none";
+  let clipPath: string | undefined;
+
+  if (kind === "fade") {
+    opacity = enter;
+  } else if (kind === "slide-up") {
+    opacity = enter;
+    transform = `translateY(${Math.round((1 - enter) * 110)}px)`;
+  } else if (kind === "wipe") {
+    clipPath = `inset(${Math.round((1 - enter) * 100)}% 0% 0% 0%)`;
+  } else {
+    opacity = enter;
+    transform = `scale(${1 + 0.06 * (1 - enter)})`;
+  }
+
+  // camera drift keeps the frame alive without softening the glyphs
   const drift = interpolate(frame, [0, lengthFrames], [1, 1.02], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
   const Effect = EFFECTS[CFG.effect] ?? WordRise;
-  const fontSize = fitFontSize(scene.text);
+  const isHook = scene.kind === "hook" || index === 0;
+  const fontSize = fitFontSize(scene.text) * (isHook ? 1.06 : 1);
 
   return (
-    <AbsoluteFill style={{ opacity }}>
+    <AbsoluteFill
+      style={{ opacity: opacity * (1 - exit), transform, clipPath }}
+    >
       <AbsoluteFill style={{ transform: `scale(${drift})` }}>
         <Effect scene={scene} fontSize={fontSize} />
       </AbsoluteFill>
+      {scene.kind === "cta" && <CtaCard fontSize={fontSize} />}
     </AbsoluteFill>
   );
 };
