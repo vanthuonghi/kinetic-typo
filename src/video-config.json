@@ -1,43 +1,36 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "green-tech",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
-    "muted": "#ffffff"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
   "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Phương pháp 80/20: 20% nỗ lực mang lại 80% kết quả",
-      "highlight": "Phương",
+      "text": "Nghịch lý sáng tạo: Hạn chế tạo ra sự sáng tạo",
+      "highlight": "sáng",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Tập trung vào việc quan trọng",
-      "highlight": "quan",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Loại bỏ việc không cần thiết",
+      "text": "Khi bạn có quá nhiều lựa chọn, bạn không chọn gì cả",
       "highlight": "không",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Hiệu quả tăng gấp đôi",
-      "highlight": "",
+      "text": "Đặt giới hạn, tạo áp lực nhẹ, sáng tạo sẽ bùng nổ",
+      "highlight": "giới",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
