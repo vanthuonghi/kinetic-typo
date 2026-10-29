@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "pink-modern",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
+    "text": "#ff80ab",
+    "accent": "#ff4081",
     "muted": "#ffffff"
   },
   "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Từ khóa thành công: Kỷ luật",
-      "highlight": "thành",
+      "text": "Tư duy tăng trưởng: Thất bại không phải là kết thúc",
+      "highlight": "Thất",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Không phải động lực",
+      "text": "Mỗi lỗi sai là bài học",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Kỷ luật là làm việc ngay cả khi không muốn",
-      "highlight": "việc",
+      "text": "Kỹ năng phát triển qua thực hành",
+      "highlight": "phát",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Thành công đến từ thói quen nhỏ mỗi ngày",
-      "highlight": "công",
+      "text": "Bạn có thể cải thiện bất kỳ điều gì",
+      "highlight": "điều",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
