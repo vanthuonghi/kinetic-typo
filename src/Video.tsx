@@ -87,19 +87,48 @@ const wrapWords = (words: string[], limit: number): string[][] => {
   return out;
 };
 
-const layoutLines = (text: string, fontSize: number): string[][] => {
+const splitPhrases = (text: string): string[][] => {
   const words = splitWords(text);
-  if (words.length <= 1) return [words];
-  const hardMax = Math.max(6, Math.floor(900 / (fontSize * 0.545)));
-  const total = text.trim().length;
-  const nLines = Math.max(1, Math.ceil(total / hardMax));
-  let limit = Math.ceil(total / nLines) + 2;
-  let lines = wrapWords(words, limit);
-  while (lines.length > nLines && limit < hardMax) {
-    limit += 2;
-    lines = wrapWords(words, limit);
+  const out: string[][] = [];
+  let cur: string[] = [];
+  for (const w of words) {
+    cur.push(w);
+    if (/[:;,!?]$/.test(w)) {
+      out.push(cur);
+      cur = [];
+    }
   }
-  return lines;
+  if (cur.length) out.push(cur);
+  return out;
+};
+
+/**
+ * Lay out a scene: break at punctuation first (a colon or comma is a real
+ * pause in speech), then shrink the type a little if one phrase still
+ * overflows, and only wrap inside a phrase as a last resort.
+ */
+const layoutScene = (text: string, base: number): { lines: string[][]; fontSize: number } => {
+  const phrases = splitPhrases(text);
+  if (!phrases.length) return { lines: [splitWords(text)], fontSize: base };
+
+  const usable = 900;
+  const charW = 0.545;
+  const longest = Math.max(...phrases.map((p) => p.join(" ").length));
+  const fit = Math.floor(usable / Math.max(1, longest * charW));
+  const fontSize = Math.max(46, Math.min(base, fit));
+  const limit = Math.floor(usable / (fontSize * charW));
+
+  const lines: string[][] = [];
+  for (const phrase of phrases) {
+    const len = phrase.join(" ").length;
+    if (len <= limit) {
+      lines.push(phrase);
+    } else {
+      const parts = Math.ceil(len / limit);
+      lines.push(...wrapWords(phrase, Math.ceil(len / parts) + 1));
+    }
+  }
+  return { lines, fontSize };
 };
 
 /** Text stays razor sharp: heavy weight, tight tracking, thin dark edge, no big blur. */
@@ -273,10 +302,10 @@ const WordRise: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSiz
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const hi = highlightSet(scene.highlight);
-  const lines = layoutLines(scene.text, fontSize);
+  const { lines, fontSize: fs } = layoutScene(scene.text, fontSize);
 
   return (
-    <TextShell fontSize={fontSize}>
+    <TextShell fontSize={fs}>
       <LineRows
         lines={lines}
         renderWord={(word, i) => {
@@ -309,11 +338,11 @@ const LineMask: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSiz
   const y = Math.round(interpolate(p, [0, 1], [26, 0]));
   const reveal = interpolate(p, [0, 1], [100, 0]);
   const hi = highlightSet(scene.highlight);
-  const lines = layoutLines(scene.text, fontSize);
+  const { lines, fontSize: fs } = layoutScene(scene.text, fontSize);
 
   return (
     <TextShell
-      fontSize={fontSize}
+      fontSize={fs}
       clipPath={`inset(0% 0% ${reveal}% 0%)`}
       transform={`translateY(${y}px)`}
     >
@@ -338,12 +367,12 @@ const Slam: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize })
     extrapolateRight: "clamp",
   });
   const hi = highlightSet(scene.highlight);
-  const lines = layoutLines(scene.text, fontSize);
+  const { lines, fontSize: fs } = layoutScene(scene.text, fontSize);
 
   return (
     <>
       <AbsoluteFill style={{ backgroundColor: "#ffffff", opacity: flash }} />
-      <TextShell fontSize={fontSize} transform={`translateY(${y}px) scale(${sc})`}>
+      <TextShell fontSize={fs} transform={`translateY(${y}px) scale(${sc})`}>
         <LineRows
           lines={lines}
           renderWord={(word) =>
@@ -358,10 +387,10 @@ const Slam: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize })
 const Wave: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const lines = layoutLines(scene.text, fontSize);
+  const { lines, fontSize: fs } = layoutScene(scene.text, fontSize);
 
   return (
-    <TextShell fontSize={fontSize}>
+    <TextShell fontSize={fs}>
       {lines.map((line, li) => (
         <div key={li} style={{ whiteSpace: "nowrap" }}>
           {line.map((word, wi) => (
@@ -403,12 +432,12 @@ const Typewriter: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontS
   const chars = Math.floor(ease(frame, 2, 2 + scene.text.length * 1.5, 0, scene.text.length));
   const shown = scene.text.slice(0, chars);
   const caretOn = Math.floor(frame / 12) % 2 === 0;
-  const lines = layoutLines(scene.text, fontSize);
+  const { lines, fontSize: fs } = layoutScene(scene.text, fontSize);
   const totalChars = lines.reduce((n, l) => n + l.join(" ").length + 1, 0);
 
   let consumed = 0;
   return (
-    <TextShell fontSize={fontSize}>
+    <TextShell fontSize={fs}>
       {lines.map((line, li) => {
         const lineText = line.join(" ");
         const start = consumed;
@@ -422,8 +451,8 @@ const Typewriter: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontS
               <span
                 style={{
                   display: "inline-block",
-                  width: Math.round(fontSize * 0.08),
-                  height: Math.round(fontSize * 0.9),
+                  width: Math.round(fs * 0.08),
+                  height: Math.round(fs * 0.9),
                   background: THEME.accent,
                   marginLeft: 6,
                   verticalAlign: "-0.08em",
@@ -441,12 +470,12 @@ const Typewriter: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontS
 const Sweep: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
   const hi = highlightSet(scene.highlight);
-  const lines = layoutLines(scene.text, fontSize);
+  const { lines, fontSize: fs } = layoutScene(scene.text, fontSize);
   const totalWords = lines.reduce((n, l) => n + l.length, 0);
   const cursor = Math.floor(ease(frame, 4, 4 + totalWords * 6, -1, totalWords - 0.01));
 
   return (
-    <TextShell fontSize={fontSize}>
+    <TextShell fontSize={fs}>
       <LineRows
         lines={lines}
         renderWord={(word, i) => {
