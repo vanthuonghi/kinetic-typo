@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "gradient-purple",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
-  "effect": "karaoke",
+  "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "thường",
+      "text": "Nghịch lý sáng tạo: Hạn chế tạo ra sự sáng tạo",
+      "highlight": "Nghịch",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
-      "highlight": "phút",
+      "text": "Khi bạn có quá nhiều lựa chọn, bạn không chọn gì cả",
+      "highlight": "chọn",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Một cuốn sách chỉ trong 3 phút",
-      "highlight": "trong",
+      "text": "Đặt giới hạn, tạo áp lực nhẹ, sáng tạo sẽ bùng nổ",
+      "highlight": "sáng",
       "startMs": 0,
       "endMs": 0,
-      "kind": "body"
+      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "",
+      "highlight": "Đăng ký",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
