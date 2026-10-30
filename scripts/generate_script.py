@@ -18,12 +18,17 @@ MODEL = "deepseek-v4-flash"
 
 
 def load_api_key():
+    # CI: read from env var
+    key = os.environ.get("ARK_API_KEY", "").strip()
+    if key:
+        return key
+    # Local: read from config.yaml
     with open(CONFIG, encoding="utf-8") as f:
         for line in f:
             s = line.strip()
             if s.startswith("api_key:") and not s.startswith("#"):
                 return s.split(":", 1)[1].strip().strip('"').strip("'")
-    raise RuntimeError("api_key not found in config.yaml")
+    raise RuntimeError("api_key not found")
 
 
 TOPICS = [
