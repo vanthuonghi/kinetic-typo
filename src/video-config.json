@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "green-tech",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
-  "effect": "sweep",
+  "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Dùng ngón tay dẫn mắt, tăng tốc 300%",
-      "highlight": "Dùng",
+      "text": "Dùng tay chỉ dọc dòng, tăng tốc mắt lên 500 từ/phút",
+      "highlight": "tăng",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Bỏ đọc thầm, não xử lý nhanh gấp đôi",
-      "highlight": "nhanh",
+      "text": "Bỏ đọc thầm, não hiểu nhanh gấp 3 lần",
+      "highlight": "hiểu",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Luyện mắt 5 phút/ngày, đọc 1000 từ/phút",
+      "text": "Luyện mắt bắt từ khóa, bỏ qua từ nối",
       "highlight": "Luyện",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Chunking 3-4 từ một lần, hiểu sâu hơn",
-      "highlight": "hiểu",
+      "text": "Đọc 1000 từ/phút chỉ sau 2 tuần tập",
+      "highlight": "tuần",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
