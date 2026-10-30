@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "green-tech",
+    "id": "ocean-blue",
     "bg": [
-      "#001a0f",
-      "#001a0f",
-      "#001a0f"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#00ff88",
-    "accent": "#00ff88",
-    "muted": "#e0ffe0"
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
+    "muted": "#ffffff"
   },
-  "effect": "typewriter",
+  "effect": "karaoke",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Dùng tay chỉ dọc dòng, tăng tốc mắt lên 500 từ/phút",
-      "highlight": "tăng",
+      "text": "AI xử lý 10 triệu dữ liệu mỗi giây",
+      "highlight": "liệu",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Bỏ đọc thầm, não hiểu nhanh gấp 3 lần",
-      "highlight": "hiểu",
+      "text": "Bỏ cảm xúc, lợi nhuận tăng 15%",
+      "highlight": "nhuận",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Luyện mắt bắt từ khóa, bỏ qua từ nối",
-      "highlight": "Luyện",
+      "text": "Dùng LSTM dự đoán xu hướng giá",
+      "highlight": "đoán",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Đọc 1000 từ/phút chỉ sau 2 tuần tập",
-      "highlight": "tuần",
+      "text": "Tự động đặt lệnh khi biến động 2%",
+      "highlight": "động",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
