@@ -1,50 +1,43 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "green-tech",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
-  "effect": "line-mask",
+  "effect": "karaoke",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Phương pháp 80/20: 20% nỗ lực mang lại 80% kết quả",
-      "highlight": "Phương",
+      "text": "Dùng AI tóm tắt 100 trang PDF chỉ 30 giây",
+      "highlight": "giây",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Tập trung vào việc quan trọng",
-      "highlight": "quan",
+      "text": "Tạo flashcard tự động từ note trong 1 phút",
+      "highlight": "động",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Loại bỏ việc không cần thiết",
-      "highlight": "thiết",
+      "text": "Học thông minh với spaced repetition, nhớ 90%",
+      "highlight": "spaced",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "Hiệu quả tăng gấp đôi",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
