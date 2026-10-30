@@ -1,1 +1,1 @@
-AI xử lý 10 triệu dữ liệu mỗi giây. Bỏ cảm xúc, lợi nhuận tăng 15%. Dùng LSTM dự đoán xu hướng giá. Tự động đặt lệnh khi biến động 2%. Đăng ký để học ngay.
+Dùng AI tóm tắt 50 trang PDF chỉ 1 phút. Tạo flashcard tự động, AI nhắc ôn đúng lúc. Viết email chuyên nghiệp chỉ với 2 dòng prompt. Đăng ký để học ngay.

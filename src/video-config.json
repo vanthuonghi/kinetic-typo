@@ -1,43 +1,36 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "neon-blue",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
+    "text": "#00d4ff",
+    "accent": "#ff006e",
     "muted": "#ffffff"
   },
-  "effect": "karaoke",
+  "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "AI xử lý 10 triệu dữ liệu mỗi giây",
-      "highlight": "liệu",
+      "text": "Dùng AI tóm tắt 50 trang PDF chỉ 1 phút",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Bỏ cảm xúc, lợi nhuận tăng 15%",
-      "highlight": "nhuận",
+      "text": "Tạo flashcard tự động, AI nhắc ôn đúng lúc",
+      "highlight": "flashcard",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Dùng LSTM dự đoán xu hướng giá",
-      "highlight": "đoán",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Tự động đặt lệnh khi biến động 2%",
-      "highlight": "động",
+      "text": "Viết email chuyên nghiệp chỉ với 2 dòng prompt",
+      "highlight": "email",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
