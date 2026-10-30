@@ -1,22 +1,22 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "ocean-blue",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
     "muted": "#ffffff"
   },
-  "effect": "line-mask",
+  "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
       "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "phút",
+      "highlight": "thường",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
