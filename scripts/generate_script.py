@@ -33,9 +33,9 @@ def load_api_key():
 
 TOPICS = [
     ("speed-reading", "tăng tốc đọc sách, phương pháp đọc nhanh, mắt và não bộ, cụm từ, đọc thầm"),
+    ("speed-reading", "đọc nhanh 1000 từ/phút, luyện mắt, bỏ đọc thầm, não xử lý ý nghĩa"),
     ("ai-tools", "ứng dụng AI trong học tập, viết lách, lập kế hoạch, tăng năng suất cá nhân"),
-    ("ai-productivity", "AI giúp đọc sách nhanh, tóm tắt tài liệu, flashcard tự động, học thông minh"),
-    ("speed-reading-ai", "kết hợp speed reading với AI: đọc nhanh + AI tóm tắt, ghi nhớ sâu"),
+    ("ai-productivity", "AI tóm tắt tài liệu, flashcard tự động, học thông minh, viết email nhanh"),
     ("ai-investing", "AI trong phân tích đầu tư, dữ liệu lớn, ra quyết định nhanh, không cảm xúc"),
     ("ai-real-estate", "AI trong BĐS: phân tích thị trường, dự báo giá, tìm bất động sản phù hợp"),
 ]
