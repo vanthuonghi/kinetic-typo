@@ -1,50 +1,43 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "luxury-gold",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
-    "muted": "#ffffff"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
-  "effect": "slam",
+  "effect": "karaoke",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Thời gian là tài sản quý nhất",
-      "highlight": "nhất",
+      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
+      "highlight": "thường",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Mỗi ngày có 86400 giây",
-      "highlight": "",
+      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
+      "highlight": "speed",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Bạn chi tiêu cho điều gì? Đầu tư vào sức khỏe, học tập, mối quan hệ",
-      "highlight": "điều",
+      "text": "Một cuốn sách chỉ trong 3 phút",
+      "highlight": "cuốn",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "Không bao giờ lấy lại được thời gian đã qua",
-      "highlight": "Không",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
