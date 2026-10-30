@@ -1,18 +1,18 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "luxury-gold",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
-    "muted": "#ffffff"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
   "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
       "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
