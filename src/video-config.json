@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "dark-minimal",
+    "id": "neon-blue",
     "bg": [
-      "#0a0a0a",
-      "#0a0a0a",
-      "#0a0a0a"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ffffff",
-    "accent": "#00d4ff",
-    "muted": "#f5f5f5"
+    "text": "#00d4ff",
+    "accent": "#ff006e",
+    "muted": "#ffffff"
   },
   "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Tư duy tăng trưởng: Thất bại không phải là kết thúc",
-      "highlight": "phải",
+      "text": "Thời gian là tài sản quý nhất",
+      "highlight": "nhất",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Mỗi lỗi sai là bài học",
+      "text": "Mỗi ngày có 86400 giây",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Kỹ năng phát triển qua thực hành",
-      "highlight": "thực",
+      "text": "Bạn chi tiêu cho điều gì? Đầu tư vào sức khỏe, học tập, mối quan hệ",
+      "highlight": "điều",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Bạn có thể cải thiện bất kỳ điều gì",
-      "highlight": "thiện",
+      "text": "Không bao giờ lấy lại được thời gian đã qua",
+      "highlight": "Không",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
