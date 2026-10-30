@@ -1,36 +1,36 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "green-tech",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
-    "muted": "#ffffff"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
-  "effect": "sweep",
+  "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
       "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "thường",
+      "highlight": "bình",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
       "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
-      "highlight": "speed",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
       "text": "Một cuốn sách chỉ trong 3 phút",
-      "highlight": "sách",
+      "highlight": "trong",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
