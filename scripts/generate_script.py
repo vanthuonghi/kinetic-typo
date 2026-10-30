@@ -32,12 +32,12 @@ def load_api_key():
 
 
 TOPICS = [
-    ("speed-reading", "tăng tốc đọc sách, phương pháp đọc nhanh, mắt và não bộ"),
-    ("investing", "tư duy đầu tư, giá trị thực, kiên nhẫn, lợi nhuận kép"),
-    ("real-estate", "khởi nghiệp BĐS, đòn bẩy tài chính, vị trí, dòng tiền"),
-    ("self-development", "thói quen nhỏ, kỷ luật, phát triển bản thân, tư duy tăng trưởng"),
-    ("productivity", "phương pháp 80/20, tập trung, quản lý thời gian, loại bỏ việc thừa"),
-    ("communication", "lắng nghe, đặt câu hỏi mở, thấu hiểu, kết nối thật sự"),
+    ("speed-reading", "tăng tốc đọc sách, phương pháp đọc nhanh, mắt và não bộ, cụm từ, đọc thầm"),
+    ("ai-tools", "ứng dụng AI trong học tập, viết lách, lập kế hoạch, tăng năng suất cá nhân"),
+    ("ai-productivity", "AI giúp đọc sách nhanh, tóm tắt tài liệu, flashcard tự động, học thông minh"),
+    ("speed-reading-ai", "kết hợp speed reading với AI: đọc nhanh + AI tóm tắt, ghi nhớ sâu"),
+    ("ai-investing", "AI trong phân tích đầu tư, dữ liệu lớn, ra quyết định nhanh, không cảm xúc"),
+    ("ai-real-estate", "AI trong BĐS: phân tích thị trường, dự báo giá, tìm bất động sản phù hợp"),
 ]
 
 
