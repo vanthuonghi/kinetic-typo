@@ -38,6 +38,12 @@ jobs:
       - name: Set TTS voice in config
         run: python3 -c "import json; p='src/video-config.json'; d=json.load(open(p)); d['voice']='${{ env.TTS_VOICE }}'; json.dump(d, open(p,'w'), ensure_ascii=False, indent=2)"
 
+      - name: Generate fresh script (AI)
+        run: |
+          python3 scripts/generate_script.py > /tmp/gen.json
+          python3 -c "import json; d=json.load(open('/tmp/gen.json')); open('script.txt','w').write(d['script'])"
+          cat script.txt
+
       - name: Prepare audio + timings
         run: python3 scripts/prepare.py
 
