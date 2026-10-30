@@ -1,43 +1,36 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "luxury-gold",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
-    "muted": "#ffffff"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
-  "effect": "sweep",
+  "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Đọc theo cụm 3-5 từ, tốc độ tăng gấp đôi",
-      "highlight": "theo",
+      "text": "Perplexity AI tra nhanh hơn Google 10 lần",
+      "highlight": "Perplexity",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Bỏ đọc thầm bằng cách đếm 1-2-3",
-      "highlight": "bằng",
+      "text": "ChatGPT viết email chào hàng chỉ 15 giây",
+      "highlight": "hàng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Dùng ngón tay dẫn mắt, đạt 300 từ/phút",
-      "highlight": "ngón",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Luyện 10 phút mỗi ngày",
-      "highlight": "",
+      "text": "Notion AI lập kế hoạch tuần chỉ 2 phút",
+      "highlight": "hoạch",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
