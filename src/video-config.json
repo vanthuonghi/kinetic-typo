@@ -1,18 +1,18 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "pink-modern",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#ff80ab",
+    "accent": "#ff4081",
+    "muted": "#ffffff"
   },
-  "effect": "karaoke",
+  "effect": "wave",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
       "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
