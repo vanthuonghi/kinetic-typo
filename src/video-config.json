@@ -1,43 +1,50 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "gradient-purple",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#ffffff",
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
-  "effect": "karaoke",
+  "effect": "line-mask",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "thường",
+      "text": "Phương pháp 80/20: 20% nỗ lực mang lại 80% kết quả",
+      "highlight": "Phương",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
-      "highlight": "speed",
+      "text": "Tập trung vào việc quan trọng",
+      "highlight": "quan",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Một cuốn sách chỉ trong 3 phút",
-      "highlight": "cuốn",
+      "text": "Loại bỏ việc không cần thiết",
+      "highlight": "thiết",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
+    },
+    {
+      "text": "Hiệu quả tăng gấp đôi",
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "",
+      "highlight": "Đăng ký",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
