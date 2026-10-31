@@ -1,29 +1,29 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "pink-modern",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
+    "text": "#ff80ab",
+    "accent": "#ff4081",
     "muted": "#ffffff"
   },
-  "effect": "karaoke",
+  "effect": "line-mask",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
       "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "phút",
+      "highlight": "bình",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
       "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
-      "highlight": "phút",
+      "highlight": "speed",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
