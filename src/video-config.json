@@ -1,43 +1,36 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "luxury-gold",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
-    "muted": "#ffffff"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
   "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Dùng ChatGPT tóm tắt 10 trang sách trong 2 phút",
-      "highlight": "ChatGPT",
+      "text": "AI phân tích 5000 giao dịch, dự báo giá chính xác 92%",
+      "highlight": "phân",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Nhờ Notion AI, viết email chuyên nghiệp chỉ 30 giây",
-      "highlight": "giây",
+      "text": "AI gợi ý BĐS theo ngân sách, vị trí, tiềm năng tăng giá",
+      "highlight": "tăng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Todoist AI lên kế hoạch tuần tự động theo thói quen",
-      "highlight": "theo",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Grammarly sửa lỗi chính tả và giọng văn ngay lập tức",
-      "highlight": "chính",
+      "text": "Tiết kiệm 80% thời gian so sánh nhờ AI tự động tổng hợp",
+      "highlight": "Tiết",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
