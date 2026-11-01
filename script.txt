@@ -1,1 +1,1 @@
-AI phân tích 10. 000 tin/giây, không cảm xúc. Mô hình LSTM dự đoán xu hướng đúng 85%. Backtest 5 năm chỉ mất 3 phút. Dùng API miễn phí Alpha Vantage.
+Dùng ChatGPT tóm tắt 10 trang sách trong 2 phút. Nhờ Notion AI, viết email chuyên nghiệp chỉ 30 giây. Todoist AI lên kế hoạch tuần tự động theo thói quen. Grammarly sửa lỗi chính tả và giọng văn ngay lập tức. Đăng ký để học ngay.

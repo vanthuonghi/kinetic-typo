@@ -1,57 +1,50 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "ocean-blue",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
     "muted": "#ffffff"
   },
-  "effect": "line-mask",
+  "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "AI phân tích 10",
-      "highlight": "",
+      "text": "Dùng ChatGPT tóm tắt 10 trang sách trong 2 phút",
+      "highlight": "ChatGPT",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "000 tin/giây, không cảm xúc",
-      "highlight": "",
+      "text": "Nhờ Notion AI, viết email chuyên nghiệp chỉ 30 giây",
+      "highlight": "giây",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Mô hình LSTM dự đoán xu hướng đúng 85%",
-      "highlight": "đoán",
+      "text": "Todoist AI lên kế hoạch tuần tự động theo thói quen",
+      "highlight": "theo",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Backtest 5 năm chỉ mất 3 phút",
-      "highlight": "phút",
+      "text": "Grammarly sửa lỗi chính tả và giọng văn ngay lập tức",
+      "highlight": "chính",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "Dùng API miễn phí Alpha Vantage",
-      "highlight": "Alpha",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
