@@ -1,36 +1,43 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "dark-minimal",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#0a0a0a",
+      "#0a0a0a",
+      "#0a0a0a"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#ffffff",
+    "accent": "#00d4ff",
+    "muted": "#f5f5f5"
   },
-  "effect": "typewriter",
+  "effect": "line-mask",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "AI phân tích 5000 giao dịch, dự báo giá chính xác 92%",
-      "highlight": "phân",
+      "text": "Đọc thầm làm bạn chậm gấp 3 lần",
+      "highlight": "thầm",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "AI gợi ý BĐS theo ngân sách, vị trí, tiềm năng tăng giá",
-      "highlight": "tăng",
+      "text": "Dùng ngón tay dẫn mắt để tăng tốc",
+      "highlight": "Dùng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Tiết kiệm 80% thời gian so sánh nhờ AI tự động tổng hợp",
-      "highlight": "Tiết",
+      "text": "Đọc cụm 3-4 từ thay vì từng chữ",
+      "highlight": "thay",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Tập 5 phút mỗi ngày, tăng 200 từ/phút",
+      "highlight": "tăng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
