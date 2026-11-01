@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "pink-modern",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#ff80ab",
+    "accent": "#ff4081",
+    "muted": "#ffffff"
   },
-  "effect": "sweep",
+  "effect": "wave",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "AI xử lý 5000 tin rao/giây, phân tích xu hướng giá",
-      "highlight": "phân",
+      "text": "Dùng tay dò theo dòng chữ, tăng tốc đọc gấp đôi",
+      "highlight": "Dùng",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Dùng thuật toán tìm đất nền dưới 1 tỷ tại quận 9",
-      "highlight": "thuật",
+      "text": "Đọc theo cụm 3-5 từ, não xử lý nhanh hơn đọc từng chữ",
+      "highlight": "từng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Dự báo giá nhà chính xác 92% nhờ học máy",
-      "highlight": "chính",
+      "text": "Tắt đọc thầm, tiết kiệm 200 từ/phút ngay lập tức",
+      "highlight": "ngay",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Chatbot trả lời ngay, giảm 70% công sức tìm kiếm",
-      "highlight": "giảm",
+      "text": "Luyện mắt nhảy 3 lần/dòng, hiệu quả tăng 50%",
+      "highlight": "tăng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
