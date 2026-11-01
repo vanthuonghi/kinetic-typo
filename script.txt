@@ -1,1 +1,1 @@
-Dùng ChatGPT tóm tắt 10 trang PDF trong 5 giây. Tự động tạo 20 flashcard từ bài giảng bằng AI. Học từ vựng với spaced repetition, nhớ 90% sau 1 tháng. Viết email chào hàng chỉ trong 3 câu nhờ AI. Đăng ký để học ngay.
+AI phân tích 10. 000 tin/giây, không cảm xúc. Mô hình LSTM dự đoán xu hướng đúng 85%. Backtest 5 năm chỉ mất 3 phút. Dùng API miễn phí Alpha Vantage.
