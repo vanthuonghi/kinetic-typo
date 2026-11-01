@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "dark-minimal",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#0a0a0a",
+      "#0a0a0a",
+      "#0a0a0a"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#00d4ff",
+    "muted": "#f5f5f5"
   },
   "effect": "wave",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Dùng tay dò theo dòng chữ, tăng tốc đọc gấp đôi",
-      "highlight": "Dùng",
+      "text": "Dùng ChatGPT tóm tắt 10 trang PDF trong 5 giây",
+      "highlight": "trong",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Đọc theo cụm 3-5 từ, não xử lý nhanh hơn đọc từng chữ",
-      "highlight": "từng",
+      "text": "Tự động tạo 20 flashcard từ bài giảng bằng AI",
+      "highlight": "bằng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Tắt đọc thầm, tiết kiệm 200 từ/phút ngay lập tức",
-      "highlight": "ngay",
+      "text": "Học từ vựng với spaced repetition, nhớ 90% sau 1 tháng",
+      "highlight": "spaced",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Luyện mắt nhảy 3 lần/dòng, hiệu quả tăng 50%",
-      "highlight": "tăng",
+      "text": "Viết email chào hàng chỉ trong 3 câu nhờ AI",
+      "highlight": "hàng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
