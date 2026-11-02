@@ -1,36 +1,36 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "neon-blue",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#00d4ff",
+    "accent": "#ff006e",
+    "muted": "#ffffff"
   },
-  "effect": "slam",
+  "effect": "wave",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Bỏ đọc thầm, mắt nhảy 3 từ mỗi lần, tăng tốc 300%",
-      "highlight": "nhảy",
+      "text": "Luyện mắt đọc 1000 từ/phút bằng cách nhóm từ",
+      "highlight": "cách",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Luyện mắt: đọc theo đường chéo 5 phút/ngày, tăng tầm nhìn",
-      "highlight": "nhìn",
+      "text": "Bỏ đọc thầm, não xử lý nghĩa trực tiếp",
+      "highlight": "nghĩa",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Não xử lý ý nghĩa, bỏ đọc thầm, đạt 1000 từ/phút dễ dàng",
-      "highlight": "dàng",
+      "text": "Dùng tay dẫn đường, tăng tốc 50% sau 7 ngày",
+      "highlight": "ngày",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
