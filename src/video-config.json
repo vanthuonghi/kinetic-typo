@@ -1,55 +1,76 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "ocean-blue",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
+    "muted": "#ffffff"
   },
-  "effect": "wave",
+  "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Dùng ngón tay dẫn mắt, tăng tốc 30% ngay",
-      "highlight": "tăng",
+      "text": "📚 Mẹo đọc nhanh: Bỏ ngay thói quen đọc thầm\n\nHỉ từng đọc 1 trang mất 2 phút",
+      "highlight": "quen",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Đọc theo cụm 3-4 từ, não xử lý nhanh hơn",
-      "highlight": "theo",
+      "text": "Sau khi áp dụng kỹ thuật Pointer (dùng ngón tay chỉ dòng), tốc độ tăng gấp 3 lần",
+      "highlight": "Pointer",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Tập bỏ đọc thầm trong 5 phút mỗi ngày",
-      "highlight": "phút",
+      "text": "Cách làm:\n1",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Luyện mắt nhảy dòng, hiệu quả gấp đôi",
-      "highlight": "Luyện",
+      "text": "Đặt ngón tay trỏ dưới dòng chữ\n2",
+      "highlight": "dòng",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Di chuyển liên tục từ trái sang phải\n3",
+      "highlight": "sang",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "cta"
+    },
+    {
+      "text": "Mắt chạy theo ngón tay\n\nNghe đơn giản nhưng hiệu quả ngay lập tức",
+      "highlight": "ngón",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Thử 5 phút và comment kết quả nhé!",
+      "highlight": "comment",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "",
+      "highlight": "Đăng ký",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 15000,
+  "totalMs": 19500,
   "hasAudio": true
 }
