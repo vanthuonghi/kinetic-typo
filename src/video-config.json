@@ -1,36 +1,43 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "dark-minimal",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#0a0a0a",
+      "#0a0a0a",
+      "#0a0a0a"
     ],
     "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "accent": "#00d4ff",
+    "muted": "#f5f5f5"
   },
-  "effect": "word-rise",
+  "effect": "karaoke",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Dùng ChatGPT tóm 1 trang sách thành 3 ý trong 30s",
-      "highlight": "trong",
+      "text": "Tóm tắt 20 trang PDF bằng AI chỉ 1 phút",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Notion AI viết kế hoạch tuần chỉ 5 bước",
-      "highlight": "Notion",
+      "text": "Tự động tạo flashcard từ slide, nhớ 90% kiến thức",
+      "highlight": "flashcard",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Grammarly kiểm tra lỗi, tăng tốc viết 40%",
-      "highlight": "tăng",
+      "text": "Học thông minh với lịch ôn tập AI, tiết kiệm 10 giờ/tuần",
+      "highlight": "minh",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Viết email trả lời trong 10 giây nhờ mẫu thông minh",
+      "highlight": "email",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
