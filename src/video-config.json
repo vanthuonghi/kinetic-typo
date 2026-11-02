@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "ocean-blue",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
     "muted": "#ffffff"
   },
-  "effect": "sweep",
+  "effect": "karaoke",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Mắt bạn đọc 1 từ/lần, hãy tập đọc 3 từ/lần",
-      "highlight": "",
+      "text": "Dùng ChatGPT tóm tắt sách 300 trang trong 3 phút",
+      "highlight": "ChatGPT",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Đọc thầm làm chậm, đếm nhẩm 1-2-3 để bỏ",
-      "highlight": "nhẩm",
+      "text": "Tạo email chuyên nghiệp chỉ với 2 dòng prompt",
+      "highlight": "chuyên",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Dùng ngón tay dẫn mắt, tăng tốc 30% ngay",
-      "highlight": "ngay",
+      "text": "Lên kế hoạch tuần bằng Notion AI chỉ 5 bước",
+      "highlight": "bằng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Mỗi ngày 5 phút, 1 tuần đọc nhanh gấp đôi",
-      "highlight": "tuần",
+      "text": "Học 10 từ vựng mỗi ngày qua AI flashcard",
+      "highlight": "vựng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
