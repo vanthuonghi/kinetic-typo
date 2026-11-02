@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "green-tech",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
-    "muted": "#ffffff"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
-  "effect": "sweep",
+  "effect": "wave",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "AI phân tích 500 tin đất nền chỉ trong 3 phút",
-      "highlight": "phân",
+      "text": "Đọc thầm chỉ 200 chữ/phút",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Dự đoán giá chung cư tăng 12% nhờ dữ liệu lịch sử",
-      "highlight": "lịch",
+      "text": "Dùng tay dẫn mắt tăng gấp đôi",
+      "highlight": "Dùng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Tìm nhà phố phù hợp với thu nhập 30 triệu/tháng",
-      "highlight": "nhập",
+      "text": "Nhìn theo cụm 3-5 từ, não xử lý nhanh hơn đọc từng chữ",
+      "highlight": "Nhìn",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Giảm 70% thời gian tìm kiếm nhờ AI gợi ý",
-      "highlight": "thời",
+      "text": "Luyện mắt với bài tập đọc dọc giữa trang, bỏ lề",
+      "highlight": "giữa",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
