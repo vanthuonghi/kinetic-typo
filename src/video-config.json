@@ -1,36 +1,36 @@
 {
   "theme": {
-    "id": "green-tech",
+    "id": "luxury-gold",
     "bg": [
-      "#001a0f",
-      "#001a0f",
-      "#001a0f"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#00ff88",
-    "accent": "#00ff88",
-    "muted": "#e0ffe0"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
-  "effect": "wave",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Tóm tắt 50 trang PDF bằng AI chỉ mất 1 phút",
-      "highlight": "trang",
+      "text": "Dùng AI tóm tắt 10 trang PDF chỉ trong 30 giây",
+      "highlight": "giây",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Tạo 100 flashcard từ bài giảng 1 giờ trong 30 giây",
-      "highlight": "giây",
+      "text": "Tự động tạo flashcard từ ghi chú học tập",
+      "highlight": "động",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Viết email 5 dòng chỉ mất 10 giây nhờ AI",
-      "highlight": "Viết",
+      "text": "Viết email chuyên nghiệp bằng 3 dòng lệnh",
+      "highlight": "email",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
