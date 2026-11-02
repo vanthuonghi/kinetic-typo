@@ -1,43 +1,36 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "gradient-purple",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
-  "effect": "sweep",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Dùng ChatGPT tóm tắt sách 200 trang trong 3 phút",
-      "highlight": "phút",
+      "text": "Dùng ChatGPT tóm 1 trang sách thành 3 ý trong 30s",
+      "highlight": "trong",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "AI lập kế hoạch học 7 ngày với mục tiêu cụ thể",
-      "highlight": "ngày",
+      "text": "Notion AI viết kế hoạch tuần chỉ 5 bước",
+      "highlight": "Notion",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Sửa lỗi tiếng Anh bằng Grammarly chỉ 5 giây",
-      "highlight": "Grammarly",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Tạo 10 ý tưởng video TikTok bằng AI trong 1 phút",
-      "highlight": "video",
+      "text": "Grammarly kiểm tra lỗi, tăng tốc viết 40%",
+      "highlight": "tăng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
