@@ -1,57 +1,50 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "warm-orange",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#1a0000",
+      "#2d1b00",
+      "#1a0f00"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#ffcc80",
+    "accent": "#ff9800",
+    "muted": "#ffffff"
   },
-  "effect": "line-mask",
+  "effect": "sweep",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "AI xử lý 5000 tin tức tài chính mỗi phút",
-      "highlight": "chính",
+      "text": "AI phân tích 500 tin đất nền chỉ trong 3 phút",
+      "highlight": "phân",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Giảm sai lầm do cảm xúc, lợi nhuận tăng 20%",
-      "highlight": "tăng",
+      "text": "Dự đoán giá chung cư tăng 12% nhờ dữ liệu lịch sử",
+      "highlight": "lịch",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Phân tích dữ liệu lớn để chọn cổ phiếu tiềm năng",
-      "highlight": "liệu",
+      "text": "Tìm nhà phố phù hợp với thu nhập 30 triệu/tháng",
+      "highlight": "nhập",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Ra quyết định mua bán chỉ trong 0",
-      "highlight": "quyết",
+      "text": "Giảm 70% thời gian tìm kiếm nhờ AI gợi ý",
+      "highlight": "thời",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "1 giây",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
