@@ -1,43 +1,36 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "green-tech",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
-    "muted": "#ffffff"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
-  "effect": "karaoke",
+  "effect": "wave",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Dùng ChatGPT tóm tắt sách 300 trang trong 3 phút",
-      "highlight": "ChatGPT",
+      "text": "Tóm tắt 50 trang PDF bằng AI chỉ mất 1 phút",
+      "highlight": "trang",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Tạo email chuyên nghiệp chỉ với 2 dòng prompt",
-      "highlight": "chuyên",
+      "text": "Tạo 100 flashcard từ bài giảng 1 giờ trong 30 giây",
+      "highlight": "giây",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Lên kế hoạch tuần bằng Notion AI chỉ 5 bước",
-      "highlight": "bằng",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Học 10 từ vựng mỗi ngày qua AI flashcard",
-      "highlight": "vựng",
+      "text": "Viết email 5 dòng chỉ mất 10 giây nhờ AI",
+      "highlight": "Viết",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
