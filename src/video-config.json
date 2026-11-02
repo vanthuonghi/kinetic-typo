@@ -1,43 +1,57 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "neon-blue",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#00d4ff",
+    "accent": "#ff006e",
+    "muted": "#ffffff"
   },
-  "effect": "line-mask",
+  "effect": "sweep",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "AI xử lý 1 triệu dữ liệu thị trường mỗi phút",
-      "highlight": "liệu",
+      "text": "AI quét 10",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Giảm 30% rủi ro nhờ phân tích khách quan",
-      "highlight": "tích",
+      "text": "000 tin tức trong 1 giây",
+      "highlight": "trong",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Backtest 5 năm chỉ trong 10 giây",
-      "highlight": "Backtest",
+      "text": "Mô hình LSTM dự đoán chính xác 85% xu hướng",
+      "highlight": "hướng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
+    },
+    {
+      "text": "Giao dịch không cảm xúc, lợi nhuận tăng 12%",
+      "highlight": "Giao",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Thử bot đầu tư tự động ngay hôm nay",
+      "highlight": "ngay",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "",
+      "highlight": "Đăng ký",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
