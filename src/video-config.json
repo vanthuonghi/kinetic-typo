@@ -1,50 +1,57 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "pink-modern",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#ff80ab",
+    "accent": "#ff4081",
+    "muted": "#ffffff"
   },
-  "effect": "line-mask",
+  "effect": "wave",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "AI xử lý 1 triệu tin tức/giây, không cảm xúc",
-      "highlight": "triệu",
+      "text": "AI xử lý 10",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Dùng LSTM dự đoán xu hướng trong 5 phút",
-      "highlight": "phút",
+      "text": "000 tin tức/giây, bỏ qua cảm xúc",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Backtest 10 năm dữ liệu chỉ mất 2 giây",
-      "highlight": "giây",
+      "text": "Phân tích dữ liệu lớn trong 0",
+      "highlight": "liệu",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Loại bỏ FOMO, robot giao dịch 24/7",
-      "highlight": "Loại",
+      "text": "5 giây",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
+    },
+    {
+      "text": "Ra quyết định mua bán không do dự",
+      "highlight": "quyết",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "",
+      "highlight": "Đăng ký",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
