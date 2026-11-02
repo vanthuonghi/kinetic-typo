@@ -1,43 +1,36 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "luxury-gold",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
-    "muted": "#ffffff"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
-  "effect": "karaoke",
+  "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "AI phân tích 10",
-      "highlight": "",
+      "text": "Bỏ đọc thầm, mắt nhảy 3 từ mỗi lần, tăng tốc 300%",
+      "highlight": "nhảy",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "000 tin tức/giây, loại bỏ cảm xúc",
-      "highlight": "loại",
+      "text": "Luyện mắt: đọc theo đường chéo 5 phút/ngày, tăng tầm nhìn",
+      "highlight": "nhìn",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Mô hình học máy dự đoán xu hướng chính xác 85%",
-      "highlight": "chính",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Ví dụ: AI bán cổ phiếu khi RSI>70, tránh lỗ 20%",
-      "highlight": "phiếu",
+      "text": "Não xử lý ý nghĩa, bỏ đọc thầm, đạt 1000 từ/phút dễ dàng",
+      "highlight": "dàng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
