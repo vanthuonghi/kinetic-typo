@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "dark-minimal",
+    "id": "pink-modern",
     "bg": [
-      "#0a0a0a",
-      "#0a0a0a",
-      "#0a0a0a"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#ffffff",
-    "accent": "#00d4ff",
-    "muted": "#f5f5f5"
+    "text": "#ff80ab",
+    "accent": "#ff4081",
+    "muted": "#ffffff"
   },
-  "effect": "karaoke",
+  "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Tóm tắt 20 trang PDF bằng AI chỉ 1 phút",
-      "highlight": "phút",
+      "text": "Đọc 1000 từ/phút nhờ luyện mắt",
+      "highlight": "luyện",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Tự động tạo flashcard từ slide, nhớ 90% kiến thức",
-      "highlight": "flashcard",
+      "text": "Dùng tay dẫn mắt nhanh hơn",
+      "highlight": "nhanh",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Học thông minh với lịch ôn tập AI, tiết kiệm 10 giờ/tuần",
-      "highlight": "minh",
+      "text": "Bỏ đọc thầm, đọc theo cụm 3-5 từ",
+      "highlight": "theo",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Viết email trả lời trong 10 giây nhờ mẫu thông minh",
-      "highlight": "email",
+      "text": "Não xử lý ý nghĩa, không từng chữ",
+      "highlight": "không",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
