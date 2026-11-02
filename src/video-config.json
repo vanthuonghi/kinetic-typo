@@ -1,57 +1,50 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "ocean-blue",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
     "muted": "#ffffff"
   },
-  "effect": "wave",
+  "effect": "sweep",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "AI xử lý 10",
-      "highlight": "",
+      "text": "Dùng ChatGPT tóm tắt sách 200 trang trong 3 phút",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "000 tin tức/giây, bỏ qua cảm xúc",
-      "highlight": "",
+      "text": "AI lập kế hoạch học 7 ngày với mục tiêu cụ thể",
+      "highlight": "ngày",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Phân tích dữ liệu lớn trong 0",
-      "highlight": "liệu",
+      "text": "Sửa lỗi tiếng Anh bằng Grammarly chỉ 5 giây",
+      "highlight": "Grammarly",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "5 giây",
-      "highlight": "",
+      "text": "Tạo 10 ý tưởng video TikTok bằng AI trong 1 phút",
+      "highlight": "video",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "Ra quyết định mua bán không do dự",
-      "highlight": "quyết",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
