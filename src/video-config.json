@@ -1,67 +1,53 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "luxury-gold",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
-    "muted": "#ffffff"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
-  "effect": "slam",
+  "effect": "line-mask",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "📚 Mẹo đọc nhanh: Bỏ ngay thói quen đọc thầm\n\nHỉ từng đọc 1 trang mất 2 phút",
-      "highlight": "quen",
+      "text": "AI xử lý 5000 tin tức tài chính mỗi phút",
+      "highlight": "chính",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Sau khi áp dụng kỹ thuật Pointer (dùng ngón tay chỉ dòng), tốc độ tăng gấp 3 lần",
-      "highlight": "Pointer",
+      "text": "Giảm sai lầm do cảm xúc, lợi nhuận tăng 20%",
+      "highlight": "tăng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Cách làm:\n1",
+      "text": "Phân tích dữ liệu lớn để chọn cổ phiếu tiềm năng",
+      "highlight": "liệu",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Ra quyết định mua bán chỉ trong 0",
+      "highlight": "quyết",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "1 giây",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Đặt ngón tay trỏ dưới dòng chữ\n2",
-      "highlight": "dòng",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Di chuyển liên tục từ trái sang phải\n3",
-      "highlight": "sang",
-      "startMs": 0,
-      "endMs": 0,
       "kind": "cta"
-    },
-    {
-      "text": "Mắt chạy theo ngón tay\n\nNghe đơn giản nhưng hiệu quả ngay lập tức",
-      "highlight": "ngón",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Thử 5 phút và comment kết quả nhé!",
-      "highlight": "comment",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
     },
     {
       "text": "Đăng ký để học ngay",
@@ -71,6 +57,6 @@
       "kind": "cta"
     }
   ],
-  "totalMs": 19500,
+  "totalMs": 15000,
   "hasAudio": true
 }
