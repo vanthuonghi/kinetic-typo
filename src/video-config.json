@@ -1,57 +1,50 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "pink-modern",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
+    "text": "#ff80ab",
+    "accent": "#ff4081",
     "muted": "#ffffff"
   },
   "effect": "sweep",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "AI quét 10",
+      "text": "Mắt bạn đọc 1 từ/lần, hãy tập đọc 3 từ/lần",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "000 tin tức trong 1 giây",
-      "highlight": "trong",
+      "text": "Đọc thầm làm chậm, đếm nhẩm 1-2-3 để bỏ",
+      "highlight": "nhẩm",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Mô hình LSTM dự đoán chính xác 85% xu hướng",
-      "highlight": "hướng",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Giao dịch không cảm xúc, lợi nhuận tăng 12%",
-      "highlight": "Giao",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Thử bot đầu tư tự động ngay hôm nay",
+      "text": "Dùng ngón tay dẫn mắt, tăng tốc 30% ngay",
       "highlight": "ngay",
       "startMs": 0,
       "endMs": 0,
-      "kind": "cta"
+      "kind": "body"
+    },
+    {
+      "text": "Mỗi ngày 5 phút, 1 tuần đọc nhanh gấp đôi",
+      "highlight": "tuần",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
