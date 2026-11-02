@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "green-tech",
+    "id": "pink-modern",
     "bg": [
-      "#001a0f",
-      "#001a0f",
-      "#001a0f"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#00ff88",
-    "accent": "#00ff88",
-    "muted": "#e0ffe0"
+    "text": "#ff80ab",
+    "accent": "#ff4081",
+    "muted": "#ffffff"
   },
-  "effect": "wave",
+  "effect": "karaoke",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Đọc thầm chỉ 200 chữ/phút",
+      "text": "AI phân tích 10",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Dùng tay dẫn mắt tăng gấp đôi",
-      "highlight": "Dùng",
+      "text": "000 tin tức/giây, loại bỏ cảm xúc",
+      "highlight": "loại",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Nhìn theo cụm 3-5 từ, não xử lý nhanh hơn đọc từng chữ",
-      "highlight": "Nhìn",
+      "text": "Mô hình học máy dự đoán xu hướng chính xác 85%",
+      "highlight": "chính",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Luyện mắt với bài tập đọc dọc giữa trang, bỏ lề",
-      "highlight": "giữa",
+      "text": "Ví dụ: AI bán cổ phiếu khi RSI>70, tránh lỗ 20%",
+      "highlight": "phiếu",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
