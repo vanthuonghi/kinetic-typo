@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "ocean-blue",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
+    "muted": "#ffffff"
   },
-  "effect": "typewriter",
+  "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "ChatGPT tóm tắt sách 200 trang chỉ 1 phút",
-      "highlight": "trang",
+      "text": "Dùng ChatGPT tóm tắt sách 300 trang trong 30 giây",
+      "highlight": "trong",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Notion AI lập kế hoạch học tập trong 3 phút",
-      "highlight": "phút",
+      "text": "Grammarly sửa lỗi chính tả tiếng Anh miễn phí",
+      "highlight": "chính",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Grammarly sửa 10 lỗi ngữ pháp mỗi lần viết",
-      "highlight": "pháp",
+      "text": "Notion AI lập kế hoạch học 7 ngày chỉ 1 prompt",
+      "highlight": "Notion",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Canva AI thiết kế slide thuyết trình 5 giây",
-      "highlight": "thiết",
+      "text": "Perplexity tra cứu tài liệu nhanh gấp 10 lần Google",
+      "highlight": "Perplexity",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
