@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "dark-minimal",
+    "id": "luxury-gold",
     "bg": [
-      "#0a0a0a",
-      "#0a0a0a",
-      "#0a0a0a"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#ffffff",
-    "accent": "#00d4ff",
-    "muted": "#f5f5f5"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
-  "effect": "sweep",
+  "effect": "line-mask",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "AI tóm tắt 20 trang tài liệu chỉ trong 1 phút",
-      "highlight": "trang",
+      "text": "AI xử lý 1 triệu tin tức/giây, không cảm xúc",
+      "highlight": "triệu",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Tự động tạo flashcard từ video bài giảng",
-      "highlight": "flashcard",
+      "text": "Dùng LSTM dự đoán xu hướng trong 5 phút",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Viết email phản hồi khách hàng trong 5 giây",
-      "highlight": "Viết",
+      "text": "Backtest 10 năm dữ liệu chỉ mất 2 giây",
+      "highlight": "giây",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Học thông minh: ôn tập 10 từ mỗi ngày bằng AI",
-      "highlight": "ngày",
+      "text": "Loại bỏ FOMO, robot giao dịch 24/7",
+      "highlight": "Loại",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
