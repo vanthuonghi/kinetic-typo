@@ -1,42 +1,42 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "luxury-gold",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
-    "muted": "#ffffff"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
-  "effect": "typewriter",
+  "effect": "line-mask",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Dùng ChatGPT tóm tắt 50 trang trong 10 giây",
-      "highlight": "giây",
+      "text": "Tóm tắt 100 trang sách thành 5 dòng nhờ AI",
+      "highlight": "dòng",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Tạo flashcard tự động từ ghi chú bằng AI",
-      "highlight": "bằng",
+      "text": "Tạo 50 flashcard tự động từ bài giảng trong 2 phút",
+      "highlight": "flashcard",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Học thông minh: AI phân tích lỗi, tiết kiệm 30% thời gian",
-      "highlight": "thời",
+      "text": "Học 200 từ vựng mỗi ngày bằng spaced repetition",
+      "highlight": "spaced",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Viết email chào hàng chỉ 2 phút với Copilot",
+      "text": "Viết email chuyên nghiệp chỉ với 3 từ khóa",
       "highlight": "Viết",
       "startMs": 0,
       "endMs": 0,
