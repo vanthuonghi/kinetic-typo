@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "gradient-purple",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
-  "effect": "line-mask",
+  "effect": "wave",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "AI phân tích 10",
-      "highlight": "",
+      "text": "Dùng AI tóm tắt 50 trang trong 2 phút",
+      "highlight": "trong",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "000 tin tức/giây",
-      "highlight": "",
+      "text": "Tạo flashcard tự động từ ghi chú",
+      "highlight": "flashcard",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Mô hình LSTM dự đoán xu hướng",
-      "highlight": "hình",
+      "text": "Học thông minh: hỏi AI giải thích bất kỳ khái niệm",
+      "highlight": "thích",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Dữ liệu lớn giảm rủi ro 30%",
-      "highlight": "giảm",
+      "text": "Viết email chuyên nghiệp chỉ với 3 dòng lệnh",
+      "highlight": "dòng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
