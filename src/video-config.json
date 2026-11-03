@@ -1,50 +1,57 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "dark-minimal",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#0a0a0a",
+      "#0a0a0a",
+      "#0a0a0a"
     ],
     "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "accent": "#00d4ff",
+    "muted": "#f5f5f5"
   },
-  "effect": "karaoke",
+  "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "AI phân tích 1000 tin rao mỗi giây, tìm cơ hội đầu tư",
-      "highlight": "phân",
+      "text": "AI quét 10",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Dự báo giá đất tăng 12% trong 6 tháng tới nhờ AI",
-      "highlight": "trong",
+      "text": "000 mã cổ phiếu trong 1 giây",
+      "highlight": "giây",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Nhập ngân sách, AI gợi ý 5 BĐS phù hợp nhất",
-      "highlight": "Nhập",
+      "text": "Loại bỏ cảm xúc, tăng lợi nhuận 25%",
+      "highlight": "Loại",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Tiết kiệm 90% thời gian săn nhà bằng công cụ AI",
-      "highlight": "công",
+      "text": "Dùng mô hình LSTM dự báo xu hướng",
+      "highlight": "Dùng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
+    },
+    {
+      "text": "Thử ngay với dữ liệu thật",
+      "highlight": "liệu",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "",
+      "highlight": "Đăng ký",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
