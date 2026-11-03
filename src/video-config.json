@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "gradient-purple",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#ffffff",
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
   "effect": "karaoke",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Đọc 1000 từ/phút nhờ luyện mắt nhìn khối",
-      "highlight": "luyện",
+      "text": "AI phân tích 1000 tin rao mỗi giây, tìm cơ hội đầu tư",
+      "highlight": "phân",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Dùng ngón tay dẫn mắt, tăng tốc dần",
-      "highlight": "Dùng",
+      "text": "Dự báo giá đất tăng 12% trong 6 tháng tới nhờ AI",
+      "highlight": "trong",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Bỏ đọc thầm, não tiếp nhận trực tiếp",
-      "highlight": "trực",
+      "text": "Nhập ngân sách, AI gợi ý 5 BĐS phù hợp nhất",
+      "highlight": "Nhập",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Tập trung vào ý chính, không từng chữ",
-      "highlight": "từng",
+      "text": "Tiết kiệm 90% thời gian săn nhà bằng công cụ AI",
+      "highlight": "công",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
