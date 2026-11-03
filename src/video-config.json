@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "neon-blue",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#00d4ff",
+    "accent": "#ff006e",
+    "muted": "#ffffff"
   },
-  "effect": "sweep",
+  "effect": "karaoke",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Dùng ngón tay dẫn mắt, tăng tốc 300 từ/phút",
-      "highlight": "ngón",
+      "text": "Dùng ChatGPT tóm tắt 100 trang PDF chỉ 10 giây",
+      "highlight": "ChatGPT",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Bỏ đọc thầm, não xử lý nhanh hơn 50%",
-      "highlight": "nhanh",
+      "text": "Tạo flashcard từ note bằng AI, tiết kiệm 2 giờ mỗi ngày",
+      "highlight": "kiệm",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Luyện mắt với 3 từ mỗi lần nhìn, đạt 600 từ/phút",
-      "highlight": "Luyện",
+      "text": "Học từ vựng với spaced repetition, nhớ 90% sau 1 tuần",
+      "highlight": "spaced",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Đọc nhanh 1000 từ/phút nhờ chunking",
-      "highlight": "nhanh",
+      "text": "Viết email chuyên nghiệp chỉ với 3 từ khóa",
+      "highlight": "email",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
