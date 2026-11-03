@@ -1,57 +1,43 @@
 {
   "theme": {
-    "id": "dark-minimal",
+    "id": "warm-orange",
     "bg": [
-      "#0a0a0a",
-      "#0a0a0a",
-      "#0a0a0a"
+      "#1a0000",
+      "#2d1b00",
+      "#1a0f00"
     ],
-    "text": "#ffffff",
-    "accent": "#00d4ff",
-    "muted": "#f5f5f5"
+    "text": "#ffcc80",
+    "accent": "#ff9800",
+    "muted": "#ffffff"
   },
-  "effect": "line-mask",
+  "effect": "wave",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "AI quét 10",
-      "highlight": "",
+      "text": "Tóm tắt 10 trang tài liệu bằng AI trong 5 giây",
+      "highlight": "liệu",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "000 báo cáo trong 1 giây",
+      "text": "Tạo 50 flashcard tự động từ bài học chỉ 1 click",
+      "highlight": "động",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Viết email chuyên nghiệp trong 30 giây nhờ AI",
       "highlight": "trong",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Bỏ qua cảm xúc, tăng lợi nhuận 12%",
-      "highlight": "tăng",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Big data dự đoán xu hướng chính xác 85%",
-      "highlight": "hướng",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Robot tư vấn giúp bạn tiết kiệm 20 giờ/tuần",
-      "highlight": "tiết",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "cta"
-    },
-    {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
