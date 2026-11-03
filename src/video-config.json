@@ -1,50 +1,57 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "green-tech",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
-    "muted": "#ffffff"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
-  "effect": "karaoke",
+  "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Dùng ChatGPT tóm tắt 100 trang PDF chỉ 10 giây",
-      "highlight": "ChatGPT",
+      "text": "AI quét 500 tin tức mỗi phút",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Tạo flashcard từ note bằng AI, tiết kiệm 2 giờ mỗi ngày",
-      "highlight": "kiệm",
+      "text": "Ra quyết định mua bán chỉ 0",
+      "highlight": "quyết",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Học từ vựng với spaced repetition, nhớ 90% sau 1 tuần",
-      "highlight": "spaced",
+      "text": "5 giây",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Viết email chuyên nghiệp chỉ với 3 từ khóa",
-      "highlight": "email",
+      "text": "Giảm sai lầm do cảm xúc 40%",
+      "highlight": "Giảm",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
+    },
+    {
+      "text": "Backtest chiến lược lợi nhuận 15%/năm",
+      "highlight": "lược",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "",
+      "highlight": "Đăng ký",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
