@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "ocean-blue",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
     "muted": "#ffffff"
   },
-  "effect": "sweep",
+  "effect": "line-mask",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Mắt bạn đọc 200 từ/phút, não xử lý 600 từ",
+      "text": "AI phân tích 10",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Dùng ngón tay dẫn mắt, tăng 30% tốc độ",
-      "highlight": "Dùng",
+      "text": "000 tin tức/giây",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Đọc theo cụm 3-4 từ, bỏ đọc thầm",
-      "highlight": "thầm",
+      "text": "Mô hình LSTM dự đoán xu hướng",
+      "highlight": "hình",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Luyện 10 phút/ngày, 1 tuần đọc nhanh gấp đôi",
-      "highlight": "Luyện",
+      "text": "Dữ liệu lớn giảm rủi ro 30%",
+      "highlight": "giảm",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
