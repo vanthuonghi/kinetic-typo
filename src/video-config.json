@@ -1,43 +1,36 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "luxury-gold",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
   "effect": "wave",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Dùng AI tóm tắt 50 trang trong 2 phút",
-      "highlight": "trong",
+      "text": "AI phân tích 10k dữ liệu giao dịch mỗi giây",
+      "highlight": "giây",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Tạo flashcard tự động từ ghi chú",
-      "highlight": "flashcard",
+      "text": "Dự báo giá nhà chính xác 92% bằng thuật toán",
+      "highlight": "toán",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Học thông minh: hỏi AI giải thích bất kỳ khái niệm",
-      "highlight": "thích",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Viết email chuyên nghiệp chỉ với 3 dòng lệnh",
-      "highlight": "dòng",
+      "text": "ChatGPT gợi ý 5 căn phù hợp ngân sách 2 tỷ",
+      "highlight": "ChatGPT",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
