@@ -1,43 +1,36 @@
 {
   "theme": {
-    "id": "dark-minimal",
+    "id": "gradient-purple",
     "bg": [
-      "#0a0a0a",
-      "#0a0a0a",
-      "#0a0a0a"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
     "text": "#ffffff",
-    "accent": "#00d4ff",
-    "muted": "#f5f5f5"
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
-  "effect": "typewriter",
+  "effect": "karaoke",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Ngừng đọc thầm, tăng tốc lên 300 từ/phút",
-      "highlight": "Ngừng",
+      "text": "AI tóm tắt tài liệu 50 trang trong 30 giây",
+      "highlight": "trang",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Dùng tay lướt theo dòng chữ để mắt bắt kịp",
-      "highlight": "lướt",
+      "text": "Tự động tạo flashcard từ slide bài giảng",
+      "highlight": "động",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Đọc theo cụm 3-5 từ, não hiểu nhanh hơn",
-      "highlight": "nhanh",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Luyện 10 phút mỗi ngày, hiệu quả sau 1 tuần",
-      "highlight": "phút",
+      "text": "Học thông minh: AI sinh câu hỏi từ ghi chú",
+      "highlight": "sinh",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
