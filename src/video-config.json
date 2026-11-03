@@ -1,36 +1,43 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "ocean-blue",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
     "muted": "#ffffff"
   },
-  "effect": "wave",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Tóm tắt 10 trang tài liệu bằng AI trong 5 giây",
-      "highlight": "liệu",
+      "text": "Mắt bạn chỉ đọc 200 từ/phút, não xử lý 600",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Tạo 50 flashcard tự động từ bài học chỉ 1 click",
-      "highlight": "động",
+      "text": "Dùng ngón tay dẫn mắt tăng tốc 30%",
+      "highlight": "Dùng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Viết email chuyên nghiệp trong 30 giây nhờ AI",
-      "highlight": "trong",
+      "text": "Đọc cụm 3-4 từ thay vì từng chữ",
+      "highlight": "thay",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Tắt đọc thầm, tốc độ gấp đôi",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
