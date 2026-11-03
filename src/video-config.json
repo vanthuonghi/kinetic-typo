@@ -1,48 +1,69 @@
 {
   "theme": {
-    "id": "green-tech",
+    "id": "neon-blue",
     "bg": [
-      "#001a0f",
-      "#001a0f",
-      "#001a0f"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#00ff88",
-    "accent": "#00ff88",
-    "muted": "#e0ffe0"
+    "text": "#00d4ff",
+    "accent": "#ff006e",
+    "muted": "#ffffff"
   },
-  "effect": "line-mask",
+  "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Đọc 1000 từ/phút: luyện mắt, bỏ đọc thầm",
-      "highlight": "luyện",
+      "text": "💡 \"Kiến thức không phải là sức mạnh",
+      "highlight": "thức",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Não bạn xử lý ý nghĩa, không phải âm thanh",
-      "highlight": "phải",
+      "text": "Kiến thức áp dụng mới là sức mạnh",
+      "highlight": "dụng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Dùng ngón tay dẫn mắt, tăng tốc 2 lần",
-      "highlight": "Dùng",
+      "text": "\"\n\nĐọc 100 cuốn sách nhưng không áp dụng được gì, khác gì không đọc",
+      "highlight": "không",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ chọn đọc ít hơn, nhưng làm nhiều hơn",
+      "highlight": "nhiều",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Mỗi tuần 1 bài học → áp dụng ngay vào công việc",
+      "highlight": "tuần",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "cta"
+    },
+    {
+      "text": "Bạn có cuốn sách nào đọc xong mà thay đổi cuộc đời bạn không? Chia sẻ với Hỉ nhé!",
+      "highlight": "thay",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "",
+      "highlight": "Đăng ký",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 15000,
+  "totalMs": 17500,
   "hasAudio": true
 }
