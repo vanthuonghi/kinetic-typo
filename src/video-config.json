@@ -1,36 +1,50 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "warm-orange",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#1a0000",
+      "#2d1b00",
+      "#1a0f00"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#ffcc80",
+    "accent": "#ff9800",
+    "muted": "#ffffff"
   },
-  "effect": "wave",
+  "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "AI phân tích 10k dữ liệu giao dịch mỗi giây",
-      "highlight": "giây",
+      "text": "AI Agent giúp doanh nghiệp nhỏ tự động hóa chăm sóc khách hàng",
+      "highlight": "khách",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Dự báo giá nhà chính xác 92% bằng thuật toán",
-      "highlight": "toán",
+      "text": "Trả lời tin nhắn tự động 24/7",
+      "highlight": "động",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "ChatGPT gợi ý 5 căn phù hợp ngân sách 2 tỷ",
-      "highlight": "ChatGPT",
+      "text": "Đặt lịch hẹn không cần nhân viên",
+      "highlight": "lịch",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Gửi email follow-up tự động",
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Setup 1 lần, chạy mãi mãi",
+      "highlight": "Setup",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
@@ -43,6 +57,6 @@
       "kind": "cta"
     }
   ],
-  "totalMs": 15000,
+  "totalMs": 25000,
   "hasAudio": true
 }
