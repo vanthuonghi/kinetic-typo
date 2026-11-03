@@ -1,57 +1,50 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "pink-modern",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
+    "text": "#ff80ab",
+    "accent": "#ff4081",
     "muted": "#ffffff"
   },
-  "effect": "karaoke",
+  "effect": "sweep",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Dùng ChatGPT tóm tắt 10 trang sách trong 30 giây",
-      "highlight": "trong",
+      "text": "Mắt bạn đọc 200 từ/phút, não xử lý 600 từ",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Nhờ Grammarly sửa lỗi chính tả, tăng điểm bài viết lên 20%",
-      "highlight": "tăng",
+      "text": "Dùng ngón tay dẫn mắt, tăng 30% tốc độ",
+      "highlight": "Dùng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Sử dụng Notion AI lên lịch công việc hàng ngày chỉ 5 phút",
-      "highlight": "hàng",
+      "text": "Đọc theo cụm 3-4 từ, bỏ đọc thầm",
+      "highlight": "thầm",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Tạo kế hoạch học IELTS 8",
-      "highlight": "hoạch",
+      "text": "Luyện 10 phút/ngày, 1 tuần đọc nhanh gấp đôi",
+      "highlight": "Luyện",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "0 bằng AI trong 1 buổi tối",
-      "highlight": "trong",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
