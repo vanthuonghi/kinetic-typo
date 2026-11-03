@@ -1,57 +1,50 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "neon-blue",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
+    "text": "#00d4ff",
+    "accent": "#ff006e",
     "muted": "#ffffff"
   },
-  "effect": "line-mask",
+  "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "AI xử lý 10",
-      "highlight": "",
+      "text": "Dùng ChatGPT tóm tắt 50 trang trong 10 giây",
+      "highlight": "giây",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "000 tin tức mỗi phút",
-      "highlight": "",
+      "text": "Tạo flashcard tự động từ ghi chú bằng AI",
+      "highlight": "bằng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Loại bỏ cảm xúc, ra quyết định chuẩn xác",
-      "highlight": "chuẩn",
+      "text": "Học thông minh: AI phân tích lỗi, tiết kiệm 30% thời gian",
+      "highlight": "thời",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Mô hình Random Forest dự đoán lợi nhuận 85%",
-      "highlight": "Random",
+      "text": "Viết email chào hàng chỉ 2 phút với Copilot",
+      "highlight": "Viết",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "Tối ưu danh mục 500 cổ phiếu chỉ 2 giây",
-      "highlight": "danh",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"

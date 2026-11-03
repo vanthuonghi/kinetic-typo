@@ -1,1 +1,1 @@
-AI xử lý 10. 000 tin tức mỗi phút. Loại bỏ cảm xúc, ra quyết định chuẩn xác. Mô hình Random Forest dự đoán lợi nhuận 85%. Tối ưu danh mục 500 cổ phiếu chỉ 2 giây.
+Dùng ChatGPT tóm tắt 50 trang trong 10 giây. Tạo flashcard tự động từ ghi chú bằng AI. Học thông minh: AI phân tích lỗi, tiết kiệm 30% thời gian. Viết email chào hàng chỉ 2 phút với Copilot. Đăng ký để học ngay.
