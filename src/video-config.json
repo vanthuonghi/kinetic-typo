@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "dark-minimal",
+    "id": "luxury-gold",
     "bg": [
-      "#0a0a0a",
-      "#0a0a0a",
-      "#0a0a0a"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#ffffff",
-    "accent": "#00d4ff",
-    "muted": "#f5f5f5"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
-  "effect": "wave",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Dùng ChatGPT tóm tắt 10 trang sách trong 30 giây",
-      "highlight": "trong",
+      "text": "Dùng ChatGPT tóm tắt 1 chương sách trong 30 giây",
+      "highlight": "Dùng",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Notion AI viết email chào hàng chỉ với 3 dòng mô tả",
-      "highlight": "chào",
+      "text": "Nhờ AI viết 5 ý chính cho bài luận 2000 từ",
+      "highlight": "viết",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Lên kế hoạch tuần bằng AI, tiết kiệm 2 giờ mỗi ngày",
-      "highlight": "kiệm",
+      "text": "Dùng Notion AI lên lịch học 7 ngày chỉ 2 phút",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Công cụ Grammarly sửa lỗi chính tả tức thì",
-      "highlight": "Grammarly",
+      "text": "Tạo flashcard từ 10 trang PDF bằng AI, tiết kiệm 1 giờ",
+      "highlight": "flashcard",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
