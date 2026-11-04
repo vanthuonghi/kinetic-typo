@@ -1,1 +1,1 @@
-AI phân tích 1000 giao dịch, dự báo giá chính xác 90%. Nhập 10 tiêu chí, AI tìm BĐS phù hợp trong 5 giây. Ví dụ: AI dự đoán quận 2 tăng 20% trong 6 tháng. Đăng ký để học ngay.
+AI xử lý 10. 000 báo cáo tài chính trong 1 phút. Mô hình LSTM dự đoán giá cổ phiếu với độ chính xác 85%. Bỏ qua cảm xúc, chỉ dựa vào dữ liệu lớn. Đăng ký để học ngay.
