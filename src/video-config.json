@@ -1,36 +1,43 @@
 {
   "theme": {
-    "id": "dark-minimal",
+    "id": "green-tech",
     "bg": [
-      "#0a0a0a",
-      "#0a0a0a",
-      "#0a0a0a"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#ffffff",
-    "accent": "#00d4ff",
-    "muted": "#f5f5f5"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
-  "effect": "sweep",
+  "effect": "wave",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Dùng ChatGPT tóm tắt bài giảng 10 trang trong 30 giây",
-      "highlight": "giảng",
+      "text": "ChatGPT tóm tắt sách 300 trang chỉ 5 phút",
+      "highlight": "trang",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Nhờ AI viết email chào hàng chỉ với 3 dòng gợi ý",
-      "highlight": "dòng",
+      "text": "Notion AI lập kế hoạch học 7 ngày bằng 1 lệnh",
+      "highlight": "ngày",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Lên kế hoạch học 7 ngày với Notion AI tự động",
-      "highlight": "động",
+      "text": "AI kiểm tra ngữ pháp tiếng Việt chính xác 95%",
+      "highlight": "Việt",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Perplexity tìm kiếm thông tin nhanh gấp 3 lần Google",
+      "highlight": "thông",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
