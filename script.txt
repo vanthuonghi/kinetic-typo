@@ -1,1 +1,1 @@
-AI quét 10 triệu tin tức mỗi giây, không bỏ lỡ cơ hội. Bỏ cảm xúc, AI giữ tỷ lệ thắng 70% hơn người. Dùng mô hình LSTM dự đoán xu hướng cổ phiếu chính xác 85%. Tự động tái cân bằng danh mục trong 0. 2 giây, giảm rủi ro.
+AI xử lý 10k cổ phiếu trong 1s, không cảm xúc. Mô hình LSTM dự đoán chính xác 85% xu hướng. Backtest 5 năm dữ liệu chỉ mất 2 phút. Đăng ký để học ngay.

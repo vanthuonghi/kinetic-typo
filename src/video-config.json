@@ -1,57 +1,43 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "green-tech",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
-    "muted": "#ffffff"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
-  "effect": "slam",
+  "effect": "sweep",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "AI quét 10 triệu tin tức mỗi giây, không bỏ lỡ cơ hội",
-      "highlight": "triệu",
+      "text": "AI xử lý 10k cổ phiếu trong 1s, không cảm xúc",
+      "highlight": "trong",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Bỏ cảm xúc, AI giữ tỷ lệ thắng 70% hơn người",
-      "highlight": "người",
+      "text": "Mô hình LSTM dự đoán chính xác 85% xu hướng",
+      "highlight": "hình",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Dùng mô hình LSTM dự đoán xu hướng cổ phiếu chính xác 85%",
-      "highlight": "Dùng",
+      "text": "Backtest 5 năm dữ liệu chỉ mất 2 phút",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "Tự động tái cân bằng danh mục trong 0",
-      "highlight": "động",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "2 giây, giảm rủi ro",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
