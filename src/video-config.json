@@ -1,41 +1,83 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "green-tech",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
-    "muted": "#ffffff"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Đọc 3 từ một lần, tốc độ tăng gấp đôi",
-      "highlight": "tăng",
+      "text": "Bạn có biết 70% khách hàng tiềm năng không mua ngay lần đầu? Họ cần được nuôi dưỡng",
+      "highlight": "nuôi",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Đọc thầm làm chậm gấp 3 lần, hãy ngậm miệng! Dùng ngón tay lướt nhanh, mắt theo kịp 500 từ/phút",
-      "highlight": "ngậm",
+      "text": "Nhưng bạn không thể nhớ gửi email cho từng người",
+      "highlight": "người",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Đăng ký để học ngay",
+      "text": "AI Agent làm việc đó cho bạn",
+      "highlight": "Agent",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Gửi email follow-up tự động theo kịch bản",
+      "highlight": "theo",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Nhắc lịch hẹn",
       "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Gửi khuyến mãi định kỳ",
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Kết quả là tỷ lệ chốt đơn tăng 40%",
+      "highlight": "chốt",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Mà bạn không mất thêm giây phút nào",
+      "highlight": "không",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "cta"
+    },
+    {
+      "text": "Đăng ký để học ngay",
+      "highlight": "Đăng ký",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 15000,
+  "totalMs": 50000,
   "hasAudio": true
 }
