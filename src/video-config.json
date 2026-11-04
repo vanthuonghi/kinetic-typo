@@ -1,43 +1,29 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "warm-orange",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#1a0000",
+      "#2d1b00",
+      "#1a0f00"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#ffcc80",
+    "accent": "#ff9800",
+    "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Dùng ChatGPT tóm tắt 1 chương sách trong 30 giây",
-      "highlight": "Dùng",
+      "text": "Đọc 3 từ một lần, tốc độ tăng gấp đôi",
+      "highlight": "tăng",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Nhờ AI viết 5 ý chính cho bài luận 2000 từ",
-      "highlight": "viết",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Dùng Notion AI lên lịch học 7 ngày chỉ 2 phút",
-      "highlight": "phút",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Tạo flashcard từ 10 trang PDF bằng AI, tiết kiệm 1 giờ",
-      "highlight": "flashcard",
+      "text": "Đọc thầm làm chậm gấp 3 lần, hãy ngậm miệng! Dùng ngón tay lướt nhanh, mắt theo kịp 500 từ/phút",
+      "highlight": "ngậm",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
