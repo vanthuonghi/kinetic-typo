@@ -1,48 +1,69 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "aurora-1",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#0f0c29",
+      "#302b63",
+      "#24243e"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#00d4ff",
+    "muted": "#94a3b8"
   },
-  "effect": "typewriter",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "AI phân tích 1000 giao dịch, dự báo giá chính xác 90%",
-      "highlight": "chính",
+      "text": "Chủ doanh nghiệp nhỏ, bạn có biết mỗi ngày bạn mất 3 tiếng để trả lời tin nhắn khách hàng lặp đi lặp lại?\nAI Agent có thể làm việc đó cho bạn.",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Nhập 10 tiêu chí, AI tìm BĐS phù hợp trong 5 giây",
-      "highlight": "giây",
+      "text": "Trả lời tự động 24/7, kể cả khi bạn đang ngủ.",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Ví dụ: AI dự đoán quận 2 tăng 20% trong 6 tháng",
-      "highlight": "quận",
+      "text": "Gửi báo giá, đặt lịch hẹn, follow-up khách hàng tự động.",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Đăng ký để học ngay",
+      "text": "Không cần đội ngũ IT, không cần biết code.",
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Setup 1 lần là chạy mãi mãi.",
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ đã giúp nhiều doanh nghiệp nhỏ tiết kiệm 70% thời gian vận hành.",
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn muốn thử không?\nLiên hệ Hỉ ngay.",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 15000,
+  "totalMs": 50000,
   "hasAudio": true
 }
