@@ -1,1 +1,1 @@
-AI xử lý 10k cổ phiếu trong 1s, không cảm xúc. Mô hình LSTM dự đoán chính xác 85% xu hướng. Backtest 5 năm dữ liệu chỉ mất 2 phút. Đăng ký để học ngay.
+Tóm tắt 50 trang PDF bằng AI chỉ 10 giây. Tạo 100 flashcard tự động từ bài giảng 2 phút. Viết email 5 dòng với AI, tiết kiệm 15 phút. Đăng ký để học ngay.

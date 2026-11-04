@@ -1,36 +1,36 @@
 {
   "theme": {
-    "id": "green-tech",
+    "id": "pink-modern",
     "bg": [
-      "#001a0f",
-      "#001a0f",
-      "#001a0f"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#00ff88",
-    "accent": "#00ff88",
-    "muted": "#e0ffe0"
+    "text": "#ff80ab",
+    "accent": "#ff4081",
+    "muted": "#ffffff"
   },
-  "effect": "sweep",
+  "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "AI xử lý 10k cổ phiếu trong 1s, không cảm xúc",
-      "highlight": "trong",
+      "text": "Tóm tắt 50 trang PDF bằng AI chỉ 10 giây",
+      "highlight": "giây",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Mô hình LSTM dự đoán chính xác 85% xu hướng",
-      "highlight": "hình",
+      "text": "Tạo 100 flashcard tự động từ bài giảng 2 phút",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Backtest 5 năm dữ liệu chỉ mất 2 phút",
-      "highlight": "phút",
+      "text": "Viết email 5 dòng với AI, tiết kiệm 15 phút",
+      "highlight": "Viết",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
