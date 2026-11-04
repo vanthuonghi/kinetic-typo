@@ -1,76 +1,48 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "green-tech",
     "bg": [
-      "#0f0c29",
-      "#302b63",
-      "#24243e"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#ffffff",
-    "accent": "#38bdf8",
-    "muted": "#94a3b8"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
-  "effect": "word-rise",
+  "effect": "wave",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "95% người đọc sách vẫn đọc thầm.",
-      "highlight": "",
+      "text": "Đọc 1000 từ/phút nhờ luyện mắt",
+      "highlight": "luyện",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Bạn phát âm từng chữ trong đầu, và tốc độ bị giới hạn ở 200-250 từ mỗi phút.",
-      "highlight": "",
+      "text": "Bỏ đọc thầm, não xử lý nhanh gấp 3",
+      "highlight": "nhanh",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Đây là rào cản lớn nhất của Speed Reading.",
-      "highlight": "",
+      "text": "Dùng tay dẫn mắt, tăng tốc 50% ngay",
+      "highlight": "tăng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Cách dừng đọc thầm đơn giản nhất là dùng ngón tay dẫn mắt.",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Di chuyển tay nhanh hơn tốc độ bạn có thể đọc thầm.",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Mắt sẽ tự động chạy theo tay.",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Não bắt đầu xử lý ý nghĩa trực tiếp thay vì chuyển thành âm thanh.",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Luyện 15 phút mỗi ngày.",
+      "text": "Đăng ký để học ngay",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 50000,
+  "totalMs": 15000,
   "hasAudio": true
 }
