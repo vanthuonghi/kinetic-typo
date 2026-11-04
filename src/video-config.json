@@ -1,43 +1,36 @@
 {
   "theme": {
-    "id": "green-tech",
+    "id": "warm-orange",
     "bg": [
-      "#001a0f",
-      "#001a0f",
-      "#001a0f"
+      "#1a0000",
+      "#2d1b00",
+      "#1a0f00"
     ],
-    "text": "#00ff88",
-    "accent": "#00ff88",
-    "muted": "#e0ffe0"
+    "text": "#ffcc80",
+    "accent": "#ff9800",
+    "muted": "#ffffff"
   },
-  "effect": "wave",
+  "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "ChatGPT tóm tắt sách 300 trang chỉ 5 phút",
-      "highlight": "trang",
+      "text": "Mắt chỉ đọc 3-4 chữ/lần, hãy mở rộng tầm nhìn ra 5-7 chữ",
+      "highlight": "nhìn",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Notion AI lập kế hoạch học 7 ngày bằng 1 lệnh",
-      "highlight": "ngày",
+      "text": "Đọc thầm làm chậm 50%, dùng tay chỉ để tăng tốc",
+      "highlight": "tăng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "AI kiểm tra ngữ pháp tiếng Việt chính xác 95%",
-      "highlight": "Việt",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Perplexity tìm kiếm thông tin nhanh gấp 3 lần Google",
-      "highlight": "thông",
+      "text": "Đọc cụm 3-4 từ giúp não xử lý nhanh hơn 2 lần",
+      "highlight": "giúp",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
