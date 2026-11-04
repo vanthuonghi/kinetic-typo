@@ -1,36 +1,36 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "luxury-gold",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
-    "muted": "#ffffff"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
-  "effect": "line-mask",
+  "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Dùng ChatGPT tóm tắt sách 200 trang chỉ 5 phút",
-      "highlight": "trang",
+      "text": "Đọc 1000 từ/phút nhờ luyện mắt bỏ đọc thầm",
+      "highlight": "thầm",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Notion AI lập kế hoạch tuần chỉ 10 giây",
-      "highlight": "giây",
+      "text": "Dùng ngón tay dẫn mắt, tăng tốc dần mỗi ngày",
+      "highlight": "ngày",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Grammarly sửa lỗi ngữ pháp tiếng Anh ngay",
-      "highlight": "tiếng",
+      "text": "Não xử lý ý nghĩa nhanh hơn chữ, tập trung từ khóa",
+      "highlight": "khóa",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
