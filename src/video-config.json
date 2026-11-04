@@ -1,83 +1,55 @@
 {
   "theme": {
-    "id": "green-tech",
+    "id": "ocean-blue",
     "bg": [
-      "#001a0f",
-      "#001a0f",
-      "#001a0f"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#00ff88",
-    "accent": "#00ff88",
-    "muted": "#e0ffe0"
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
+    "muted": "#ffffff"
   },
-  "effect": "word-rise",
+  "effect": "sweep",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Bạn có biết 70% khách hàng tiềm năng không mua ngay lần đầu? Họ cần được nuôi dưỡng",
-      "highlight": "nuôi",
+      "text": "Dùng ChatGPT tóm tắt 50 trang sách chỉ 3 phút",
+      "highlight": "Dùng",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Nhưng bạn không thể nhớ gửi email cho từng người",
-      "highlight": "người",
+      "text": "Nhờ AI viết email mẫu, tiết kiệm 20 phút mỗi ngày",
+      "highlight": "kiệm",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "AI Agent làm việc đó cho bạn",
-      "highlight": "Agent",
+      "text": "Lập kế hoạch học tuần với Notion AI chỉ 2 bước",
+      "highlight": "bước",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Gửi email follow-up tự động theo kịch bản",
-      "highlight": "theo",
+      "text": "Tăng 30% năng suất nhờ Copilot gợi ý code",
+      "highlight": "code",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "Nhắc lịch hẹn",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Gửi khuyến mãi định kỳ",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Kết quả là tỷ lệ chốt đơn tăng 40%",
-      "highlight": "chốt",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Mà bạn không mất thêm giây phút nào",
-      "highlight": "không",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 50000,
+  "totalMs": 15000,
   "hasAudio": true
 }
