@@ -1,43 +1,43 @@
 {
   "theme": {
-    "id": "dark-minimal",
+    "id": "gradient-purple",
     "bg": [
-      "#0a0a0a",
-      "#0a0a0a",
-      "#0a0a0a"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
     "text": "#ffffff",
-    "accent": "#00d4ff",
-    "muted": "#f5f5f5"
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
-  "effect": "wave",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Dùng ChatGPT tóm tắt 50 trang PDF trong 10 giây",
-      "highlight": "Dùng",
+      "text": "Dùng ChatGPT tóm tắt 10 trang PDF chỉ trong 30 giây",
+      "highlight": "giây",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Tạo flashcard tự động từ ghi chú bằng Notion AI",
-      "highlight": "flashcard",
+      "text": "Tự động tạo flashcard từ ghi chú AI, tiết kiệm 2h/tuần",
+      "highlight": "kiệm",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Viết email chuyên nghiệp chỉ với 3 dòng prompt",
+      "text": "Học từ vựng Anh với app AI, nhớ 90% sau 1 lần",
+      "highlight": "vựng",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Viết email chuyên nghiệp chỉ 5 giây nhờ prompt mẫu",
       "highlight": "Viết",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Học từ vựng siêu tốc với Anki + AI dịch",
-      "highlight": "siêu",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
