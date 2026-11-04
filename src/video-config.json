@@ -7,57 +7,64 @@
       "#24243e"
     ],
     "text": "#ffffff",
-    "accent": "#00d4ff",
+    "accent": "#f97316",
     "muted": "#94a3b8"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Chủ doanh nghiệp nhỏ, bạn có biết mỗi ngày bạn mất 3 tiếng để trả lời tin nhắn khách hàng lặp đi lặp lại?\nAI Agent có thể làm việc đó cho bạn.",
+      "text": "Nhiều người nghĩ AI Agent sẽ thay thế họ.",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Trả lời tự động 24/7, kể cả khi bạn đang ngủ.",
+      "text": "Nhưng sự thật ngược lại.",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Gửi báo giá, đặt lịch hẹn, follow-up khách hàng tự động.",
+      "text": "AI Agent làm những việc lặp đi lặp lại để bạn có thời gian làm việc quan trọng hơn.",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Không cần đội ngũ IT, không cần biết code.",
+      "text": "Bán hàng.",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Setup 1 lần là chạy mãi mãi.",
+      "text": "Xây dựng mối quan hệ.",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Hỉ đã giúp nhiều doanh nghiệp nhỏ tiết kiệm 70% thời gian vận hành.",
+      "text": "Phát triển chiến lược.",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Bạn muốn thử không?\nLiên hệ Hỉ ngay.",
+      "text": "Hỉ đang dùng AI Agent để tự động trả lời tin nhắn, đăng bài, chăm sóc khách hàng.",
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Kết quả là Hỉ có thêm 20 tiếng mỗi tuần.",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
