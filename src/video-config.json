@@ -1,36 +1,43 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "gradient-purple",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
-  "effect": "slam",
+  "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "AI phân tích 1000 tin rao/giây, tìm giá thấp nhất",
-      "highlight": "phân",
+      "text": "AI phân tích 10",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Dự báo giá đất quận 9 tăng 20% trong 3 tháng",
-      "highlight": "quận",
+      "text": "000 tin tức/giây, bắt kịp biến động",
+      "highlight": "biến",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Nhập ngân sách 2 tỷ, AI gợi ý 5 căn phù hợp",
-      "highlight": "Nhập",
+      "text": "Dùng mô hình LSTM dự đoán xu hướng giá cổ phiếu",
+      "highlight": "hình",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Bot giao dịch không cảm xúc, dùng RSI 70/30",
+      "highlight": "giao",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
