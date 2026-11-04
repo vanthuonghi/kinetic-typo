@@ -1,36 +1,43 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "gradient-purple",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
-  "effect": "typewriter",
+  "effect": "karaoke",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Tóm tắt 50 trang PDF bằng AI chỉ 10 giây",
-      "highlight": "giây",
+      "text": "Dùng ngón tay dẫn mắt lướt nhanh, đọc 500 từ/phút",
+      "highlight": "lướt",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Tạo 100 flashcard tự động từ bài giảng 2 phút",
-      "highlight": "phút",
+      "text": "Bỏ đọc thầm, não xử lý ý nghĩa trực tiếp",
+      "highlight": "tiếp",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Viết email 5 dòng với AI, tiết kiệm 15 phút",
-      "highlight": "Viết",
+      "text": "Luyện 10 phút mỗi ngày, 1 tháng đạt 1000 từ/phút",
+      "highlight": "tháng",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Đọc xong 1 cuốn sách trong 30 phút",
+      "highlight": "cuốn",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
