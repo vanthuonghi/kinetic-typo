@@ -1,43 +1,36 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "ocean-blue",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
     "muted": "#ffffff"
   },
-  "effect": "karaoke",
+  "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Dùng AI tóm tắt sách 200 trang chỉ 5 phút",
-      "highlight": "sách",
+      "text": "AI phân tích 1000 tin rao/giây, tìm giá thấp nhất",
+      "highlight": "phân",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Lập kế hoạch học 7 môn trong 1 giờ nhờ AI",
-      "highlight": "trong",
+      "text": "Dự báo giá đất quận 9 tăng 20% trong 3 tháng",
+      "highlight": "quận",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Viết bài blog 500 từ với AI chỉ 3 phút",
-      "highlight": "blog",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Tăng năng suất 30% nhờ AI sắp xếp công việc",
-      "highlight": "việc",
+      "text": "Nhập ngân sách 2 tỷ, AI gợi ý 5 căn phù hợp",
+      "highlight": "Nhập",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
