@@ -1,43 +1,36 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "pink-modern",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#ff80ab",
+    "accent": "#ff4081",
+    "muted": "#ffffff"
   },
-  "effect": "word-rise",
+  "effect": "karaoke",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Dùng ChatGPT tóm tắt 10 trang PDF chỉ trong 30 giây",
-      "highlight": "giây",
+      "text": "Đọc theo cụm 3-5 từ giúp tăng tốc 2 lần",
+      "highlight": "giúp",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Tự động tạo flashcard từ ghi chú AI, tiết kiệm 2h/tuần",
-      "highlight": "kiệm",
+      "text": "Ngừng đọc thầm, mắt bạn đọc nhanh hơn não 300 chữ/phút",
+      "highlight": "nhanh",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Học từ vựng Anh với app AI, nhớ 90% sau 1 lần",
-      "highlight": "vựng",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Viết email chuyên nghiệp chỉ 5 giây nhờ prompt mẫu",
-      "highlight": "Viết",
+      "text": "Dùng ngón tay dẫn mắt, tăng tốc độ 50% ngay",
+      "highlight": "tăng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
