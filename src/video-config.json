@@ -1,55 +1,76 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "ocean-blue",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#0f0c29",
+      "#302b63",
+      "#24243e"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#38bdf8",
+    "muted": "#94a3b8"
   },
-  "effect": "karaoke",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "AI xử lý 10",
+      "text": "Bạn có biết 95% người đọc sách vẫn đọc thầm từng chữ trong đầu?\nCách này chỉ đạt tối đa 250 từ mỗi phút.",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "000 báo cáo tài chính trong 1 phút",
-      "highlight": "phút",
+      "text": "Nhưng não bạn có thể xử lý nhanh hơn gấp 3 lần.",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Mô hình LSTM dự đoán giá cổ phiếu với độ chính xác 85%",
-      "highlight": "đoán",
+      "text": "Bí quyết nằm ở Pointer Method.",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Bỏ qua cảm xúc, chỉ dựa vào dữ liệu lớn",
-      "highlight": "liệu",
+      "text": "Dùng ngón tay hoặc bút dẫn mắt lướt nhanh theo dòng chữ.",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Đăng ký để học ngay",
+      "text": "Mắt tự động chạy theo tay.",
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Không kịp đọc thầm.",
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Luyện 15 phút mỗi ngày.",
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Sau 7 ngày bạn sẽ đọc 400 từ mỗi phút.",
       "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 15000,
+  "totalMs": 50000,
   "hasAudio": true
 }
