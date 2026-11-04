@@ -1,36 +1,43 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "neon-blue",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
+    "text": "#00d4ff",
+    "accent": "#ff006e",
     "muted": "#ffffff"
   },
   "effect": "karaoke",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Đọc theo cụm 3-5 từ giúp tăng tốc 2 lần",
-      "highlight": "giúp",
+      "text": "Dùng AI tóm tắt sách 200 trang chỉ 5 phút",
+      "highlight": "sách",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Ngừng đọc thầm, mắt bạn đọc nhanh hơn não 300 chữ/phút",
-      "highlight": "nhanh",
+      "text": "Lập kế hoạch học 7 môn trong 1 giờ nhờ AI",
+      "highlight": "trong",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Dùng ngón tay dẫn mắt, tăng tốc độ 50% ngay",
-      "highlight": "tăng",
+      "text": "Viết bài blog 500 từ với AI chỉ 3 phút",
+      "highlight": "blog",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Tăng năng suất 30% nhờ AI sắp xếp công việc",
+      "highlight": "việc",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
