@@ -16,9 +16,9 @@ MP3 = ROOT / "public" / "voiceover.mp3"
 
 MAX_CHARS = 95
 MIN_SCENE_S = 0.7
-MAX_SCENE_S = 6.0
+MAX_SCENE_S = 12.0
 MIN_TOTAL_S = 6.0
-MAX_TOTAL_S = 40.0
+MAX_TOTAL_S = 120.0
 MIN_CONTRAST = 3.0
 
 
