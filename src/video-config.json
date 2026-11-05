@@ -1,36 +1,36 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "luxury-gold",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
-    "muted": "#ffffff"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
-  "effect": "slam",
+  "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Mắt chỉ đọc 3-4 chữ/lần, hãy mở rộng tầm nhìn ra 5-7 chữ",
-      "highlight": "nhìn",
+      "text": "AI dự báo giá BĐS với độ chính xác 85% từ dữ liệu lớn",
+      "highlight": "liệu",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Đọc thầm làm chậm 50%, dùng tay chỉ để tăng tốc",
-      "highlight": "tăng",
+      "text": "Công cụ AI lọc 1000 căn nhà phù hợp trong 2 phút",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Đọc cụm 3-4 từ giúp não xử lý nhanh hơn 2 lần",
-      "highlight": "giúp",
+      "text": "AI chỉ ra thời điểm mua tốt nhất dựa trên 10 năm dữ liệu",
+      "highlight": "thời",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
