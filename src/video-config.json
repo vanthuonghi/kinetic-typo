@@ -1,85 +1,41 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "warm-orange",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#1a0000",
+      "#2d1b00",
+      "#1a0f00"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
+    "text": "#ffcc80",
+    "accent": "#ff9800",
     "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Nhiều người nghĩ AI Agent sẽ thay thế họ",
-      "highlight": "thay",
+      "text": "Peripheral Vision - Mở rộng tầm nhìn khi đọc",
+      "highlight": "rộng",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Nhưng sự thật ngược lại",
-      "highlight": "",
+      "text": "Luyện 15 phút mỗi ngày để thấy hiệu quả",
+      "highlight": "ngày",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "AI Agent làm những việc lặp đi lặp lại để bạn có thời gian làm việc quan trọng hơn",
-      "highlight": "thời",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Bán hàng",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Xây dựng mối quan hệ",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Phát triển chiến lược",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ đang dùng AI Agent để tự động trả lời tin nhắn, đăng bài, chăm sóc khách hàng",
-      "highlight": "chăm",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Kết quả là Hỉ có thêm 20 tiếng mỗi tuần",
-      "highlight": "thêm",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 50000,
-  "hasAudio": true,
-  "width": 1080,
-  "height": 1920
+  "totalMs": 8000,
+  "hasAudio": true
 }
