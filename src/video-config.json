@@ -1,76 +1,48 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "dark-minimal",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#0a0a0a",
+      "#0a0a0a",
+      "#0a0a0a"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#00d4ff",
+    "muted": "#f5f5f5"
   },
-  "effect": "word-rise",
+  "effect": "sweep",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Regression - Bỏ thói quen đọc lại",
-      "highlight": "Regression",
+      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
+      "highlight": "Người",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Đây là kỹ thuật quan trọng giúp bạn đọc nhanh hơn gấp 3 lần mà vẫn hiểu sâu",
-      "highlight": "trọng",
+      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Hỉ đã áp dụng phương pháp này và đọc xong 1 cuốn sách 300 trang chỉ trong 2 giờ",
-      "highlight": "xong",
+      "text": "Một cuốn sách chỉ trong 3 phút",
+      "highlight": "trong",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Bạn cũng có thể làm được",
-      "highlight": "cũng",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Bắt đầu với 15 phút luyện tập mỗi ngày",
-      "highlight": "ngày",
+      "text": "Đăng ký để học ngay",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
-    },
-    {
-      "text": "Chỉ sau 7 ngày bạn sẽ thấy sự khác biệt rõ rệt",
-      "highlight": "ngày",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Tốc độ đọc tăng lên, khả năng tập trung cải thiện, và bạn tiết kiệm được hàng giờ mỗi ngày",
-      "highlight": "tăng",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
-    },
-    {
-      "text": "Hãy đăng ký khóa học Speed Reading của Hỉ để được hướng dẫn chi tiết từ A đến Z",
-      "highlight": "tiết",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "body"
     }
   ],
-  "totalMs": 60000,
+  "totalMs": 15000,
   "hasAudio": true
 }
