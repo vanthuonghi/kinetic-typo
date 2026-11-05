@@ -1,43 +1,57 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "neon-blue",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#00d4ff",
+    "accent": "#ff006e",
+    "muted": "#ffffff"
   },
-  "effect": "typewriter",
+  "effect": "karaoke",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "AI dự báo giá BĐS với độ chính xác 85% từ dữ liệu lớn",
-      "highlight": "liệu",
+      "text": "AI phân tích 10",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Công cụ AI lọc 1000 căn nhà phù hợp trong 2 phút",
-      "highlight": "phút",
+      "text": "000 báo cáo mỗi giây",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "AI chỉ ra thời điểm mua tốt nhất dựa trên 10 năm dữ liệu",
-      "highlight": "thời",
+      "text": "Mô hình LSTM dự đoán xu hướng với độ chính xác 85%",
+      "highlight": "hướng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
+    },
+    {
+      "text": "Ra quyết định mua bán trong 0",
+      "highlight": "định",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "1 giây không cảm xúc",
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "",
+      "highlight": "Đăng ký",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
