@@ -1,41 +1,76 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "green-tech",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Preview - Đọc lướt trước, đọc sâu sau",
-      "highlight": "lướt",
+      "text": "Tốc độ vs Hiểu - Cân bằng giữa nhanh và nhớ",
+      "highlight": "Hiểu",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Luyện 15 phút mỗi ngày để thấy hiệu quả",
-      "highlight": "Luyện",
+      "text": "Đây là kỹ thuật quan trọng giúp bạn đọc nhanh hơn gấp 3 lần mà vẫn hiểu sâu",
+      "highlight": "giúp",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Đăng ký để học ngay",
-      "highlight": "",
+      "text": "Hỉ đã áp dụng phương pháp này và đọc xong 1 cuốn sách 300 trang chỉ trong 2 giờ",
+      "highlight": "phương",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn cũng có thể làm được",
+      "highlight": "cũng",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Bắt đầu với 15 phút luyện tập mỗi ngày",
+      "highlight": "luyện",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
+    },
+    {
+      "text": "Chỉ sau 7 ngày bạn sẽ thấy sự khác biệt rõ rệt",
+      "highlight": "ngày",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Tốc độ đọc tăng lên, khả năng tập trung cải thiện, và bạn tiết kiệm được hàng giờ mỗi ngày",
+      "highlight": "hàng",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Hãy đăng ký khóa học Speed Reading của Hỉ để được hướng dẫn chi tiết từ A đến Z",
+      "highlight": "tiết",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
     }
   ],
-  "totalMs": 8000,
+  "totalMs": 60000,
   "hasAudio": true
 }
