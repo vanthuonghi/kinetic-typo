@@ -1,76 +1,132 @@
 {
   "theme": {
-    "id": "dark-minimal",
+    "id": "warm-orange",
     "bg": [
-      "#0a0a0a",
-      "#0a0a0a",
-      "#0a0a0a"
+      "#1a0000",
+      "#2d1b00",
+      "#1a0f00"
     ],
-    "text": "#ffffff",
-    "accent": "#00d4ff",
-    "muted": "#f5f5f5"
+    "text": "#ffcc80",
+    "accent": "#ff9800",
+    "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Bạn muốn tăng doanh thu nhưng không biết bắt đầu từ đâu? AI Agent có thể phân tích dữ liệu bán hàng của bạn",
+      "text": "Lead generation tự động là siêu năng lực của AI Agent",
       "highlight": "",
       "startMs": 0,
-      "endMs": 8400,
+      "endMs": 3850,
       "kind": "hook"
     },
     {
-      "text": "Tìm ra sản phẩm bán chạy",
+      "text": "Bạn có biết hầu hết chủ doanh nghiệp nhỏ mất 70% thời gian để tìm kiếm khách hàng? Họ post bài mỗi ngày",
       "highlight": "",
-      "startMs": 8400,
-      "endMs": 10500,
+      "startMs": 3850,
+      "endMs": 11900,
       "kind": "body"
     },
     {
-      "text": "Thời điểm khách mua nhiều nhất",
+      "text": "Họ chạy quảng cáo",
       "highlight": "",
-      "startMs": 10500,
-      "endMs": 12600,
+      "startMs": 11900,
+      "endMs": 13900,
       "kind": "body"
     },
     {
-      "text": "Khách hàng nào mua thường xuyên",
+      "text": "Họ đi networking",
       "highlight": "",
-      "startMs": 12600,
-      "endMs": 14700,
+      "startMs": 13900,
+      "endMs": 15900,
       "kind": "body"
     },
     {
-      "text": "Hỉ dùng AI Agent để đưa ra quyết định kinh doanh dựa trên dữ liệu",
+      "text": "Nhưng kết quả không như mong đợi",
       "highlight": "",
-      "startMs": 14700,
-      "endMs": 19950,
+      "startMs": 15900,
+      "endMs": 18350,
       "kind": "body"
     },
     {
-      "text": "Không phải cảm tính",
+      "text": "AI Agent thay đổi cuộc chơi",
       "highlight": "",
-      "startMs": 19950,
-      "endMs": 21950,
+      "startMs": 18350,
+      "endMs": 20450,
       "kind": "body"
     },
     {
-      "text": "Không phải may rủi",
+      "text": "Nó tự động tìm kiếm khách hàng tiềm năng trên Facebook và TikTok",
       "highlight": "",
-      "startMs": 21950,
-      "endMs": 23950,
+      "startMs": 20450,
+      "endMs": 25000,
+      "kind": "body"
+    },
+    {
+      "text": "Những người đang quan tâm đến sản phẩm của bạn",
+      "highlight": "",
+      "startMs": 25000,
+      "endMs": 28500,
+      "kind": "body"
+    },
+    {
+      "text": "Những người đã tương tác với bài viết",
+      "highlight": "",
+      "startMs": 28500,
+      "endMs": 31300,
+      "kind": "body"
+    },
+    {
+      "text": "Những người có nhu cầu thực sự",
+      "highlight": "",
+      "startMs": 31300,
+      "endMs": 33750,
+      "kind": "body"
+    },
+    {
+      "text": "Sau đó AI Agent gửi tin nhắn chào hỏi tự động",
+      "highlight": "",
+      "startMs": 33750,
+      "endMs": 37600,
+      "kind": "body"
+    },
+    {
+      "text": "Cá nhân hóa từng tin nhắn",
+      "highlight": "",
+      "startMs": 37600,
+      "endMs": 39700,
+      "kind": "body"
+    },
+    {
+      "text": "Không spam",
+      "highlight": "",
+      "startMs": 39700,
+      "endMs": 41700,
+      "kind": "body"
+    },
+    {
+      "text": "Không chung chung",
+      "highlight": "",
+      "startMs": 41700,
+      "endMs": 43700,
+      "kind": "body"
+    },
+    {
+      "text": "Mỗi khách hàng nhận được một lời chào phù hợp với nhu cầu của họ",
+      "highlight": "",
+      "startMs": 43700,
+      "endMs": 48950,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 23950,
-      "endMs": 26950,
+      "startMs": 48950,
+      "endMs": 51950,
       "kind": "cta"
     }
   ],
-  "totalMs": 26950,
+  "totalMs": 51950,
   "hasAudio": true
 }
