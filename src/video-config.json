@@ -1,97 +1,97 @@
 {
   "theme": {
-    "id": "dark-minimal",
+    "id": "gradient-purple",
     "bg": [
-      "#0a0a0a",
-      "#0a0a0a",
-      "#0a0a0a"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
     "text": "#ffffff",
-    "accent": "#00d4ff",
-    "muted": "#f5f5f5"
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "AI Agent giúp bạn chốt đơn ngay cả khi bạn đang tắm",
+      "text": "Mỗi ngày bạn nhận bao nhiêu cuộc gọi nhỡ? Bao nhiêu tin nhắn chưa trả lời? Đó là tiền đang trôi đi",
       "highlight": "",
       "startMs": 0,
-      "endMs": 4200,
+      "endMs": 7700,
       "kind": "hook"
     },
     {
-      "text": "Nghe có vẻ hài nhưng có thật",
+      "text": "Mỗi cuộc gọi nhỡ là một khách hàng tiềm năng đã tìm đến đối thủ",
       "highlight": "",
-      "startMs": 4200,
-      "endMs": 6650,
+      "startMs": 7700,
+      "endMs": 12950,
       "kind": "body"
     },
     {
-      "text": "Khách hàng vào website của bạn lúc 10 giờ tối",
+      "text": "AI Agent trả lời tất cả",
       "highlight": "",
-      "startMs": 6650,
-      "endMs": 10150,
+      "startMs": 12950,
+      "endMs": 15050,
       "kind": "body"
     },
     {
-      "text": "Họ muốn biết giá sản phẩm",
+      "text": "Ghi lại thông tin khách hàng",
       "highlight": "",
-      "startMs": 10150,
-      "endMs": 12250,
+      "startMs": 15050,
+      "endMs": 17150,
       "kind": "body"
     },
     {
-      "text": "Họ muốn được tư vấn",
+      "text": "Phân loại yêu cầu",
       "highlight": "",
-      "startMs": 12250,
-      "endMs": 14250,
-      "kind": "body"
-    },
-    {
-      "text": "Chatbot AI Agent trên website trả lời ngay",
-      "highlight": "",
-      "startMs": 14250,
-      "endMs": 17050,
-      "kind": "body"
-    },
-    {
-      "text": "Tư vấn sản phẩm phù hợp",
-      "highlight": "",
-      "startMs": 17050,
+      "startMs": 17150,
       "endMs": 19150,
       "kind": "body"
     },
     {
-      "text": "Gửi bảng giá chi tiết",
+      "text": "Khách mới hay khách cũ? Mua sản phẩm hay khiếu nại? Cần gấp hay có thể chờ? AI Agent phân loại và xử lý tự động",
       "highlight": "",
       "startMs": 19150,
-      "endMs": 21150,
+      "endMs": 28250,
       "kind": "body"
     },
     {
-      "text": "Giải đáp thắc mắc",
+      "text": "Chuyển việc quan trọng cho bạn",
       "highlight": "",
-      "startMs": 21150,
-      "endMs": 23150,
+      "startMs": 28250,
+      "endMs": 30350,
       "kind": "body"
     },
     {
-      "text": "Chốt đơn hàng",
+      "text": "Những việc đơn giản AI tự xử lý",
       "highlight": "",
-      "startMs": 23150,
-      "endMs": 25150,
+      "startMs": 30350,
+      "endMs": 33150,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ đã thiết lập hệ thống này cho nhiều doanh nghiệp",
+      "highlight": "",
+      "startMs": 33150,
+      "endMs": 37000,
+      "kind": "body"
+    },
+    {
+      "text": "Kết quả là không còn cuộc gọi nhỡ",
+      "highlight": "",
+      "startMs": 37000,
+      "endMs": 39800,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 25150,
-      "endMs": 28150,
+      "startMs": 39800,
+      "endMs": 42800,
       "kind": "cta"
     }
   ],
-  "totalMs": 28150,
+  "totalMs": 42800,
   "hasAudio": true
 }
