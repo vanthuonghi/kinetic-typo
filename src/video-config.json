@@ -1,132 +1,48 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "luxury-gold",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
-    "muted": "#ffffff"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
-  "effect": "word-rise",
+  "effect": "karaoke",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Bạn muốn có một trợ lý AI Agent riêng cho doanh nghiệp của mình? Hỉ có thể setup cho bạn",
-      "highlight": "",
+      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
+      "highlight": "bình",
       "startMs": 0,
-      "endMs": 7000,
+      "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Quy trình đơn giản",
-      "highlight": "",
-      "startMs": 7000,
-      "endMs": 9000,
+      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
+      "highlight": "speed",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Bước một: Hỉ phân tích nhu cầu của bạn",
-      "highlight": "",
-      "startMs": 9000,
-      "endMs": 12150,
+      "text": "Một cuốn sách chỉ trong 3 phút",
+      "highlight": "cuốn",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "Bạn cần tự động hóa việc gì? Chăm sóc khách hàng? Đăng bài mạng xã hội? Gửi email marketing? Quản lý đơn hàng? Hay tất cả những việc trên? Bước hai: Hỉ thiết kế hệ thống phù hợp",
-      "highlight": "",
-      "startMs": 12150,
-      "endMs": 25450,
-      "kind": "body"
-    },
-    {
-      "text": "Không rườm rà",
-      "highlight": "",
-      "startMs": 25450,
-      "endMs": 27450,
-      "kind": "body"
-    },
-    {
-      "text": "Không tính năng vô dụng",
-      "highlight": "",
-      "startMs": 27450,
-      "endMs": 29450,
-      "kind": "body"
-    },
-    {
-      "text": "Chỉ những gì bạn thực sự cần",
-      "highlight": "",
-      "startMs": 29450,
-      "endMs": 31900,
-      "kind": "body"
-    },
-    {
-      "text": "Bước ba: Cài đặt tự động",
-      "highlight": "",
-      "startMs": 31900,
-      "endMs": 34000,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ làm tất cả",
-      "highlight": "",
-      "startMs": 34000,
-      "endMs": 36000,
-      "kind": "body"
-    },
-    {
-      "text": "Bạn không cần biết kỹ thuật",
-      "highlight": "",
-      "startMs": 36000,
-      "endMs": 38100,
-      "kind": "body"
-    },
-    {
-      "text": "Bước bốn: Hướng dẫn sử dụng",
-      "highlight": "",
-      "startMs": 38100,
-      "endMs": 40200,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ chỉ bạn cách kiểm tra hệ thống mỗi ngày",
-      "highlight": "",
-      "startMs": 40200,
-      "endMs": 43700,
-      "kind": "body"
-    },
-    {
-      "text": "Chỉ 10 phút mỗi sáng",
-      "highlight": "",
-      "startMs": 43700,
-      "endMs": 45700,
-      "kind": "body"
-    },
-    {
-      "text": "Tất cả chỉ trong 1 buổi làm việc",
-      "highlight": "",
-      "startMs": 45700,
-      "endMs": 48500,
-      "kind": "body"
-    },
-    {
-      "text": "Kết quả bạn nhận được: Một hệ thống AI Agent làm việc cho mình 24/7",
-      "highlight": "",
-      "startMs": 48500,
-      "endMs": 53750,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
-      "startMs": 53750,
-      "endMs": 56750,
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 56750,
+  "totalMs": 15000,
   "hasAudio": true
 }
