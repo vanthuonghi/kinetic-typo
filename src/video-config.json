@@ -1,132 +1,132 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "ocean-blue",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
     "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Lead generation tự động là siêu năng lực của AI Agent",
+      "text": "Bạn muốn có một trợ lý AI Agent riêng cho doanh nghiệp của mình? Hỉ có thể setup cho bạn",
       "highlight": "",
       "startMs": 0,
-      "endMs": 3850,
+      "endMs": 7000,
       "kind": "hook"
     },
     {
-      "text": "Bạn có biết hầu hết chủ doanh nghiệp nhỏ mất 70% thời gian để tìm kiếm khách hàng? Họ post bài mỗi ngày",
+      "text": "Quy trình đơn giản",
       "highlight": "",
-      "startMs": 3850,
-      "endMs": 11900,
+      "startMs": 7000,
+      "endMs": 9000,
       "kind": "body"
     },
     {
-      "text": "Họ chạy quảng cáo",
+      "text": "Bước một: Hỉ phân tích nhu cầu của bạn",
       "highlight": "",
-      "startMs": 11900,
-      "endMs": 13900,
+      "startMs": 9000,
+      "endMs": 12150,
       "kind": "body"
     },
     {
-      "text": "Họ đi networking",
+      "text": "Bạn cần tự động hóa việc gì? Chăm sóc khách hàng? Đăng bài mạng xã hội? Gửi email marketing? Quản lý đơn hàng? Hay tất cả những việc trên? Bước hai: Hỉ thiết kế hệ thống phù hợp",
       "highlight": "",
-      "startMs": 13900,
-      "endMs": 15900,
+      "startMs": 12150,
+      "endMs": 25450,
       "kind": "body"
     },
     {
-      "text": "Nhưng kết quả không như mong đợi",
+      "text": "Không rườm rà",
       "highlight": "",
-      "startMs": 15900,
-      "endMs": 18350,
+      "startMs": 25450,
+      "endMs": 27450,
       "kind": "body"
     },
     {
-      "text": "AI Agent thay đổi cuộc chơi",
+      "text": "Không tính năng vô dụng",
       "highlight": "",
-      "startMs": 18350,
-      "endMs": 20450,
+      "startMs": 27450,
+      "endMs": 29450,
       "kind": "body"
     },
     {
-      "text": "Nó tự động tìm kiếm khách hàng tiềm năng trên Facebook và TikTok",
+      "text": "Chỉ những gì bạn thực sự cần",
       "highlight": "",
-      "startMs": 20450,
-      "endMs": 25000,
+      "startMs": 29450,
+      "endMs": 31900,
       "kind": "body"
     },
     {
-      "text": "Những người đang quan tâm đến sản phẩm của bạn",
+      "text": "Bước ba: Cài đặt tự động",
       "highlight": "",
-      "startMs": 25000,
-      "endMs": 28500,
+      "startMs": 31900,
+      "endMs": 34000,
       "kind": "body"
     },
     {
-      "text": "Những người đã tương tác với bài viết",
+      "text": "Hỉ làm tất cả",
       "highlight": "",
-      "startMs": 28500,
-      "endMs": 31300,
+      "startMs": 34000,
+      "endMs": 36000,
       "kind": "body"
     },
     {
-      "text": "Những người có nhu cầu thực sự",
+      "text": "Bạn không cần biết kỹ thuật",
       "highlight": "",
-      "startMs": 31300,
-      "endMs": 33750,
+      "startMs": 36000,
+      "endMs": 38100,
       "kind": "body"
     },
     {
-      "text": "Sau đó AI Agent gửi tin nhắn chào hỏi tự động",
+      "text": "Bước bốn: Hướng dẫn sử dụng",
       "highlight": "",
-      "startMs": 33750,
-      "endMs": 37600,
+      "startMs": 38100,
+      "endMs": 40200,
       "kind": "body"
     },
     {
-      "text": "Cá nhân hóa từng tin nhắn",
+      "text": "Hỉ chỉ bạn cách kiểm tra hệ thống mỗi ngày",
       "highlight": "",
-      "startMs": 37600,
-      "endMs": 39700,
-      "kind": "body"
-    },
-    {
-      "text": "Không spam",
-      "highlight": "",
-      "startMs": 39700,
-      "endMs": 41700,
-      "kind": "body"
-    },
-    {
-      "text": "Không chung chung",
-      "highlight": "",
-      "startMs": 41700,
+      "startMs": 40200,
       "endMs": 43700,
       "kind": "body"
     },
     {
-      "text": "Mỗi khách hàng nhận được một lời chào phù hợp với nhu cầu của họ",
+      "text": "Chỉ 10 phút mỗi sáng",
       "highlight": "",
       "startMs": 43700,
-      "endMs": 48950,
+      "endMs": 45700,
+      "kind": "body"
+    },
+    {
+      "text": "Tất cả chỉ trong 1 buổi làm việc",
+      "highlight": "",
+      "startMs": 45700,
+      "endMs": 48500,
+      "kind": "body"
+    },
+    {
+      "text": "Kết quả bạn nhận được: Một hệ thống AI Agent làm việc cho mình 24/7",
+      "highlight": "",
+      "startMs": 48500,
+      "endMs": 53750,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 48950,
-      "endMs": 51950,
+      "startMs": 53750,
+      "endMs": 56750,
       "kind": "cta"
     }
   ],
-  "totalMs": 51950,
+  "totalMs": 56750,
   "hasAudio": true
 }
