@@ -1,29 +1,29 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "luxury-gold",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
-    "muted": "#ffffff"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Peripheral Vision - Mở rộng tầm nhìn khi đọc",
-      "highlight": "rộng",
+      "text": "Preview - Đọc lướt trước, đọc sâu sau",
+      "highlight": "lướt",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
       "text": "Luyện 15 phút mỗi ngày để thấy hiệu quả",
-      "highlight": "ngày",
+      "highlight": "Luyện",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
