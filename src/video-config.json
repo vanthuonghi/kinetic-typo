@@ -1,57 +1,50 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "gradient-purple",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
-  "effect": "karaoke",
+  "effect": "line-mask",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "AI phân tích 10",
-      "highlight": "",
+      "text": "Dùng ChatGPT tóm tắt 1 bài giảng chỉ trong 3 phút",
+      "highlight": "giảng",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "000 báo cáo mỗi giây",
-      "highlight": "",
+      "text": "Nhờ Notion AI, viết email chuyên nghiệp chỉ 5 dòng",
+      "highlight": "viết",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Mô hình LSTM dự đoán xu hướng với độ chính xác 85%",
-      "highlight": "hướng",
+      "text": "Claude giúp lập kế hoạch học tập 7 ngày hiệu quả",
+      "highlight": "hoạch",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Ra quyết định mua bán trong 0",
-      "highlight": "định",
+      "text": "Grammarly sửa lỗi ngữ pháp, giảm 50% thời gian viết",
+      "highlight": "giảm",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "1 giây không cảm xúc",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
