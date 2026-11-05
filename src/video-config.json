@@ -1,97 +1,97 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "warm-orange",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#1a0000",
+      "#2d1b00",
+      "#1a0f00"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#ffcc80",
+    "accent": "#ff9800",
+    "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Mỗi ngày bạn nhận bao nhiêu cuộc gọi nhỡ? Bao nhiêu tin nhắn chưa trả lời? Đó là tiền đang trôi đi",
+      "text": "Bạn có biết AI Agent có thể giúp bạn viết content? Viết bài Facebook",
       "highlight": "",
       "startMs": 0,
-      "endMs": 7700,
+      "endMs": 4900,
       "kind": "hook"
     },
     {
-      "text": "Mỗi cuộc gọi nhỡ là một khách hàng tiềm năng đã tìm đến đối thủ",
+      "text": "Viết mô tả sản phẩm",
       "highlight": "",
-      "startMs": 7700,
-      "endMs": 12950,
+      "startMs": 4900,
+      "endMs": 6900,
       "kind": "body"
     },
     {
-      "text": "AI Agent trả lời tất cả",
+      "text": "Viết email quảng cáo",
       "highlight": "",
-      "startMs": 12950,
-      "endMs": 15050,
+      "startMs": 6900,
+      "endMs": 8900,
       "kind": "body"
     },
     {
-      "text": "Ghi lại thông tin khách hàng",
+      "text": "Viết kịch bản video",
       "highlight": "",
-      "startMs": 15050,
-      "endMs": 17150,
+      "startMs": 8900,
+      "endMs": 10900,
       "kind": "body"
     },
     {
-      "text": "Phân loại yêu cầu",
+      "text": "Tất cả chỉ trong vài phút",
       "highlight": "",
-      "startMs": 17150,
-      "endMs": 19150,
+      "startMs": 10900,
+      "endMs": 13000,
       "kind": "body"
     },
     {
-      "text": "Khách mới hay khách cũ? Mua sản phẩm hay khiếu nại? Cần gấp hay có thể chờ? AI Agent phân loại và xử lý tự động",
+      "text": "Bạn không cần phải là người viết giỏi",
       "highlight": "",
-      "startMs": 19150,
-      "endMs": 28250,
+      "startMs": 13000,
+      "endMs": 15800,
       "kind": "body"
     },
     {
-      "text": "Chuyển việc quan trọng cho bạn",
+      "text": "AI Agent làm hộ bạn",
       "highlight": "",
-      "startMs": 28250,
-      "endMs": 30350,
+      "startMs": 15800,
+      "endMs": 17800,
       "kind": "body"
     },
     {
-      "text": "Những việc đơn giản AI tự xử lý",
+      "text": "Chỉ cần cho nó biết chủ đề và vài ý chính",
       "highlight": "",
-      "startMs": 30350,
-      "endMs": 33150,
+      "startMs": 17800,
+      "endMs": 21650,
       "kind": "body"
     },
     {
-      "text": "Hỉ đã thiết lập hệ thống này cho nhiều doanh nghiệp",
+      "text": "Nó sẽ viết thành bài hoàn chỉnh",
       "highlight": "",
-      "startMs": 33150,
-      "endMs": 37000,
+      "startMs": 21650,
+      "endMs": 24100,
       "kind": "body"
     },
     {
-      "text": "Kết quả là không còn cuộc gọi nhỡ",
+      "text": "Đúng tông giọng thương hiệu của bạn",
       "highlight": "",
-      "startMs": 37000,
-      "endMs": 39800,
+      "startMs": 24100,
+      "endMs": 26550,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 39800,
-      "endMs": 42800,
+      "startMs": 26550,
+      "endMs": 29550,
       "kind": "cta"
     }
   ],
-  "totalMs": 42800,
+  "totalMs": 29550,
   "hasAudio": true
 }
