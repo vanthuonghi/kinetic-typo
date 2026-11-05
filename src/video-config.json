@@ -1,125 +1,76 @@
 {
   "theme": {
-    "id": "green-tech",
+    "id": "dark-minimal",
     "bg": [
-      "#001a0f",
-      "#001a0f",
-      "#001a0f"
+      "#0a0a0a",
+      "#0a0a0a",
+      "#0a0a0a"
     ],
-    "text": "#00ff88",
-    "accent": "#00ff88",
-    "muted": "#e0ffe0"
+    "text": "#ffffff",
+    "accent": "#00d4ff",
+    "muted": "#f5f5f5"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Khách hàng thường hỏi: Dịch vụ của bạn có bảo hành không? Có giao hàng không? Có đổi trả không? Mỗi ngày bạn trả lời những câu hỏi giống nhau hàng chục lần",
+      "text": "Bạn muốn tăng doanh thu nhưng không biết bắt đầu từ đâu? AI Agent có thể phân tích dữ liệu bán hàng của bạn",
       "highlight": "",
       "startMs": 0,
-      "endMs": 11550,
+      "endMs": 8400,
       "kind": "hook"
     },
     {
-      "text": "Mệt mỏi",
+      "text": "Tìm ra sản phẩm bán chạy",
       "highlight": "",
-      "startMs": 11550,
-      "endMs": 13550,
+      "startMs": 8400,
+      "endMs": 10500,
       "kind": "body"
     },
     {
-      "text": "Tốn thời gian",
+      "text": "Thời điểm khách mua nhiều nhất",
       "highlight": "",
-      "startMs": 13550,
-      "endMs": 15550,
+      "startMs": 10500,
+      "endMs": 12600,
       "kind": "body"
     },
     {
-      "text": "AI Agent trả lời ngay lập tức",
+      "text": "Khách hàng nào mua thường xuyên",
       "highlight": "",
-      "startMs": 15550,
-      "endMs": 18000,
+      "startMs": 12600,
+      "endMs": 14700,
       "kind": "body"
     },
     {
-      "text": "24 giờ một ngày",
+      "text": "Hỉ dùng AI Agent để đưa ra quyết định kinh doanh dựa trên dữ liệu",
       "highlight": "",
-      "startMs": 18000,
-      "endMs": 20000,
+      "startMs": 14700,
+      "endMs": 19950,
       "kind": "body"
     },
     {
-      "text": "7 ngày một tuần",
+      "text": "Không phải cảm tính",
       "highlight": "",
-      "startMs": 20000,
-      "endMs": 22000,
+      "startMs": 19950,
+      "endMs": 21950,
       "kind": "body"
     },
     {
-      "text": "Chính xác từng chữ",
+      "text": "Không phải may rủi",
       "highlight": "",
-      "startMs": 22000,
-      "endMs": 24000,
-      "kind": "body"
-    },
-    {
-      "text": "Nhất quán từng câu trả lời",
-      "highlight": "",
-      "startMs": 24000,
-      "endMs": 26100,
-      "kind": "body"
-    },
-    {
-      "text": "Không bao giờ sai sót",
-      "highlight": "",
-      "startMs": 26100,
-      "endMs": 28100,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ đã xây dựng hệ thống FAQ tự động cho nhiều doanh nghiệp",
-      "highlight": "",
-      "startMs": 28100,
-      "endMs": 32650,
-      "kind": "body"
-    },
-    {
-      "text": "Kết quả là giảm 80% cuộc gọi hỏi những câu giống nhau",
-      "highlight": "",
-      "startMs": 32650,
-      "endMs": 36850,
-      "kind": "body"
-    },
-    {
-      "text": "Nhân viên tập trung bán hàng thay vì trả lời",
-      "highlight": "",
-      "startMs": 36850,
-      "endMs": 40350,
-      "kind": "body"
-    },
-    {
-      "text": "Doanh thu tăng vì nhân viên có thêm thời gian bán hàng",
-      "highlight": "",
-      "startMs": 40350,
-      "endMs": 44550,
-      "kind": "body"
-    },
-    {
-      "text": "Bạn muốn thiết lập không?",
-      "highlight": "",
-      "startMs": 44550,
-      "endMs": 46550,
+      "startMs": 21950,
+      "endMs": 23950,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 46550,
-      "endMs": 49550,
+      "startMs": 23950,
+      "endMs": 26950,
       "kind": "cta"
     }
   ],
-  "totalMs": 49550,
+  "totalMs": 26950,
   "hasAudio": true
 }
