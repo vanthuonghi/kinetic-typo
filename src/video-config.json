@@ -1,97 +1,90 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "neon-blue",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
+    "text": "#00d4ff",
+    "accent": "#ff006e",
     "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Bạn có biết AI Agent có thể giúp bạn viết content? Viết bài Facebook",
+      "text": "Bạn muốn mở rộng kinh doanh nhưng ngại thuê thêm người? AI Agent là giải pháp",
       "highlight": "",
       "startMs": 0,
-      "endMs": 4900,
+      "endMs": 5600,
       "kind": "hook"
     },
     {
-      "text": "Viết mô tả sản phẩm",
+      "text": "Một AI Agent làm việc bằng 3 nhân viên",
       "highlight": "",
-      "startMs": 4900,
-      "endMs": 6900,
+      "startMs": 5600,
+      "endMs": 8750,
       "kind": "body"
     },
     {
-      "text": "Viết email quảng cáo",
+      "text": "Không cần đào tạo",
       "highlight": "",
-      "startMs": 6900,
-      "endMs": 8900,
+      "startMs": 8750,
+      "endMs": 10750,
       "kind": "body"
     },
     {
-      "text": "Viết kịch bản video",
+      "text": "Không cần quản lý",
       "highlight": "",
-      "startMs": 8900,
-      "endMs": 10900,
+      "startMs": 10750,
+      "endMs": 12750,
       "kind": "body"
     },
     {
-      "text": "Tất cả chỉ trong vài phút",
+      "text": "Không cần trả lương tháng 13",
       "highlight": "",
-      "startMs": 10900,
-      "endMs": 13000,
+      "startMs": 12750,
+      "endMs": 14850,
       "kind": "body"
     },
     {
-      "text": "Bạn không cần phải là người viết giỏi",
+      "text": "Hỉ đã thay thế 2 nhân viên bằng AI Agent",
       "highlight": "",
-      "startMs": 13000,
-      "endMs": 15800,
+      "startMs": 14850,
+      "endMs": 18350,
       "kind": "body"
     },
     {
-      "text": "AI Agent làm hộ bạn",
+      "text": "Chi phí giảm 70%",
       "highlight": "",
-      "startMs": 15800,
-      "endMs": 17800,
+      "startMs": 18350,
+      "endMs": 20350,
       "kind": "body"
     },
     {
-      "text": "Chỉ cần cho nó biết chủ đề và vài ý chính",
+      "text": "Hiệu quả tăng 50%",
       "highlight": "",
-      "startMs": 17800,
-      "endMs": 21650,
+      "startMs": 20350,
+      "endMs": 22350,
       "kind": "body"
     },
     {
-      "text": "Nó sẽ viết thành bài hoàn chỉnh",
+      "text": "Đó là toán học đơn giản",
       "highlight": "",
-      "startMs": 21650,
-      "endMs": 24100,
-      "kind": "body"
-    },
-    {
-      "text": "Đúng tông giọng thương hiệu của bạn",
-      "highlight": "",
-      "startMs": 24100,
-      "endMs": 26550,
+      "startMs": 22350,
+      "endMs": 24450,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 26550,
-      "endMs": 29550,
+      "startMs": 24450,
+      "endMs": 27450,
       "kind": "cta"
     }
   ],
-  "totalMs": 29550,
+  "totalMs": 27450,
   "hasAudio": true
 }
