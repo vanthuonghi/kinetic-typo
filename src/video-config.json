@@ -1,48 +1,90 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "gradient-purple",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
-  "effect": "karaoke",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "bình",
+      "text": "Chunking là kỹ thuật đọc theo cụm từ thay vì từng từ một",
+      "highlight": "theo",
       "startMs": 0,
-      "endMs": 0,
+      "endMs": 4550,
       "kind": "hook"
     },
     {
-      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
-      "highlight": "speed",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Thay vì đọc 'Tôi đi chợ mua rau', hãy đọc 'Tôi đi chợ' và 'mua rau' như 2 cụm",
+      "highlight": "Thay",
+      "startMs": 4550,
+      "endMs": 11200,
       "kind": "body"
     },
     {
-      "text": "Một cuốn sách chỉ trong 3 phút",
-      "highlight": "trong",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Não bạn xử lý cụm từ nhanh hơn từng từ",
+      "highlight": "từng",
+      "startMs": 11200,
+      "endMs": 14700,
       "kind": "body"
+    },
+    {
+      "text": "Hỉ đã luyện tập bằng cách vẽ khung autour cụm từ trong sách",
+      "highlight": "sách",
+      "startMs": 14700,
+      "endMs": 19250,
+      "kind": "body"
+    },
+    {
+      "text": "Sau 1 tuần, số lần dừng mắt giảm từ 12 xuống 4 trên mỗi dòng",
+      "highlight": "dòng",
+      "startMs": 19250,
+      "endMs": 24500,
+      "kind": "body"
+    },
+    {
+      "text": "Tốc độ đọc tăng gấp đôi",
+      "highlight": "tăng",
+      "startMs": 24500,
+      "endMs": 26600,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn muốn thử? Hãy lấy một trang sách, vẽ khung quanh 2-3 từ và đọc theo cụm",
+      "highlight": "trang",
+      "startMs": 26600,
+      "endMs": 32550,
+      "kind": "body"
+    },
+    {
+      "text": "Chỉ 15 phút mỗi ngày",
+      "highlight": "",
+      "startMs": 32550,
+      "endMs": 34550,
+      "kind": "body"
+    },
+    {
+      "text": "Sau 7 ngày bạn sẽ thấy sự khác biệt",
+      "highlight": "khác",
+      "startMs": 34550,
+      "endMs": 37700,
+      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "",
+      "highlight": "Đăng ký",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 15000,
+  "totalMs": 37700,
   "hasAudio": true
 }
