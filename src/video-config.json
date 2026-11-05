@@ -1,97 +1,55 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "warm-orange",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#1a0000",
+      "#2d1b00",
+      "#1a0f00"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
+    "text": "#ffcc80",
+    "accent": "#ff9800",
     "muted": "#ffffff"
   },
-  "effect": "word-rise",
+  "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Bạn có 1000 khách hàng trong danh sách",
+      "text": "Mắt bạn chỉ đọc 1 từ mỗi lần? Hãy tập đọc 3-4 từ một cụm",
       "highlight": "",
       "startMs": 0,
-      "endMs": 2800,
+      "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Bao nhiêu người đã mua lại lần hai? Hầu hết chủ doanh nghiệp không biết",
-      "highlight": "",
-      "startMs": 2800,
-      "endMs": 8050,
+      "text": "Não xử lý cụm từ nhanh hơn đọc thầm từng chữ 3 lần",
+      "highlight": "nhanh",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Họ có danh sách khách hàng nhưng không tận dụng được",
-      "highlight": "",
-      "startMs": 8050,
-      "endMs": 11900,
+      "text": "Dùng ngón tay dẫn mắt, tăng tốc 50% ngay lập tức",
+      "highlight": "ngón",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "AI Agent thay đổi điều đó",
-      "highlight": "",
-      "startMs": 11900,
-      "endMs": 14000,
+      "text": "Bỏ đọc thầm, bạn tiết kiệm 30% thời gian mỗi ngày",
+      "highlight": "kiệm",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "Nó tự động gửi chương trình khách hàng thân thiết",
-      "highlight": "",
-      "startMs": 14000,
-      "endMs": 17500,
-      "kind": "body"
-    },
-    {
-      "text": "Tặng voucher giảm giá",
-      "highlight": "",
-      "startMs": 17500,
-      "endMs": 19500,
-      "kind": "body"
-    },
-    {
-      "text": "Nhắc mua lại khi sản phẩm sắp hết",
-      "highlight": "",
-      "startMs": 19500,
-      "endMs": 22300,
-      "kind": "body"
-    },
-    {
-      "text": "Chăm sóc khách hàng cũ",
-      "highlight": "",
-      "startMs": 22300,
-      "endMs": 24300,
-      "kind": "body"
-    },
-    {
-      "text": "Họ là những người đã tin tưởng bạn",
-      "highlight": "",
-      "startMs": 24300,
-      "endMs": 27100,
-      "kind": "body"
-    },
-    {
-      "text": "Họ dễ bán hơn khách mới gấp 5 lần",
-      "highlight": "",
-      "startMs": 27100,
-      "endMs": 30250,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
-      "startMs": 30250,
-      "endMs": 33250,
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 33250,
+  "totalMs": 15000,
   "hasAudio": true
 }
