@@ -1,97 +1,97 @@
 {
   "theme": {
-    "id": "green-tech",
+    "id": "dark-minimal",
     "bg": [
-      "#001a0f",
-      "#001a0f",
-      "#001a0f"
+      "#0a0a0a",
+      "#0a0a0a",
+      "#0a0a0a"
     ],
-    "text": "#00ff88",
-    "accent": "#00ff88",
-    "muted": "#e0ffe0"
+    "text": "#ffffff",
+    "accent": "#00d4ff",
+    "muted": "#f5f5f5"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Xây dựng hệ thống AI Agent không cần biết lập trình",
+      "text": "AI Agent giúp bạn chốt đơn ngay cả khi bạn đang tắm",
       "highlight": "",
       "startMs": 0,
-      "endMs": 3850,
+      "endMs": 4200,
       "kind": "hook"
     },
     {
-      "text": "Hỉ làm được",
+      "text": "Nghe có vẻ hài nhưng có thật",
       "highlight": "",
-      "startMs": 3850,
-      "endMs": 5850,
+      "startMs": 4200,
+      "endMs": 6650,
       "kind": "body"
     },
     {
-      "text": "Bạn cũng làm được",
+      "text": "Khách hàng vào website của bạn lúc 10 giờ tối",
       "highlight": "",
-      "startMs": 5850,
-      "endMs": 7850,
+      "startMs": 6650,
+      "endMs": 10150,
       "kind": "body"
     },
     {
-      "text": "Nhiều người nghĩ AI Agent là công nghệ cao chỉ dành cho dân IT",
+      "text": "Họ muốn biết giá sản phẩm",
       "highlight": "",
-      "startMs": 7850,
-      "endMs": 12750,
+      "startMs": 10150,
+      "endMs": 12250,
       "kind": "body"
     },
     {
-      "text": "Nhưng sự thật là bạn chỉ cần biết mình muốn tự động hóa việc gì",
+      "text": "Họ muốn được tư vấn",
       "highlight": "",
-      "startMs": 12750,
-      "endMs": 18000,
+      "startMs": 12250,
+      "endMs": 14250,
       "kind": "body"
     },
     {
-      "text": "Hỉ sẽ hướng dẫn bạn từng bước",
+      "text": "Chatbot AI Agent trên website trả lời ngay",
       "highlight": "",
-      "startMs": 18000,
-      "endMs": 20450,
+      "startMs": 14250,
+      "endMs": 17050,
       "kind": "body"
     },
     {
-      "text": "Từ chatbot Facebook tự động trả lời tin nhắn",
+      "text": "Tư vấn sản phẩm phù hợp",
       "highlight": "",
-      "startMs": 20450,
-      "endMs": 23600,
+      "startMs": 17050,
+      "endMs": 19150,
       "kind": "body"
     },
     {
-      "text": "Đến email marketing gửi tự động theo kịch bản",
+      "text": "Gửi bảng giá chi tiết",
       "highlight": "",
-      "startMs": 23600,
-      "endMs": 26750,
+      "startMs": 19150,
+      "endMs": 21150,
       "kind": "body"
     },
     {
-      "text": "Đến quản lý đơn hàng từ Facebook vào hệ thống",
+      "text": "Giải đáp thắc mắc",
       "highlight": "",
-      "startMs": 26750,
-      "endMs": 30250,
+      "startMs": 21150,
+      "endMs": 23150,
       "kind": "body"
     },
     {
-      "text": "Tất cả trong một hệ thống duy nhất",
+      "text": "Chốt đơn hàng",
       "highlight": "",
-      "startMs": 30250,
-      "endMs": 33050,
+      "startMs": 23150,
+      "endMs": 25150,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 33050,
-      "endMs": 36050,
+      "startMs": 25150,
+      "endMs": 28150,
       "kind": "cta"
     }
   ],
-  "totalMs": 36050,
+  "totalMs": 28150,
   "hasAudio": true
 }
