@@ -1,55 +1,97 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "green-tech",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
-    "muted": "#ffffff"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
-  "effect": "typewriter",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Mắt bạn chỉ đọc 1 từ mỗi lần? Hãy tập đọc 3-4 từ một cụm",
+      "text": "Xây dựng hệ thống AI Agent không cần biết lập trình",
       "highlight": "",
       "startMs": 0,
-      "endMs": 0,
+      "endMs": 3850,
       "kind": "hook"
     },
     {
-      "text": "Não xử lý cụm từ nhanh hơn đọc thầm từng chữ 3 lần",
-      "highlight": "nhanh",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Hỉ làm được",
+      "highlight": "",
+      "startMs": 3850,
+      "endMs": 5850,
       "kind": "body"
     },
     {
-      "text": "Dùng ngón tay dẫn mắt, tăng tốc 50% ngay lập tức",
-      "highlight": "ngón",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Bạn cũng làm được",
+      "highlight": "",
+      "startMs": 5850,
+      "endMs": 7850,
       "kind": "body"
     },
     {
-      "text": "Bỏ đọc thầm, bạn tiết kiệm 30% thời gian mỗi ngày",
-      "highlight": "kiệm",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Nhiều người nghĩ AI Agent là công nghệ cao chỉ dành cho dân IT",
+      "highlight": "",
+      "startMs": 7850,
+      "endMs": 12750,
       "kind": "body"
+    },
+    {
+      "text": "Nhưng sự thật là bạn chỉ cần biết mình muốn tự động hóa việc gì",
+      "highlight": "",
+      "startMs": 12750,
+      "endMs": 18000,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ sẽ hướng dẫn bạn từng bước",
+      "highlight": "",
+      "startMs": 18000,
+      "endMs": 20450,
+      "kind": "body"
+    },
+    {
+      "text": "Từ chatbot Facebook tự động trả lời tin nhắn",
+      "highlight": "",
+      "startMs": 20450,
+      "endMs": 23600,
+      "kind": "body"
+    },
+    {
+      "text": "Đến email marketing gửi tự động theo kịch bản",
+      "highlight": "",
+      "startMs": 23600,
+      "endMs": 26750,
+      "kind": "body"
+    },
+    {
+      "text": "Đến quản lý đơn hàng từ Facebook vào hệ thống",
+      "highlight": "",
+      "startMs": 26750,
+      "endMs": 30250,
+      "kind": "body"
+    },
+    {
+      "text": "Tất cả trong một hệ thống duy nhất",
+      "highlight": "",
+      "startMs": 30250,
+      "endMs": 33050,
+      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
+      "highlight": "Đăng ký",
+      "startMs": 33050,
+      "endMs": 36050,
       "kind": "cta"
     }
   ],
-  "totalMs": 15000,
+  "totalMs": 36050,
   "hasAudio": true
 }
