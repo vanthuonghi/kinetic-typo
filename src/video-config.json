@@ -1,50 +1,50 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "pink-modern",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#ff80ab",
+    "accent": "#ff4081",
+    "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Bỏ đọc thầm - Kỹ thuật nền tảng của Speed Reading",
-      "highlight": "Reading",
+      "text": "Regression - Bỏ thói quen đọc lại",
+      "highlight": "Regression",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
       "text": "Đây là kỹ thuật quan trọng giúp bạn đọc nhanh hơn gấp 3 lần mà vẫn hiểu sâu",
-      "highlight": "thuật",
+      "highlight": "trọng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
       "text": "Hỉ đã áp dụng phương pháp này và đọc xong 1 cuốn sách 300 trang chỉ trong 2 giờ",
-      "highlight": "phương",
+      "highlight": "xong",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
       "text": "Bạn cũng có thể làm được",
-      "highlight": "được",
+      "highlight": "cũng",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
       "text": "Bắt đầu với 15 phút luyện tập mỗi ngày",
-      "highlight": "luyện",
+      "highlight": "ngày",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
@@ -65,7 +65,7 @@
     },
     {
       "text": "Hãy đăng ký khóa học Speed Reading của Hỉ để được hướng dẫn chi tiết từ A đến Z",
-      "highlight": "Reading",
+      "highlight": "tiết",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
