@@ -1,182 +1,163 @@
 # 🎬 Kinetic Typography Video Generator
 
-Tạo video 15 giây chỉ bằng code — **không cần ảnh, không cần video, chỉ cần voice + text chuyển động**.
+Video short (9:16 / 4:5 / 1:1) chỉ từ **text + giọng đọc**: không ảnh, không footage.
+Chữ hiện theo nhịp nói thật (karaoke), nền gradient động, có sẵn 7 hiệu ứng và
+4 kiểu chuyển cảnh.
 
-## 🚀 Quick Start
+## Yêu cầu
 
-### 1. Clone hoặc tạo repo trên GitHub
+| Thứ | Phiên bản đã test | Ghi chú |
+|---|---|---|
+| Node.js | 22 | npm 10+ |
+| FFmpeg | 8.0 | cần `ffmpeg`, `ffprobe` trong PATH |
+| Python | 3.11+ | `pip install edge-tts==7.3.1` |
+
 ```bash
-git clone https://github.com/YOUR_USERNAME/kinetic-typo.git
-cd kinetic-typo
+npm ci                      # hoặc npm install
+pip install edge-tts==7.3.1
 ```
 
-### 2. Cài đặt dependencies (chỉ cần làm 1 lần)
+## Quy trình 3 bước
+
 ```bash
-npm install
+# 1. Sửa lời + theme trong src/video-config.json
+# 2. Sinh giọng đọc + timing từng từ (ghi vào public/voiceover.mp3 + config)
+python3 scripts/prepare.py
+
+# 3. Kiểm tra chất lượng rồi render
+python3 scripts/check_quality.py
+npm run build               # -> out/video.mp4
 ```
 
-### 3. Chỉnh sửa script
-Mở file `script.txt` và thay đổi nội dung lời nói.
+Preview trực tiếp khi đang chỉnh: `npm start` (Remotion Studio, `http://localhost:3000`).
 
-**Quy tắc vàng**: Mỗi dòng = 1 đoạn text hiển thị trong 3 giây.
+## `src/video-config.json`
 
-### 4. Chạy preview trên máy (MacBook)
-```bash
-npm start
-```
-Mở browser tại `http://localhost:3000` để xem preview.
+Đây là **file duy nhất** cần sửa cho nội dung. `prepare.py` sẽ ghi lại
+`startMs` / `endMs` / `words` / `totalMs` vào cùng file, nên đừng sửa tay mấy
+trường đó.
 
-### 5. Push lên GitHub để render
-```bash
-git add .
-git commit -m "Update script"
-git push
-```
-
-### 6. Lấy video
-- Vào tab **Actions** trên GitHub
-- Chọn workflow vừa chạy
-- Download artifact **video-15s**
-
-## 📝 Cách chỉnh sửa video
-
-### Thay đổi script
-Mở `script.txt`:
-```
-Đoạn 1 (3 giây)
-Đoạn 2 (3 giây)
-Đoạn 3 (3 giây)
-...
-```
-
-### Thay đổi style text
-Mở `src/Video.tsx`, tìm `VIDEO_CONFIG`:
-```typescript
-const VIDEO_CONFIG = {
-  fps: 30,
-  width: 1080,
-  height: 1920,
-  scenes: [
-    {
-      text: "Bạn có biết?",
-      highlight: "", // Từ khóa cần highlight (màu vàng)
-      duration: 3, // Thời gian hiển thị (giây)
-      color: "#ffffff", // Màu text
-    },
+```jsonc
+{
+  "theme": {
+    "bg": ["#000814", "#000814", "#000814"], // 3 màu nền gradient
+    "text": "#00d4ff",
+    "accent": "#ff006e",
+    "muted": "#ffffff"
+  },
+  "effect": "karaoke",              // xem bảng hiệu ứng bên dưới
+  "brand": "Văn Hỉ Official",       // watermark góc trên + nút CTA
+  "voice": "vi-VN-NamMinhNeural",   // hoặc vi-VN-HoaiMyNeural (nữ)
+  "width": 1080,                    // đổi tỉ lệ khung ở đây
+  "height": 1920,
+  "scenes": [
+    { "text": "AI phân tích 10", "highlight": "", "kind": "hook" },
+    { "text": "000 báo cáo mỗi giây", "highlight": "báo cáo", "kind": "body" },
+    { "text": "Đăng ký để học ngay", "highlight": "Đăng ký", "kind": "cta" }
   ],
-};
+  "totalMs": 15000,
+  "hasAudio": true
+}
 ```
 
-### Thay đổi giọng đọc
-Mở `scripts/generate-tts.py`, đổi dòng:
-```python
-VOICE = "vi-VN-NamMinhNeural"  # Nam
-# HOẶC
-VOICE = "vi-VN-HoaiMyNeural"  # Nữ
+- `kind`: `hook` (scene đầu, chữ to hơn 6%), `body`, `cta` (kèm nút "Theo dõi …").
+- `highlight`: từ (hoặc cụm) sẽ tô màu accent. Không phân biệt dấu.
+- `scenes[].text` là **một câu mỗi scene** — prosody tự nhiên hơn là cắt vụn.
+
+### Tỉ lệ khung
+
+`width`/`height` nhận bất kỳ giá trị nào. Mọi khoảng đệm, cỡ chữ, vị trí
+brand/progress bar đều suy ra từ khung tham chiếu 1080×1920 nên 4:5 hay 1:1
+không bị lệch bố cục:
+
+```jsonc
+"width": 1080, "height": 1350   // 4:5 feed
+"width": 1080, "height": 1080   // 1:1
 ```
 
-### Thay đổi độ phân giải
-```typescript
-// Trong src/Root.tsx
-width={1080},  // 1080 = Full HD, 720 = HD
-height={1920}, // 1920 = 9:16 (Shorts/Reels), 1080 = 16:9 (YouTube)
-```
+## Hiệu ứng
 
-## 🎨 Tùy chỉnh nâng cao
+| `effect` | Mô tả |
+|---|---|
+| `karaoke` | Cả câu mờ, từng từ sáng lên đúng lúc giọng đọc tới (cần `words`) |
+| `word-rise` | Từng từ trượt lên, có gạch chân cho từ highlight |
+| `line-mask` | Cả khối chữ được "mở" từ dưới lên như mặt nạ |
+| `slam` | Cả khối đập xuống kèm flash trắng |
+| `wave` | Từng ký tự nhún sóng |
+| `typewriter` | Gõ từng ký tự, có con trỏ nhấp nháy |
+| `sweep` | Quét sáng dần từng từ |
 
-### Đổi màu nền gradient
-Trong `src/Video.tsx`, tìm dòng `background`:
-```typescript
-background: `linear-gradient(${gradientShift * 0.1}deg, #0f0c29, #1a1a3e, #24243e)`,
-```
-Thay 3 mã màu này bằng màu bạn muốn.
+Chuyển cảnh (`fade`, `slide-up`, `wipe`, `punch`) tự luân phiên theo thứ tự
+scene, lệch pha theo `effect` đang chọn.
 
-### Đổi màu highlight
-```typescript
-color: "#ffd700", // Vàng gold
-// HOẶC
-color: "#00d4ff", // Xanh cyan
-// HOẶC
-color: "#ff6b6b", // Đỏ coral
-```
+## Font
 
-### Đổi font chữ
-```typescript
-fontFamily: "Inter, Arial, sans-serif",
-// HOẶC
-fontFamily: "Roboto, sans-serif",
-// HOẶC
-fontFamily: "Montserrat, sans-serif",
-```
+Be Vietnam Pro (Black 900 + ExtraBold 800, subset Latin + Vietnamese) được
+**self-host** trong `public/fonts/` và nạp qua `FontFace` trong `src/fonts.ts`
+kèm `delayRender()`.
 
-### Đổi kích thước chữ
-```typescript
-fontSize: 72, // Tăng/giảm theo ý bạn
-```
+Lý do: trước đây code gọi `Helvetica Neue / Segoe UI / Roboto` — không font nào
+có trên máy CI Linux, nên preview trên Mac và video render ra khác nhau. Font
+vendored cũng bảo đảm render không phụ thuộc mạng.
 
-## 📦 Cấu trúc project
+Cỡ chữ được fit bằng `canvas.measureText` (`layoutScene` trong `src/Video.tsx`),
+không dùng ước lượng "trung bình mỗi ký tự rộng 0.545em" nữa — ước lượng đó vừa
+tràn khung với glyph rộng, vừa thu nhỏ chữ vô ích với câu nhiều chữ hẹp.
+
+## Đồng bộ chữ với giọng đọc
+
+`scripts/prepare.py`:
+
+1. Gọi edge-tts cho từng scene (tự thử lại với biến thể dấu câu, rồi chia đôi,
+   rồi từng từ nếu Edge không trả audio).
+2. Chuẩn hoá loudness từng clip về −15 LUFS.
+3. Dò khoảng lặng bằng `ffmpeg silencedetect` (`-35dB`, dài ≥ 0.18s).
+4. Rải từ theo trọng số âm tiết **trên tổng thời lượng có tiếng**, rồi map ngược
+   về thời gian thực — nên chữ không "chạy" trong lúc người nói ngừng nghỉ.
+   Giọng Anh có WordBoundary từ Edge thì dùng thẳng số đo của Edge.
+5. Nối các clip, ghi `public/voiceover.mp3` và timing vào config.
+
+## Quality gate
+
+`scripts/check_quality.py` chặn các lỗi làm hỏng video thật: scene quá ngắn để
+đọc, chữ quá dày, tương phản chữ/nền thấp, thiếu word timing, từ nằm ngoài
+scene, timing không tăng dần, khoảng lặng bất thường giữa câu. Lỗi nặng exit 1;
+cảnh báo về gu thẩm mỹ chỉ in ra.
+
+## Cấu trúc
 
 ```
 kinetic-typo/
-├── .github/workflows/
-│   └── render.yml          # Tự động render khi push
+├── .github/workflows/render.yml  # CI: render khi push (cần secret ARK_API_KEY)
+├── public/fonts/                 # Be Vietnam Pro (self-host)
+├── public/voiceover.mp3          # sinh bởi prepare.py (gitignore)
 ├── scripts/
-│   └── generate-tts.py    # Tạo giọng đọc
+│   ├── prepare.py                # TTS + timing + trộn audio
+│   ├── check_quality.py          # quality gate
+│   ├── generate_script.py        # sinh kịch bản mới bằng model (tuỳ chọn, CI dùng)
+│   └── generate-tts.py           # đường cũ: chỉ đọc script.txt -> voiceover.mp3
 ├── src/
-│   ├── Video.tsx          # Code chính - video composition
-│   └── Root.tsx           # Đăng ký composition
-├── script.txt             # 📝 NỘI DUNG VIDEO - chỉnh sửa ở đây
-├── package.json
-├── tsconfig.json
+│   ├── Root.tsx                  # đăng ký composition, đọc width/height/fps
+│   ├── Video.tsx                 # scene, hiệu ứng, transitions, brand
+│   ├── fonts.ts                  # nạp font local
+│   └── video-config.json         # ⬅ NỘI DUNG VIDEO
+├── script.txt                    # chỉ còn dùng cho generate-tts.py (đường cũ)
 └── remotion.config.ts
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
-### Lỗi "Module not found"
-```bash
-npm install
-```
+| Triệu chứng | Xử lý |
+|---|---|
+| `edge-tts produced no audio` | Edge đổi API/rate limit → chạy lại; kiểm tra `voice` có đúng tên không |
+| `Chữ bị tràn khung` | Quality gate báo `won't fit the frame` → rút ngắn text hoặc tách thêm scene |
+| `Render chậm` | Giảm `width`/`height`, giảm `--concurrency`, hoặc tăng `--crf` |
+| `Browser ... not found` | `npx remotion browser ensure` |
+| `Module not found` | `npm ci` |
 
-### Lỗi "edge-tts not found"
-```bash
-pip3 install edge-tts
-```
+## Ghi chú
 
-### Video render lâu
-- Giảm `duration` trong `VIDEO_CONFIG`
-- Giảm `width/height` trong `Root.tsx`
-
-### Text bị tràn
-- Giảm `fontSize` trong `Video.tsx`
-- Giảm độ dài text trong `script.txt`
-
-## 🎯 Next Steps
-
-Khi bạn đã quen với template này, nâng cấp lên:
-
-1. **Thêm subtitle file** (.srt) để FFmpeg burn-in
-2. **Thêm nhạc nền** (tải từ YouTube Audio Library)
-3. **Thêm logo watermark**
-4. **Thêm hiệu ứng chuyển scene** (fade, slide)
-5. **Tạo nhiều template** (vertical, horizontal, square)
-
-## 📚 Tài liệu
-
-- Remotion Docs: https://www.remotion.dev/docs
-- Edge TTS: https://github.com/rany2/edge-tts
-- GitHub Actions: https://docs.github.com/en/actions
-
-## 💡 Tips
-
-- **Test script trước**: Đọc to script.txt để kiểm tra thời lượng (~15 giây)
-- **Mỗi đoạn 3-4 giây**: Đủ người đọc hiểu, không bị quá nhanh
-- **Highlight 1-2 từ**: Không quá nhiều, làm mất focus
-- **Dùng text ngắn**: "Speed reading" thay vì "Phương pháp đọc nhanh tốc độ cao"
-
-## 🆘 Support
-
-Nếu gặp vấn đề, kiểm tra:
-1. GitHub Actions logs (xem lỗi ở bước nào)
-2. Remotion Studio preview (chạy `npm start`)
-3. File `script.txt` có đúng format không
+- `node_modules/` từng bị commit vào repo; `.gitignore` đã có `node_modules/`
+  và thư mục này đã được bỏ khỏi git index (`git rm -r --cached node_modules`).
+- `@remotion/google-fonts` còn trong `package.json` nhưng không còn được dùng —
+  có thể gỡ khi bạn muốn dọn dependency.

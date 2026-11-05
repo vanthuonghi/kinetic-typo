@@ -76,8 +76,24 @@ def main() -> int:
         words = s.get("words") or []
         if not words:
             errors.append(f"{tag}: no word timings (karaoke would freeze)")
-        elif words[-1]["e"] < (s["endMs"] - s["startMs"]) * 0.5:
-            warnings.append(f"{tag}: word timings end early")
+        else:
+            # words[] carry ABSOLUTE timestamps, so they must be compared with
+            # the scene window. The old check compared them against the scene
+            # duration, which made "word timings end early" almost never fire.
+            scene_start, scene_end = s["startMs"], s["endMs"]
+            first, last = words[0]["s"], words[-1]["e"]
+            if first < scene_start - 50 or first > scene_end:
+                errors.append(f"{tag}: first word starts outside the scene ({first}ms)")
+            if last > scene_end + 50:
+                warnings.append(f"{tag}: last word ends after the scene ({last}ms)")
+            covered = max(0, min(last, scene_end) - scene_start)
+            if covered < (scene_end - scene_start) * 0.5:
+                warnings.append(f"{tag}: word timings cover only {covered}ms of the scene")
+            if any(cur["s"] < prev["s"] for prev, cur in zip(words, words[1:])):
+                errors.append(f"{tag}: word timings are not monotonic")
+            gaps = [cur["s"] - prev["e"] for prev, cur in zip(words, words[1:])]
+            if gaps and max(gaps) > 1200:
+                warnings.append(f"{tag}: {max(gaps)}ms silent gap inside the sentence")
 
     print(f"Quality check: {len(scenes)} scenes, {total:.1f}s, contrast {ratio:.1f}:1")
     for w in warnings:

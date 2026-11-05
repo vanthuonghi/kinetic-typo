@@ -79,5 +79,7 @@
     }
   ],
   "totalMs": 50000,
-  "hasAudio": true
+  "hasAudio": true,
+  "width": 1080,
+  "height": 1920
 }

@@ -23,6 +23,8 @@ MP3 = PUBLIC / "voiceover.mp3"
 
 SUFFIXES = ["", ",", ".", " .", " ,"]
 GAP = 110  # ms of air between scenes
+SILENCE_DB = -35      # anything quieter than this counts as a pause
+SILENCE_MIN_S = 0.18  # ...if it lasts at least this long
 VOWELS = "aeiouyàáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ"
 
 
@@ -44,6 +46,50 @@ def dur_ms(path: Path) -> int:
         text=True,
     ).strip()
     return int(float(out) * 1000)
+
+
+def detect_speech_windows(path: Path, total_ms: int):
+    """Return [(start_ms, end_ms)] windows that actually contain speech.
+
+    ffmpeg's silencedetect tells us where the voice really pauses. Vietnamese
+    edge-tts voices emit no WordBoundary events, so without this the word
+    timings are spread over the whole clip and drift out of sync on anything
+    longer than a few words: the text keeps moving while the speaker is silent.
+    """
+    proc = subprocess.run(
+        ["ffmpeg", "-hide_banner", "-i", str(path),
+         "-af", f"silencedetect=noise={SILENCE_DB}dB:d={SILENCE_MIN_S}",
+         "-f", "null", "-"],
+        stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True,
+    )
+
+    starts, ends = [], []
+    for line in (proc.stderr or "").splitlines():
+        for key, bucket in (("silence_start:", starts), ("silence_end:", ends)):
+            if key in line:
+                try:
+                    bucket.append(float(line.split(key)[1].split()[0]) * 1000)
+                except (IndexError, ValueError):
+                    pass
+
+    silences = []
+    for i, start in enumerate(starts):
+        end = ends[i] if i < len(ends) and ends[i] > start else total_ms
+        silences.append((start, end))
+    if not silences:
+        return [(0, total_ms)]
+
+    windows, cursor = [], 0.0
+    for start, end in silences:
+        if start - cursor >= 1:
+            windows.append((cursor, start))
+        cursor = max(cursor, end)
+    if total_ms - cursor >= 1:
+        windows.append((cursor, total_ms))
+
+    # Drop slivers (breaths, clicks) so a 30ms blip does not become a "window".
+    cleaned = [(int(a), int(b)) for a, b in windows if (b - a) >= 60]
+    return cleaned or [(0, total_ms)]
 
 
 def normalize(path: Path) -> None:
@@ -153,13 +199,14 @@ def scene_speech(text, voice, out: Path, tmp: Path, tag: str):
     return ok, all_marks
 
 
-def align_words(scene_text: str, marks, scene_dur: int):
+def align_words(scene_text: str, marks, scene_dur: int, speech_windows=None):
     """Map TTS word marks onto the words we actually draw.
 
-    Vietnamese voices don't emit WordBoundary events, so usually there are no
-    marks to use. We then spread the scene duration across words by weight:
-    every syllable counts one, and a word followed by punctuation also pays
-    for the pause that follows it.
+    If Edge returned WordBoundary events (English voices) we use them as-is.
+    Otherwise (all Vietnamese voices) the words are distributed by syllable
+    weight over **only the voiced parts** of the clip, then mapped back to real
+    time, so every pause found by silencedetect stays silent instead of being
+    filled with drifting text.
     """
     words = scene_text.split()
     if not words:
@@ -168,6 +215,10 @@ def align_words(scene_text: str, marks, scene_dur: int):
         return [{"t": w, "s": int(m["startMs"]), "e": int(m["endMs"])}
                 for w, m in zip(words, marks)]
 
+    windows = [(int(a), int(b)) for a, b in (speech_windows or []) if b > a]
+    if not windows:
+        windows = [(min(90, scene_dur // 20), max(1, scene_dur))]
+
     weights = []
     for w in words:
         wt = float(syllables(w)) + min(0.5, max(0, len(w) - 6) * 0.06)
@@ -175,14 +226,44 @@ def align_words(scene_text: str, marks, scene_dur: int):
             wt += 1.1  # the speaker pauses here
         weights.append(wt)
 
-    total = sum(weights)
-    lead = min(90, scene_dur // 20)  # small onset before the first word
-    span = max(1, scene_dur - lead)
-    out, cur = [], lead
-    for w, wt in zip(words, weights):
-        d = int(span * wt / total)
-        out.append({"t": w, "s": cur, "e": cur + d})
-        cur += d
+    total = float(sum(weights)) or 1.0
+    speak_total = float(sum(b - a for a, b in windows)) or 1.0
+
+    bounds, acc = [], 0.0
+    for wt in weights:
+        bounds.append((acc, acc + wt))
+        acc += wt
+
+    def speech_to_real(position: float) -> int:
+        """Map a point on the concatenated-speech timeline back to real time."""
+        remaining = max(0.0, position)
+        for start, end in windows:
+            span = end - start
+            if remaining <= span:
+                return int(start + remaining)
+            remaining -= span
+        return int(windows[-1][1])
+
+    def window_end_at(position: int) -> int:
+        """End of the voiced window that contains `position`."""
+        for win_start, win_end in windows:
+            if win_start <= position <= win_end:
+                return win_end
+        return windows[-1][1]
+
+    out = []
+    last = 0
+    for w, (lo, hi) in zip(words, bounds):
+        start = max(speech_to_real(speak_total * lo / total), last)
+        end = speech_to_real(speak_total * hi / total)
+        # A word must not stay highlighted through a pause: clamp it to the
+        # window it starts in, otherwise the karaoke keeps "speaking" while
+        # the voice is silent.
+        holder = window_end_at(start)
+        end = min(max(end, start + 40), holder)
+        end = max(end, start)
+        last = start
+        out.append({"t": w, "s": start, "e": min(end, scene_dur)})
     return out
 
 
@@ -204,10 +285,11 @@ def main() -> None:
             raise RuntimeError(f"edge-tts produced no audio for scene {i}: {s['text']!r}")
 
         d = dur_ms(clip)
+        speech = detect_speech_windows(clip, d)
         s["startMs"] = cursor
         s["endMs"] = cursor + d
         s["words"] = [{"t": w["t"], "s": cursor + w["s"], "e": cursor + w["e"]}
-                      for w in align_words(s["text"], marks, d)]
+                      for w in align_words(s["text"], marks, d, speech)]
         cursor += d + GAP
         clips.append(clip)
 

@@ -10,6 +10,7 @@ import {
   useVideoConfig,
 } from "remotion";
 import rawConfig from "./video-config.json";
+import { FONT_FAMILY } from "./fonts";
 
 /* ------------------------------------------------------------------ */
 /* Types                                                               */
@@ -79,19 +80,92 @@ const splitWords = (text: string) => text.trim().split(/\s+/).filter(Boolean);
 const highlightSet = (highlight?: string) =>
   new Set(splitWords(highlight || "").map(stripMarks).filter(Boolean));
 
-const wrapWords = (words: string[], limit: number): string[][] => {
+/*
+ * All sizes below are authored on a 1080x1920 reference frame and scaled by
+ * `useStage()`. Changing `width`/`height` in video-config.json therefore keeps
+ * the same optical text size and margins on 4:5 or 1:1 instead of inheriting
+ * 9:16 padding.
+ */
+const BASE_WIDTH = 1080;
+const PAD_X_RATIO = 84 / 1080;
+const PAD_TOP_RATIO = 300 / 1920;
+const PAD_BOTTOM_RATIO = 520 / 1920;
+
+/** Horizontal room between the safe margins: 1080 - 2 x 84. */
+const USABLE_WIDTH = BASE_WIDTH - 2 * Math.round(BASE_WIDTH * PAD_X_RATIO);
+const MIN_FONT_SIZE = 46;
+const LETTER_SPACING_EM = -0.02;
+
+type Stage = {
+  /** 1 on the 1080x1920 reference frame; smaller for narrower renders. */
+  scale: number;
+  padX: number;
+  padTop: number;
+  padBottom: number;
+  usable: number;
+};
+
+const useStage = (): Stage => {
+  const { width, height } = useVideoConfig();
+  const padX = Math.round(width * PAD_X_RATIO);
+  return {
+    scale: width / BASE_WIDTH,
+    padX,
+    padTop: Math.round(height * PAD_TOP_RATIO),
+    padBottom: Math.round(height * PAD_BOTTOM_RATIO),
+    usable: width - padX * 2,
+  };
+};
+
+let measureCtx: CanvasRenderingContext2D | null = null;
+const widthCache = new Map<string, number>();
+
+/**
+ * Real glyph measurement instead of an average-character-width guess.
+ * Vietnamese mixes narrow ("i", "l") and wide ("M", "Ư") glyphs, so the old
+ * `length * 0.545` estimate either overflowed the frame or shrank the type for
+ * no reason. Measured once per (text, size) and cached — cheap enough to call
+ * during render.
+ */
+const measureWidth = (text: string, fontSize: number): number => {
+  const key = `${fontSize}|${text}`;
+  const cached = widthCache.get(key);
+  if (cached !== undefined) return cached;
+
+  let width: number;
+  if (typeof document === "undefined") {
+    width = text.length * fontSize * 0.545;
+  } else {
+    if (!measureCtx) {
+      measureCtx = document.createElement("canvas").getContext("2d");
+    }
+    if (measureCtx) {
+      measureCtx.font = `900 ${fontSize}px ${FONT_FAMILY}`;
+      width = measureCtx.measureText(text).width;
+      width += LETTER_SPACING_EM * fontSize * Math.max(0, text.length - 1);
+    } else {
+      width = text.length * fontSize * 0.545;
+    }
+  }
+
+  widthCache.set(key, width);
+  return width;
+};
+
+const wrapToWidth = (
+  words: string[],
+  fontSize: number,
+  usable: number = USABLE_WIDTH,
+): string[][] => {
   const out: string[][] = [];
   let cur: string[] = [];
-  let used = 0;
   for (const w of words) {
-    const add = cur.length ? w.length + 1 : w.length;
-    if (cur.length && used + add > limit) {
+    const candidate = cur.length ? `${cur.join(" ")} ${w}` : w;
+    if (cur.length && measureWidth(candidate, fontSize) > usable) {
       out.push(cur);
       cur = [w];
-      used = w.length;
     } else {
       cur.push(w);
-      used += add;
     }
   }
   if (cur.length) out.push(cur);
@@ -118,28 +192,44 @@ const splitPhrases = (text: string): string[][] => {
  * speech), shrink the type a little if one phrase still overflows, and only
  * wrap inside a phrase as a last resort.
  */
-const layoutScene = (text: string, base: number): { lines: string[][]; fontSize: number } => {
+const layoutScene = (
+  text: string,
+  base: number,
+  usable: number = USABLE_WIDTH,
+): { lines: string[][]; fontSize: number } => {
   const phrases = splitPhrases(text);
-  if (!phrases.length) return { lines: [splitWords(text)], fontSize: base };
+  const blocks = phrases.length ? phrases : [splitWords(text)];
 
-  const usable = 900;
-  const charW = 0.545;
-  const longest = Math.max(...phrases.map((p) => p.join(" ").length));
-  const fit = Math.floor(usable / Math.max(1, longest * charW));
-  const fontSize = Math.max(46, Math.min(base, fit));
-  const limit = Math.floor(usable / (fontSize * charW));
+  // Measure the widest phrase at the base size, then scale the type down
+  // exactly as far as needed. Width scales linearly with font size, so one
+  // measurement is enough.
+  let longestText = "";
+  for (const block of blocks) {
+    const joined = block.join(" ");
+    if (joined.length > longestText.length) longestText = joined;
+  }
+
+  const needed = measureWidth(longestText, base);
+  const fontSize = Math.max(
+    Math.min(MIN_FONT_SIZE, base),
+    Math.min(base, Math.floor((base * usable) / Math.max(1, needed))),
+  );
 
   const lines: string[][] = [];
-  for (const phrase of phrases) {
-    const len = phrase.join(" ").length;
-    if (len <= limit) {
-      lines.push(phrase);
+  for (const block of blocks) {
+    if (measureWidth(block.join(" "), fontSize) <= usable) {
+      lines.push(block);
     } else {
-      const parts = Math.ceil(len / limit);
-      lines.push(...wrapWords(phrase, Math.ceil(len / parts) + 1));
+      lines.push(...wrapToWidth(block, fontSize, usable));
     }
   }
   return { lines, fontSize };
+};
+
+/** layoutScene measured against the real stage width of this render. */
+const useSceneLayout = (text: string, base: number) => {
+  const stage = useStage();
+  return layoutScene(text, base, stage.usable);
 };
 
 /** Heavy weight, tight tracking, thin dark edge: stays crisp on a phone. */
@@ -150,7 +240,7 @@ const textStyle = (fontSize: number, color: string): React.CSSProperties => ({
   letterSpacing: "-0.02em",
   color,
   textAlign: "center",
-  fontFamily: "'Helvetica Neue', 'Segoe UI', Roboto, 'Noto Sans', Arial, sans-serif",
+  fontFamily: FONT_FAMILY,
   WebkitTextStroke: "1.5px rgba(0,0,0,0.45)",
   paintOrder: "stroke fill",
   textShadow: "0 2px 6px rgba(0,0,0,0.5)",
@@ -163,6 +253,7 @@ const textStyle = (fontSize: number, color: string): React.CSSProperties => ({
 const Background: React.FC = () => {
   const frame = useCurrentFrame();
   const { durationInFrames, fps } = useVideoConfig();
+  const stage = useStage();
   const t = frame / Math.max(1, durationInFrames);
 
   const orbA = interpolate(t, [0, 1], [0.9, 1.08]);
@@ -181,27 +272,28 @@ const Background: React.FC = () => {
       <div
         style={{
           position: "absolute",
-          width: 760,
-          height: 760,
+          width: Math.round(760 * stage.scale),
+          height: Math.round(760 * stage.scale),
           borderRadius: "50%",
           left: "50%",
           top: "18%",
           transform: `translate(-50%, 0) translateY(${drift}px) scale(${orbA})`,
-          background: `radial-gradient(circle, ${THEME.accent}44 0%, transparent 68%)`,
-          filter: "blur(70px)",
+          // No CSS blur filter here: it was re-rasterised every frame and was
+          // the single most expensive thing in the render. A radial gradient
+          // with a soft alpha falloff looks the same and costs nothing.
+          background: `radial-gradient(circle, ${THEME.accent}44 0%, transparent 72%)`,
         }}
       />
       <div
         style={{
           position: "absolute",
-          width: 620,
-          height: 620,
+          width: Math.round(620 * stage.scale),
+          height: Math.round(620 * stage.scale),
           borderRadius: "50%",
           right: "-14%",
           bottom: "12%",
           transform: `scale(${orbB})`,
-          background: `radial-gradient(circle, ${THEME.muted}2e 0%, transparent 70%)`,
-          filter: "blur(80px)",
+          background: `radial-gradient(circle, ${THEME.muted}2e 0%, transparent 74%)`,
         }}
       />
       <AbsoluteFill
@@ -224,30 +316,34 @@ const TextShell: React.FC<{
   opacity?: number;
   transform?: string;
   clipPath?: string;
-}> = ({ children, fontSize, opacity = 1, transform, clipPath }) => (
-  <AbsoluteFill
-    style={{
-      justifyContent: "center",
-      alignItems: "center",
-      paddingLeft: 84,
-      paddingRight: 84,
-      paddingTop: 300,
-      paddingBottom: 520,
-    }}
-  >
-    <div
+}> = ({ children, fontSize, opacity = 1, transform, clipPath }) => {
+  const stage = useStage();
+
+  return (
+    <AbsoluteFill
       style={{
-        maxWidth: 912,
-        ...textStyle(fontSize, THEME.text),
-        opacity,
-        transform,
-        clipPath,
+        justifyContent: "center",
+        alignItems: "center",
+        paddingLeft: stage.padX,
+        paddingRight: stage.padX,
+        paddingTop: stage.padTop,
+        paddingBottom: stage.padBottom,
       }}
     >
-      {children}
-    </div>
-  </AbsoluteFill>
-);
+      <div
+        style={{
+          maxWidth: stage.usable,
+          ...textStyle(fontSize, THEME.text),
+          opacity,
+          transform,
+          clipPath,
+        }}
+      >
+        {children}
+      </div>
+    </AbsoluteFill>
+  );
+};
 
 /** Lines render as nowrap rows, so a phrase never breaks across two lines. */
 const LineRows: React.FC<{
@@ -309,7 +405,7 @@ const WordRise: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSiz
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const hi = highlightSet(scene.highlight);
-  const { lines, fontSize: fs } = layoutScene(scene.text, fontSize);
+  const { lines, fontSize: fs } = useSceneLayout(scene.text, fontSize);
 
   return (
     <TextShell fontSize={fs}>
@@ -345,7 +441,7 @@ const LineMask: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSiz
   const y = Math.round(interpolate(p, [0, 1], [26, 0]));
   const reveal = interpolate(p, [0, 1], [100, 0]);
   const hi = highlightSet(scene.highlight);
-  const { lines, fontSize: fs } = layoutScene(scene.text, fontSize);
+  const { lines, fontSize: fs } = useSceneLayout(scene.text, fontSize);
 
   return (
     <TextShell
@@ -374,7 +470,7 @@ const Slam: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize })
     extrapolateRight: "clamp",
   });
   const hi = highlightSet(scene.highlight);
-  const { lines, fontSize: fs } = layoutScene(scene.text, fontSize);
+  const { lines, fontSize: fs } = useSceneLayout(scene.text, fontSize);
 
   return (
     <>
@@ -394,7 +490,7 @@ const Slam: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize })
 const Wave: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const { lines, fontSize: fs } = layoutScene(scene.text, fontSize);
+  const { lines, fontSize: fs } = useSceneLayout(scene.text, fontSize);
 
   return (
     <TextShell fontSize={fs}>
@@ -438,7 +534,7 @@ const Typewriter: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontS
   const frame = useCurrentFrame();
   const chars = Math.floor(ease(frame, 2, 2 + scene.text.length * 1.5, 0, scene.text.length));
   const caretOn = Math.floor(frame / 12) % 2 === 0;
-  const { lines, fontSize: fs } = layoutScene(scene.text, fontSize);
+  const { lines, fontSize: fs } = useSceneLayout(scene.text, fontSize);
 
   let consumed = 0;
   return (
@@ -475,7 +571,7 @@ const Typewriter: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontS
 const Sweep: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
   const hi = highlightSet(scene.highlight);
-  const { lines, fontSize: fs } = layoutScene(scene.text, fontSize);
+  const { lines, fontSize: fs } = useSceneLayout(scene.text, fontSize);
   const totalWords = lines.reduce((n, l) => n + l.length, 0);
   const cursor = Math.floor(ease(frame, 4, 4 + totalWords * 6, -1, totalWords - 0.01));
 
@@ -508,7 +604,7 @@ const Sweep: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }
 const Karaoke: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const { lines, fontSize: fs } = layoutScene(scene.text, fontSize);
+  const { lines, fontSize: fs } = useSceneLayout(scene.text, fontSize);
   const nowMs = (frame / fps) * 1000 + scene.startMs;
   const words = scene.words && scene.words.length ? scene.words : [];
 
@@ -558,21 +654,22 @@ const transitionFor = (index: number): TransitionName => {
 };
 
 const CtaScene: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
-  const { lines, fontSize: fs } = layoutScene(scene.text, fontSize * 0.62);
+  const stage = useStage();
+  const { lines, fontSize: fs } = layoutScene(scene.text, fontSize * 0.62, stage.usable);
 
   return (
     <AbsoluteFill
       style={{
         justifyContent: "center",
         alignItems: "center",
-        paddingLeft: 84,
-        paddingRight: 84,
-        paddingTop: 300,
-        paddingBottom: 470,
-        gap: 44,
+        paddingLeft: stage.padX,
+        paddingRight: stage.padX,
+        paddingTop: stage.padTop,
+        paddingBottom: Math.round(stage.padBottom * (470 / 520)),
+        gap: Math.round(44 * stage.scale),
       }}
     >
-      <div style={{ maxWidth: 912, ...textStyle(fs, THEME.text) }}>
+      <div style={{ maxWidth: stage.usable, ...textStyle(fs, THEME.text) }}>
         {lines.map((line, li) => (
           <div key={li} style={{ whiteSpace: "nowrap" }}>
             {line.join(" ")}
@@ -584,8 +681,8 @@ const CtaScene: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSiz
         style={{
           display: "flex",
           alignItems: "center",
-          gap: 18,
-          padding: "26px 46px",
+          gap: Math.round(18 * stage.scale),
+          padding: `${Math.round(26 * stage.scale)}px ${Math.round(46 * stage.scale)}px`,
           borderRadius: 999,
           background: `linear-gradient(135deg, ${THEME.accent}, ${THEME.muted})`,
           boxShadow: `0 18px 60px ${THEME.accent}55`,
@@ -598,7 +695,7 @@ const CtaScene: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSiz
             fontWeight: 900,
             letterSpacing: "0.01em",
             color: "#0b0b0b",
-            fontFamily: "'Helvetica Neue', Arial, sans-serif",
+            fontFamily: FONT_FAMILY,
             whiteSpace: "nowrap",
           }}
         >
@@ -616,6 +713,7 @@ const SceneLayer: React.FC<{ scene: Scene; index: number; total: number }> = ({
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const stage = useStage();
   const lengthMs = Math.max(400, scene.endMs - scene.startMs);
   const lengthFrames = Math.max(1, Math.round((lengthMs / 1000) * fps));
 
@@ -647,7 +745,7 @@ const SceneLayer: React.FC<{ scene: Scene; index: number; total: number }> = ({
 
   const Effect = EFFECTS[CFG.effect] ?? WordRise;
   const isHook = scene.kind === "hook" || index === 0;
-  const fontSize = fitFontSize(scene.text) * (isHook ? 1.06 : 1);
+  const fontSize = fitFontSize(scene.text) * (isHook ? 1.06 : 1) * stage.scale;
 
   return (
     <AbsoluteFill
@@ -671,6 +769,7 @@ const SceneLayer: React.FC<{ scene: Scene; index: number; total: number }> = ({
 const Chrome: React.FC = () => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
+  const stage = useStage();
   const p = clamp(frame / Math.max(1, durationInFrames - 1), 0, 1);
 
   return (
@@ -678,18 +777,18 @@ const Chrome: React.FC = () => {
       <div
         style={{
           position: "absolute",
-          top: 150,
-          left: 84,
+          top: Math.round(stage.padTop * 0.5),
+          left: stage.padX,
           display: "flex",
           alignItems: "center",
-          gap: 14,
+          gap: Math.round(14 * stage.scale),
           opacity: 0.92,
         }}
       >
         <div
           style={{
-            width: 10,
-            height: 10,
+            width: Math.round(10 * stage.scale),
+            height: Math.round(10 * stage.scale),
             borderRadius: 99,
             background: THEME.accent,
             boxShadow: `0 0 12px ${THEME.accent}`,
@@ -697,11 +796,11 @@ const Chrome: React.FC = () => {
         />
         <div
           style={{
-            fontSize: 30,
+            fontSize: Math.round(30 * stage.scale),
             fontWeight: 700,
             letterSpacing: "0.02em",
             color: "rgba(255,255,255,0.82)",
-            fontFamily: "'Helvetica Neue', Arial, sans-serif",
+            fontFamily: FONT_FAMILY,
           }}
         >
           {BRAND}
@@ -711,10 +810,10 @@ const Chrome: React.FC = () => {
       <div
         style={{
           position: "absolute",
-          left: 84,
-          right: 84,
-          bottom: 420,
-          height: 6,
+          left: stage.padX,
+          right: stage.padX,
+          bottom: Math.round(stage.padBottom * (420 / 520)),
+          height: Math.max(2, Math.round(6 * stage.scale)),
           borderRadius: 99,
           background: "rgba(255,255,255,0.16)",
           overflow: "hidden",
