@@ -1,55 +1,83 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "pink-modern",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#ff80ab",
+    "accent": "#ff4081",
+    "muted": "#ffffff"
   },
-  "effect": "line-mask",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Dùng ChatGPT tóm tắt 1 bài giảng chỉ trong 3 phút",
-      "highlight": "giảng",
+      "text": "Nhiều người nghĩ AI Agent sẽ thay thế họ",
+      "highlight": "thay",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Nhờ Notion AI, viết email chuyên nghiệp chỉ 5 dòng",
-      "highlight": "viết",
+      "text": "Nhưng sự thật ngược lại",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Claude giúp lập kế hoạch học tập 7 ngày hiệu quả",
-      "highlight": "hoạch",
+      "text": "AI Agent làm những việc lặp đi lặp lại để bạn có thời gian làm việc quan trọng hơn",
+      "highlight": "thời",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Grammarly sửa lỗi ngữ pháp, giảm 50% thời gian viết",
-      "highlight": "giảm",
+      "text": "Bán hàng",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
+    },
+    {
+      "text": "Xây dựng mối quan hệ",
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Phát triển chiến lược",
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ đang dùng AI Agent để tự động trả lời tin nhắn, đăng bài, chăm sóc khách hàng",
+      "highlight": "chăm",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Kết quả là Hỉ có thêm 20 tiếng mỗi tuần",
+      "highlight": "thêm",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "",
+      "highlight": "Đăng ký",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 15000,
+  "totalMs": 50000,
   "hasAudio": true
 }
