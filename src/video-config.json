@@ -1,101 +1,94 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "luxury-gold",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
-    "muted": "#ffffff"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Skimming là kỹ thuật đọc lướt để nắm ý chính",
-      "highlight": "lướt",
+      "text": "Scanning là kỹ thuật tìm kiếm thông tin cụ thể trong văn bản",
+      "highlight": "trong",
       "startMs": 0,
-      "endMs": 3500,
+      "endMs": 4550,
       "kind": "hook"
     },
     {
-      "text": "Không cần đọc từng từ",
+      "text": "Không cần đọc toàn bộ",
       "highlight": "",
-      "startMs": 3500,
-      "endMs": 5500,
+      "startMs": 4550,
+      "endMs": 6550,
       "kind": "body"
     },
     {
-      "text": "Chỉ cần đọc câu đầu và câu cuối mỗi đoạn",
-      "highlight": "đoạn",
-      "startMs": 5500,
-      "endMs": 9000,
-      "kind": "body"
-    },
-    {
-      "text": "Đọc các từ in đậm, in nghiêng",
-      "highlight": "nghiêng",
-      "startMs": 9000,
-      "endMs": 11450,
-      "kind": "body"
-    },
-    {
-      "text": "Xem hình ảnh và biểu đồ",
-      "highlight": "hình",
-      "startMs": 11450,
-      "endMs": 13550,
-      "kind": "body"
-    },
-    {
-      "text": "Skimming giúp bạn nắm ý chính trong 10% thời gian",
-      "highlight": "giúp",
-      "startMs": 13550,
-      "endMs": 17050,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ dùng skimming để quyết định có nên đọc chi tiết không",
-      "highlight": "dùng",
-      "startMs": 17050,
-      "endMs": 21250,
-      "kind": "body"
-    },
-    {
-      "text": "Nếu bài viết có giá trị, đọc chi tiết",
-      "highlight": "tiết",
-      "startMs": 21250,
-      "endMs": 24400,
-      "kind": "body"
-    },
-    {
-      "text": "Nếu không, bỏ qua",
+      "text": "Chỉ cần tìm từ khóa",
       "highlight": "",
-      "startMs": 24400,
-      "endMs": 26400,
+      "startMs": 6550,
+      "endMs": 8550,
       "kind": "body"
     },
     {
-      "text": "Tiết kiệm hàng giờ mỗi ngày",
-      "highlight": "hàng",
-      "startMs": 26400,
-      "endMs": 28500,
+      "text": "Ví dụ: tìm tên người, ngày tháng, số liệu",
+      "highlight": "liệu",
+      "startMs": 8550,
+      "endMs": 11700,
       "kind": "body"
     },
     {
-      "text": "Bạn muốn thử? Hãy skimming một bài báo trong 2 phút",
-      "highlight": "skimming",
-      "startMs": 28500,
-      "endMs": 32350,
+      "text": "Mắt di chuyển nhanh trên trang, tìm từ khóa",
+      "highlight": "trên",
+      "startMs": 11700,
+      "endMs": 14850,
       "kind": "body"
     },
     {
-      "text": "Xem bạn nắm được bao nhiêu ý chính",
-      "highlight": "chính",
-      "startMs": 32350,
-      "endMs": 35150,
+      "text": "Khi tìm thấy, đọc xung quanh để hiểu ngữ cảnh",
+      "highlight": "xung",
+      "startMs": 14850,
+      "endMs": 18350,
+      "kind": "body"
+    },
+    {
+      "text": "Scanning giúp bạn tìm thông tin trong vài giây thay vì vài phút",
+      "highlight": "Scanning",
+      "startMs": 18350,
+      "endMs": 22900,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ dùng scanning mỗi ngày để tìm thông tin trong email, báo cáo, sách",
+      "highlight": "thông",
+      "startMs": 22900,
+      "endMs": 27800,
+      "kind": "body"
+    },
+    {
+      "text": "Tiết kiệm rất nhiều thời gian",
+      "highlight": "nhiều",
+      "startMs": 27800,
+      "endMs": 29900,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn muốn thử? Hãy scanning một trang sách tìm một từ cụ thể",
+      "highlight": "sách",
+      "startMs": 29900,
+      "endMs": 34450,
+      "kind": "body"
+    },
+    {
+      "text": "Xem bạn tìm được trong bao lâu",
+      "highlight": "trong",
+      "startMs": 34450,
+      "endMs": 36900,
       "kind": "cta"
     },
     {
@@ -106,6 +99,6 @@
       "kind": "cta"
     }
   ],
-  "totalMs": 35150,
+  "totalMs": 36900,
   "hasAudio": true
 }
