@@ -1,76 +1,48 @@
 {
   "theme": {
-    "id": "dark-minimal",
+    "id": "gradient-purple",
     "bg": [
-      "#0a0a0a",
-      "#0a0a0a",
-      "#0a0a0a"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
     "text": "#ffffff",
-    "accent": "#00d4ff",
-    "muted": "#f5f5f5"
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
-  "effect": "word-rise",
+  "effect": "karaoke",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Leonardo da Vinci bước vào xưởng của Verrocchio để học hội họa, nhưng ông nghiên cứu cả giải phẫu, kỹ thuật, quang học và nhiều lĩnh vực khác",
-      "highlight": "",
+      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
+      "highlight": "phút",
       "startMs": 0,
-      "endMs": 9800,
+      "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Không ai nói với da Vinci rằng anh phải chọn niche",
-      "highlight": "",
-      "startMs": 9800,
-      "endMs": 13650,
+      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
+      "highlight": "speed",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Chính sự giao thoa giữa nhiều lĩnh vực tạo nên khả năng đặc biệt của ông",
-      "highlight": "",
-      "startMs": 13650,
-      "endMs": 19250,
+      "text": "Một cuốn sách chỉ trong 3 phút",
+      "highlight": "trong",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "Dan Koe nhắc lại điều này để nói về tương lai",
-      "highlight": "",
-      "startMs": 19250,
-      "endMs": 23100,
-      "kind": "body"
-    },
-    {
-      "text": "AI đang cho chúng ta cơ hội trở lại thời Phục Hưng",
-      "highlight": "",
-      "startMs": 23100,
-      "endMs": 27300,
-      "kind": "body"
-    },
-    {
-      "text": "Một cá nhân giờ có thể tiếp cận kiến thức và công cụ mà trước đây chỉ tổ chức lớn mới có",
-      "highlight": "",
-      "startMs": 27300,
-      "endMs": 35000,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ tin rằng những người dám khám phá nhiều lĩnh vực, kết hợp chúng lại và dùng AI để khuếch đại sẽ là những người thắng trong 10 năm tới",
-      "highlight": "",
-      "startMs": 35000,
-      "endMs": 45500,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
-      "startMs": 45500,
-      "endMs": 48500,
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 48500,
+  "totalMs": 15000,
   "hasAudio": true
 }
