@@ -1,104 +1,83 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "luxury-gold",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
-    "muted": "#ffffff"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Nhiều người sợ AI sẽ khiến chúng ta trở nên giống máy hơn",
+      "text": "Dan Koe tin AI đang mở ra cuộc Phục Hưng thứ hai",
       "highlight": "",
       "startMs": 0,
-      "endMs": 4550,
+      "endMs": 4200,
       "kind": "hook"
     },
     {
-      "text": "Làm việc như máy",
+      "text": "Trong thời Phục Hưng, Leonardo da Vinci nghiên cứu cả hội họa, giải phẫu, kỹ thuật, quang học",
       "highlight": "",
-      "startMs": 4550,
-      "endMs": 6550,
+      "startMs": 4200,
+      "endMs": 10500,
       "kind": "body"
     },
     {
-      "text": "Sống như máy",
+      "text": "Không ai nói với ông phải chọn một niche",
       "highlight": "",
-      "startMs": 6550,
-      "endMs": 8550,
+      "startMs": 10500,
+      "endMs": 13650,
       "kind": "body"
     },
     {
-      "text": "Suy nghĩ như máy",
+      "text": "Chính sự giao thoa giữa nhiều lĩnh vực tạo nên khả năng đặc biệt",
       "highlight": "",
-      "startMs": 8550,
-      "endMs": 10550,
+      "startMs": 13650,
+      "endMs": 18550,
       "kind": "body"
     },
     {
-      "text": "Nhưng Dan Koe tin rằng AI thực sự cho chúng ta cơ hội ngừng sống như một cái máy",
+      "text": "Rồi công nghiệp hóa xuất hiện, con người bị đào tạo thành mắt xích chuyên biệt",
       "highlight": "",
-      "startMs": 10550,
-      "endMs": 17200,
+      "startMs": 18550,
+      "endMs": 24150,
       "kind": "body"
     },
     {
-      "text": "Thay vì dành 8 giờ mỗi ngày cho công việc lặp lại, AI xử lý những phần máy móc",
+      "text": "AI đang đảo ngược logic đó",
       "highlight": "",
-      "startMs": 17200,
-      "endMs": 23850,
+      "startMs": 24150,
+      "endMs": 26250,
       "kind": "body"
     },
     {
-      "text": "Con người được giải phóng để làm những thứ máy không thể: sáng tạo, kết nối, trải nghiệm, suy nghĩ sâu",
+      "text": "Một cá nhân giờ có thể tiếp cận kiến thức, công cụ sáng tạo, phần mềm và phân phối mà trước đây chỉ tổ chức lớn mới có",
       "highlight": "",
-      "startMs": 23850,
-      "endMs": 31200,
+      "startMs": 26250,
+      "endMs": 36050,
       "kind": "body"
     },
     {
-      "text": "Hỉ đã dùng AI Agent để tự động hóa chăm sóc khách hàng, đăng bài mạng xã hội, gửi email",
+      "text": "Hỉ tin rằng thời đại này thuộc về những người dám kết hợp nhiều năng lực và dùng AI để khuếch đại chúng",
       "highlight": "",
-      "startMs": 31200,
-      "endMs": 38200,
-      "kind": "body"
-    },
-    {
-      "text": "Kết quả là Hỉ có thêm thời gian đọc sách, viết, và suy nghĩ về chiến lược",
-      "highlight": "",
-      "startMs": 38200,
-      "endMs": 44150,
-      "kind": "body"
-    },
-    {
-      "text": "AI không làm chúng ta giống máy",
-      "highlight": "",
-      "startMs": 44150,
-      "endMs": 46600,
-      "kind": "body"
-    },
-    {
-      "text": "AI giúp chúng ta trở lại làm người",
-      "highlight": "",
-      "startMs": 46600,
-      "endMs": 49400,
+      "startMs": 36050,
+      "endMs": 44100,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 49400,
-      "endMs": 52400,
+      "startMs": 44100,
+      "endMs": 47100,
       "kind": "cta"
     }
   ],
-  "totalMs": 52400,
+  "totalMs": 47100,
   "hasAudio": true
 }
