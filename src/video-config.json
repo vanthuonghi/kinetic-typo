@@ -1,132 +1,48 @@
 {
   "theme": {
-    "id": "green-tech",
+    "id": "luxury-gold",
     "bg": [
-      "#001a0f",
-      "#001a0f",
-      "#001a0f"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#00ff88",
-    "accent": "#00ff88",
-    "muted": "#e0ffe0"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
-  "effect": "word-rise",
+  "effect": "typewriter",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Bạn có biết AI Agent có thể giúp bạn viết content? Viết bài Facebook",
-      "highlight": "",
+      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
+      "highlight": "phút",
       "startMs": 0,
-      "endMs": 4900,
+      "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Viết mô tả sản phẩm",
-      "highlight": "",
-      "startMs": 4900,
-      "endMs": 6900,
+      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
+      "highlight": "phút",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Viết email quảng cáo",
-      "highlight": "",
-      "startMs": 6900,
-      "endMs": 8900,
+      "text": "Một cuốn sách chỉ trong 3 phút",
+      "highlight": "sách",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "Viết kịch bản video",
-      "highlight": "",
-      "startMs": 8900,
-      "endMs": 10900,
-      "kind": "body"
-    },
-    {
-      "text": "Tất cả chỉ trong vài phút",
-      "highlight": "",
-      "startMs": 10900,
-      "endMs": 13000,
-      "kind": "body"
-    },
-    {
-      "text": "Bạn không cần phải là người viết giỏi",
-      "highlight": "",
-      "startMs": 13000,
-      "endMs": 15800,
-      "kind": "body"
-    },
-    {
-      "text": "AI Agent làm hộ bạn",
-      "highlight": "",
-      "startMs": 15800,
-      "endMs": 17800,
-      "kind": "body"
-    },
-    {
-      "text": "Chỉ cần cho nó biết chủ đề và vài ý chính",
-      "highlight": "",
-      "startMs": 17800,
-      "endMs": 21650,
-      "kind": "body"
-    },
-    {
-      "text": "Nó sẽ viết thành bài hoàn chỉnh",
-      "highlight": "",
-      "startMs": 21650,
-      "endMs": 24100,
-      "kind": "body"
-    },
-    {
-      "text": "Đúng tông giọng thương hiệu của bạn",
-      "highlight": "",
-      "startMs": 24100,
-      "endMs": 26550,
-      "kind": "body"
-    },
-    {
-      "text": "Chất lượng đồng đều",
-      "highlight": "",
-      "startMs": 26550,
-      "endMs": 28550,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ dùng AI Agent để viết 30 bài content mỗi ngày",
-      "highlight": "",
-      "startMs": 28550,
-      "endMs": 32400,
-      "kind": "body"
-    },
-    {
-      "text": "Ba mươi bài",
-      "highlight": "",
-      "startMs": 32400,
-      "endMs": 34400,
-      "kind": "body"
-    },
-    {
-      "text": "Mà không cần động tay viết chữ nào",
-      "highlight": "",
-      "startMs": 34400,
-      "endMs": 37200,
-      "kind": "body"
-    },
-    {
-      "text": "Chỉ kiểm tra và chỉnh sửa một chút",
-      "highlight": "",
-      "startMs": 37200,
-      "endMs": 40000,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
-      "startMs": 40000,
-      "endMs": 43000,
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 43000,
+  "totalMs": 15000,
   "hasAudio": true
 }
