@@ -1,111 +1,132 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "pink-modern",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
+    "text": "#ff80ab",
+    "accent": "#ff4081",
     "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Bạn có biết đọc nhanh không chỉ là tốc độ? Đọc nhanh còn là khả năng hiểu và nhớ",
-      "highlight": "nhanh",
+      "text": "AI Agent giúp bạn chốt đơn ngay cả khi bạn đang tắm",
+      "highlight": "",
       "startMs": 0,
-      "endMs": 6650,
+      "endMs": 4200,
       "kind": "hook"
     },
     {
-      "text": "Người đọc nhanh không chỉ đọc nhanh mà còn hiểu sâu",
-      "highlight": "Người",
+      "text": "Nghe có vẻ hài nhưng có thật",
+      "highlight": "",
+      "startMs": 4200,
+      "endMs": 6650,
+      "kind": "body"
+    },
+    {
+      "text": "Khách hàng vào website của bạn lúc 10 giờ tối",
+      "highlight": "",
       "startMs": 6650,
-      "endMs": 10500,
+      "endMs": 10150,
       "kind": "body"
     },
     {
-      "text": "Bí quyết là tập trung",
+      "text": "Họ muốn biết giá sản phẩm",
       "highlight": "",
-      "startMs": 10500,
-      "endMs": 12500,
+      "startMs": 10150,
+      "endMs": 12250,
       "kind": "body"
     },
     {
-      "text": "Loại bỏ phân tâm",
+      "text": "Họ muốn được tư vấn",
       "highlight": "",
-      "startMs": 12500,
-      "endMs": 14500,
+      "startMs": 12250,
+      "endMs": 14250,
       "kind": "body"
     },
     {
-      "text": "Đọc trong môi trường yên tĩnh",
-      "highlight": "trong",
-      "startMs": 14500,
-      "endMs": 16600,
-      "kind": "body"
-    },
-    {
-      "text": "Tắt điện thoại",
+      "text": "Chatbot AI Agent trên website trả lời ngay",
       "highlight": "",
-      "startMs": 16600,
-      "endMs": 18600,
+      "startMs": 14250,
+      "endMs": 17050,
       "kind": "body"
     },
     {
-      "text": "Đóng các tab không cần thiết",
-      "highlight": "thiết",
-      "startMs": 18600,
-      "endMs": 20700,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ đọc trong phòng yên tĩnh, không điện thoại",
-      "highlight": "phòng",
-      "startMs": 20700,
-      "endMs": 23850,
-      "kind": "body"
-    },
-    {
-      "text": "Kết quả: tốc độ tăng, khả năng nhớ tăng",
-      "highlight": "tăng",
-      "startMs": 23850,
-      "endMs": 27000,
-      "kind": "body"
-    },
-    {
-      "text": "Bạn muốn thử? Hãy tạo môi trường đọc yên tĩnh",
-      "highlight": "tĩnh",
-      "startMs": 27000,
-      "endMs": 30500,
-      "kind": "body"
-    },
-    {
-      "text": "Tắt mọi thứ phân tâm",
+      "text": "Tư vấn sản phẩm phù hợp",
       "highlight": "",
-      "startMs": 30500,
-      "endMs": 32500,
+      "startMs": 17050,
+      "endMs": 19150,
       "kind": "body"
     },
     {
-      "text": "Chỉ tập trung vào sách",
+      "text": "Gửi bảng giá chi tiết",
       "highlight": "",
-      "startMs": 32500,
-      "endMs": 34500,
+      "startMs": 19150,
+      "endMs": 21150,
+      "kind": "body"
+    },
+    {
+      "text": "Giải đáp thắc mắc",
+      "highlight": "",
+      "startMs": 21150,
+      "endMs": 23150,
+      "kind": "body"
+    },
+    {
+      "text": "Chốt đơn hàng",
+      "highlight": "",
+      "startMs": 23150,
+      "endMs": 25150,
+      "kind": "body"
+    },
+    {
+      "text": "Hướng dẫn thanh toán",
+      "highlight": "",
+      "startMs": 25150,
+      "endMs": 27150,
+      "kind": "body"
+    },
+    {
+      "text": "Tất cả tự động",
+      "highlight": "",
+      "startMs": 27150,
+      "endMs": 29150,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn không cần làm gì",
+      "highlight": "",
+      "startMs": 29150,
+      "endMs": 31150,
+      "kind": "body"
+    },
+    {
+      "text": "Sáng hôm sau thức dậy, bạn thấy đơn hàng đã được đặt và thanh toán",
+      "highlight": "",
+      "startMs": 31150,
+      "endMs": 36400,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ đã chứng kiến một chủ shop mỹ phẩm kiếm 15 triệu đồng khi đang ngủ nhờ AI Agent",
+      "highlight": "",
+      "startMs": 36400,
+      "endMs": 43050,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 0,
-      "endMs": 0,
+      "startMs": 43050,
+      "endMs": 46050,
       "kind": "cta"
     }
   ],
-  "totalMs": 34500,
+  "totalMs": 46050,
   "hasAudio": true
 }
