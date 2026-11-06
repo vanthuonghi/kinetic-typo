@@ -1,111 +1,48 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "warm-orange",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#1a0000",
+      "#2d1b00",
+      "#1a0f00"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
+    "text": "#ffcc80",
+    "accent": "#ff9800",
     "muted": "#ffffff"
   },
-  "effect": "word-rise",
+  "effect": "wave",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Trong 10 năm tới, lợi thế không còn thuộc về người biết làm một công việc chuyên môn thật lâu",
-      "highlight": "",
+      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
+      "highlight": "bình",
       "startMs": 0,
-      "endMs": 7000,
+      "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "AI có thể làm ngày càng nhiều phần việc kỹ thuật",
-      "highlight": "",
-      "startMs": 7000,
-      "endMs": 10850,
+      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
+      "highlight": "speed",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Viết code",
-      "highlight": "",
-      "startMs": 10850,
-      "endMs": 12850,
+      "text": "Một cuốn sách chỉ trong 3 phút",
+      "highlight": "cuốn",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "Phân tích dữ liệu",
-      "highlight": "",
-      "startMs": 12850,
-      "endMs": 14850,
-      "kind": "body"
-    },
-    {
-      "text": "Tạo nội dung",
-      "highlight": "",
-      "startMs": 14850,
-      "endMs": 16850,
-      "kind": "body"
-    },
-    {
-      "text": "Thiết kế",
-      "highlight": "",
-      "startMs": 16850,
-      "endMs": 18850,
-      "kind": "body"
-    },
-    {
-      "text": "Những kỹ năng từng mất 10 năm để thành thạo giờ AI làm trong vài giây",
-      "highlight": "",
-      "startMs": 18850,
-      "endMs": 24450,
-      "kind": "body"
-    },
-    {
-      "text": "Vậy con người nên trở thành ai? Dan Koe đặt câu hỏi lớn này",
-      "highlight": "",
-      "startMs": 24450,
-      "endMs": 29350,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ tin rằng câu trả lời nằm ở sự kết hợp: hiểu con người, có góc nhìn riêng, và dùng AI để khuếch đại",
-      "highlight": "",
-      "startMs": 29350,
-      "endMs": 37750,
-      "kind": "body"
-    },
-    {
-      "text": "Chuyên môn hóa từng là lợi thế",
-      "highlight": "",
-      "startMs": 37750,
-      "endMs": 40200,
-      "kind": "body"
-    },
-    {
-      "text": "Giờ đây, sự đa chiều mới là lợi thế",
-      "highlight": "",
-      "startMs": 40200,
-      "endMs": 43350,
-      "kind": "body"
-    },
-    {
-      "text": "Bạn đã chuẩn bị cho sự thay đổi này chưa?",
-      "highlight": "",
-      "startMs": 43350,
-      "endMs": 46850,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
-      "startMs": 46850,
-      "endMs": 49850,
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 49850,
+  "totalMs": 15000,
   "hasAudio": true
 }
