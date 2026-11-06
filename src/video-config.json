@@ -1,22 +1,22 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "pink-modern",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#ff80ab",
+    "accent": "#ff4081",
+    "muted": "#ffffff"
   },
-  "effect": "typewriter",
+  "effect": "sweep",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
       "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "Người",
+      "highlight": "thường",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
@@ -30,7 +30,7 @@
     },
     {
       "text": "Một cuốn sách chỉ trong 3 phút",
-      "highlight": "sách",
+      "highlight": "cuốn",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
