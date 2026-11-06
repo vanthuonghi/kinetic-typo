@@ -1,48 +1,90 @@
 {
   "theme": {
-    "id": "dark-minimal",
+    "id": "neon-blue",
     "bg": [
-      "#0a0a0a",
-      "#0a0a0a",
-      "#0a0a0a"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ffffff",
-    "accent": "#00d4ff",
-    "muted": "#f5f5f5"
+    "text": "#00d4ff",
+    "accent": "#ff006e",
+    "muted": "#ffffff"
   },
-  "effect": "wave",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "Người",
+      "text": "Bạn có biết subvocalization làm chậm tốc độ đọc? Subvocalization là đọc thầm trong đầu từng từ",
+      "highlight": "Subvocalization",
       "startMs": 0,
-      "endMs": 0,
+      "endMs": 5950,
       "kind": "hook"
     },
     {
-      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
+      "text": "Não bạn phát âm từng từ trong đầu, làm chậm tốc độ đọc xuống 200-300 từ mỗi phút",
       "highlight": "phút",
-      "startMs": 0,
-      "endMs": 0,
+      "startMs": 5950,
+      "endMs": 12250,
       "kind": "body"
     },
     {
-      "text": "Một cuốn sách chỉ trong 3 phút",
-      "highlight": "phút",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Để bỏ subvocalization, hãy đọc nhanh hơn khả năng phát âm trong đầu",
+      "highlight": "nhanh",
+      "startMs": 12250,
+      "endMs": 16800,
       "kind": "body"
+    },
+    {
+      "text": "Nếu bạn đọc nhanh hơn tốc độ nói, não không kịp phát âm và tự động bỏ subvocalization",
+      "highlight": "subvocalization",
+      "startMs": 16800,
+      "endMs": 23100,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ đã luyện tập bằng cách đọc với metronome",
+      "highlight": "luyện",
+      "startMs": 23100,
+      "endMs": 26250,
+      "kind": "body"
+    },
+    {
+      "text": "Bắt đầu với 300 từ mỗi phút",
+      "highlight": "phút",
+      "startMs": 26250,
+      "endMs": 28700,
+      "kind": "body"
+    },
+    {
+      "text": "Tăng dần lên 500, 700",
+      "highlight": "",
+      "startMs": 28700,
+      "endMs": 30700,
+      "kind": "body"
+    },
+    {
+      "text": "Sau 2 tuần, subvocalization giảm đáng kể",
+      "highlight": "giảm",
+      "startMs": 30700,
+      "endMs": 33150,
+      "kind": "body"
+    },
+    {
+      "text": "Tốc độ đọc tăng gấp đôi",
+      "highlight": "tăng",
+      "startMs": 33150,
+      "endMs": 35250,
+      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "",
+      "highlight": "Đăng ký",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 15000,
+  "totalMs": 35250,
   "hasAudio": true
 }
