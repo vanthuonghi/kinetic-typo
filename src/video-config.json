@@ -1,132 +1,48 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "neon-blue",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#00d4ff",
+    "accent": "#ff006e",
+    "muted": "#ffffff"
   },
-  "effect": "word-rise",
+  "effect": "slam",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "AI Agent không phải robot thay thế con người",
-      "highlight": "",
+      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
+      "highlight": "phút",
       "startMs": 0,
-      "endMs": 3150,
+      "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Nhiều người hiểu lầm về AI Agent",
-      "highlight": "",
-      "startMs": 3150,
-      "endMs": 5600,
+      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
+      "highlight": "speed",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Họ nghĩ nó phức tạp",
-      "highlight": "",
-      "startMs": 5600,
-      "endMs": 7600,
+      "text": "Một cuốn sách chỉ trong 3 phút",
+      "highlight": "sách",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "Họ nghĩ nó đắt tiền",
-      "highlight": "",
-      "startMs": 7600,
-      "endMs": 9600,
-      "kind": "body"
-    },
-    {
-      "text": "Họ nghĩ chỉ dành cho công ty lớn",
-      "highlight": "",
-      "startMs": 9600,
-      "endMs": 12400,
-      "kind": "body"
-    },
-    {
-      "text": "Nhưng sự thật hoàn toàn khác",
-      "highlight": "",
-      "startMs": 12400,
-      "endMs": 14500,
-      "kind": "body"
-    },
-    {
-      "text": "AI Agent là trợ lý 24/7 cho doanh nghiệp của bạn",
-      "highlight": "",
-      "startMs": 14500,
-      "endMs": 18350,
-      "kind": "body"
-    },
-    {
-      "text": "Nó làm những việc lặp đi lặp lại mà bạn không thích làm",
-      "highlight": "",
-      "startMs": 18350,
-      "endMs": 22900,
-      "kind": "body"
-    },
-    {
-      "text": "Trả lời tin nhắn tự động",
-      "highlight": "",
-      "startMs": 22900,
-      "endMs": 25000,
-      "kind": "body"
-    },
-    {
-      "text": "Chăm sóc khách hàng",
-      "highlight": "",
-      "startMs": 25000,
-      "endMs": 27000,
-      "kind": "body"
-    },
-    {
-      "text": "Đặt lịch hẹn",
-      "highlight": "",
-      "startMs": 27000,
-      "endMs": 29000,
-      "kind": "body"
-    },
-    {
-      "text": "Gửi báo giá",
-      "highlight": "",
-      "startMs": 29000,
-      "endMs": 31000,
-      "kind": "body"
-    },
-    {
-      "text": "Nhắc nợ",
-      "highlight": "",
-      "startMs": 31000,
-      "endMs": 33000,
-      "kind": "body"
-    },
-    {
-      "text": "Tất cả đều chạy tự động không cần người giám sát",
-      "highlight": "",
-      "startMs": 33000,
-      "endMs": 36850,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ đã giúp nhiều chủ doanh nghiệp nhỏ tiết kiệm 30 giờ mỗi tuần nhờ AI Agent",
-      "highlight": "",
-      "startMs": 36850,
-      "endMs": 42800,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
-      "startMs": 42800,
-      "endMs": 45800,
+      "highlight": "",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 45800,
+  "totalMs": 15000,
   "hasAudio": true
 }
