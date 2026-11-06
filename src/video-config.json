@@ -1,90 +1,104 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "ocean-blue",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
     "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Theo Dan Koe, tương lai sẽ chia thành 3 kiểu người",
+      "text": "Nhiều người sợ AI sẽ khiến chúng ta trở nên giống máy hơn",
       "highlight": "",
       "startMs": 0,
-      "endMs": 3850,
+      "endMs": 4550,
       "kind": "hook"
     },
     {
-      "text": "Kiểu đầu tiên tránh xa AI, tin rằng để giữ sự sáng tạo cần quay về cuộc sống đơn giản",
+      "text": "Làm việc như máy",
       "highlight": "",
-      "startMs": 3850,
-      "endMs": 10850,
+      "startMs": 4550,
+      "endMs": 6550,
       "kind": "body"
     },
     {
-      "text": "Kiểu thứ hai tối ưu mọi thứ, giao công việc, nghiên cứu, viết lách, quyết định cho AI",
+      "text": "Sống như máy",
       "highlight": "",
-      "startMs": 10850,
-      "endMs": 17150,
+      "startMs": 6550,
+      "endMs": 8550,
       "kind": "body"
     },
     {
-      "text": "Dan gọi nhóm này là cyborg, những người không còn biết AI kết thúc ở đâu và cuộc sống bắt đầu",
+      "text": "Suy nghĩ như máy",
       "highlight": "",
-      "startMs": 17150,
-      "endMs": 24500,
+      "startMs": 8550,
+      "endMs": 10550,
       "kind": "body"
     },
     {
-      "text": "Còn kiểu thứ ba là Digital Renaissance Man",
+      "text": "Nhưng Dan Koe tin rằng AI thực sự cho chúng ta cơ hội ngừng sống như một cái máy",
       "highlight": "",
-      "startMs": 24500,
-      "endMs": 27300,
+      "startMs": 10550,
+      "endMs": 17200,
       "kind": "body"
     },
     {
-      "text": "Người dành buổi sáng cho thế giới thật: đọc, viết, tập luyện",
+      "text": "Thay vì dành 8 giờ mỗi ngày cho công việc lặp lại, AI xử lý những phần máy móc",
       "highlight": "",
-      "startMs": 27300,
-      "endMs": 31500,
+      "startMs": 17200,
+      "endMs": 23850,
       "kind": "body"
     },
     {
-      "text": "Nhưng khi làm việc, họ dùng AI để khuếch đại năng lực",
+      "text": "Con người được giải phóng để làm những thứ máy không thể: sáng tạo, kết nối, trải nghiệm, suy nghĩ sâu",
       "highlight": "",
-      "startMs": 31500,
-      "endMs": 35700,
+      "startMs": 23850,
+      "endMs": 31200,
       "kind": "body"
     },
     {
-      "text": "Hỉ chọn kiểu thứ ba",
+      "text": "Hỉ đã dùng AI Agent để tự động hóa chăm sóc khách hàng, đăng bài mạng xã hội, gửi email",
       "highlight": "",
-      "startMs": 35700,
-      "endMs": 37700,
+      "startMs": 31200,
+      "endMs": 38200,
       "kind": "body"
     },
     {
-      "text": "Không chống AI, không phục tùng AI, mà sử dụng nó để trở nên đa chiều hơn",
+      "text": "Kết quả là Hỉ có thêm thời gian đọc sách, viết, và suy nghĩ về chiến lược",
       "highlight": "",
-      "startMs": 37700,
-      "endMs": 43650,
+      "startMs": 38200,
+      "endMs": 44150,
+      "kind": "body"
+    },
+    {
+      "text": "AI không làm chúng ta giống máy",
+      "highlight": "",
+      "startMs": 44150,
+      "endMs": 46600,
+      "kind": "body"
+    },
+    {
+      "text": "AI giúp chúng ta trở lại làm người",
+      "highlight": "",
+      "startMs": 46600,
+      "endMs": 49400,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 43650,
-      "endMs": 46650,
+      "startMs": 49400,
+      "endMs": 52400,
       "kind": "cta"
     }
   ],
-  "totalMs": 46650,
+  "totalMs": 52400,
   "hasAudio": true
 }
