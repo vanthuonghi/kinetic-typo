@@ -1,94 +1,73 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "dark-minimal",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#0a0a0a",
+      "#0a0a0a",
+      "#0a0a0a"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#ffffff",
+    "accent": "#00d4ff",
+    "muted": "#f5f5f5"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Scanning là kỹ thuật tìm kiếm thông tin cụ thể trong văn bản",
-      "highlight": "trong",
+      "text": "Meta guiding là kỹ thuật dùng ngón tay hoặc bút để dẫn mắt di chuyển trên trang",
+      "highlight": "ngón",
       "startMs": 0,
-      "endMs": 4550,
+      "endMs": 5950,
       "kind": "hook"
     },
     {
-      "text": "Không cần đọc toàn bộ",
-      "highlight": "",
-      "startMs": 4550,
-      "endMs": 6550,
+      "text": "Điều này giúp mắt di chuyển mượt mà, không dừng lại giữa chừng",
+      "highlight": "chuyển",
+      "startMs": 5950,
+      "endMs": 10500,
       "kind": "body"
     },
     {
-      "text": "Chỉ cần tìm từ khóa",
-      "highlight": "",
-      "startMs": 6550,
-      "endMs": 8550,
+      "text": "Tốc độ có thể tăng 50-100%",
+      "highlight": "tăng",
+      "startMs": 10500,
+      "endMs": 12600,
       "kind": "body"
     },
     {
-      "text": "Ví dụ: tìm tên người, ngày tháng, số liệu",
-      "highlight": "liệu",
-      "startMs": 8550,
-      "endMs": 11700,
+      "text": "Hỉ dùng ngón tay để dẫn mắt",
+      "highlight": "ngón",
+      "startMs": 12600,
+      "endMs": 15050,
       "kind": "body"
     },
     {
-      "text": "Mắt di chuyển nhanh trên trang, tìm từ khóa",
-      "highlight": "trên",
-      "startMs": 11700,
-      "endMs": 14850,
+      "text": "Sau 1 tuần, tốc độ tăng từ 200 lên 400 từ mỗi phút",
+      "highlight": "phút",
+      "startMs": 15050,
+      "endMs": 19600,
       "kind": "body"
     },
     {
-      "text": "Khi tìm thấy, đọc xung quanh để hiểu ngữ cảnh",
-      "highlight": "xung",
-      "startMs": 14850,
-      "endMs": 18350,
+      "text": "Bạn muốn thử? Hãy dùng ngón tay để dẫn mắt khi đọc",
+      "highlight": "ngón",
+      "startMs": 19600,
+      "endMs": 23800,
       "kind": "body"
     },
     {
-      "text": "Scanning giúp bạn tìm thông tin trong vài giây thay vì vài phút",
-      "highlight": "Scanning",
-      "startMs": 18350,
-      "endMs": 22900,
+      "text": "Di chuyển nhanh hơn khả năng đọc",
+      "highlight": "nhanh",
+      "startMs": 23800,
+      "endMs": 26250,
       "kind": "body"
     },
     {
-      "text": "Hỉ dùng scanning mỗi ngày để tìm thông tin trong email, báo cáo, sách",
-      "highlight": "thông",
-      "startMs": 22900,
-      "endMs": 27800,
-      "kind": "body"
-    },
-    {
-      "text": "Tiết kiệm rất nhiều thời gian",
-      "highlight": "nhiều",
-      "startMs": 27800,
-      "endMs": 29900,
-      "kind": "body"
-    },
-    {
-      "text": "Bạn muốn thử? Hãy scanning một trang sách tìm một từ cụ thể",
-      "highlight": "sách",
-      "startMs": 29900,
-      "endMs": 34450,
-      "kind": "body"
-    },
-    {
-      "text": "Xem bạn tìm được trong bao lâu",
-      "highlight": "trong",
-      "startMs": 34450,
-      "endMs": 36900,
+      "text": "Não sẽ tự điều chỉnh tốc độ",
+      "highlight": "điều",
+      "startMs": 26250,
+      "endMs": 28700,
       "kind": "cta"
     },
     {
@@ -99,6 +78,6 @@
       "kind": "cta"
     }
   ],
-  "totalMs": 36900,
+  "totalMs": 28700,
   "hasAudio": true
 }
