@@ -1,132 +1,132 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "neon-blue",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
+    "text": "#00d4ff",
+    "accent": "#ff006e",
     "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "AI Agent không phải robot thay thế con người",
+      "text": "Chatbot AI Agent có thể tư vấn bán hàng cho bạn 24 giờ một ngày",
       "highlight": "",
       "startMs": 0,
-      "endMs": 3150,
+      "endMs": 5250,
       "kind": "hook"
     },
     {
-      "text": "Nhiều người hiểu lầm về AI Agent",
+      "text": "Kể cả lúc bạn đang ngủ",
       "highlight": "",
-      "startMs": 3150,
-      "endMs": 5600,
+      "startMs": 5250,
+      "endMs": 7350,
       "kind": "body"
     },
     {
-      "text": "Họ nghĩ nó phức tạp",
+      "text": "Khách hàng nhắn tin vào trang Facebook lúc 2 giờ sáng",
       "highlight": "",
-      "startMs": 5600,
-      "endMs": 7600,
+      "startMs": 7350,
+      "endMs": 11200,
       "kind": "body"
     },
     {
-      "text": "Họ nghĩ nó đắt tiền",
+      "text": "Họ hỏi về sản phẩm",
       "highlight": "",
-      "startMs": 7600,
-      "endMs": 9600,
+      "startMs": 11200,
+      "endMs": 13200,
       "kind": "body"
     },
     {
-      "text": "Họ nghĩ chỉ dành cho công ty lớn",
+      "text": "Họ muốn biết giá",
       "highlight": "",
-      "startMs": 9600,
-      "endMs": 12400,
+      "startMs": 13200,
+      "endMs": 15200,
       "kind": "body"
     },
     {
-      "text": "Nhưng sự thật hoàn toàn khác",
+      "text": "Họ cần được tư vấn",
       "highlight": "",
-      "startMs": 12400,
-      "endMs": 14500,
+      "startMs": 15200,
+      "endMs": 17200,
       "kind": "body"
     },
     {
-      "text": "AI Agent là trợ lý 24/7 cho doanh nghiệp của bạn",
+      "text": "Chatbot AI Agent trả lời ngay lập tức",
       "highlight": "",
-      "startMs": 14500,
-      "endMs": 18350,
+      "startMs": 17200,
+      "endMs": 20000,
       "kind": "body"
     },
     {
-      "text": "Nó làm những việc lặp đi lặp lại mà bạn không thích làm",
+      "text": "Không để khách chờ",
       "highlight": "",
-      "startMs": 18350,
-      "endMs": 22900,
+      "startMs": 20000,
+      "endMs": 22000,
       "kind": "body"
     },
     {
-      "text": "Trả lời tin nhắn tự động",
+      "text": "Không bỏ lỡ cơ hội",
       "highlight": "",
-      "startMs": 22900,
-      "endMs": 25000,
+      "startMs": 22000,
+      "endMs": 24000,
       "kind": "body"
     },
     {
-      "text": "Chăm sóc khách hàng",
+      "text": "Nó tư vấn sản phẩm phù hợp với nhu cầu của từng khách hàng",
       "highlight": "",
-      "startMs": 25000,
-      "endMs": 27000,
+      "startMs": 24000,
+      "endMs": 28900,
       "kind": "body"
     },
     {
-      "text": "Đặt lịch hẹn",
+      "text": "Gửi bảng giá chi tiết",
       "highlight": "",
-      "startMs": 27000,
-      "endMs": 29000,
+      "startMs": 28900,
+      "endMs": 30900,
       "kind": "body"
     },
     {
-      "text": "Gửi báo giá",
+      "text": "Giải đáp thắc mắc",
       "highlight": "",
-      "startMs": 29000,
-      "endMs": 31000,
+      "startMs": 30900,
+      "endMs": 32900,
       "kind": "body"
     },
     {
-      "text": "Nhắc nợ",
+      "text": "Chốt đơn hàng",
       "highlight": "",
-      "startMs": 31000,
-      "endMs": 33000,
+      "startMs": 32900,
+      "endMs": 34900,
       "kind": "body"
     },
     {
-      "text": "Tất cả đều chạy tự động không cần người giám sát",
+      "text": "Sáng hôm sau bạn thức dậy và thấy đơn hàng đã được đặt",
       "highlight": "",
-      "startMs": 33000,
-      "endMs": 36850,
+      "startMs": 34900,
+      "endMs": 39450,
       "kind": "body"
     },
     {
-      "text": "Hỉ đã giúp nhiều chủ doanh nghiệp nhỏ tiết kiệm 30 giờ mỗi tuần nhờ AI Agent",
+      "text": "Khách hàng đã thanh toán",
       "highlight": "",
-      "startMs": 36850,
-      "endMs": 42800,
+      "startMs": 39450,
+      "endMs": 41450,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 42800,
-      "endMs": 45800,
+      "startMs": 41450,
+      "endMs": 44450,
       "kind": "cta"
     }
   ],
-  "totalMs": 45800,
+  "totalMs": 44450,
   "hasAudio": true
 }
