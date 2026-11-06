@@ -1,48 +1,83 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "green-tech",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
-    "muted": "#ffffff"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
-  "effect": "wave",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "bình",
+      "text": "Lợi thế lớn nhất trong tương lai thuộc về những người biết kết hợp nhiều năng lực rồi dùng công nghệ để khuếch đại chúng",
+      "highlight": "",
       "startMs": 0,
-      "endMs": 0,
+      "endMs": 8750,
       "kind": "hook"
     },
     {
-      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
-      "highlight": "speed",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Một người chỉ biết fitness không hiếm",
+      "highlight": "",
+      "startMs": 8750,
+      "endMs": 11200,
       "kind": "body"
     },
     {
-      "text": "Một cuốn sách chỉ trong 3 phút",
-      "highlight": "cuốn",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Một người chỉ nghiên cứu triết học cũng không hiếm",
+      "highlight": "",
+      "startMs": 11200,
+      "endMs": 14700,
       "kind": "body"
+    },
+    {
+      "text": "Nhưng một người vừa tập luyện nghiêm túc, vừa nghiên cứu triết học, vừa biết viết và vừa biết xây doanh nghiệp quanh những ý tưởng đó bắt đầu trở nên thú vị",
+      "highlight": "",
+      "startMs": 14700,
+      "endMs": 26250,
+      "kind": "body"
+    },
+    {
+      "text": "AI là công cụ khuếch đại",
+      "highlight": "",
+      "startMs": 26250,
+      "endMs": 28350,
+      "kind": "body"
+    },
+    {
+      "text": "Nó giúp bạn nghiên cứu hàng nghìn dữ liệu, viết code, xây website, tạo sản phẩm",
+      "highlight": "",
+      "startMs": 28350,
+      "endMs": 33950,
+      "kind": "body"
+    },
+    {
+      "text": "Nhưng góc nhìn, trải nghiệm, gu và khả năng phán đoán vẫn là của bạn",
+      "highlight": "",
+      "startMs": 33950,
+      "endMs": 39200,
+      "kind": "body"
+    },
+    {
+      "text": "Đó là thứ máy không thể sao chép",
+      "highlight": "",
+      "startMs": 39200,
+      "endMs": 42000,
+      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
+      "highlight": "Đăng ký",
+      "startMs": 42000,
+      "endMs": 45000,
       "kind": "cta"
     }
   ],
-  "totalMs": 15000,
+  "totalMs": 45000,
   "hasAudio": true
 }
