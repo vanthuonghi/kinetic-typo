@@ -1,83 +1,111 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "neon-blue",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#00d4ff",
+    "accent": "#ff006e",
+    "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Dan Koe tin AI đang mở ra cuộc Phục Hưng thứ hai",
+      "text": "Trong 10 năm tới, lợi thế không còn thuộc về người biết làm một công việc chuyên môn thật lâu",
       "highlight": "",
       "startMs": 0,
-      "endMs": 4200,
+      "endMs": 7000,
       "kind": "hook"
     },
     {
-      "text": "Trong thời Phục Hưng, Leonardo da Vinci nghiên cứu cả hội họa, giải phẫu, kỹ thuật, quang học",
+      "text": "AI có thể làm ngày càng nhiều phần việc kỹ thuật",
       "highlight": "",
-      "startMs": 4200,
-      "endMs": 10500,
+      "startMs": 7000,
+      "endMs": 10850,
       "kind": "body"
     },
     {
-      "text": "Không ai nói với ông phải chọn một niche",
+      "text": "Viết code",
       "highlight": "",
-      "startMs": 10500,
-      "endMs": 13650,
+      "startMs": 10850,
+      "endMs": 12850,
       "kind": "body"
     },
     {
-      "text": "Chính sự giao thoa giữa nhiều lĩnh vực tạo nên khả năng đặc biệt",
+      "text": "Phân tích dữ liệu",
       "highlight": "",
-      "startMs": 13650,
-      "endMs": 18550,
+      "startMs": 12850,
+      "endMs": 14850,
       "kind": "body"
     },
     {
-      "text": "Rồi công nghiệp hóa xuất hiện, con người bị đào tạo thành mắt xích chuyên biệt",
+      "text": "Tạo nội dung",
       "highlight": "",
-      "startMs": 18550,
-      "endMs": 24150,
+      "startMs": 14850,
+      "endMs": 16850,
       "kind": "body"
     },
     {
-      "text": "AI đang đảo ngược logic đó",
+      "text": "Thiết kế",
       "highlight": "",
-      "startMs": 24150,
-      "endMs": 26250,
+      "startMs": 16850,
+      "endMs": 18850,
       "kind": "body"
     },
     {
-      "text": "Một cá nhân giờ có thể tiếp cận kiến thức, công cụ sáng tạo, phần mềm và phân phối mà trước đây chỉ tổ chức lớn mới có",
+      "text": "Những kỹ năng từng mất 10 năm để thành thạo giờ AI làm trong vài giây",
       "highlight": "",
-      "startMs": 26250,
-      "endMs": 36050,
+      "startMs": 18850,
+      "endMs": 24450,
       "kind": "body"
     },
     {
-      "text": "Hỉ tin rằng thời đại này thuộc về những người dám kết hợp nhiều năng lực và dùng AI để khuếch đại chúng",
+      "text": "Vậy con người nên trở thành ai? Dan Koe đặt câu hỏi lớn này",
       "highlight": "",
-      "startMs": 36050,
-      "endMs": 44100,
+      "startMs": 24450,
+      "endMs": 29350,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ tin rằng câu trả lời nằm ở sự kết hợp: hiểu con người, có góc nhìn riêng, và dùng AI để khuếch đại",
+      "highlight": "",
+      "startMs": 29350,
+      "endMs": 37750,
+      "kind": "body"
+    },
+    {
+      "text": "Chuyên môn hóa từng là lợi thế",
+      "highlight": "",
+      "startMs": 37750,
+      "endMs": 40200,
+      "kind": "body"
+    },
+    {
+      "text": "Giờ đây, sự đa chiều mới là lợi thế",
+      "highlight": "",
+      "startMs": 40200,
+      "endMs": 43350,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn đã chuẩn bị cho sự thay đổi này chưa?",
+      "highlight": "",
+      "startMs": 43350,
+      "endMs": 46850,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 44100,
-      "endMs": 47100,
+      "startMs": 46850,
+      "endMs": 49850,
       "kind": "cta"
     }
   ],
-  "totalMs": 47100,
+  "totalMs": 49850,
   "hasAudio": true
 }
