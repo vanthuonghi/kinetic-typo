@@ -1,48 +1,132 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "ocean-blue",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
+    "muted": "#ffffff"
   },
-  "effect": "typewriter",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "phút",
+      "text": "Bạn muốn mở rộng kinh doanh nhưng ngại thuê thêm người? AI Agent là giải pháp",
+      "highlight": "",
       "startMs": 0,
-      "endMs": 0,
+      "endMs": 5600,
       "kind": "hook"
     },
     {
-      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
-      "highlight": "phút",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Một AI Agent làm việc bằng 3 nhân viên",
+      "highlight": "",
+      "startMs": 5600,
+      "endMs": 8750,
       "kind": "body"
     },
     {
-      "text": "Một cuốn sách chỉ trong 3 phút",
-      "highlight": "sách",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Không cần đào tạo",
+      "highlight": "",
+      "startMs": 8750,
+      "endMs": 10750,
       "kind": "body"
+    },
+    {
+      "text": "Không cần quản lý",
+      "highlight": "",
+      "startMs": 10750,
+      "endMs": 12750,
+      "kind": "body"
+    },
+    {
+      "text": "Không cần trả lương tháng 13",
+      "highlight": "",
+      "startMs": 12750,
+      "endMs": 14850,
+      "kind": "body"
+    },
+    {
+      "text": "Không cần bảo hiểm",
+      "highlight": "",
+      "startMs": 14850,
+      "endMs": 16850,
+      "kind": "body"
+    },
+    {
+      "text": "Không cần thưởng Tết",
+      "highlight": "",
+      "startMs": 16850,
+      "endMs": 18850,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ đã thay thế 2 nhân viên bằng AI Agent",
+      "highlight": "",
+      "startMs": 18850,
+      "endMs": 22350,
+      "kind": "body"
+    },
+    {
+      "text": "Chi phí giảm 70%",
+      "highlight": "",
+      "startMs": 22350,
+      "endMs": 24350,
+      "kind": "body"
+    },
+    {
+      "text": "Hiệu quả tăng 50%",
+      "highlight": "",
+      "startMs": 24350,
+      "endMs": 26350,
+      "kind": "body"
+    },
+    {
+      "text": "Đó là toán học đơn giản",
+      "highlight": "",
+      "startMs": 26350,
+      "endMs": 28450,
+      "kind": "body"
+    },
+    {
+      "text": "Với số tiền tiết kiệm được, bạn có thể đầu tư vào marketing hoặc phát triển sản phẩm",
+      "highlight": "",
+      "startMs": 28450,
+      "endMs": 34750,
+      "kind": "body"
+    },
+    {
+      "text": "AI Agent làm việc không mệt mỏi",
+      "highlight": "",
+      "startMs": 34750,
+      "endMs": 37200,
+      "kind": "body"
+    },
+    {
+      "text": "Không cần nghỉ trưa",
+      "highlight": "",
+      "startMs": 37200,
+      "endMs": 39200,
+      "kind": "body"
+    },
+    {
+      "text": "Không cần ngày lễ",
+      "highlight": "",
+      "startMs": 39200,
+      "endMs": 41200,
+      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
+      "highlight": "Đăng ký",
+      "startMs": 41200,
+      "endMs": 44200,
       "kind": "cta"
     }
   ],
-  "totalMs": 15000,
+  "totalMs": 44200,
   "hasAudio": true
 }
