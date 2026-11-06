@@ -1,80 +1,80 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "ocean-blue",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
     "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Bạn có biết subvocalization làm chậm tốc độ đọc? Subvocalization là đọc thầm trong đầu từng từ",
-      "highlight": "Subvocalization",
+      "text": "Peripheral vision là khả năng nhìn thấy từ ở rìa tầm mắt",
+      "highlight": "vision",
       "startMs": 0,
-      "endMs": 5950,
+      "endMs": 4200,
       "kind": "hook"
     },
     {
-      "text": "Não bạn phát âm từng từ trong đầu, làm chậm tốc độ đọc xuống 200-300 từ mỗi phút",
-      "highlight": "phút",
-      "startMs": 5950,
-      "endMs": 12250,
+      "text": "Người đọc nhanh tận dụng peripheral vision để đọc nhiều từ cùng lúc",
+      "highlight": "dụng",
+      "startMs": 4200,
+      "endMs": 8750,
       "kind": "body"
     },
     {
-      "text": "Để bỏ subvocalization, hãy đọc nhanh hơn khả năng phát âm trong đầu",
-      "highlight": "nhanh",
-      "startMs": 12250,
-      "endMs": 16800,
+      "text": "Thay vì nhìn từng từ, hãy nhìn vào giữa dòng và để peripheral vision nhận diện các từ ở hai bên",
+      "highlight": "từng",
+      "startMs": 8750,
+      "endMs": 16100,
       "kind": "body"
     },
     {
-      "text": "Nếu bạn đọc nhanh hơn tốc độ nói, não không kịp phát âm và tự động bỏ subvocalization",
-      "highlight": "subvocalization",
-      "startMs": 16800,
-      "endMs": 23100,
+      "text": "Hỉ đã luyện tập bằng cách đọc với ngón tay chỉ vào giữa dòng",
+      "highlight": "bằng",
+      "startMs": 16100,
+      "endMs": 21000,
       "kind": "body"
     },
     {
-      "text": "Hỉ đã luyện tập bằng cách đọc với metronome",
-      "highlight": "luyện",
-      "startMs": 23100,
-      "endMs": 26250,
+      "text": "Sau 1 tuần, tầm nhìn mở rộng, đọc được 4-5 từ cùng lúc",
+      "highlight": "nhìn",
+      "startMs": 21000,
+      "endMs": 25550,
       "kind": "body"
     },
     {
-      "text": "Bắt đầu với 300 từ mỗi phút",
-      "highlight": "phút",
-      "startMs": 26250,
-      "endMs": 28700,
-      "kind": "body"
-    },
-    {
-      "text": "Tăng dần lên 500, 700",
+      "text": "Tốc độ tăng gấp đôi",
       "highlight": "",
-      "startMs": 28700,
-      "endMs": 30700,
+      "startMs": 25550,
+      "endMs": 27550,
       "kind": "body"
     },
     {
-      "text": "Sau 2 tuần, subvocalization giảm đáng kể",
-      "highlight": "giảm",
-      "startMs": 30700,
-      "endMs": 33150,
+      "text": "Bạn muốn thử? Hãy lấy một trang sách, chỉ vào giữa dòng và đọc",
+      "highlight": "muốn",
+      "startMs": 27550,
+      "endMs": 32450,
       "kind": "body"
     },
     {
-      "text": "Tốc độ đọc tăng gấp đôi",
-      "highlight": "tăng",
-      "startMs": 33150,
-      "endMs": 35250,
+      "text": "Đừng di chuyển mắt",
+      "highlight": "",
+      "startMs": 32450,
+      "endMs": 34450,
+      "kind": "body"
+    },
+    {
+      "text": "Để peripheral vision làm việc",
+      "highlight": "",
+      "startMs": 34450,
+      "endMs": 36450,
       "kind": "cta"
     },
     {
@@ -85,6 +85,6 @@
       "kind": "cta"
     }
   ],
-  "totalMs": 35250,
+  "totalMs": 36450,
   "hasAudio": true
 }
