@@ -1,16 +1,16 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "neon-blue",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
+    "text": "#00d4ff",
+    "accent": "#ff006e",
     "muted": "#ffffff"
   },
-  "effect": "sweep",
+  "effect": "line-mask",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
@@ -23,14 +23,14 @@
     },
     {
       "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
-      "highlight": "speed",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
       "text": "Một cuốn sách chỉ trong 3 phút",
-      "highlight": "cuốn",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
