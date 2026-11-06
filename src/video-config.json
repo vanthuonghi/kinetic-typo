@@ -1,90 +1,104 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "green-tech",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
-    "muted": "#ffffff"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Digital Renaissance Man là con người Phục Hưng của thời đại số",
+      "text": "Nhiều người sợ AI sẽ khiến chúng ta trở nên giống máy hơn",
       "highlight": "",
       "startMs": 0,
-      "endMs": 4200,
+      "endMs": 4550,
       "kind": "hook"
     },
     {
-      "text": "Một người không bị giới hạn bởi một chuyên môn duy nhất",
+      "text": "Làm việc như máy",
       "highlight": "",
-      "startMs": 4200,
-      "endMs": 8400,
+      "startMs": 4550,
+      "endMs": 6550,
       "kind": "body"
     },
     {
-      "text": "Họ có thể dành buổi sáng đọc sách, viết, đi bộ, tập luyện và suy nghĩ sâu",
+      "text": "Sống như máy",
       "highlight": "",
-      "startMs": 8400,
-      "endMs": 14350,
+      "startMs": 6550,
+      "endMs": 8550,
       "kind": "body"
     },
     {
-      "text": "Nhưng khi ngồi xuống làm việc, họ biết dùng AI để nghiên cứu hàng nghìn dữ liệu, xây website, tạo sản phẩm, viết code và vận hành quy trình từng cần cả đội ngũ",
+      "text": "Suy nghĩ như máy",
       "highlight": "",
-      "startMs": 14350,
-      "endMs": 26250,
+      "startMs": 8550,
+      "endMs": 10550,
       "kind": "body"
     },
     {
-      "text": "Họ không chống lại công nghệ",
+      "text": "Nhưng Dan Koe tin rằng AI thực sự cho chúng ta cơ hội ngừng sống như một cái máy",
       "highlight": "",
-      "startMs": 26250,
-      "endMs": 28350,
+      "startMs": 10550,
+      "endMs": 17200,
       "kind": "body"
     },
     {
-      "text": "Họ cũng không phục tùng công nghệ",
+      "text": "Thay vì dành 8 giờ mỗi ngày cho công việc lặp lại, AI xử lý những phần máy móc",
       "highlight": "",
-      "startMs": 28350,
-      "endMs": 30800,
+      "startMs": 17200,
+      "endMs": 23850,
       "kind": "body"
     },
     {
-      "text": "Họ sử dụng nó",
+      "text": "Con người được giải phóng để làm những thứ máy không thể: sáng tạo, kết nối, trải nghiệm, suy nghĩ sâu",
       "highlight": "",
-      "startMs": 30800,
-      "endMs": 32800,
+      "startMs": 23850,
+      "endMs": 31200,
       "kind": "body"
     },
     {
-      "text": "Hỉ tin rằng đây là mô hình con người lý tưởng trong thời đại AI",
+      "text": "Hỉ đã dùng AI Agent để tự động hóa chăm sóc khách hàng, đăng bài mạng xã hội, gửi email",
       "highlight": "",
-      "startMs": 32800,
-      "endMs": 38050,
+      "startMs": 31200,
+      "endMs": 38200,
       "kind": "body"
     },
     {
-      "text": "Bạn muốn trở thành Digital Renaissance Man? Bắt đầu bằng cách phát triển nhiều sở thích, kết hợp chúng lại, rồi dùng công nghệ để khuếch đại",
+      "text": "Kết quả là Hỉ có thêm thời gian đọc sách, viết, và suy nghĩ về chiến lược",
       "highlight": "",
-      "startMs": 38050,
-      "endMs": 47500,
+      "startMs": 38200,
+      "endMs": 44150,
+      "kind": "body"
+    },
+    {
+      "text": "AI không làm chúng ta giống máy",
+      "highlight": "",
+      "startMs": 44150,
+      "endMs": 46600,
+      "kind": "body"
+    },
+    {
+      "text": "AI giúp chúng ta trở lại làm người",
+      "highlight": "",
+      "startMs": 46600,
+      "endMs": 49400,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 47500,
-      "endMs": 50500,
+      "startMs": 49400,
+      "endMs": 52400,
       "kind": "cta"
     }
   ],
-  "totalMs": 50500,
+  "totalMs": 52400,
   "hasAudio": true
 }
