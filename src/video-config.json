@@ -1,132 +1,125 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "luxury-gold",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
-    "muted": "#ffffff"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Bạn muốn mở rộng kinh doanh nhưng ngại thuê thêm người? AI Agent là giải pháp",
+      "text": "Khách hàng thường hỏi: Dịch vụ của bạn có bảo hành không? Có giao hàng không? Có đổi trả không? Mỗi ngày bạn trả lời những câu hỏi giống nhau hàng chục lần",
       "highlight": "",
       "startMs": 0,
-      "endMs": 5600,
+      "endMs": 11550,
       "kind": "hook"
     },
     {
-      "text": "Một AI Agent làm việc bằng 3 nhân viên",
+      "text": "Mệt mỏi",
       "highlight": "",
-      "startMs": 5600,
-      "endMs": 8750,
+      "startMs": 11550,
+      "endMs": 13550,
       "kind": "body"
     },
     {
-      "text": "Không cần đào tạo",
+      "text": "Tốn thời gian",
       "highlight": "",
-      "startMs": 8750,
-      "endMs": 10750,
+      "startMs": 13550,
+      "endMs": 15550,
       "kind": "body"
     },
     {
-      "text": "Không cần quản lý",
+      "text": "AI Agent trả lời ngay lập tức",
       "highlight": "",
-      "startMs": 10750,
-      "endMs": 12750,
+      "startMs": 15550,
+      "endMs": 18000,
       "kind": "body"
     },
     {
-      "text": "Không cần trả lương tháng 13",
+      "text": "24 giờ một ngày",
       "highlight": "",
-      "startMs": 12750,
-      "endMs": 14850,
+      "startMs": 18000,
+      "endMs": 20000,
       "kind": "body"
     },
     {
-      "text": "Không cần bảo hiểm",
+      "text": "7 ngày một tuần",
       "highlight": "",
-      "startMs": 14850,
-      "endMs": 16850,
+      "startMs": 20000,
+      "endMs": 22000,
       "kind": "body"
     },
     {
-      "text": "Không cần thưởng Tết",
+      "text": "Chính xác từng chữ",
       "highlight": "",
-      "startMs": 16850,
-      "endMs": 18850,
+      "startMs": 22000,
+      "endMs": 24000,
       "kind": "body"
     },
     {
-      "text": "Hỉ đã thay thế 2 nhân viên bằng AI Agent",
+      "text": "Nhất quán từng câu trả lời",
       "highlight": "",
-      "startMs": 18850,
-      "endMs": 22350,
+      "startMs": 24000,
+      "endMs": 26100,
       "kind": "body"
     },
     {
-      "text": "Chi phí giảm 70%",
+      "text": "Không bao giờ sai sót",
       "highlight": "",
-      "startMs": 22350,
-      "endMs": 24350,
+      "startMs": 26100,
+      "endMs": 28100,
       "kind": "body"
     },
     {
-      "text": "Hiệu quả tăng 50%",
+      "text": "Hỉ đã xây dựng hệ thống FAQ tự động cho nhiều doanh nghiệp",
       "highlight": "",
-      "startMs": 24350,
-      "endMs": 26350,
+      "startMs": 28100,
+      "endMs": 32650,
       "kind": "body"
     },
     {
-      "text": "Đó là toán học đơn giản",
+      "text": "Kết quả là giảm 80% cuộc gọi hỏi những câu giống nhau",
       "highlight": "",
-      "startMs": 26350,
-      "endMs": 28450,
+      "startMs": 32650,
+      "endMs": 36850,
       "kind": "body"
     },
     {
-      "text": "Với số tiền tiết kiệm được, bạn có thể đầu tư vào marketing hoặc phát triển sản phẩm",
+      "text": "Nhân viên tập trung bán hàng thay vì trả lời",
       "highlight": "",
-      "startMs": 28450,
-      "endMs": 34750,
+      "startMs": 36850,
+      "endMs": 40350,
       "kind": "body"
     },
     {
-      "text": "AI Agent làm việc không mệt mỏi",
+      "text": "Doanh thu tăng vì nhân viên có thêm thời gian bán hàng",
       "highlight": "",
-      "startMs": 34750,
-      "endMs": 37200,
+      "startMs": 40350,
+      "endMs": 44550,
       "kind": "body"
     },
     {
-      "text": "Không cần nghỉ trưa",
+      "text": "Bạn muốn thiết lập không?",
       "highlight": "",
-      "startMs": 37200,
-      "endMs": 39200,
-      "kind": "body"
-    },
-    {
-      "text": "Không cần ngày lễ",
-      "highlight": "",
-      "startMs": 39200,
-      "endMs": 41200,
+      "startMs": 44550,
+      "endMs": 46550,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 41200,
-      "endMs": 44200,
+      "startMs": 46550,
+      "endMs": 49550,
       "kind": "cta"
     }
   ],
-  "totalMs": 44200,
+  "totalMs": 49550,
   "hasAudio": true
 }
