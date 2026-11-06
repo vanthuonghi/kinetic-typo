@@ -1,83 +1,76 @@
 {
   "theme": {
-    "id": "green-tech",
+    "id": "dark-minimal",
     "bg": [
-      "#001a0f",
-      "#001a0f",
-      "#001a0f"
+      "#0a0a0a",
+      "#0a0a0a",
+      "#0a0a0a"
     ],
-    "text": "#00ff88",
-    "accent": "#00ff88",
-    "muted": "#e0ffe0"
+    "text": "#ffffff",
+    "accent": "#00d4ff",
+    "muted": "#f5f5f5"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Lợi thế lớn nhất trong tương lai thuộc về những người biết kết hợp nhiều năng lực rồi dùng công nghệ để khuếch đại chúng",
+      "text": "Leonardo da Vinci bước vào xưởng của Verrocchio để học hội họa, nhưng ông nghiên cứu cả giải phẫu, kỹ thuật, quang học và nhiều lĩnh vực khác",
       "highlight": "",
       "startMs": 0,
-      "endMs": 8750,
+      "endMs": 9800,
       "kind": "hook"
     },
     {
-      "text": "Một người chỉ biết fitness không hiếm",
+      "text": "Không ai nói với da Vinci rằng anh phải chọn niche",
       "highlight": "",
-      "startMs": 8750,
-      "endMs": 11200,
+      "startMs": 9800,
+      "endMs": 13650,
       "kind": "body"
     },
     {
-      "text": "Một người chỉ nghiên cứu triết học cũng không hiếm",
+      "text": "Chính sự giao thoa giữa nhiều lĩnh vực tạo nên khả năng đặc biệt của ông",
       "highlight": "",
-      "startMs": 11200,
-      "endMs": 14700,
+      "startMs": 13650,
+      "endMs": 19250,
       "kind": "body"
     },
     {
-      "text": "Nhưng một người vừa tập luyện nghiêm túc, vừa nghiên cứu triết học, vừa biết viết và vừa biết xây doanh nghiệp quanh những ý tưởng đó bắt đầu trở nên thú vị",
+      "text": "Dan Koe nhắc lại điều này để nói về tương lai",
       "highlight": "",
-      "startMs": 14700,
-      "endMs": 26250,
+      "startMs": 19250,
+      "endMs": 23100,
       "kind": "body"
     },
     {
-      "text": "AI là công cụ khuếch đại",
+      "text": "AI đang cho chúng ta cơ hội trở lại thời Phục Hưng",
       "highlight": "",
-      "startMs": 26250,
-      "endMs": 28350,
+      "startMs": 23100,
+      "endMs": 27300,
       "kind": "body"
     },
     {
-      "text": "Nó giúp bạn nghiên cứu hàng nghìn dữ liệu, viết code, xây website, tạo sản phẩm",
+      "text": "Một cá nhân giờ có thể tiếp cận kiến thức và công cụ mà trước đây chỉ tổ chức lớn mới có",
       "highlight": "",
-      "startMs": 28350,
-      "endMs": 33950,
+      "startMs": 27300,
+      "endMs": 35000,
       "kind": "body"
     },
     {
-      "text": "Nhưng góc nhìn, trải nghiệm, gu và khả năng phán đoán vẫn là của bạn",
+      "text": "Hỉ tin rằng những người dám khám phá nhiều lĩnh vực, kết hợp chúng lại và dùng AI để khuếch đại sẽ là những người thắng trong 10 năm tới",
       "highlight": "",
-      "startMs": 33950,
-      "endMs": 39200,
-      "kind": "body"
-    },
-    {
-      "text": "Đó là thứ máy không thể sao chép",
-      "highlight": "",
-      "startMs": 39200,
-      "endMs": 42000,
+      "startMs": 35000,
+      "endMs": 45500,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 42000,
-      "endMs": 45000,
+      "startMs": 45500,
+      "endMs": 48500,
       "kind": "cta"
     }
   ],
-  "totalMs": 45000,
+  "totalMs": 48500,
   "hasAudio": true
 }
