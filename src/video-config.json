@@ -1,76 +1,132 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "green-tech",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Đọc nhanh giúp bạn tiết kiệm thời gian và tăng kiến thức",
-      "highlight": "kiệm",
+      "text": "Bạn có biết AI Agent có thể giúp bạn viết content? Viết bài Facebook",
+      "highlight": "",
       "startMs": 0,
-      "endMs": 4200,
+      "endMs": 4900,
       "kind": "hook"
     },
     {
-      "text": "Nếu bạn đọc 1 cuốn sách mỗi tuần thay vì 1 cuốn mỗi tháng, trong 1 năm bạn đọc 52 cuốn thay vì 12 cuốn",
-      "highlight": "sách",
-      "startMs": 4200,
-      "endMs": 12950,
+      "text": "Viết mô tả sản phẩm",
+      "highlight": "",
+      "startMs": 4900,
+      "endMs": 6900,
       "kind": "body"
     },
     {
-      "text": "Kiến thức tăng gấp 4 lần",
-      "highlight": "thức",
-      "startMs": 12950,
-      "endMs": 15050,
+      "text": "Viết email quảng cáo",
+      "highlight": "",
+      "startMs": 6900,
+      "endMs": 8900,
       "kind": "body"
     },
     {
-      "text": "Cơ hội thành công cũng tăng gấp 4 lần",
-      "highlight": "tăng",
-      "startMs": 15050,
-      "endMs": 18200,
+      "text": "Viết kịch bản video",
+      "highlight": "",
+      "startMs": 8900,
+      "endMs": 10900,
       "kind": "body"
     },
     {
-      "text": "Hỉ đã đọc 50 cuốn sách trong 1 năm nhờ đọc nhanh",
-      "highlight": "cuốn",
-      "startMs": 18200,
-      "endMs": 22400,
+      "text": "Tất cả chỉ trong vài phút",
+      "highlight": "",
+      "startMs": 10900,
+      "endMs": 13000,
       "kind": "body"
     },
     {
-      "text": "Kiến thức và kỹ năng tăng vọt",
-      "highlight": "Kiến",
-      "startMs": 22400,
-      "endMs": 24850,
+      "text": "Bạn không cần phải là người viết giỏi",
+      "highlight": "",
+      "startMs": 13000,
+      "endMs": 15800,
       "kind": "body"
     },
     {
-      "text": "Bạn muốn làm được như vậy? Hãy bắt đầu luyện tập đọc nhanh ngay hôm nay",
-      "highlight": "ngay",
-      "startMs": 24850,
-      "endMs": 30450,
+      "text": "AI Agent làm hộ bạn",
+      "highlight": "",
+      "startMs": 15800,
+      "endMs": 17800,
+      "kind": "body"
+    },
+    {
+      "text": "Chỉ cần cho nó biết chủ đề và vài ý chính",
+      "highlight": "",
+      "startMs": 17800,
+      "endMs": 21650,
+      "kind": "body"
+    },
+    {
+      "text": "Nó sẽ viết thành bài hoàn chỉnh",
+      "highlight": "",
+      "startMs": 21650,
+      "endMs": 24100,
+      "kind": "body"
+    },
+    {
+      "text": "Đúng tông giọng thương hiệu của bạn",
+      "highlight": "",
+      "startMs": 24100,
+      "endMs": 26550,
+      "kind": "body"
+    },
+    {
+      "text": "Chất lượng đồng đều",
+      "highlight": "",
+      "startMs": 26550,
+      "endMs": 28550,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ dùng AI Agent để viết 30 bài content mỗi ngày",
+      "highlight": "",
+      "startMs": 28550,
+      "endMs": 32400,
+      "kind": "body"
+    },
+    {
+      "text": "Ba mươi bài",
+      "highlight": "",
+      "startMs": 32400,
+      "endMs": 34400,
+      "kind": "body"
+    },
+    {
+      "text": "Mà không cần động tay viết chữ nào",
+      "highlight": "",
+      "startMs": 34400,
+      "endMs": 37200,
+      "kind": "body"
+    },
+    {
+      "text": "Chỉ kiểm tra và chỉnh sửa một chút",
+      "highlight": "",
+      "startMs": 37200,
+      "endMs": 40000,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 0,
-      "endMs": 0,
+      "startMs": 40000,
+      "endMs": 43000,
       "kind": "cta"
     }
   ],
-  "totalMs": 30450,
+  "totalMs": 43000,
   "hasAudio": true
 }
