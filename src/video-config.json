@@ -1,132 +1,76 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "gradient-purple",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "AI Agent giúp bạn chốt đơn ngay cả khi bạn đang tắm",
-      "highlight": "",
+      "text": "Đọc nhanh giúp bạn tiết kiệm thời gian và tăng kiến thức",
+      "highlight": "kiệm",
       "startMs": 0,
       "endMs": 4200,
       "kind": "hook"
     },
     {
-      "text": "Nghe có vẻ hài nhưng có thật",
-      "highlight": "",
+      "text": "Nếu bạn đọc 1 cuốn sách mỗi tuần thay vì 1 cuốn mỗi tháng, trong 1 năm bạn đọc 52 cuốn thay vì 12 cuốn",
+      "highlight": "sách",
       "startMs": 4200,
-      "endMs": 6650,
+      "endMs": 12950,
       "kind": "body"
     },
     {
-      "text": "Khách hàng vào website của bạn lúc 10 giờ tối",
-      "highlight": "",
-      "startMs": 6650,
-      "endMs": 10150,
+      "text": "Kiến thức tăng gấp 4 lần",
+      "highlight": "thức",
+      "startMs": 12950,
+      "endMs": 15050,
       "kind": "body"
     },
     {
-      "text": "Họ muốn biết giá sản phẩm",
-      "highlight": "",
-      "startMs": 10150,
-      "endMs": 12250,
+      "text": "Cơ hội thành công cũng tăng gấp 4 lần",
+      "highlight": "tăng",
+      "startMs": 15050,
+      "endMs": 18200,
       "kind": "body"
     },
     {
-      "text": "Họ muốn được tư vấn",
-      "highlight": "",
-      "startMs": 12250,
-      "endMs": 14250,
+      "text": "Hỉ đã đọc 50 cuốn sách trong 1 năm nhờ đọc nhanh",
+      "highlight": "cuốn",
+      "startMs": 18200,
+      "endMs": 22400,
       "kind": "body"
     },
     {
-      "text": "Chatbot AI Agent trên website trả lời ngay",
-      "highlight": "",
-      "startMs": 14250,
-      "endMs": 17050,
+      "text": "Kiến thức và kỹ năng tăng vọt",
+      "highlight": "Kiến",
+      "startMs": 22400,
+      "endMs": 24850,
       "kind": "body"
     },
     {
-      "text": "Tư vấn sản phẩm phù hợp",
-      "highlight": "",
-      "startMs": 17050,
-      "endMs": 19150,
-      "kind": "body"
-    },
-    {
-      "text": "Gửi bảng giá chi tiết",
-      "highlight": "",
-      "startMs": 19150,
-      "endMs": 21150,
-      "kind": "body"
-    },
-    {
-      "text": "Giải đáp thắc mắc",
-      "highlight": "",
-      "startMs": 21150,
-      "endMs": 23150,
-      "kind": "body"
-    },
-    {
-      "text": "Chốt đơn hàng",
-      "highlight": "",
-      "startMs": 23150,
-      "endMs": 25150,
-      "kind": "body"
-    },
-    {
-      "text": "Hướng dẫn thanh toán",
-      "highlight": "",
-      "startMs": 25150,
-      "endMs": 27150,
-      "kind": "body"
-    },
-    {
-      "text": "Tất cả tự động",
-      "highlight": "",
-      "startMs": 27150,
-      "endMs": 29150,
-      "kind": "body"
-    },
-    {
-      "text": "Bạn không cần làm gì",
-      "highlight": "",
-      "startMs": 29150,
-      "endMs": 31150,
-      "kind": "body"
-    },
-    {
-      "text": "Sáng hôm sau thức dậy, bạn thấy đơn hàng đã được đặt và thanh toán",
-      "highlight": "",
-      "startMs": 31150,
-      "endMs": 36400,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ đã chứng kiến một chủ shop mỹ phẩm kiếm 15 triệu đồng khi đang ngủ nhờ AI Agent",
-      "highlight": "",
-      "startMs": 36400,
-      "endMs": 43050,
+      "text": "Bạn muốn làm được như vậy? Hãy bắt đầu luyện tập đọc nhanh ngay hôm nay",
+      "highlight": "ngay",
+      "startMs": 24850,
+      "endMs": 30450,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 43050,
-      "endMs": 46050,
+      "startMs": 0,
+      "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 46050,
+  "totalMs": 30450,
   "hasAudio": true
 }
