@@ -1,87 +1,101 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "warm-orange",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#1a0000",
+      "#2d1b00",
+      "#1a0f00"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
+    "text": "#ffcc80",
+    "accent": "#ff9800",
     "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Previewing là kỹ thuật xem trước nội dung trước khi đọc chi tiết",
-      "highlight": "tiết",
+      "text": "Skimming là kỹ thuật đọc lướt để nắm ý chính",
+      "highlight": "lướt",
       "startMs": 0,
-      "endMs": 4550,
+      "endMs": 3500,
       "kind": "hook"
     },
     {
-      "text": "Đọc tiêu đề, tiêu đề phụ, in đậm, in nghiêng",
-      "highlight": "nghiêng",
-      "startMs": 4550,
-      "endMs": 8050,
-      "kind": "body"
-    },
-    {
-      "text": "Xem hình ảnh và chú thích",
-      "highlight": "thích",
-      "startMs": 8050,
-      "endMs": 10150,
-      "kind": "body"
-    },
-    {
-      "text": "Điều này giúp não bạn tạo bản đồ nội dung",
-      "highlight": "giúp",
-      "startMs": 10150,
-      "endMs": 13650,
-      "kind": "body"
-    },
-    {
-      "text": "Khi đọc chi tiết, bạn sẽ hiểu nhanh hơn vì đã biết khung",
-      "highlight": "hiểu",
-      "startMs": 13650,
-      "endMs": 18200,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ preview mỗi chương trong 2 phút trước khi đọc",
-      "highlight": "phút",
-      "startMs": 18200,
-      "endMs": 21700,
-      "kind": "body"
-    },
-    {
-      "text": "Kết quả: thời gian đọc giảm 30%, khả năng nhớ tăng 50%",
-      "highlight": "gian",
-      "startMs": 21700,
-      "endMs": 25900,
-      "kind": "body"
-    },
-    {
-      "text": "Bạn muốn thử? Hãy preview chương tiếp theo trước khi đọc",
-      "highlight": "preview",
-      "startMs": 25900,
-      "endMs": 29750,
-      "kind": "body"
-    },
-    {
-      "text": "Chỉ 2 phút",
+      "text": "Không cần đọc từng từ",
       "highlight": "",
-      "startMs": 29750,
-      "endMs": 31750,
+      "startMs": 3500,
+      "endMs": 5500,
       "kind": "body"
     },
     {
-      "text": "Tiết kiệm rất nhiều thời gian",
-      "highlight": "kiệm",
-      "startMs": 31750,
-      "endMs": 33850,
+      "text": "Chỉ cần đọc câu đầu và câu cuối mỗi đoạn",
+      "highlight": "đoạn",
+      "startMs": 5500,
+      "endMs": 9000,
+      "kind": "body"
+    },
+    {
+      "text": "Đọc các từ in đậm, in nghiêng",
+      "highlight": "nghiêng",
+      "startMs": 9000,
+      "endMs": 11450,
+      "kind": "body"
+    },
+    {
+      "text": "Xem hình ảnh và biểu đồ",
+      "highlight": "hình",
+      "startMs": 11450,
+      "endMs": 13550,
+      "kind": "body"
+    },
+    {
+      "text": "Skimming giúp bạn nắm ý chính trong 10% thời gian",
+      "highlight": "giúp",
+      "startMs": 13550,
+      "endMs": 17050,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ dùng skimming để quyết định có nên đọc chi tiết không",
+      "highlight": "dùng",
+      "startMs": 17050,
+      "endMs": 21250,
+      "kind": "body"
+    },
+    {
+      "text": "Nếu bài viết có giá trị, đọc chi tiết",
+      "highlight": "tiết",
+      "startMs": 21250,
+      "endMs": 24400,
+      "kind": "body"
+    },
+    {
+      "text": "Nếu không, bỏ qua",
+      "highlight": "",
+      "startMs": 24400,
+      "endMs": 26400,
+      "kind": "body"
+    },
+    {
+      "text": "Tiết kiệm hàng giờ mỗi ngày",
+      "highlight": "hàng",
+      "startMs": 26400,
+      "endMs": 28500,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn muốn thử? Hãy skimming một bài báo trong 2 phút",
+      "highlight": "skimming",
+      "startMs": 28500,
+      "endMs": 32350,
+      "kind": "body"
+    },
+    {
+      "text": "Xem bạn nắm được bao nhiêu ý chính",
+      "highlight": "chính",
+      "startMs": 32350,
+      "endMs": 35150,
       "kind": "cta"
     },
     {
@@ -92,6 +106,6 @@
       "kind": "cta"
     }
   ],
-  "totalMs": 33850,
+  "totalMs": 35150,
   "hasAudio": true
 }
