@@ -1,73 +1,101 @@
 {
   "theme": {
-    "id": "dark-minimal",
+    "id": "neon-blue",
     "bg": [
-      "#0a0a0a",
-      "#0a0a0a",
-      "#0a0a0a"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ffffff",
-    "accent": "#00d4ff",
-    "muted": "#f5f5f5"
+    "text": "#00d4ff",
+    "accent": "#ff006e",
+    "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Meta guiding là kỹ thuật dùng ngón tay hoặc bút để dẫn mắt di chuyển trên trang",
-      "highlight": "ngón",
+      "text": "Bạn có biết đọc nhanh không chỉ là tốc độ? Đọc nhanh còn là khả năng hiểu và nhớ",
+      "highlight": "nhanh",
       "startMs": 0,
-      "endMs": 5950,
+      "endMs": 6650,
       "kind": "hook"
     },
     {
-      "text": "Điều này giúp mắt di chuyển mượt mà, không dừng lại giữa chừng",
-      "highlight": "chuyển",
-      "startMs": 5950,
+      "text": "Người đọc nhanh không chỉ đọc nhanh mà còn hiểu sâu",
+      "highlight": "Người",
+      "startMs": 6650,
       "endMs": 10500,
       "kind": "body"
     },
     {
-      "text": "Tốc độ có thể tăng 50-100%",
-      "highlight": "tăng",
+      "text": "Bí quyết là tập trung",
+      "highlight": "",
       "startMs": 10500,
-      "endMs": 12600,
+      "endMs": 12500,
       "kind": "body"
     },
     {
-      "text": "Hỉ dùng ngón tay để dẫn mắt",
-      "highlight": "ngón",
-      "startMs": 12600,
-      "endMs": 15050,
+      "text": "Loại bỏ phân tâm",
+      "highlight": "",
+      "startMs": 12500,
+      "endMs": 14500,
       "kind": "body"
     },
     {
-      "text": "Sau 1 tuần, tốc độ tăng từ 200 lên 400 từ mỗi phút",
-      "highlight": "phút",
-      "startMs": 15050,
-      "endMs": 19600,
+      "text": "Đọc trong môi trường yên tĩnh",
+      "highlight": "trong",
+      "startMs": 14500,
+      "endMs": 16600,
       "kind": "body"
     },
     {
-      "text": "Bạn muốn thử? Hãy dùng ngón tay để dẫn mắt khi đọc",
-      "highlight": "ngón",
-      "startMs": 19600,
-      "endMs": 23800,
+      "text": "Tắt điện thoại",
+      "highlight": "",
+      "startMs": 16600,
+      "endMs": 18600,
       "kind": "body"
     },
     {
-      "text": "Di chuyển nhanh hơn khả năng đọc",
-      "highlight": "nhanh",
-      "startMs": 23800,
-      "endMs": 26250,
+      "text": "Đóng các tab không cần thiết",
+      "highlight": "thiết",
+      "startMs": 18600,
+      "endMs": 20700,
       "kind": "body"
     },
     {
-      "text": "Não sẽ tự điều chỉnh tốc độ",
-      "highlight": "điều",
-      "startMs": 26250,
-      "endMs": 28700,
+      "text": "Hỉ đọc trong phòng yên tĩnh, không điện thoại",
+      "highlight": "phòng",
+      "startMs": 20700,
+      "endMs": 23850,
+      "kind": "body"
+    },
+    {
+      "text": "Kết quả: tốc độ tăng, khả năng nhớ tăng",
+      "highlight": "tăng",
+      "startMs": 23850,
+      "endMs": 27000,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn muốn thử? Hãy tạo môi trường đọc yên tĩnh",
+      "highlight": "tĩnh",
+      "startMs": 27000,
+      "endMs": 30500,
+      "kind": "body"
+    },
+    {
+      "text": "Tắt mọi thứ phân tâm",
+      "highlight": "",
+      "startMs": 30500,
+      "endMs": 32500,
+      "kind": "body"
+    },
+    {
+      "text": "Chỉ tập trung vào sách",
+      "highlight": "",
+      "startMs": 32500,
+      "endMs": 34500,
       "kind": "cta"
     },
     {
@@ -78,6 +106,6 @@
       "kind": "cta"
     }
   ],
-  "totalMs": 28700,
+  "totalMs": 34500,
   "hasAudio": true
 }
