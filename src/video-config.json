@@ -1,16 +1,16 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "ocean-blue",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
     "muted": "#ffffff"
   },
-  "effect": "typewriter",
+  "effect": "sweep",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
@@ -30,7 +30,7 @@
     },
     {
       "text": "Một cuốn sách chỉ trong 3 phút",
-      "highlight": "trong",
+      "highlight": "cuốn",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
