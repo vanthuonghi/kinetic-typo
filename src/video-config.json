@@ -1,132 +1,90 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "warm-orange",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#1a0000",
+      "#2d1b00",
+      "#1a0f00"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
+    "text": "#ffcc80",
+    "accent": "#ff9800",
     "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Chatbot AI Agent có thể tư vấn bán hàng cho bạn 24 giờ một ngày",
+      "text": "Digital Renaissance Man là con người Phục Hưng của thời đại số",
       "highlight": "",
       "startMs": 0,
-      "endMs": 5250,
+      "endMs": 4200,
       "kind": "hook"
     },
     {
-      "text": "Kể cả lúc bạn đang ngủ",
+      "text": "Một người không bị giới hạn bởi một chuyên môn duy nhất",
       "highlight": "",
-      "startMs": 5250,
-      "endMs": 7350,
+      "startMs": 4200,
+      "endMs": 8400,
       "kind": "body"
     },
     {
-      "text": "Khách hàng nhắn tin vào trang Facebook lúc 2 giờ sáng",
+      "text": "Họ có thể dành buổi sáng đọc sách, viết, đi bộ, tập luyện và suy nghĩ sâu",
       "highlight": "",
-      "startMs": 7350,
-      "endMs": 11200,
+      "startMs": 8400,
+      "endMs": 14350,
       "kind": "body"
     },
     {
-      "text": "Họ hỏi về sản phẩm",
+      "text": "Nhưng khi ngồi xuống làm việc, họ biết dùng AI để nghiên cứu hàng nghìn dữ liệu, xây website, tạo sản phẩm, viết code và vận hành quy trình từng cần cả đội ngũ",
       "highlight": "",
-      "startMs": 11200,
-      "endMs": 13200,
+      "startMs": 14350,
+      "endMs": 26250,
       "kind": "body"
     },
     {
-      "text": "Họ muốn biết giá",
+      "text": "Họ không chống lại công nghệ",
       "highlight": "",
-      "startMs": 13200,
-      "endMs": 15200,
+      "startMs": 26250,
+      "endMs": 28350,
       "kind": "body"
     },
     {
-      "text": "Họ cần được tư vấn",
+      "text": "Họ cũng không phục tùng công nghệ",
       "highlight": "",
-      "startMs": 15200,
-      "endMs": 17200,
+      "startMs": 28350,
+      "endMs": 30800,
       "kind": "body"
     },
     {
-      "text": "Chatbot AI Agent trả lời ngay lập tức",
+      "text": "Họ sử dụng nó",
       "highlight": "",
-      "startMs": 17200,
-      "endMs": 20000,
+      "startMs": 30800,
+      "endMs": 32800,
       "kind": "body"
     },
     {
-      "text": "Không để khách chờ",
+      "text": "Hỉ tin rằng đây là mô hình con người lý tưởng trong thời đại AI",
       "highlight": "",
-      "startMs": 20000,
-      "endMs": 22000,
+      "startMs": 32800,
+      "endMs": 38050,
       "kind": "body"
     },
     {
-      "text": "Không bỏ lỡ cơ hội",
+      "text": "Bạn muốn trở thành Digital Renaissance Man? Bắt đầu bằng cách phát triển nhiều sở thích, kết hợp chúng lại, rồi dùng công nghệ để khuếch đại",
       "highlight": "",
-      "startMs": 22000,
-      "endMs": 24000,
-      "kind": "body"
-    },
-    {
-      "text": "Nó tư vấn sản phẩm phù hợp với nhu cầu của từng khách hàng",
-      "highlight": "",
-      "startMs": 24000,
-      "endMs": 28900,
-      "kind": "body"
-    },
-    {
-      "text": "Gửi bảng giá chi tiết",
-      "highlight": "",
-      "startMs": 28900,
-      "endMs": 30900,
-      "kind": "body"
-    },
-    {
-      "text": "Giải đáp thắc mắc",
-      "highlight": "",
-      "startMs": 30900,
-      "endMs": 32900,
-      "kind": "body"
-    },
-    {
-      "text": "Chốt đơn hàng",
-      "highlight": "",
-      "startMs": 32900,
-      "endMs": 34900,
-      "kind": "body"
-    },
-    {
-      "text": "Sáng hôm sau bạn thức dậy và thấy đơn hàng đã được đặt",
-      "highlight": "",
-      "startMs": 34900,
-      "endMs": 39450,
-      "kind": "body"
-    },
-    {
-      "text": "Khách hàng đã thanh toán",
-      "highlight": "",
-      "startMs": 39450,
-      "endMs": 41450,
+      "startMs": 38050,
+      "endMs": 47500,
       "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
       "highlight": "Đăng ký",
-      "startMs": 41450,
-      "endMs": 44450,
+      "startMs": 47500,
+      "endMs": 50500,
       "kind": "cta"
     }
   ],
-  "totalMs": 44450,
+  "totalMs": 50500,
   "hasAudio": true
 }
