@@ -10,7 +10,7 @@
     "accent": "#ff9800",
     "muted": "#ffffff"
   },
-  "effect": "slam",
+  "effect": "sweep",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
@@ -23,7 +23,7 @@
     },
     {
       "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
-      "highlight": "speed",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
