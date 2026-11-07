@@ -1,16 +1,16 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "neon-blue",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
+    "text": "#00d4ff",
+    "accent": "#ff006e",
     "muted": "#ffffff"
   },
-  "effect": "wave",
+  "effect": "typewriter",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
