@@ -10,27 +10,27 @@
     "accent": "#ff4081",
     "muted": "#ffffff"
   },
-  "effect": "line-mask",
+  "effect": "typewriter",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
       "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "bình",
+      "highlight": "Người",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
       "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
-      "highlight": "speed",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
       "text": "Một cuốn sách chỉ trong 3 phút",
-      "highlight": "trong",
+      "highlight": "sách",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
