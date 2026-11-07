@@ -1,16 +1,16 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "ocean-blue",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
+    "muted": "#ffffff"
   },
-  "effect": "word-rise",
+  "effect": "wave",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
