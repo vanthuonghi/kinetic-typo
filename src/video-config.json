@@ -1,16 +1,16 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "green-tech",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
-  "effect": "wave",
+  "effect": "slam",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-NamMinhNeural",
   "scenes": [
@@ -30,7 +30,7 @@
     },
     {
       "text": "Một cuốn sách chỉ trong 3 phút",
-      "highlight": "cuốn",
+      "highlight": "trong",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
