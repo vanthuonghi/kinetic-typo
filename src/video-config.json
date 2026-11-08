@@ -1,29 +1,29 @@
 {
   "theme": {
-    "id": "green-tech",
+    "id": "dark-minimal",
     "bg": [
-      "#001a0f",
-      "#001a0f",
-      "#001a0f"
+      "#0a0a0a",
+      "#0a0a0a",
+      "#0a0a0a"
     ],
-    "text": "#00ff88",
-    "accent": "#00ff88",
-    "muted": "#e0ffe0"
+    "text": "#ffffff",
+    "accent": "#00d4ff",
+    "muted": "#f5f5f5"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
       "text": "Bạn có biết đọc nhanh không chỉ là tốc độ? Đọc nhanh còn là khả năng hiểu và nhớ",
-      "highlight": "nhanh",
+      "highlight": "không",
       "startMs": 0,
       "endMs": 6650,
       "kind": "hook"
     },
     {
       "text": "Người đọc nhanh không chỉ đọc nhanh mà còn hiểu sâu",
-      "highlight": "hiểu",
+      "highlight": "Người",
       "startMs": 6650,
       "endMs": 10500,
       "kind": "body"
