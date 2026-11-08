@@ -1,101 +1,80 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "dark-minimal",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#0a0a0a",
+      "#0a0a0a",
+      "#0a0a0a"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#00d4ff",
+    "muted": "#f5f5f5"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "RSVP là kỹ thuật đọc nhanh từng từ một với tốc độ cố định",
+      "text": "Chunking là kỹ thuật đọc theo cụm từ thay vì từng từ một",
       "highlight": "từng",
       "startMs": 0,
-      "endMs": 4900,
+      "endMs": 4550,
       "kind": "hook"
     },
     {
-      "text": "Từ xuất hiện từng từ một ở giữa màn hình",
-      "highlight": "hiện",
-      "startMs": 4900,
-      "endMs": 8400,
+      "text": "Thay vì đọc 'Tôi đi chợ mua rau', hãy đọc 'Tôi đi chợ' và 'mua rau' như 2 cụm",
+      "highlight": "Thay",
+      "startMs": 4550,
+      "endMs": 11200,
       "kind": "body"
     },
     {
-      "text": "Bạn không cần di chuyển mắt",
-      "highlight": "không",
-      "startMs": 8400,
-      "endMs": 10500,
+      "text": "Não bạn xử lý cụm từ nhanh hơn từng từ",
+      "highlight": "nhanh",
+      "startMs": 11200,
+      "endMs": 14700,
       "kind": "body"
     },
     {
-      "text": "Não bạn tự động nhận diện từ và hiểu ý nghĩa",
-      "highlight": "hiểu",
-      "startMs": 10500,
-      "endMs": 14350,
+      "text": "Hỉ đã luyện tập bằng cách vẽ khung autour cụm từ trong sách",
+      "highlight": "luyện",
+      "startMs": 14700,
+      "endMs": 19250,
       "kind": "body"
     },
     {
-      "text": "Tốc độ có thể tăng lên 1000 từ mỗi phút",
+      "text": "Sau 1 tuần, số lần dừng mắt giảm từ 12 xuống 4 trên mỗi dòng",
+      "highlight": "dòng",
+      "startMs": 19250,
+      "endMs": 24500,
+      "kind": "body"
+    },
+    {
+      "text": "Tốc độ đọc tăng gấp đôi",
       "highlight": "tăng",
-      "startMs": 14350,
-      "endMs": 17850,
+      "startMs": 24500,
+      "endMs": 26600,
       "kind": "body"
     },
     {
-      "text": "Hỉ dùng RSVP mỗi ngày 10 phút để luyện tập",
-      "highlight": "dùng",
-      "startMs": 17850,
-      "endMs": 21350,
+      "text": "Bạn muốn thử? Hãy lấy một trang sách, vẽ khung quanh 2-3 từ và đọc theo cụm",
+      "highlight": "khung",
+      "startMs": 26600,
+      "endMs": 32550,
       "kind": "body"
     },
     {
-      "text": "Sau 2 tuần, tốc độ đọc tăng từ 200 lên 800 từ mỗi phút",
-      "highlight": "phút",
-      "startMs": 21350,
-      "endMs": 26250,
+      "text": "Chỉ 15 phút mỗi ngày",
+      "highlight": "",
+      "startMs": 32550,
+      "endMs": 34550,
       "kind": "body"
     },
     {
-      "text": "Bạn có thể dùng app như Spritz hoặc ReadMe",
-      "highlight": "dùng",
-      "startMs": 26250,
-      "endMs": 29400,
-      "kind": "body"
-    },
-    {
-      "text": "Hoặc tự luyện bằng cách flash từ trên màn hình",
-      "highlight": "trên",
-      "startMs": 29400,
-      "endMs": 32900,
-      "kind": "body"
-    },
-    {
-      "text": "Bắt đầu với 300 từ mỗi phút",
-      "highlight": "phút",
-      "startMs": 32900,
-      "endMs": 35350,
-      "kind": "body"
-    },
-    {
-      "text": "Tăng dần lên 500, 700, 1000",
-      "highlight": "Tăng",
-      "startMs": 35350,
-      "endMs": 37450,
-      "kind": "body"
-    },
-    {
-      "text": "Chỉ sau 2 tuần bạn sẽ thấy sự khác biệt",
-      "highlight": "biệt",
-      "startMs": 37450,
-      "endMs": 40950,
+      "text": "Sau 7 ngày bạn sẽ thấy sự khác biệt",
+      "highlight": "khác",
+      "startMs": 34550,
+      "endMs": 37700,
       "kind": "cta"
     },
     {
@@ -106,6 +85,6 @@
       "kind": "cta"
     }
   ],
-  "totalMs": 40950,
+  "totalMs": 37700,
   "hasAudio": true
 }
