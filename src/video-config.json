@@ -1,101 +1,66 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "warm-orange",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#1a0000",
+      "#2d1b00",
+      "#1a0f00"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
+    "text": "#ffcc80",
+    "accent": "#ff9800",
     "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Bạn có biết đọc nhanh không chỉ là tốc độ? Đọc nhanh còn là khả năng hiểu và nhớ",
-      "highlight": "nhanh",
+      "text": "Đọc nhanh giúp bạn tiết kiệm thời gian và tăng kiến thức",
+      "highlight": "gian",
       "startMs": 0,
-      "endMs": 6650,
+      "endMs": 4200,
       "kind": "hook"
     },
     {
-      "text": "Người đọc nhanh không chỉ đọc nhanh mà còn hiểu sâu",
-      "highlight": "nhanh",
-      "startMs": 6650,
-      "endMs": 10500,
+      "text": "Nếu bạn đọc 1 cuốn sách mỗi tuần thay vì 1 cuốn mỗi tháng, trong 1 năm bạn đọc 52 cuốn thay vì 12 cuốn",
+      "highlight": "cuốn",
+      "startMs": 4200,
+      "endMs": 12950,
       "kind": "body"
     },
     {
-      "text": "Bí quyết là tập trung",
-      "highlight": "",
-      "startMs": 10500,
-      "endMs": 12500,
-      "kind": "body"
-    },
-    {
-      "text": "Loại bỏ phân tâm",
-      "highlight": "",
-      "startMs": 12500,
-      "endMs": 14500,
-      "kind": "body"
-    },
-    {
-      "text": "Đọc trong môi trường yên tĩnh",
-      "highlight": "trường",
-      "startMs": 14500,
-      "endMs": 16600,
-      "kind": "body"
-    },
-    {
-      "text": "Tắt điện thoại",
-      "highlight": "",
-      "startMs": 16600,
-      "endMs": 18600,
-      "kind": "body"
-    },
-    {
-      "text": "Đóng các tab không cần thiết",
-      "highlight": "thiết",
-      "startMs": 18600,
-      "endMs": 20700,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ đọc trong phòng yên tĩnh, không điện thoại",
-      "highlight": "trong",
-      "startMs": 20700,
-      "endMs": 23850,
-      "kind": "body"
-    },
-    {
-      "text": "Kết quả: tốc độ tăng, khả năng nhớ tăng",
+      "text": "Kiến thức tăng gấp 4 lần",
       "highlight": "tăng",
-      "startMs": 23850,
-      "endMs": 27000,
+      "startMs": 12950,
+      "endMs": 15050,
       "kind": "body"
     },
     {
-      "text": "Bạn muốn thử? Hãy tạo môi trường đọc yên tĩnh",
-      "highlight": "trường",
-      "startMs": 27000,
-      "endMs": 30500,
+      "text": "Cơ hội thành công cũng tăng gấp 4 lần",
+      "highlight": "công",
+      "startMs": 15050,
+      "endMs": 18200,
       "kind": "body"
     },
     {
-      "text": "Tắt mọi thứ phân tâm",
-      "highlight": "",
-      "startMs": 30500,
-      "endMs": 32500,
+      "text": "Hỉ đã đọc 50 cuốn sách trong 1 năm nhờ đọc nhanh",
+      "highlight": "trong",
+      "startMs": 18200,
+      "endMs": 22400,
       "kind": "body"
     },
     {
-      "text": "Chỉ tập trung vào sách",
-      "highlight": "",
-      "startMs": 32500,
-      "endMs": 34500,
+      "text": "Kiến thức và kỹ năng tăng vọt",
+      "highlight": "Kiến",
+      "startMs": 22400,
+      "endMs": 24850,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn muốn làm được như vậy? Hãy bắt đầu luyện tập đọc nhanh ngay hôm nay",
+      "highlight": "nhanh",
+      "startMs": 24850,
+      "endMs": 30450,
       "kind": "cta"
     },
     {
@@ -106,6 +71,6 @@
       "kind": "cta"
     }
   ],
-  "totalMs": 34500,
+  "totalMs": 30450,
   "hasAudio": true
 }
