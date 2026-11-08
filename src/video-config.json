@@ -1,115 +1,101 @@
 {
   "theme": {
-    "id": "green-tech",
+    "id": "gradient-purple",
     "bg": [
-      "#001a0f",
-      "#001a0f",
-      "#001a0f"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
-    "text": "#00ff88",
-    "accent": "#00ff88",
-    "muted": "#e0ffe0"
+    "text": "#ffffff",
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Regression là thói quen đọc lại những từ vừa đọc",
-      "highlight": "thói",
+      "text": "RSVP là kỹ thuật đọc nhanh từng từ một với tốc độ cố định",
+      "highlight": "thuật",
       "startMs": 0,
-      "endMs": 3500,
+      "endMs": 4900,
       "kind": "hook"
     },
     {
-      "text": "Đây là kẻ thù số một của tốc độ đọc",
-      "highlight": "",
-      "startMs": 3500,
-      "endMs": 7000,
+      "text": "Từ xuất hiện từng từ một ở giữa màn hình",
+      "highlight": "từng",
+      "startMs": 4900,
+      "endMs": 8400,
       "kind": "body"
     },
     {
-      "text": "Người đọc chậm thường đọc lại 30% nội dung",
-      "highlight": "dung",
-      "startMs": 7000,
-      "endMs": 10150,
+      "text": "Bạn không cần di chuyển mắt",
+      "highlight": "chuyển",
+      "startMs": 8400,
+      "endMs": 10500,
       "kind": "body"
     },
     {
-      "text": "Điều này làm chậm tốc độ và giảm khả năng tập trung",
-      "highlight": "năng",
-      "startMs": 10150,
+      "text": "Não bạn tự động nhận diện từ và hiểu ý nghĩa",
+      "highlight": "hiểu",
+      "startMs": 10500,
       "endMs": 14350,
       "kind": "body"
     },
     {
-      "text": "Tại sao bạn đọc lại? Vì bạn không tin mình đã hiểu",
-      "highlight": "hiểu",
+      "text": "Tốc độ có thể tăng lên 1000 từ mỗi phút",
+      "highlight": "phút",
       "startMs": 14350,
-      "endMs": 18550,
+      "endMs": 17850,
       "kind": "body"
     },
     {
-      "text": "Nhưng thực ra não bạn đã ghi nhận thông tin rồi",
-      "highlight": "nhận",
-      "startMs": 18550,
-      "endMs": 22400,
+      "text": "Hỉ dùng RSVP mỗi ngày 10 phút để luyện tập",
+      "highlight": "phút",
+      "startMs": 17850,
+      "endMs": 21350,
       "kind": "body"
     },
     {
-      "text": "Chỉ cần tin tưởng bản thân",
-      "highlight": "thân",
-      "startMs": 22400,
-      "endMs": 24500,
+      "text": "Sau 2 tuần, tốc độ đọc tăng từ 200 lên 800 từ mỗi phút",
+      "highlight": "phút",
+      "startMs": 21350,
+      "endMs": 26250,
       "kind": "body"
     },
     {
-      "text": "Hỉ đã overcome regression bằng cách dùng thẻ che dòng vừa đọc",
-      "highlight": "overcome",
-      "startMs": 24500,
-      "endMs": 28700,
+      "text": "Bạn có thể dùng app như Spritz hoặc ReadMe",
+      "highlight": "dùng",
+      "startMs": 26250,
+      "endMs": 29400,
       "kind": "body"
     },
     {
-      "text": "Không cho phép mình nhìn lại",
-      "highlight": "nhìn",
-      "startMs": 28700,
-      "endMs": 30800,
+      "text": "Hoặc tự luyện bằng cách flash từ trên màn hình",
+      "highlight": "bằng",
+      "startMs": 29400,
+      "endMs": 32900,
       "kind": "body"
     },
     {
-      "text": "Sau 1 tuần, tốc độ tăng 50%",
-      "highlight": "tăng",
-      "startMs": 30800,
-      "endMs": 33250,
-      "kind": "body"
-    },
-    {
-      "text": "Bạn cũng có thể làm được",
-      "highlight": "cũng",
-      "startMs": 33250,
+      "text": "Bắt đầu với 300 từ mỗi phút",
+      "highlight": "phút",
+      "startMs": 32900,
       "endMs": 35350,
       "kind": "body"
     },
     {
-      "text": "Hãy thử ngay hôm nay",
-      "highlight": "",
+      "text": "Tăng dần lên 500, 700, 1000",
+      "highlight": "Tăng",
       "startMs": 35350,
-      "endMs": 37350,
+      "endMs": 37450,
       "kind": "body"
     },
     {
-      "text": "Che dòng vừa đọc và tiếp tục",
-      "highlight": "tiếp",
-      "startMs": 37350,
-      "endMs": 39800,
-      "kind": "body"
-    },
-    {
-      "text": "Đừng nhìn lại",
-      "highlight": "",
-      "startMs": 39800,
-      "endMs": 41800,
+      "text": "Chỉ sau 2 tuần bạn sẽ thấy sự khác biệt",
+      "highlight": "biệt",
+      "startMs": 37450,
+      "endMs": 40950,
       "kind": "cta"
     },
     {
@@ -120,6 +106,6 @@
       "kind": "cta"
     }
   ],
-  "totalMs": 41800,
+  "totalMs": 40950,
   "hasAudio": true
 }
