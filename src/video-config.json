@@ -1,94 +1,115 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "green-tech",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
-    "muted": "#ffffff"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Bạn có biết mắt người chỉ cần 1/4 giây để nhận diện một từ? Nhưng khi đọc, bạn thường dừng mắt quá lâu trên mỗi từ",
-      "highlight": "diện",
+      "text": "Regression là thói quen đọc lại những từ vừa đọc",
+      "highlight": "thói",
       "startMs": 0,
-      "endMs": 9100,
+      "endMs": 3500,
       "kind": "hook"
     },
     {
-      "text": "Đây gọi là fixation",
+      "text": "Đây là kẻ thù số một của tốc độ đọc",
       "highlight": "",
-      "startMs": 9100,
-      "endMs": 11100,
+      "startMs": 3500,
+      "endMs": 7000,
       "kind": "body"
     },
     {
-      "text": "Người đọc chậm dừng mắt 10-12 lần trên mỗi dòng",
-      "highlight": "dòng",
-      "startMs": 11100,
-      "endMs": 14600,
+      "text": "Người đọc chậm thường đọc lại 30% nội dung",
+      "highlight": "dung",
+      "startMs": 7000,
+      "endMs": 10150,
       "kind": "body"
     },
     {
-      "text": "Người đọc nhanh chỉ dừng 3-4 lần",
-      "highlight": "Người",
-      "startMs": 14600,
-      "endMs": 17050,
+      "text": "Điều này làm chậm tốc độ và giảm khả năng tập trung",
+      "highlight": "năng",
+      "startMs": 10150,
+      "endMs": 14350,
       "kind": "body"
     },
     {
-      "text": "Bí quyết là mở rộng tầm nhìn",
-      "highlight": "quyết",
-      "startMs": 17050,
-      "endMs": 19500,
+      "text": "Tại sao bạn đọc lại? Vì bạn không tin mình đã hiểu",
+      "highlight": "hiểu",
+      "startMs": 14350,
+      "endMs": 18550,
       "kind": "body"
     },
     {
-      "text": "Thay vì nhìn từng từ, hãy nhìn cụm 3-4 từ cùng lúc",
+      "text": "Nhưng thực ra não bạn đã ghi nhận thông tin rồi",
+      "highlight": "nhận",
+      "startMs": 18550,
+      "endMs": 22400,
+      "kind": "body"
+    },
+    {
+      "text": "Chỉ cần tin tưởng bản thân",
+      "highlight": "thân",
+      "startMs": 22400,
+      "endMs": 24500,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ đã overcome regression bằng cách dùng thẻ che dòng vừa đọc",
+      "highlight": "overcome",
+      "startMs": 24500,
+      "endMs": 28700,
+      "kind": "body"
+    },
+    {
+      "text": "Không cho phép mình nhìn lại",
       "highlight": "nhìn",
-      "startMs": 19500,
-      "endMs": 23700,
+      "startMs": 28700,
+      "endMs": 30800,
       "kind": "body"
     },
     {
-      "text": "Hỉ đã luyện tập bằng cách dùng thẻ che và chỉ nhìn vào giữa dòng",
-      "highlight": "cách",
-      "startMs": 23700,
-      "endMs": 28950,
-      "kind": "body"
-    },
-    {
-      "text": "Sau 1 tuần, số lần dừng mắt giảm từ 12 xuống còn 4",
-      "highlight": "giảm",
-      "startMs": 28950,
-      "endMs": 33500,
-      "kind": "body"
-    },
-    {
-      "text": "Tốc độ đọc tăng gấp đôi",
+      "text": "Sau 1 tuần, tốc độ tăng 50%",
       "highlight": "tăng",
-      "startMs": 33500,
-      "endMs": 35600,
+      "startMs": 30800,
+      "endMs": 33250,
       "kind": "body"
     },
     {
-      "text": "Bạn muốn cải thiện? Hãy thử phương pháp này ngay hôm nay",
-      "highlight": "phương",
-      "startMs": 35600,
+      "text": "Bạn cũng có thể làm được",
+      "highlight": "cũng",
+      "startMs": 33250,
+      "endMs": 35350,
+      "kind": "body"
+    },
+    {
+      "text": "Hãy thử ngay hôm nay",
+      "highlight": "",
+      "startMs": 35350,
+      "endMs": 37350,
+      "kind": "body"
+    },
+    {
+      "text": "Che dòng vừa đọc và tiếp tục",
+      "highlight": "tiếp",
+      "startMs": 37350,
       "endMs": 39800,
       "kind": "body"
     },
     {
-      "text": "Chỉ cần 15 phút mỗi ngày",
-      "highlight": "phút",
+      "text": "Đừng nhìn lại",
+      "highlight": "",
       "startMs": 39800,
-      "endMs": 41900,
+      "endMs": 41800,
       "kind": "cta"
     },
     {
@@ -99,6 +120,6 @@
       "kind": "cta"
     }
   ],
-  "totalMs": 41900,
+  "totalMs": 41800,
   "hasAudio": true
 }
