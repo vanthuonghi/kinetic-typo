@@ -1,76 +1,48 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "pink-modern",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#ff80ab",
+    "accent": "#ff4081",
+    "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Đọc nhanh giúp bạn tiết kiệm thời gian và tăng kiến thức",
-      "highlight": "tăng",
+      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
+      "highlight": "bình",
       "startMs": 0,
-      "endMs": 4200,
+      "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Nếu bạn đọc 1 cuốn sách mỗi tuần thay vì 1 cuốn mỗi tháng, trong 1 năm bạn đọc 52 cuốn thay vì 12 cuốn",
-      "highlight": "thay",
-      "startMs": 4200,
-      "endMs": 12950,
+      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
+      "highlight": "phút",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Kiến thức tăng gấp 4 lần",
-      "highlight": "Kiến",
-      "startMs": 12950,
-      "endMs": 15050,
+      "text": "Một cuốn sách chỉ trong 3 phút",
+      "highlight": "phút",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "body"
-    },
-    {
-      "text": "Cơ hội thành công cũng tăng gấp 4 lần",
-      "highlight": "công",
-      "startMs": 15050,
-      "endMs": 18200,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ đã đọc 50 cuốn sách trong 1 năm nhờ đọc nhanh",
-      "highlight": "trong",
-      "startMs": 18200,
-      "endMs": 22400,
-      "kind": "body"
-    },
-    {
-      "text": "Kiến thức và kỹ năng tăng vọt",
-      "highlight": "năng",
-      "startMs": 22400,
-      "endMs": 24850,
-      "kind": "body"
-    },
-    {
-      "text": "Bạn muốn làm được như vậy? Hãy bắt đầu luyện tập đọc nhanh ngay hôm nay",
-      "highlight": "ngay",
-      "startMs": 24850,
-      "endMs": 30450,
-      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
+      "highlight": "",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 30450,
+  "totalMs": 15000,
   "hasAudio": true
 }
