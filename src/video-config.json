@@ -1,101 +1,101 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "warm-orange",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#1a0000",
+      "#2d1b00",
+      "#1a0f00"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#ffcc80",
+    "accent": "#ff9800",
+    "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "RSVP là kỹ thuật đọc nhanh từng từ một với tốc độ cố định",
-      "highlight": "từng",
+      "text": "Skimming là kỹ thuật đọc lướt để nắm ý chính",
+      "highlight": "chính",
       "startMs": 0,
-      "endMs": 4900,
+      "endMs": 3500,
       "kind": "hook"
     },
     {
-      "text": "Từ xuất hiện từng từ một ở giữa màn hình",
-      "highlight": "từng",
-      "startMs": 4900,
-      "endMs": 8400,
+      "text": "Không cần đọc từng từ",
+      "highlight": "",
+      "startMs": 3500,
+      "endMs": 5500,
       "kind": "body"
     },
     {
-      "text": "Bạn không cần di chuyển mắt",
-      "highlight": "không",
-      "startMs": 8400,
-      "endMs": 10500,
+      "text": "Chỉ cần đọc câu đầu và câu cuối mỗi đoạn",
+      "highlight": "cuối",
+      "startMs": 5500,
+      "endMs": 9000,
       "kind": "body"
     },
     {
-      "text": "Não bạn tự động nhận diện từ và hiểu ý nghĩa",
-      "highlight": "nghĩa",
-      "startMs": 10500,
-      "endMs": 14350,
+      "text": "Đọc các từ in đậm, in nghiêng",
+      "highlight": "nghiêng",
+      "startMs": 9000,
+      "endMs": 11450,
       "kind": "body"
     },
     {
-      "text": "Tốc độ có thể tăng lên 1000 từ mỗi phút",
-      "highlight": "tăng",
-      "startMs": 14350,
-      "endMs": 17850,
+      "text": "Xem hình ảnh và biểu đồ",
+      "highlight": "biểu",
+      "startMs": 11450,
+      "endMs": 13550,
       "kind": "body"
     },
     {
-      "text": "Hỉ dùng RSVP mỗi ngày 10 phút để luyện tập",
+      "text": "Skimming giúp bạn nắm ý chính trong 10% thời gian",
+      "highlight": "thời",
+      "startMs": 13550,
+      "endMs": 17050,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ dùng skimming để quyết định có nên đọc chi tiết không",
+      "highlight": "tiết",
+      "startMs": 17050,
+      "endMs": 21250,
+      "kind": "body"
+    },
+    {
+      "text": "Nếu bài viết có giá trị, đọc chi tiết",
+      "highlight": "tiết",
+      "startMs": 21250,
+      "endMs": 24400,
+      "kind": "body"
+    },
+    {
+      "text": "Nếu không, bỏ qua",
+      "highlight": "",
+      "startMs": 24400,
+      "endMs": 26400,
+      "kind": "body"
+    },
+    {
+      "text": "Tiết kiệm hàng giờ mỗi ngày",
+      "highlight": "hàng",
+      "startMs": 26400,
+      "endMs": 28500,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn muốn thử? Hãy skimming một bài báo trong 2 phút",
       "highlight": "phút",
-      "startMs": 17850,
-      "endMs": 21350,
+      "startMs": 28500,
+      "endMs": 32350,
       "kind": "body"
     },
     {
-      "text": "Sau 2 tuần, tốc độ đọc tăng từ 200 lên 800 từ mỗi phút",
-      "highlight": "tăng",
-      "startMs": 21350,
-      "endMs": 26250,
-      "kind": "body"
-    },
-    {
-      "text": "Bạn có thể dùng app như Spritz hoặc ReadMe",
-      "highlight": "dùng",
-      "startMs": 26250,
-      "endMs": 29400,
-      "kind": "body"
-    },
-    {
-      "text": "Hoặc tự luyện bằng cách flash từ trên màn hình",
-      "highlight": "trên",
-      "startMs": 29400,
-      "endMs": 32900,
-      "kind": "body"
-    },
-    {
-      "text": "Bắt đầu với 300 từ mỗi phút",
-      "highlight": "phút",
-      "startMs": 32900,
-      "endMs": 35350,
-      "kind": "body"
-    },
-    {
-      "text": "Tăng dần lên 500, 700, 1000",
-      "highlight": "Tăng",
-      "startMs": 35350,
-      "endMs": 37450,
-      "kind": "body"
-    },
-    {
-      "text": "Chỉ sau 2 tuần bạn sẽ thấy sự khác biệt",
-      "highlight": "tuần",
-      "startMs": 37450,
-      "endMs": 40950,
+      "text": "Xem bạn nắm được bao nhiêu ý chính",
+      "highlight": "chính",
+      "startMs": 32350,
+      "endMs": 35150,
       "kind": "cta"
     },
     {
@@ -106,6 +106,6 @@
       "kind": "cta"
     }
   ],
-  "totalMs": 40950,
+  "totalMs": 35150,
   "hasAudio": true
 }
