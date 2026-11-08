@@ -1,48 +1,104 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "ocean-blue",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
     "muted": "#ffffff"
   },
-  "effect": "sweep",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "bình",
+      "text": "Bạn có biết mắt người chỉ cần 1/4 giây để nhận diện một từ? Nhưng khi đọc, bạn thường dừng mắt quá lâu trên mỗi từ",
+      "highlight": "giây",
       "startMs": 0,
-      "endMs": 0,
+      "endMs": 9100,
       "kind": "hook"
     },
     {
-      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
-      "highlight": "phút",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Đây gọi là fixation",
+      "highlight": "",
+      "startMs": 9100,
+      "endMs": 11100,
       "kind": "body"
     },
     {
-      "text": "Một cuốn sách chỉ trong 3 phút",
-      "highlight": "trong",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Người đọc chậm dừng mắt 10-12 lần trên mỗi dòng",
+      "highlight": "Người",
+      "startMs": 11100,
+      "endMs": 14600,
       "kind": "body"
+    },
+    {
+      "text": "Người đọc nhanh chỉ dừng 3-4 lần",
+      "highlight": "Người",
+      "startMs": 14600,
+      "endMs": 17050,
+      "kind": "body"
+    },
+    {
+      "text": "Bí quyết là mở rộng tầm nhìn",
+      "highlight": "nhìn",
+      "startMs": 17050,
+      "endMs": 19500,
+      "kind": "body"
+    },
+    {
+      "text": "Thay vì nhìn từng từ, hãy nhìn cụm 3-4 từ cùng lúc",
+      "highlight": "nhìn",
+      "startMs": 19500,
+      "endMs": 23700,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ đã luyện tập bằng cách dùng thẻ che và chỉ nhìn vào giữa dòng",
+      "highlight": "bằng",
+      "startMs": 23700,
+      "endMs": 28950,
+      "kind": "body"
+    },
+    {
+      "text": "Sau 1 tuần, số lần dừng mắt giảm từ 12 xuống còn 4",
+      "highlight": "giảm",
+      "startMs": 28950,
+      "endMs": 33500,
+      "kind": "body"
+    },
+    {
+      "text": "Tốc độ đọc tăng gấp đôi",
+      "highlight": "tăng",
+      "startMs": 33500,
+      "endMs": 35600,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn muốn cải thiện? Hãy thử phương pháp này ngay hôm nay",
+      "highlight": "ngay",
+      "startMs": 35600,
+      "endMs": 39800,
+      "kind": "body"
+    },
+    {
+      "text": "Chỉ cần 15 phút mỗi ngày",
+      "highlight": "phút",
+      "startMs": 39800,
+      "endMs": 41900,
+      "kind": "cta"
     },
     {
       "text": "Đăng ký để học ngay",
-      "highlight": "",
+      "highlight": "Đăng ký",
       "startMs": 0,
       "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 15000,
+  "totalMs": 41900,
   "hasAudio": true
 }
