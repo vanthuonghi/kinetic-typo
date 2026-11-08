@@ -1,104 +1,104 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "pink-modern",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#1a001a",
+      "#1a001a",
+      "#1a001a"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
+    "text": "#ff80ab",
+    "accent": "#ff4081",
     "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Bạn có biết người bình thường chỉ đọc 200 từ mỗi phút? Trong khi đó, người đọc nhanh có thể đọc 1000 từ mỗi phút",
-      "highlight": "biết",
+      "text": "Bạn có biết mắt người chỉ cần 1/4 giây để nhận diện một từ? Nhưng khi đọc, bạn thường dừng mắt quá lâu trên mỗi từ",
+      "highlight": "diện",
       "startMs": 0,
-      "endMs": 8750,
+      "endMs": 9100,
       "kind": "hook"
     },
     {
-      "text": "Bí mật nằm ở kỹ thuật bỏ đọc thầm",
-      "highlight": "thầm",
-      "startMs": 8750,
-      "endMs": 11900,
-      "kind": "body"
-    },
-    {
-      "text": "Khi bạn đọc, bạn thường đọc thầm trong đầu từng từ một",
-      "highlight": "trong",
-      "startMs": 11900,
-      "endMs": 16100,
-      "kind": "body"
-    },
-    {
-      "text": "Đây là thói quen xấu làm chậm tốc độ đọc",
-      "highlight": "thói",
-      "startMs": 16100,
-      "endMs": 19600,
-      "kind": "body"
-    },
-    {
-      "text": "Thay vào đó, hãy nhìn vào từ và hiểu ngay ý nghĩa",
-      "highlight": "Thay",
-      "startMs": 19600,
-      "endMs": 23800,
-      "kind": "body"
-    },
-    {
-      "text": "Không cần phát âm trong đầu",
-      "highlight": "trong",
-      "startMs": 23800,
-      "endMs": 25900,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ đã luyện tập 15 phút mỗi ngày và sau 2 tuần đã đọc được 600 từ mỗi phút",
-      "highlight": "được",
-      "startMs": 25900,
-      "endMs": 32550,
-      "kind": "body"
-    },
-    {
-      "text": "Bạn cũng có thể làm được",
-      "highlight": "cũng",
-      "startMs": 32550,
-      "endMs": 34650,
-      "kind": "body"
-    },
-    {
-      "text": "Bắt đầu hôm nay",
+      "text": "Đây gọi là fixation",
       "highlight": "",
-      "startMs": 34650,
-      "endMs": 36650,
+      "startMs": 9100,
+      "endMs": 11100,
       "kind": "body"
     },
     {
-      "text": "Chỉ cần tập trung nhìn vào từ, không đọc thầm",
-      "highlight": "thầm",
-      "startMs": 36650,
-      "endMs": 40150,
+      "text": "Người đọc chậm dừng mắt 10-12 lần trên mỗi dòng",
+      "highlight": "dòng",
+      "startMs": 11100,
+      "endMs": 14600,
       "kind": "body"
     },
     {
-      "text": "Sau 7 ngày bạn sẽ thấy sự khác biệt",
-      "highlight": "khác",
-      "startMs": 40150,
-      "endMs": 43300,
+      "text": "Người đọc nhanh chỉ dừng 3-4 lần",
+      "highlight": "Người",
+      "startMs": 14600,
+      "endMs": 17050,
       "kind": "body"
     },
     {
-      "text": "Đăng ký khóa học Speed Reading của Hỉ để được hướng dẫn chi tiết",
-      "highlight": "tiết",
-      "startMs": 43300,
-      "endMs": 48200,
+      "text": "Bí quyết là mở rộng tầm nhìn",
+      "highlight": "quyết",
+      "startMs": 17050,
+      "endMs": 19500,
+      "kind": "body"
+    },
+    {
+      "text": "Thay vì nhìn từng từ, hãy nhìn cụm 3-4 từ cùng lúc",
+      "highlight": "nhìn",
+      "startMs": 19500,
+      "endMs": 23700,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ đã luyện tập bằng cách dùng thẻ che và chỉ nhìn vào giữa dòng",
+      "highlight": "cách",
+      "startMs": 23700,
+      "endMs": 28950,
+      "kind": "body"
+    },
+    {
+      "text": "Sau 1 tuần, số lần dừng mắt giảm từ 12 xuống còn 4",
+      "highlight": "giảm",
+      "startMs": 28950,
+      "endMs": 33500,
+      "kind": "body"
+    },
+    {
+      "text": "Tốc độ đọc tăng gấp đôi",
+      "highlight": "tăng",
+      "startMs": 33500,
+      "endMs": 35600,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn muốn cải thiện? Hãy thử phương pháp này ngay hôm nay",
+      "highlight": "phương",
+      "startMs": 35600,
+      "endMs": 39800,
+      "kind": "body"
+    },
+    {
+      "text": "Chỉ cần 15 phút mỗi ngày",
+      "highlight": "phút",
+      "startMs": 39800,
+      "endMs": 41900,
+      "kind": "cta"
+    },
+    {
+      "text": "Đăng ký để học ngay",
+      "highlight": "Đăng ký",
+      "startMs": 0,
+      "endMs": 0,
       "kind": "cta"
     }
   ],
-  "totalMs": 48200,
+  "totalMs": 41900,
   "hasAudio": true
 }
