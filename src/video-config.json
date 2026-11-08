@@ -1,87 +1,101 @@
 {
   "theme": {
-    "id": "ocean-blue",
+    "id": "green-tech",
     "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
-    "muted": "#ffffff"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Previewing là kỹ thuật xem trước nội dung trước khi đọc chi tiết",
-      "highlight": "Previewing",
+      "text": "Bạn có biết đọc nhanh không chỉ là tốc độ? Đọc nhanh còn là khả năng hiểu và nhớ",
+      "highlight": "nhanh",
       "startMs": 0,
-      "endMs": 4550,
+      "endMs": 6650,
       "kind": "hook"
     },
     {
-      "text": "Đọc tiêu đề, tiêu đề phụ, in đậm, in nghiêng",
-      "highlight": "nghiêng",
-      "startMs": 4550,
-      "endMs": 8050,
-      "kind": "body"
-    },
-    {
-      "text": "Xem hình ảnh và chú thích",
-      "highlight": "thích",
-      "startMs": 8050,
-      "endMs": 10150,
-      "kind": "body"
-    },
-    {
-      "text": "Điều này giúp não bạn tạo bản đồ nội dung",
-      "highlight": "Điều",
-      "startMs": 10150,
-      "endMs": 13650,
-      "kind": "body"
-    },
-    {
-      "text": "Khi đọc chi tiết, bạn sẽ hiểu nhanh hơn vì đã biết khung",
+      "text": "Người đọc nhanh không chỉ đọc nhanh mà còn hiểu sâu",
       "highlight": "hiểu",
-      "startMs": 13650,
-      "endMs": 18200,
+      "startMs": 6650,
+      "endMs": 10500,
       "kind": "body"
     },
     {
-      "text": "Hỉ preview mỗi chương trong 2 phút trước khi đọc",
-      "highlight": "trước",
-      "startMs": 18200,
-      "endMs": 21700,
-      "kind": "body"
-    },
-    {
-      "text": "Kết quả: thời gian đọc giảm 30%, khả năng nhớ tăng 50%",
-      "highlight": "năng",
-      "startMs": 21700,
-      "endMs": 25900,
-      "kind": "body"
-    },
-    {
-      "text": "Bạn muốn thử? Hãy preview chương tiếp theo trước khi đọc",
-      "highlight": "muốn",
-      "startMs": 25900,
-      "endMs": 29750,
-      "kind": "body"
-    },
-    {
-      "text": "Chỉ 2 phút",
+      "text": "Bí quyết là tập trung",
       "highlight": "",
-      "startMs": 29750,
-      "endMs": 31750,
+      "startMs": 10500,
+      "endMs": 12500,
       "kind": "body"
     },
     {
-      "text": "Tiết kiệm rất nhiều thời gian",
-      "highlight": "gian",
-      "startMs": 31750,
-      "endMs": 33850,
+      "text": "Loại bỏ phân tâm",
+      "highlight": "",
+      "startMs": 12500,
+      "endMs": 14500,
+      "kind": "body"
+    },
+    {
+      "text": "Đọc trong môi trường yên tĩnh",
+      "highlight": "tĩnh",
+      "startMs": 14500,
+      "endMs": 16600,
+      "kind": "body"
+    },
+    {
+      "text": "Tắt điện thoại",
+      "highlight": "",
+      "startMs": 16600,
+      "endMs": 18600,
+      "kind": "body"
+    },
+    {
+      "text": "Đóng các tab không cần thiết",
+      "highlight": "Đóng",
+      "startMs": 18600,
+      "endMs": 20700,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ đọc trong phòng yên tĩnh, không điện thoại",
+      "highlight": "phòng",
+      "startMs": 20700,
+      "endMs": 23850,
+      "kind": "body"
+    },
+    {
+      "text": "Kết quả: tốc độ tăng, khả năng nhớ tăng",
+      "highlight": "năng",
+      "startMs": 23850,
+      "endMs": 27000,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn muốn thử? Hãy tạo môi trường đọc yên tĩnh",
+      "highlight": "trường",
+      "startMs": 27000,
+      "endMs": 30500,
+      "kind": "body"
+    },
+    {
+      "text": "Tắt mọi thứ phân tâm",
+      "highlight": "",
+      "startMs": 30500,
+      "endMs": 32500,
+      "kind": "body"
+    },
+    {
+      "text": "Chỉ tập trung vào sách",
+      "highlight": "",
+      "startMs": 32500,
+      "endMs": 34500,
       "kind": "cta"
     },
     {
@@ -92,6 +106,6 @@
       "kind": "cta"
     }
   ],
-  "totalMs": 33850,
+  "totalMs": 34500,
   "hasAudio": true
 }
