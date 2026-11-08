@@ -1,48 +1,83 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "luxury-gold",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#1a1500",
+      "#2d2400",
+      "#1a1500"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
-    "muted": "#ffffff"
+    "text": "#ffd700",
+    "accent": "#ffeb3b",
+    "muted": "#fff5cc"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "bình",
+      "text": "Khóa học Speed Reading của Hỉ giúp bạn đọc nhanh gấp 3-5 lần mà vẫn hiểu sâu",
+      "highlight": "Khóa",
       "startMs": 0,
-      "endMs": 0,
+      "endMs": 5950,
       "kind": "hook"
     },
     {
-      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
-      "highlight": "phút",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Cam kết hoàn tiền nếu không hiệu quả",
+      "highlight": "tiền",
+      "startMs": 5950,
+      "endMs": 8750,
       "kind": "body"
     },
     {
-      "text": "Một cuốn sách chỉ trong 3 phút",
-      "highlight": "phút",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Hỉ đã giúp hàng trăm học viên đọc nhanh hơn",
+      "highlight": "viên",
+      "startMs": 8750,
+      "endMs": 12250,
       "kind": "body"
     },
     {
-      "text": "Đăng ký để học ngay",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Từ 200 lên 800-1000 từ mỗi phút",
+      "highlight": "phút",
+      "startMs": 12250,
+      "endMs": 14700,
+      "kind": "body"
+    },
+    {
+      "text": "Tiết kiệm hàng giờ mỗi ngày",
+      "highlight": "ngày",
+      "startMs": 14700,
+      "endMs": 16800,
+      "kind": "body"
+    },
+    {
+      "text": "Tăng kiến thức và cơ hội thành công",
+      "highlight": "thành",
+      "startMs": 16800,
+      "endMs": 19600,
+      "kind": "body"
+    },
+    {
+      "text": "Đăng ký ngay hôm nay để được tư vấn miễn phí",
+      "highlight": "ngay",
+      "startMs": 19600,
+      "endMs": 23450,
+      "kind": "body"
+    },
+    {
+      "text": "Chỉ cần 15 phút luyện tập mỗi ngày",
+      "highlight": "ngày",
+      "startMs": 23450,
+      "endMs": 26250,
+      "kind": "body"
+    },
+    {
+      "text": "Sau 30 ngày bạn sẽ thấy sự khác biệt rõ rệt",
+      "highlight": "khác",
+      "startMs": 26250,
+      "endMs": 30100,
       "kind": "cta"
     }
   ],
-  "totalMs": 15000,
+  "totalMs": 30100,
   "hasAudio": true
 }
