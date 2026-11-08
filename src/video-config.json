@@ -1,94 +1,87 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "ocean-blue",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
     "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Scanning là kỹ thuật tìm kiếm thông tin cụ thể trong văn bản",
-      "highlight": "kiếm",
+      "text": "Previewing là kỹ thuật xem trước nội dung trước khi đọc chi tiết",
+      "highlight": "Previewing",
       "startMs": 0,
       "endMs": 4550,
       "kind": "hook"
     },
     {
-      "text": "Không cần đọc toàn bộ",
-      "highlight": "",
+      "text": "Đọc tiêu đề, tiêu đề phụ, in đậm, in nghiêng",
+      "highlight": "nghiêng",
       "startMs": 4550,
-      "endMs": 6550,
+      "endMs": 8050,
       "kind": "body"
     },
     {
-      "text": "Chỉ cần tìm từ khóa",
+      "text": "Xem hình ảnh và chú thích",
+      "highlight": "thích",
+      "startMs": 8050,
+      "endMs": 10150,
+      "kind": "body"
+    },
+    {
+      "text": "Điều này giúp não bạn tạo bản đồ nội dung",
+      "highlight": "Điều",
+      "startMs": 10150,
+      "endMs": 13650,
+      "kind": "body"
+    },
+    {
+      "text": "Khi đọc chi tiết, bạn sẽ hiểu nhanh hơn vì đã biết khung",
+      "highlight": "hiểu",
+      "startMs": 13650,
+      "endMs": 18200,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ preview mỗi chương trong 2 phút trước khi đọc",
+      "highlight": "trước",
+      "startMs": 18200,
+      "endMs": 21700,
+      "kind": "body"
+    },
+    {
+      "text": "Kết quả: thời gian đọc giảm 30%, khả năng nhớ tăng 50%",
+      "highlight": "năng",
+      "startMs": 21700,
+      "endMs": 25900,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn muốn thử? Hãy preview chương tiếp theo trước khi đọc",
+      "highlight": "muốn",
+      "startMs": 25900,
+      "endMs": 29750,
+      "kind": "body"
+    },
+    {
+      "text": "Chỉ 2 phút",
       "highlight": "",
-      "startMs": 6550,
-      "endMs": 8550,
-      "kind": "body"
-    },
-    {
-      "text": "Ví dụ: tìm tên người, ngày tháng, số liệu",
-      "highlight": "ngày",
-      "startMs": 8550,
-      "endMs": 11700,
-      "kind": "body"
-    },
-    {
-      "text": "Mắt di chuyển nhanh trên trang, tìm từ khóa",
-      "highlight": "nhanh",
-      "startMs": 11700,
-      "endMs": 14850,
-      "kind": "body"
-    },
-    {
-      "text": "Khi tìm thấy, đọc xung quanh để hiểu ngữ cảnh",
-      "highlight": "cảnh",
-      "startMs": 14850,
-      "endMs": 18350,
-      "kind": "body"
-    },
-    {
-      "text": "Scanning giúp bạn tìm thông tin trong vài giây thay vì vài phút",
-      "highlight": "phút",
-      "startMs": 18350,
-      "endMs": 22900,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ dùng scanning mỗi ngày để tìm thông tin trong email, báo cáo, sách",
-      "highlight": "sách",
-      "startMs": 22900,
-      "endMs": 27800,
+      "startMs": 29750,
+      "endMs": 31750,
       "kind": "body"
     },
     {
       "text": "Tiết kiệm rất nhiều thời gian",
-      "highlight": "Tiết",
-      "startMs": 27800,
-      "endMs": 29900,
-      "kind": "body"
-    },
-    {
-      "text": "Bạn muốn thử? Hãy scanning một trang sách tìm một từ cụ thể",
-      "highlight": "trang",
-      "startMs": 29900,
-      "endMs": 34450,
-      "kind": "body"
-    },
-    {
-      "text": "Xem bạn tìm được trong bao lâu",
-      "highlight": "được",
-      "startMs": 34450,
-      "endMs": 36900,
+      "highlight": "gian",
+      "startMs": 31750,
+      "endMs": 33850,
       "kind": "cta"
     },
     {
@@ -99,6 +92,6 @@
       "kind": "cta"
     }
   ],
-  "totalMs": 36900,
+  "totalMs": 33850,
   "hasAudio": true
 }
