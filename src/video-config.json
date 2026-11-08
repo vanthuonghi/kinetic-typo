@@ -1,83 +1,104 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "neon-blue",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#00d4ff",
+    "accent": "#ff006e",
+    "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Khóa học Speed Reading của Hỉ giúp bạn đọc nhanh gấp 3-5 lần mà vẫn hiểu sâu",
-      "highlight": "Khóa",
+      "text": "Bạn có biết người bình thường chỉ đọc 200 từ mỗi phút? Trong khi đó, người đọc nhanh có thể đọc 1000 từ mỗi phút",
+      "highlight": "biết",
       "startMs": 0,
-      "endMs": 5950,
+      "endMs": 8750,
       "kind": "hook"
     },
     {
-      "text": "Cam kết hoàn tiền nếu không hiệu quả",
-      "highlight": "tiền",
-      "startMs": 5950,
-      "endMs": 8750,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ đã giúp hàng trăm học viên đọc nhanh hơn",
-      "highlight": "viên",
+      "text": "Bí mật nằm ở kỹ thuật bỏ đọc thầm",
+      "highlight": "thầm",
       "startMs": 8750,
-      "endMs": 12250,
+      "endMs": 11900,
       "kind": "body"
     },
     {
-      "text": "Từ 200 lên 800-1000 từ mỗi phút",
-      "highlight": "phút",
-      "startMs": 12250,
-      "endMs": 14700,
+      "text": "Khi bạn đọc, bạn thường đọc thầm trong đầu từng từ một",
+      "highlight": "trong",
+      "startMs": 11900,
+      "endMs": 16100,
       "kind": "body"
     },
     {
-      "text": "Tiết kiệm hàng giờ mỗi ngày",
-      "highlight": "ngày",
-      "startMs": 14700,
-      "endMs": 16800,
-      "kind": "body"
-    },
-    {
-      "text": "Tăng kiến thức và cơ hội thành công",
-      "highlight": "thành",
-      "startMs": 16800,
+      "text": "Đây là thói quen xấu làm chậm tốc độ đọc",
+      "highlight": "thói",
+      "startMs": 16100,
       "endMs": 19600,
       "kind": "body"
     },
     {
-      "text": "Đăng ký ngay hôm nay để được tư vấn miễn phí",
-      "highlight": "ngay",
+      "text": "Thay vào đó, hãy nhìn vào từ và hiểu ngay ý nghĩa",
+      "highlight": "Thay",
       "startMs": 19600,
-      "endMs": 23450,
+      "endMs": 23800,
       "kind": "body"
     },
     {
-      "text": "Chỉ cần 15 phút luyện tập mỗi ngày",
-      "highlight": "ngày",
-      "startMs": 23450,
-      "endMs": 26250,
+      "text": "Không cần phát âm trong đầu",
+      "highlight": "trong",
+      "startMs": 23800,
+      "endMs": 25900,
       "kind": "body"
     },
     {
-      "text": "Sau 30 ngày bạn sẽ thấy sự khác biệt rõ rệt",
+      "text": "Hỉ đã luyện tập 15 phút mỗi ngày và sau 2 tuần đã đọc được 600 từ mỗi phút",
+      "highlight": "được",
+      "startMs": 25900,
+      "endMs": 32550,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn cũng có thể làm được",
+      "highlight": "cũng",
+      "startMs": 32550,
+      "endMs": 34650,
+      "kind": "body"
+    },
+    {
+      "text": "Bắt đầu hôm nay",
+      "highlight": "",
+      "startMs": 34650,
+      "endMs": 36650,
+      "kind": "body"
+    },
+    {
+      "text": "Chỉ cần tập trung nhìn vào từ, không đọc thầm",
+      "highlight": "thầm",
+      "startMs": 36650,
+      "endMs": 40150,
+      "kind": "body"
+    },
+    {
+      "text": "Sau 7 ngày bạn sẽ thấy sự khác biệt",
       "highlight": "khác",
-      "startMs": 26250,
-      "endMs": 30100,
+      "startMs": 40150,
+      "endMs": 43300,
+      "kind": "body"
+    },
+    {
+      "text": "Đăng ký khóa học Speed Reading của Hỉ để được hướng dẫn chi tiết",
+      "highlight": "tiết",
+      "startMs": 43300,
+      "endMs": 48200,
       "kind": "cta"
     }
   ],
-  "totalMs": 30100,
+  "totalMs": 48200,
   "hasAudio": true
 }
