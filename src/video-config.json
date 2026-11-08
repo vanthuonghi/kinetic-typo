@@ -1,101 +1,94 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "dark-minimal",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#0a0a0a",
+      "#0a0a0a",
+      "#0a0a0a"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#00d4ff",
+    "muted": "#f5f5f5"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Bạn có biết đọc nhanh không chỉ là tốc độ? Đọc nhanh còn là khả năng hiểu và nhớ",
-      "highlight": "nhanh",
+      "text": "Luyện tập đọc nhanh mỗi ngày là chìa khóa thành công",
+      "highlight": "ngày",
       "startMs": 0,
-      "endMs": 6650,
+      "endMs": 3850,
       "kind": "hook"
     },
     {
-      "text": "Người đọc nhanh không chỉ đọc nhanh mà còn hiểu sâu",
+      "text": "Không có bí quyết nào thay thế luyện tập",
+      "highlight": "luyện",
+      "startMs": 3850,
+      "endMs": 7000,
+      "kind": "body"
+    },
+    {
+      "text": "Chỉ cần 15 phút mỗi ngày",
+      "highlight": "phút",
+      "startMs": 7000,
+      "endMs": 9100,
+      "kind": "body"
+    },
+    {
+      "text": "Bắt đầu với tốc độ thoải mái",
+      "highlight": "thoải",
+      "startMs": 9100,
+      "endMs": 11550,
+      "kind": "body"
+    },
+    {
+      "text": "Tăng dần lên",
+      "highlight": "",
+      "startMs": 11550,
+      "endMs": 13550,
+      "kind": "body"
+    },
+    {
+      "text": "Sau 1 tuần bạn sẽ thấy sự khác biệt",
+      "highlight": "khác",
+      "startMs": 13550,
+      "endMs": 16700,
+      "kind": "body"
+    },
+    {
+      "text": "Sau 1 tháng bạn sẽ đọc nhanh gấp đôi",
       "highlight": "nhanh",
-      "startMs": 6650,
-      "endMs": 10500,
+      "startMs": 16700,
+      "endMs": 19850,
       "kind": "body"
     },
     {
-      "text": "Bí quyết là tập trung",
+      "text": "Hỉ đã luyện tập 15 phút mỗi ngày trong 3 tháng",
+      "highlight": "tháng",
+      "startMs": 19850,
+      "endMs": 23700,
+      "kind": "body"
+    },
+    {
+      "text": "Tốc độ tăng từ 200 lên 1000 từ mỗi phút",
+      "highlight": "phút",
+      "startMs": 23700,
+      "endMs": 27200,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn cũng có thể làm được",
+      "highlight": "cũng",
+      "startMs": 27200,
+      "endMs": 29300,
+      "kind": "body"
+    },
+    {
+      "text": "Bắt đầu hôm nay",
       "highlight": "",
-      "startMs": 10500,
-      "endMs": 12500,
-      "kind": "body"
-    },
-    {
-      "text": "Loại bỏ phân tâm",
-      "highlight": "",
-      "startMs": 12500,
-      "endMs": 14500,
-      "kind": "body"
-    },
-    {
-      "text": "Đọc trong môi trường yên tĩnh",
-      "highlight": "tĩnh",
-      "startMs": 14500,
-      "endMs": 16600,
-      "kind": "body"
-    },
-    {
-      "text": "Tắt điện thoại",
-      "highlight": "",
-      "startMs": 16600,
-      "endMs": 18600,
-      "kind": "body"
-    },
-    {
-      "text": "Đóng các tab không cần thiết",
-      "highlight": "thiết",
-      "startMs": 18600,
-      "endMs": 20700,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ đọc trong phòng yên tĩnh, không điện thoại",
-      "highlight": "trong",
-      "startMs": 20700,
-      "endMs": 23850,
-      "kind": "body"
-    },
-    {
-      "text": "Kết quả: tốc độ tăng, khả năng nhớ tăng",
-      "highlight": "tăng",
-      "startMs": 23850,
-      "endMs": 27000,
-      "kind": "body"
-    },
-    {
-      "text": "Bạn muốn thử? Hãy tạo môi trường đọc yên tĩnh",
-      "highlight": "trường",
-      "startMs": 27000,
-      "endMs": 30500,
-      "kind": "body"
-    },
-    {
-      "text": "Tắt mọi thứ phân tâm",
-      "highlight": "",
-      "startMs": 30500,
-      "endMs": 32500,
-      "kind": "body"
-    },
-    {
-      "text": "Chỉ tập trung vào sách",
-      "highlight": "",
-      "startMs": 32500,
-      "endMs": 34500,
+      "startMs": 29300,
+      "endMs": 31300,
       "kind": "cta"
     },
     {
@@ -106,6 +99,6 @@
       "kind": "cta"
     }
   ],
-  "totalMs": 34500,
+  "totalMs": 31300,
   "hasAudio": true
 }
