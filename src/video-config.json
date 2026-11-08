@@ -1,101 +1,94 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "ocean-blue",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#001219",
+      "#005f73",
+      "#0a192f"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#90e0ef",
+    "accent": "#00b4d8",
+    "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "RSVP là kỹ thuật đọc nhanh từng từ một với tốc độ cố định",
-      "highlight": "thuật",
+      "text": "Bạn có biết mắt người chỉ cần 1/4 giây để nhận diện một từ? Nhưng khi đọc, bạn thường dừng mắt quá lâu trên mỗi từ",
+      "highlight": "nhận",
       "startMs": 0,
-      "endMs": 4900,
+      "endMs": 9100,
       "kind": "hook"
     },
     {
-      "text": "Từ xuất hiện từng từ một ở giữa màn hình",
-      "highlight": "từng",
-      "startMs": 4900,
-      "endMs": 8400,
+      "text": "Đây gọi là fixation",
+      "highlight": "",
+      "startMs": 9100,
+      "endMs": 11100,
       "kind": "body"
     },
     {
-      "text": "Bạn không cần di chuyển mắt",
-      "highlight": "chuyển",
-      "startMs": 8400,
-      "endMs": 10500,
+      "text": "Người đọc chậm dừng mắt 10-12 lần trên mỗi dòng",
+      "highlight": "trên",
+      "startMs": 11100,
+      "endMs": 14600,
       "kind": "body"
     },
     {
-      "text": "Não bạn tự động nhận diện từ và hiểu ý nghĩa",
-      "highlight": "hiểu",
-      "startMs": 10500,
-      "endMs": 14350,
+      "text": "Người đọc nhanh chỉ dừng 3-4 lần",
+      "highlight": "dừng",
+      "startMs": 14600,
+      "endMs": 17050,
       "kind": "body"
     },
     {
-      "text": "Tốc độ có thể tăng lên 1000 từ mỗi phút",
+      "text": "Bí quyết là mở rộng tầm nhìn",
+      "highlight": "nhìn",
+      "startMs": 17050,
+      "endMs": 19500,
+      "kind": "body"
+    },
+    {
+      "text": "Thay vì nhìn từng từ, hãy nhìn cụm 3-4 từ cùng lúc",
+      "highlight": "cùng",
+      "startMs": 19500,
+      "endMs": 23700,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ đã luyện tập bằng cách dùng thẻ che và chỉ nhìn vào giữa dòng",
+      "highlight": "nhìn",
+      "startMs": 23700,
+      "endMs": 28950,
+      "kind": "body"
+    },
+    {
+      "text": "Sau 1 tuần, số lần dừng mắt giảm từ 12 xuống còn 4",
+      "highlight": "giảm",
+      "startMs": 28950,
+      "endMs": 33500,
+      "kind": "body"
+    },
+    {
+      "text": "Tốc độ đọc tăng gấp đôi",
+      "highlight": "tăng",
+      "startMs": 33500,
+      "endMs": 35600,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn muốn cải thiện? Hãy thử phương pháp này ngay hôm nay",
+      "highlight": "phương",
+      "startMs": 35600,
+      "endMs": 39800,
+      "kind": "body"
+    },
+    {
+      "text": "Chỉ cần 15 phút mỗi ngày",
       "highlight": "phút",
-      "startMs": 14350,
-      "endMs": 17850,
-      "kind": "body"
-    },
-    {
-      "text": "Hỉ dùng RSVP mỗi ngày 10 phút để luyện tập",
-      "highlight": "phút",
-      "startMs": 17850,
-      "endMs": 21350,
-      "kind": "body"
-    },
-    {
-      "text": "Sau 2 tuần, tốc độ đọc tăng từ 200 lên 800 từ mỗi phút",
-      "highlight": "phút",
-      "startMs": 21350,
-      "endMs": 26250,
-      "kind": "body"
-    },
-    {
-      "text": "Bạn có thể dùng app như Spritz hoặc ReadMe",
-      "highlight": "dùng",
-      "startMs": 26250,
-      "endMs": 29400,
-      "kind": "body"
-    },
-    {
-      "text": "Hoặc tự luyện bằng cách flash từ trên màn hình",
-      "highlight": "bằng",
-      "startMs": 29400,
-      "endMs": 32900,
-      "kind": "body"
-    },
-    {
-      "text": "Bắt đầu với 300 từ mỗi phút",
-      "highlight": "phút",
-      "startMs": 32900,
-      "endMs": 35350,
-      "kind": "body"
-    },
-    {
-      "text": "Tăng dần lên 500, 700, 1000",
-      "highlight": "Tăng",
-      "startMs": 35350,
-      "endMs": 37450,
-      "kind": "body"
-    },
-    {
-      "text": "Chỉ sau 2 tuần bạn sẽ thấy sự khác biệt",
-      "highlight": "biệt",
-      "startMs": 37450,
-      "endMs": 40950,
+      "startMs": 39800,
+      "endMs": 41900,
       "kind": "cta"
     },
     {
@@ -106,6 +99,6 @@
       "kind": "cta"
     }
   ],
-  "totalMs": 40950,
+  "totalMs": 41900,
   "hasAudio": true
 }
