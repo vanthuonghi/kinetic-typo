@@ -1,16 +1,16 @@
 {
   "theme": {
-    "id": "pink-modern",
+    "id": "gradient-purple",
     "bg": [
-      "#1a001a",
-      "#1a001a",
-      "#1a001a"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
-    "text": "#ff80ab",
-    "accent": "#ff4081",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
-  "effect": "slam",
+  "effect": "sweep",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-NamMinhNeural",
   "scenes": [
@@ -23,7 +23,7 @@
     },
     {
       "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
-      "highlight": "speed",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
