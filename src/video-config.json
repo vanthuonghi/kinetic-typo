@@ -1,66 +1,94 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "neon-blue",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
+    "text": "#00d4ff",
+    "accent": "#ff006e",
     "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Đọc nhanh giúp bạn tiết kiệm thời gian và tăng kiến thức",
-      "highlight": "gian",
+      "text": "Luyện tập đọc nhanh mỗi ngày là chìa khóa thành công",
+      "highlight": "chìa",
       "startMs": 0,
-      "endMs": 4200,
+      "endMs": 3850,
       "kind": "hook"
     },
     {
-      "text": "Nếu bạn đọc 1 cuốn sách mỗi tuần thay vì 1 cuốn mỗi tháng, trong 1 năm bạn đọc 52 cuốn thay vì 12 cuốn",
-      "highlight": "cuốn",
-      "startMs": 4200,
-      "endMs": 12950,
+      "text": "Không có bí quyết nào thay thế luyện tập",
+      "highlight": "thay",
+      "startMs": 3850,
+      "endMs": 7000,
       "kind": "body"
     },
     {
-      "text": "Kiến thức tăng gấp 4 lần",
-      "highlight": "tăng",
-      "startMs": 12950,
-      "endMs": 15050,
+      "text": "Chỉ cần 15 phút mỗi ngày",
+      "highlight": "ngày",
+      "startMs": 7000,
+      "endMs": 9100,
       "kind": "body"
     },
     {
-      "text": "Cơ hội thành công cũng tăng gấp 4 lần",
-      "highlight": "công",
-      "startMs": 15050,
-      "endMs": 18200,
+      "text": "Bắt đầu với tốc độ thoải mái",
+      "highlight": "thoải",
+      "startMs": 9100,
+      "endMs": 11550,
       "kind": "body"
     },
     {
-      "text": "Hỉ đã đọc 50 cuốn sách trong 1 năm nhờ đọc nhanh",
-      "highlight": "trong",
-      "startMs": 18200,
-      "endMs": 22400,
+      "text": "Tăng dần lên",
+      "highlight": "",
+      "startMs": 11550,
+      "endMs": 13550,
       "kind": "body"
     },
     {
-      "text": "Kiến thức và kỹ năng tăng vọt",
-      "highlight": "Kiến",
-      "startMs": 22400,
-      "endMs": 24850,
+      "text": "Sau 1 tuần bạn sẽ thấy sự khác biệt",
+      "highlight": "khác",
+      "startMs": 13550,
+      "endMs": 16700,
       "kind": "body"
     },
     {
-      "text": "Bạn muốn làm được như vậy? Hãy bắt đầu luyện tập đọc nhanh ngay hôm nay",
+      "text": "Sau 1 tháng bạn sẽ đọc nhanh gấp đôi",
       "highlight": "nhanh",
-      "startMs": 24850,
-      "endMs": 30450,
+      "startMs": 16700,
+      "endMs": 19850,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ đã luyện tập 15 phút mỗi ngày trong 3 tháng",
+      "highlight": "phút",
+      "startMs": 19850,
+      "endMs": 23700,
+      "kind": "body"
+    },
+    {
+      "text": "Tốc độ tăng từ 200 lên 1000 từ mỗi phút",
+      "highlight": "tăng",
+      "startMs": 23700,
+      "endMs": 27200,
+      "kind": "body"
+    },
+    {
+      "text": "Bạn cũng có thể làm được",
+      "highlight": "được",
+      "startMs": 27200,
+      "endMs": 29300,
+      "kind": "body"
+    },
+    {
+      "text": "Bắt đầu hôm nay",
+      "highlight": "",
+      "startMs": 29300,
+      "endMs": 31300,
       "kind": "cta"
     },
     {
@@ -71,6 +99,6 @@
       "kind": "cta"
     }
   ],
-  "totalMs": 30450,
+  "totalMs": 31300,
   "hasAudio": true
 }
