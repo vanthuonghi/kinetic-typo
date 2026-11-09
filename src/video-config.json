@@ -1,18 +1,18 @@
 {
   "theme": {
-    "id": "gradient-purple",
+    "id": "warm-orange",
     "bg": [
-      "#0f0c29",
-      "#1a1a3e",
-      "#24243e"
+      "#1a0000",
+      "#2d1b00",
+      "#1a0f00"
     ],
-    "text": "#ffffff",
-    "accent": "#ffd700",
-    "muted": "#e0e0e0"
+    "text": "#ffcc80",
+    "accent": "#ff9800",
+    "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
       "text": "Tối thứ Hai tuần sau, Hỉ bắt đầu dạy lớp Speed Reading online",
@@ -37,21 +37,21 @@
     },
     {
       "text": "Bạn sẽ đọc nhanh gấp 3-5 lần, vẫn hiểu sâu",
-      "highlight": "hiểu",
+      "highlight": "nhanh",
       "startMs": 8550,
       "endMs": 12050,
       "kind": "body"
     },
     {
       "text": "Tiết kiệm hàng giờ mỗi ngày",
-      "highlight": "kiệm",
+      "highlight": "hàng",
       "startMs": 12050,
       "endMs": 14150,
       "kind": "body"
     },
     {
       "text": "Đăng ký ngay bằng cách inbox cho Hỉ",
-      "highlight": "Đăng",
+      "highlight": "bằng",
       "startMs": 14150,
       "endMs": 16950,
       "kind": "body"
