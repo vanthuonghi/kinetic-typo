@@ -1,76 +1,76 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "gradient-purple",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#0f0c29",
+      "#1a1a3e",
+      "#24243e"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#ffffff",
+    "accent": "#ffd700",
+    "muted": "#e0e0e0"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Đọc nhanh giúp bạn tiết kiệm thời gian và tăng kiến thức",
-      "highlight": "gian",
+      "text": "Tối thứ Hai tuần sau, Hỉ bắt đầu dạy lớp Speed Reading online",
+      "highlight": "Reading",
       "startMs": 0,
-      "endMs": 4200,
+      "endMs": 4550,
       "kind": "hook"
     },
     {
-      "text": "Nếu bạn đọc 1 cuốn sách mỗi tuần thay vì 1 cuốn mỗi tháng, trong 1 năm bạn đọc 52 cuốn thay vì 12 cuốn",
-      "highlight": "cuốn",
-      "startMs": 4200,
-      "endMs": 12950,
+      "text": "Khóa học 8 buổi",
+      "highlight": "",
+      "startMs": 4550,
+      "endMs": 6550,
       "kind": "body"
     },
     {
-      "text": "Kiến thức tăng gấp 4 lần",
-      "highlight": "Kiến",
-      "startMs": 12950,
-      "endMs": 15050,
+      "text": "Học phí 980 nghìn",
+      "highlight": "",
+      "startMs": 6550,
+      "endMs": 8550,
       "kind": "body"
     },
     {
-      "text": "Cơ hội thành công cũng tăng gấp 4 lần",
-      "highlight": "thành",
-      "startMs": 15050,
-      "endMs": 18200,
+      "text": "Bạn sẽ đọc nhanh gấp 3-5 lần, vẫn hiểu sâu",
+      "highlight": "hiểu",
+      "startMs": 8550,
+      "endMs": 12050,
       "kind": "body"
     },
     {
-      "text": "Hỉ đã đọc 50 cuốn sách trong 1 năm nhờ đọc nhanh",
-      "highlight": "trong",
-      "startMs": 18200,
-      "endMs": 22400,
+      "text": "Tiết kiệm hàng giờ mỗi ngày",
+      "highlight": "kiệm",
+      "startMs": 12050,
+      "endMs": 14150,
       "kind": "body"
     },
     {
-      "text": "Kiến thức và kỹ năng tăng vọt",
-      "highlight": "tăng",
-      "startMs": 22400,
-      "endMs": 24850,
+      "text": "Đăng ký ngay bằng cách inbox cho Hỉ",
+      "highlight": "Đăng",
+      "startMs": 14150,
+      "endMs": 16950,
       "kind": "body"
     },
     {
-      "text": "Bạn muốn làm được như vậy? Hãy bắt đầu luyện tập đọc nhanh ngay hôm nay",
-      "highlight": "ngay",
-      "startMs": 24850,
-      "endMs": 30450,
-      "kind": "cta"
+      "text": "Số lượng có hạn",
+      "highlight": "",
+      "startMs": 16950,
+      "endMs": 18950,
+      "kind": "body"
     },
     {
-      "text": "Đăng ký để học ngay",
-      "highlight": "Đăng ký",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Nhanh tay đăng ký để giữ chỗ",
+      "highlight": "Nhanh",
+      "startMs": 18950,
+      "endMs": 21400,
       "kind": "cta"
     }
   ],
-  "totalMs": 30450,
+  "totalMs": 21400,
   "hasAudio": true
 }
