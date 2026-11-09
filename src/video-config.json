@@ -10,13 +10,13 @@
     "accent": "#ffeb3b",
     "muted": "#fff5cc"
   },
-  "effect": "karaoke",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
       "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "thường",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
