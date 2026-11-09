@@ -1,18 +1,18 @@
 {
   "theme": {
-    "id": "warm-orange",
+    "id": "neon-blue",
     "bg": [
-      "#1a0000",
-      "#2d1b00",
-      "#1a0f00"
+      "#000814",
+      "#000814",
+      "#000814"
     ],
-    "text": "#ffcc80",
-    "accent": "#ff9800",
+    "text": "#00d4ff",
+    "accent": "#ff006e",
     "muted": "#ffffff"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
       "text": "Tối thứ Hai tuần sau, Hỉ bắt đầu dạy lớp Speed Reading online",
@@ -37,21 +37,21 @@
     },
     {
       "text": "Bạn sẽ đọc nhanh gấp 3-5 lần, vẫn hiểu sâu",
-      "highlight": "nhanh",
+      "highlight": "hiểu",
       "startMs": 8550,
       "endMs": 12050,
       "kind": "body"
     },
     {
       "text": "Tiết kiệm hàng giờ mỗi ngày",
-      "highlight": "hàng",
+      "highlight": "kiệm",
       "startMs": 12050,
       "endMs": 14150,
       "kind": "body"
     },
     {
       "text": "Đăng ký ngay bằng cách inbox cho Hỉ",
-      "highlight": "bằng",
+      "highlight": "Đăng",
       "startMs": 14150,
       "endMs": 16950,
       "kind": "body"
@@ -65,12 +65,54 @@
     },
     {
       "text": "Nhanh tay đăng ký để giữ chỗ",
-      "highlight": "Nhanh",
+      "highlight": "đăng",
       "startMs": 18950,
       "endMs": 21400,
+      "kind": "body"
+    },
+    {
+      "text": "Khóa học bao gồm kỹ thuật bỏ đọc thầm, chunking, RSVP, và meta guiding",
+      "highlight": "meta",
+      "startMs": 21400,
+      "endMs": 26300,
+      "kind": "body"
+    },
+    {
+      "text": "Mỗi buổi 90 phút, thực hành trực tiếp",
+      "highlight": "trực",
+      "startMs": 26300,
+      "endMs": 29100,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ cam kết hoàn tiền nếu không hiệu quả",
+      "highlight": "không",
+      "startMs": 29100,
+      "endMs": 32250,
+      "kind": "body"
+    },
+    {
+      "text": "Chỉ cần 15 phút luyện tập mỗi ngày sau khóa học",
+      "highlight": "phút",
+      "startMs": 32250,
+      "endMs": 36100,
+      "kind": "body"
+    },
+    {
+      "text": "Sau 30 ngày bạn sẽ thấy sự khác biệt rõ rệt",
+      "highlight": "khác",
+      "startMs": 36100,
+      "endMs": 39950,
+      "kind": "body"
+    },
+    {
+      "text": "Đừng bỏ lỡ cơ hội nâng cấp bản thân",
+      "highlight": "nâng",
+      "startMs": 39950,
+      "endMs": 43100,
       "kind": "cta"
     }
   ],
-  "totalMs": 21400,
+  "totalMs": 43100,
   "hasAudio": true
 }
