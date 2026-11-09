@@ -16,7 +16,7 @@
   "scenes": [
     {
       "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "Người",
+      "highlight": "thường",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
