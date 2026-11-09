@@ -16,7 +16,7 @@
   "scenes": [
     {
       "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "thường",
+      "highlight": "phút",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
@@ -30,7 +30,7 @@
     },
     {
       "text": "Một cuốn sách chỉ trong 3 phút",
-      "highlight": "trong",
+      "highlight": "sách",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
