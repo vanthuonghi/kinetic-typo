@@ -1,364 +1,118 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "dark-minimal",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#0a0a0a",
+      "#0a0a0a",
+      "#0a0a0a"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
-    "muted": "#ffffff"
+    "text": "#ffffff",
+    "accent": "#00d4ff",
+    "muted": "#f5f5f5"
   },
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
-  "voice": "vi-VN-NamMinhNeural",
+  "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Bạn muốn tăng gấp đôi năng suất mỗi ngày?",
-      "highlight": "năng suất",
+      "text": "Tối thứ Hai tuần sau, Hỉ bắt đầu dạy lớp Speed Reading online",
+      "highlight": "Reading",
       "startMs": 0,
-      "endMs": 3140,
-      "kind": "hook",
-      "words": [
-        {
-          "t": "Bạn",
-          "s": 249,
-          "e": 438
-        },
-        {
-          "t": "muốn",
-          "s": 438,
-          "e": 627
-        },
-        {
-          "t": "tăng",
-          "s": 627,
-          "e": 816
-        },
-        {
-          "t": "gấp",
-          "s": 816,
-          "e": 1005
-        },
-        {
-          "t": "đôi",
-          "s": 1005,
-          "e": 1195
-        },
-        {
-          "t": "năng",
-          "s": 1195,
-          "e": 1384
-        },
-        {
-          "t": "suất",
-          "s": 1384,
-          "e": 1573
-        },
-        {
-          "t": "mỗi",
-          "s": 1573,
-          "e": 1762
-        },
-        {
-          "t": "ngày?",
-          "s": 1762,
-          "e": 2160
-        }
-      ]
+      "endMs": 4550,
+      "kind": "hook"
     },
     {
-      "text": "Bí quyết là Pomodoro 25 phút, nghỉ 5 phút",
-      "highlight": "Pomodoro",
-      "startMs": 3250,
-      "endMs": 8390,
-      "kind": "body",
-      "words": [
-        {
-          "t": "Bí",
-          "s": 3507,
-          "e": 3702
-        },
-        {
-          "t": "quyết",
-          "s": 3702,
-          "e": 3898
-        },
-        {
-          "t": "là",
-          "s": 3898,
-          "e": 4094
-        },
-        {
-          "t": "Pomodoro",
-          "s": 4094,
-          "e": 4814
-        },
-        {
-          "t": "25",
-          "s": 6020,
-          "e": 6216
-        },
-        {
-          "t": "phút,",
-          "s": 6216,
-          "e": 6604
-        },
-        {
-          "t": "nghỉ",
-          "s": 6928,
-          "e": 7124
-        },
-        {
-          "t": "5",
-          "s": 7124,
-          "e": 7320
-        },
-        {
-          "t": "phút",
-          "s": 7320,
-          "e": 7516
-        }
-      ]
-    },
-    {
-      "text": "Não bộ tập trung tối đa trong khung thời gian ngắn",
-      "highlight": "tập trung",
-      "startMs": 8500,
-      "endMs": 12120,
-      "kind": "body",
-      "words": [
-        {
-          "t": "Não",
-          "s": 8876,
-          "e": 9093
-        },
-        {
-          "t": "bộ",
-          "s": 9093,
-          "e": 9311
-        },
-        {
-          "t": "tập",
-          "s": 9311,
-          "e": 9528
-        },
-        {
-          "t": "trung",
-          "s": 9528,
-          "e": 9746
-        },
-        {
-          "t": "tối",
-          "s": 9746,
-          "e": 9964
-        },
-        {
-          "t": "đa",
-          "s": 9964,
-          "e": 10181
-        },
-        {
-          "t": "trong",
-          "s": 10181,
-          "e": 10399
-        },
-        {
-          "t": "khung",
-          "s": 10399,
-          "e": 10617
-        },
-        {
-          "t": "thời",
-          "s": 10617,
-          "e": 10834
-        },
-        {
-          "t": "gian",
-          "s": 10834,
-          "e": 11052
-        },
-        {
-          "t": "ngắn",
-          "s": 11052,
-          "e": 11270
-        }
-      ]
-    },
-    {
-      "text": "Lặp lại 4 lần, nghỉ dài 20 phút",
+      "text": "Khóa học 8 buổi",
       "highlight": "",
-      "startMs": 12230,
-      "endMs": 15690,
-      "kind": "body",
-      "words": [
-        {
-          "t": "Lặp",
-          "s": 12489,
-          "e": 12705
-        },
-        {
-          "t": "lại",
-          "s": 12705,
-          "e": 12922
-        },
-        {
-          "t": "4",
-          "s": 12922,
-          "e": 13139
-        },
-        {
-          "t": "lần,",
-          "s": 13139,
-          "e": 13431
-        },
-        {
-          "t": "nghỉ",
-          "s": 13927,
-          "e": 14144
-        },
-        {
-          "t": "dài",
-          "s": 14144,
-          "e": 14361
-        },
-        {
-          "t": "20",
-          "s": 14361,
-          "e": 14578
-        },
-        {
-          "t": "phút",
-          "s": 14578,
-          "e": 14795
-        }
-      ]
+      "startMs": 4550,
+      "endMs": 6550,
+      "kind": "body"
     },
     {
-      "text": "Một ngày bạn hoàn thành gấp 3 lần bình thường",
-      "highlight": "3 lần",
-      "startMs": 15800,
-      "endMs": 19230,
-      "kind": "body",
-      "words": [
-        {
-          "t": "Một",
-          "s": 16165,
-          "e": 16387
-        },
-        {
-          "t": "ngày",
-          "s": 16387,
-          "e": 16610
-        },
-        {
-          "t": "bạn",
-          "s": 16610,
-          "e": 16832
-        },
-        {
-          "t": "hoàn",
-          "s": 16832,
-          "e": 17055
-        },
-        {
-          "t": "thành",
-          "s": 17055,
-          "e": 17277
-        },
-        {
-          "t": "gấp",
-          "s": 17277,
-          "e": 17500
-        },
-        {
-          "t": "3",
-          "s": 17500,
-          "e": 17722
-        },
-        {
-          "t": "lần",
-          "s": 17722,
-          "e": 17945
-        },
-        {
-          "t": "bình",
-          "s": 17945,
-          "e": 18167
-        },
-        {
-          "t": "thường",
-          "s": 18167,
-          "e": 18390
-        }
-      ]
+      "text": "Học phí 980 nghìn",
+      "highlight": "",
+      "startMs": 6550,
+      "endMs": 8550,
+      "kind": "body"
     },
     {
-      "text": "Thử ngay hôm nay, đăng ký để biết thêm mẹo hay",
-      "highlight": "đăng ký",
-      "startMs": 19340,
-      "endMs": 24190,
-      "kind": "cta",
-      "words": [
-        {
-          "t": "Thử",
-          "s": 19570,
-          "e": 19758
-        },
-        {
-          "t": "ngay",
-          "s": 19758,
-          "e": 19947
-        },
-        {
-          "t": "hôm",
-          "s": 19947,
-          "e": 20135
-        },
-        {
-          "t": "nay,",
-          "s": 20135,
-          "e": 20417
-        },
-        {
-          "t": "đăng",
-          "s": 20855,
-          "e": 20988
-        },
-        {
-          "t": "ký",
-          "s": 22187,
-          "e": 22376
-        },
-        {
-          "t": "để",
-          "s": 22376,
-          "e": 22564
-        },
-        {
-          "t": "biết",
-          "s": 22564,
-          "e": 22753
-        },
-        {
-          "t": "thêm",
-          "s": 22753,
-          "e": 22941
-        },
-        {
-          "t": "mẹo",
-          "s": 22941,
-          "e": 23130
-        },
-        {
-          "t": "hay",
-          "s": 23130,
-          "e": 23319
-        }
-      ]
+      "text": "Bạn sẽ đọc nhanh gấp 3-5 lần, vẫn hiểu sâu",
+      "highlight": "hiểu",
+      "startMs": 8550,
+      "endMs": 12050,
+      "kind": "body"
+    },
+    {
+      "text": "Tiết kiệm hàng giờ mỗi ngày",
+      "highlight": "Tiết",
+      "startMs": 12050,
+      "endMs": 14150,
+      "kind": "body"
+    },
+    {
+      "text": "Đăng ký ngay bằng cách inbox cho Hỉ",
+      "highlight": "inbox",
+      "startMs": 14150,
+      "endMs": 16950,
+      "kind": "body"
+    },
+    {
+      "text": "Số lượng có hạn",
+      "highlight": "",
+      "startMs": 16950,
+      "endMs": 18950,
+      "kind": "body"
+    },
+    {
+      "text": "Nhanh tay đăng ký để giữ chỗ",
+      "highlight": "đăng",
+      "startMs": 18950,
+      "endMs": 21400,
+      "kind": "body"
+    },
+    {
+      "text": "Khóa học bao gồm kỹ thuật bỏ đọc thầm, chunking, RSVP, và meta guiding",
+      "highlight": "meta",
+      "startMs": 21400,
+      "endMs": 26300,
+      "kind": "body"
+    },
+    {
+      "text": "Mỗi buổi 90 phút, thực hành trực tiếp",
+      "highlight": "trực",
+      "startMs": 26300,
+      "endMs": 29100,
+      "kind": "body"
+    },
+    {
+      "text": "Hỉ cam kết hoàn tiền nếu không hiệu quả",
+      "highlight": "không",
+      "startMs": 29100,
+      "endMs": 32250,
+      "kind": "body"
+    },
+    {
+      "text": "Chỉ cần 15 phút luyện tập mỗi ngày sau khóa học",
+      "highlight": "phút",
+      "startMs": 32250,
+      "endMs": 36100,
+      "kind": "body"
+    },
+    {
+      "text": "Sau 30 ngày bạn sẽ thấy sự khác biệt rõ rệt",
+      "highlight": "ngày",
+      "startMs": 36100,
+      "endMs": 39950,
+      "kind": "body"
+    },
+    {
+      "text": "Đừng bỏ lỡ cơ hội nâng cấp bản thân",
+      "highlight": "nâng",
+      "startMs": 39950,
+      "endMs": 43100,
+      "kind": "cta"
     }
   ],
-  "totalMs": 24490,
+  "totalMs": 43100,
   "hasAudio": true
 }
