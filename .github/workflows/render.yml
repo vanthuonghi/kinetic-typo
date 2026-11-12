@@ -3,13 +3,19 @@ on:
   push:
     branches: [main, master]
   workflow_dispatch:
+    inputs:
+      topic:
+        description: "Chủ đề video (tự động sinh script nếu có)"
+        required: false
+        type: string
 
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     env:
       TTS_VOICE: vi-VN-HoaiMyNeural
+      ARK_API_KEY: ${{ secrets.ARK_API_KEY }}
 
     steps:
       - name: Checkout code
@@ -38,8 +44,14 @@ jobs:
       - name: Set TTS voice in config
         run: python3 -c "import json; p='src/video-config.json'; d=json.load(open(p)); d['voice']='${{ env.TTS_VOICE }}'; json.dump(d, open(p,'w'), ensure_ascii=False, indent=2)"
 
-      - name: Extract script from video-config.json
-        run: python3 -c "import json; d=json.load(open('src/video-config.json')); open('script.txt','w').write('. '.join(s['text'] for s in d['scenes']))" && cat script.txt
+      - name: Generate script (if topic provided via workflow_dispatch)
+        if: github.event_name == 'workflow_dispatch' && inputs.topic != '' && env.ARK_API_KEY != ''
+        run: python3 scripts/generate_script.py
+
+      - name: Show script content
+        run: |
+          echo "=== video-config.json ==="
+          python3 -c "import json; d=json.load(open('src/video-config.json')); print('Scenes:', len(d['scenes'])); [print(f'  {s[\"kind\"]}: {s[\"text\"]}') for s in d['scenes']]"
 
       - name: Prepare audio + timings
         run: python3 scripts/prepare.py
@@ -53,7 +65,7 @@ jobs:
       - name: Upload video artifact
         uses: actions/upload-artifact@v4
         with:
-          name: video-15s
+          name: kinetic-typo-video
           path: out/video.mp4
           retention-days: 7
 
@@ -61,4 +73,5 @@ jobs:
         if: success()
         run: |
           echo "✅ Video rendered successfully!"
-          python3 -c "import json; d=json.load(open('src/video-config.json')); print('Scenes:', len(d['scenes']), 'TotalMs:', d['totalMs'])"
+          python3 -c "import json; d=json.load(open('src/video-config.json')); print('Scenes:', len(d['scenes']), 'TotalMs:', d['totalMs'], f'({d[\"totalMs\"]/1000:.1f}s)')"
+          ls -lh out/video.mp4

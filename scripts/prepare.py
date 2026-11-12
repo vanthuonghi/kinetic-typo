@@ -41,11 +41,16 @@ def syllables(word: str) -> int:
 
 def dur_ms(path: Path) -> int:
     out = subprocess.check_output(
-        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
-         "-of", "default=noprint_wrappers=1:nokey=1", str(path)],
-        text=True,
-    ).strip()
-    return int(float(out) * 1000)
+        ["ffmpeg", "-i", str(path), "-f", "null", "-"],
+        stderr=subprocess.STDOUT, text=True,
+    )
+    # Parse "Duration: HH:MM:SS.mmm" from ffmpeg output
+    for line in out.splitlines():
+        if "Duration:" in line:
+            parts = line.split("Duration:")[1].split(",")[0].strip()
+            h, m, s = parts.split(":")
+            return int((int(h) * 3600 + int(m) * 60 + float(s)) * 1000)
+    return 0
 
 
 def detect_speech_windows(path: Path, total_ms: int):
