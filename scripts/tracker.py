@@ -105,6 +105,17 @@ def mark_done(stt, link):
     return False
 
 
+def remove_topic(stt):
+    data = load_tracker()
+    new_data = [item for item in data if item["stt"] != stt]
+    if len(new_data) == len(data):
+        print(f"✗ Không tìm thấy STT {stt}")
+        return False
+    save_tracker(new_data)
+    print(f"✓ Đã xoá STT {stt}")
+    return True
+
+
 def sheet_url():
     print(f"📊 Google Sheet: https://docs.google.com/spreadsheets/d/{SHEET_ID}")
     print(f"📁 Drive folder: https://drive.google.com/drive/folders/kinetic-typo-videos")
@@ -119,7 +130,8 @@ def main():
         print("  next                  - Lấy chủ đề tiếp theo cần làm")
         print("  render <stt>          - Đánh dấu đang render")
         print("  done <stt> <link>     - Đánh dấu hoàn thành + link video")
-        print("  sheet                 - Hiện link Google Sheet")
+        print("  sheet                 - Hi?n link Google Sheet")
+        print("  remove <stt>          - Xoá ch? d? theo STT")
         return
 
     action = sys.argv[1]
@@ -141,6 +153,8 @@ def main():
         mark_done(int(sys.argv[2]), sys.argv[3])
     elif action == "sheet":
         sheet_url()
+    elif action == "remove":
+        remove_topic(int(sys.argv[2]))
     else:
         print(f"Unknown action: {action}")
 
