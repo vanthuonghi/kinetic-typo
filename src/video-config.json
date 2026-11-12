@@ -1,48 +1,51 @@
 {
   "theme": {
-    "id": "ocean-blue",
-    "bg": [
-      "#001219",
-      "#005f73",
-      "#0a192f"
-    ],
-    "text": "#90e0ef",
-    "accent": "#00b4d8",
+    "id": "neon-blue",
+    "bg": ["#000814", "#000814", "#000814"],
+    "text": "#00d4ff",
+    "accent": "#ff006e",
     "muted": "#ffffff"
   },
-  "effect": "typewriter",
+  "effect": "word-rise",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-NamMinhNeural",
   "scenes": [
     {
-      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "thường",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Bạn có đang làm việc 8 tiếng nhưng hiệu quả chỉ bằng 2 tiếng?",
+      "highlight": "hiệu quả",
       "kind": "hook"
     },
     {
-      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
-      "highlight": "phút",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Nguyên nhân là não bạn không được huấn luyện để tập trung",
+      "highlight": "tập trung",
       "kind": "body"
     },
     {
-      "text": "Một cuốn sách chỉ trong 3 phút",
-      "highlight": "trong",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Phương pháp Pomodoro: 25 phút làm, 5 phút nghỉ",
+      "highlight": "Pomodoro",
       "kind": "body"
     },
     {
-      "text": "Đăng ký để học ngay",
-      "highlight": "",
-      "startMs": 0,
-      "endMs": 0,
+      "text": "Tắt điện thoại, đóng tab không cần thiết",
+      "highlight": "Tắt",
+      "kind": "body"
+    },
+    {
+      "text": "Mỗi ngày chỉ cần 4 Pomodoro là đủ",
+      "highlight": "4",
+      "kind": "body"
+    },
+    {
+      "text": "Năng suất của bạn sẽ tăng gấp 3 lần",
+      "highlight": "3 lần",
+      "kind": "body"
+    },
+    {
+      "text": "Bắt đầu ngay hôm nay, theo dõi để biết thêm mẹo hay",
+      "highlight": "theo dõi",
       "kind": "cta"
     }
   ],
-  "totalMs": 15000,
-  "hasAudio": true
+  "totalMs": 0,
+  "hasAudio": false
 }
