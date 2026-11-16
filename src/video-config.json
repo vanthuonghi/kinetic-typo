@@ -1,36 +1,43 @@
 {
   "theme": {
-    "id": "luxury-gold",
+    "id": "green-tech",
     "bg": [
-      "#1a1500",
-      "#2d2400",
-      "#1a1500"
+      "#001a0f",
+      "#001a0f",
+      "#001a0f"
     ],
-    "text": "#ffd700",
-    "accent": "#ffeb3b",
-    "muted": "#fff5cc"
+    "text": "#00ff88",
+    "accent": "#00ff88",
+    "muted": "#e0ffe0"
   },
   "effect": "line-mask",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Bạn có biết? Người bình thường đọc 200 từ mỗi phút",
-      "highlight": "bình",
+      "text": "Dùng AI tóm tắt 10 trang PDF trong 30 giây",
+      "highlight": "Dùng",
       "startMs": 0,
       "endMs": 0,
       "kind": "hook"
     },
     {
-      "text": "Với speed reading, bạn đọc 1000 từ mỗi phút",
-      "highlight": "speed",
+      "text": "Tạo flashcard từ ghi chú chỉ với 1 lệnh",
+      "highlight": "flashcard",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
     },
     {
-      "text": "Một cuốn sách chỉ trong 3 phút",
-      "highlight": "cuốn",
+      "text": "Học từ vựng mới nhờ AI nhắc lịch hàng ngày",
+      "highlight": "lịch",
+      "startMs": 0,
+      "endMs": 0,
+      "kind": "body"
+    },
+    {
+      "text": "Viết email chuyên nghiệp trong 2 phút nhờ mẫu AI",
+      "highlight": "nghiệp",
       "startMs": 0,
       "endMs": 0,
       "kind": "body"
