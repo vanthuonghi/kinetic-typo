@@ -14,7 +14,10 @@ import json
 import subprocess
 from pathlib import Path
 
-import edge_tts
+try:
+    import edge_tts
+except ImportError:  # pre-recorded audio mode does not need Edge TTS
+    edge_tts = None
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "src" / "video-config.json"
@@ -95,6 +98,17 @@ def detect_speech_windows(path: Path, total_ms: int):
     # Drop slivers (breaths, clicks) so a 30ms blip does not become a "window".
     cleaned = [(int(a), int(b)) for a, b in windows if (b - a) >= 60]
     return cleaned or [(0, total_ms)]
+
+
+def speech_at(windows, position: float) -> float:
+    """Map a position on concatenated-speech timeline back to real time."""
+    remaining = max(0.0, position)
+    for a, b in windows:
+        span = b - a
+        if remaining <= span:
+            return a + remaining
+        remaining -= span
+    return windows[-1][1] if windows else position
 
 
 def normalize(path: Path) -> None:
@@ -277,6 +291,24 @@ def main() -> None:
     cfg = json.loads(CONFIG.read_text(encoding="utf-8"))
     scenes = cfg["scenes"]
     voice = cfg.get("voice", "vi-VN-NamMinhNeural")
+
+    # --- Pre-timed scenes: exact word timings supplied by caller (ElevenLabs /with-timestamps) ---
+    if cfg.get("audioMode") == "pre_timed":
+        clips_dir = PUBLIC / cfg.get("clipsDir", "_tts")
+        clips = []
+        for i in range(len(scenes)):
+            clip = clips_dir / f"scene_{i}.mp3"
+            if not clip.exists():
+                raise RuntimeError(f"missing scene clip {clip}")
+            clips.append(clip)
+        if not concat(clips, MP3):
+            raise RuntimeError("could not build voiceover.mp3")
+        cfg["totalMs"] = max(s["endMs"] for s in scenes) + 300
+        cfg["hasAudio"] = True
+        CONFIG.write_text(json.dumps(cfg, ensure_ascii=False, indent=2), encoding="utf-8")
+        wc = sum(len(s.get("words", [])) for s in scenes)
+        print(f"Prepared {len(scenes)} scenes / {wc} EXACT timed words, totalMs={cfg['totalMs']}")
+        return
 
     tmp = PUBLIC / "_tts"
     tmp.mkdir(exist_ok=True)
