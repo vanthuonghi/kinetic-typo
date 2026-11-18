@@ -15,63 +15,63 @@
   "voice": "vi-VN-HoaiMyNeural",
   "scenes": [
     {
-      "text": "Mất 3 giờ đọc một paper? Giảm xuống 20 phút.",
-      "highlight": "20 phút",
+      "text": "Đọc màn hình chậm hơn giấy 25%?",
+      "highlight": "chậm hơn",
       "kind": "hook"
     },
     {
-      "text": "Đọc có mục đích giúp tiết kiệm 80% thời gian.",
-      "highlight": "80%",
+      "text": "Nghiên cứu từ ĐH Copenhagen 2018.",
+      "highlight": "Nghiên cứu",
       "kind": "body"
     },
     {
-      "text": "Bắt đầu bằng abstract và conclusion trước.",
-      "highlight": "abstract và conclusion",
+      "text": "Mắt bạn di chuyển khác trên màn hình.",
+      "highlight": "di chuyển khác",
       "kind": "body"
     },
     {
-      "text": "Xác định câu hỏi nghiên cứu của bạn.",
-      "highlight": "câu hỏi nghiên cứu",
+      "text": "Ánh sáng xanh gây mỏi cơ mắt nhanh hơn.",
+      "highlight": "ánh sáng xanh",
       "kind": "body"
     },
     {
-      "text": "Chỉ đọc phần trả lời trực tiếp câu hỏi đó.",
-      "highlight": "trả lời trực tiếp",
+      "text": "Đọc giấy giúp ghi nhớ sâu hơn 30%.",
+      "highlight": "ghi nhớ sâu",
       "kind": "body"
     },
     {
-      "text": "Dùng kỹ thuật scanning để tìm từ khóa chính.",
-      "highlight": "scanning",
+      "text": "Lý do là không có sự phân tán kỹ thuật số.",
+      "highlight": "phân tán",
       "kind": "body"
     },
     {
-      "text": "Đọc lướt các bảng biểu và hình ảnh trước.",
-      "highlight": "bảng biểu và hình ảnh",
+      "text": "Cách thích nghi điều chỉnh cỡ chữ lớn hơn.",
+      "highlight": "cỡ chữ lớn",
       "kind": "body"
     },
     {
-      "text": "Phân tích cấu trúc IMRaD của paper.",
-      "highlight": "IMRaD",
+      "text": "Giảm độ sáng màn hình và dùng chế độ đọc.",
+      "highlight": "giảm độ sáng",
       "kind": "body"
     },
     {
-      "text": "Tập trung vào phương pháp và kết quả.",
-      "highlight": "phương pháp và kết quả",
+      "text": "Tập đọc lướt theo đường zic zac trên màn.",
+      "highlight": "đọc lướt",
       "kind": "body"
     },
     {
-      "text": "Ghi chú lại các điểm chính bằng 1-2 từ.",
-      "highlight": "Ghi chú",
+      "text": "Dùng ngón tay dẫn đường để tăng tốc độ.",
+      "highlight": "ngón tay dẫn",
       "kind": "body"
     },
     {
-      "text": "Áp dụng kỹ thuật đọc tốc độ 300 từ/phút.",
-      "highlight": "300 từ/phút",
+      "text": "Thực hành 10 phút mỗi ngày cải thiện 50%.",
+      "highlight": "cải thiện 50%",
       "kind": "body"
     },
     {
-      "text": "Thử ngay với paper đầu tiên của bạn.",
-      "highlight": "Thử ngay",
+      "text": "Bắt đầu ngay hôm nay, thử thách 7 ngày.",
+      "highlight": "thử thách 7 ngày",
       "kind": "cta"
     }
   ]
