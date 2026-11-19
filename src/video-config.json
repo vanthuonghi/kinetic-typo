@@ -980,5 +980,16 @@
     "brand": true,
     "counter": true,
     "progress": true
+  },
+  "music": {
+    "track": "music/bed-neon.mp3",
+    "gainDb": -20,
+    "fadeInMs": 900,
+    "fadeOutMs": 1800
+  },
+  "sfx": {
+    "whoosh": true,
+    "click": true,
+    "volume": 0.35
   }
 }

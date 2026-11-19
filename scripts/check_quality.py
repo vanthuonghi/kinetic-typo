@@ -15,6 +15,9 @@ ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "src" / "video-config.json"
 MP3 = ROOT / "public" / "voiceover.mp3"
 
+EFFECTS = ["karaoke", "word-rise", "line-mask", "slam", "wave",
+           "typewriter", "sweep", "spotlight", "pop"]
+
 MAX_CHARS = 95
 MIN_SCENE_S = 0.7
 MAX_SCENE_S = 12.0
@@ -74,12 +77,37 @@ def main() -> int:
     if isinstance(blur, (int, float)) and blur > 60:
         warnings.append(f"background blur {blur}px is expensive to render (24-30 is plenty)")
 
+    # A missing music bed or SFX file only shows up as a silent video after a
+    # 6-minute render, so catch it here.
+    music = cfg.get("music") or {}
+    track = (music.get("track") or "").strip()
+    if track and not (public / track).exists():
+        errors.append(f"music track not found: public/{track}")
+    sfx = cfg.get("sfx") or {}
+    for flag, name in (("whoosh", "sfx/whoosh.mp3"), ("click", "sfx/click.mp3")):
+        if sfx.get(flag, True) and not (public / name).exists():
+            errors.append(
+                f"sound effect not found: public/{name} "
+                f"(set sfx.{flag}=false or run python3 scripts/make_music.py)"
+            )
+
+    effect = cfg.get("effect", "word-rise")
+    if effect != "auto" and effect not in EFFECTS:
+        errors.append(f"unknown effect {effect!r} (use auto or one of: {', '.join(EFFECTS)})")
+
     for i, s in enumerate(scenes):
         dur = (s["endMs"] - s["startMs"]) / 1000
         n = len(s["text"])
         tag = f"scene {i + 1}"
         if s.get("image") and not (ROOT / "public" / s["image"]).exists():
             errors.append(f"{tag}: image not found: public/{s['image']}")
+        if s.get("effect") and s["effect"] not in EFFECTS:
+            errors.append(f"{tag}: unknown effect {s['effect']!r}")
+        if s.get("alignSource") == "estimate":
+            warnings.append(
+                f"{tag}: word timings estimated from the script "
+                "(pip install faster-whisper for measured sync)"
+            )
 
         # The renderer matches highlight as a whole phrase, so a highlight that
         # is not literally in the sentence silently highlights nothing.
@@ -123,7 +151,10 @@ def main() -> int:
             if gaps and max(gaps) > 1200:
                 warnings.append(f"{tag}: {max(gaps)}ms silent gap inside the sentence")
 
-    print(f"Quality check: {len(scenes)} scenes, {total:.1f}s, contrast {ratio:.1f}:1")
+    measured = sum(1 for s in scenes if s.get("alignSource") == "whisper")
+    align = f", timings {measured}/{len(scenes)} measured" if measured else ""
+    music = f", music {cfg['music']['track']}" if (cfg.get("music") or {}).get("track") else ""
+    print(f"Quality check: {len(scenes)} scenes, {total:.1f}s, contrast {ratio:.1f}:1{align}{music}")
     for w in warnings:
         print(f"  warn  {w}")
     for e in errors:

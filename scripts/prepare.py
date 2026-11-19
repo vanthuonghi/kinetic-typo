@@ -11,13 +11,20 @@ then goes word by word.
 """
 import asyncio
 import json
+import os
 import subprocess
+import sys
 from pathlib import Path
 
 try:
     import edge_tts
 except ImportError:  # pre-recorded audio mode does not need Edge TTS
     edge_tts = None
+
+try:  # optional: measured word timings instead of syllable estimates
+    import align as aligner
+except ImportError:
+    aligner = None
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "src" / "video-config.json"
@@ -155,6 +162,56 @@ def speak(text: str, voice: str, out: Path):
             normalize(out)
             return True, marks
     return False, []
+
+
+def mix_music(voice: Path, cfg: dict) -> bool:
+    """Lay a music bed under the voice, ducked while the narrator speaks.
+
+    The bed is looped to the voice length, faded in/out, then compressed by a
+    sidechain keyed on the voice so the narration never competes with it. The
+    final mix is normalised to -14 LUFS / -1.5 dBTP, which is what short-form
+    platforms expect, and it replaces voiceover.mp3 in place.
+    """
+    music = cfg.get("music") or {}
+    track = (music.get("track") or "").strip()
+    if not track:
+        return False
+    source = PUBLIC / track
+    if not source.exists():
+        print(f"⚠ music track missing: public/{track} — voice only", file=sys.stderr)
+        return False
+
+    total = dur_ms(voice) / 1000
+    if total <= 0.5:
+        return False
+    gain = float(music.get("gainDb", -20))
+    fade_in = min(float(music.get("fadeInMs", 900)) / 1000, total / 3)
+    fade_out = min(float(music.get("fadeOutMs", 1800)) / 1000, total / 3)
+
+    out = voice.with_name("voiceover.mix.mp3")
+    graph = (
+        f"[1:a]volume={gain}dB,atrim=0:{total:.3f},asetpts=N/SR/TB,"
+        f"afade=t=in:st=0:d={fade_in:.3f},"
+        f"afade=t=out:st={total - fade_out:.3f}:d={fade_out:.3f}[bed];"
+        "[bed][0:a]sidechaincompress=threshold=0.04:ratio=8:attack=15:release=320[ducked];"
+        # The bed is stereo and edge-tts is mono; force the mix to stereo so the
+        # pad keeps its width instead of collapsing to one channel.
+        "[0:a]aformat=channel_layouts=stereo[voice];"
+        "[voice][ducked]amix=inputs=2:duration=first:dropout_transition=0:normalize=0,"
+        "loudnorm=I=-14:TP=-1.5:LRA=9[out]"
+    )
+    r = subprocess.run(
+        ["ffmpeg", "-y", "-i", str(voice), "-stream_loop", "-1", "-i", str(source),
+         "-filter_complex", graph, "-map", "[out]",
+         "-c:a", "libmp3lame", "-q:a", "3", "-ar", "44100", str(out)],
+        stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True,
+    )
+    if r.returncode != 0 or not out.exists() or out.stat().st_size < 5000:
+        print(f"⚠ music mix failed: {(r.stderr or '')[-400:]}", file=sys.stderr)
+        out.unlink(missing_ok=True)
+        return False
+    out.replace(voice)
+    return True
 
 
 def concat(files, out: Path) -> bool:
@@ -303,6 +360,8 @@ def main() -> None:
             clips.append(clip)
         if not concat(clips, MP3):
             raise RuntimeError("could not build voiceover.mp3")
+        if mix_music(MP3, cfg):
+            print(f"Mixed music bed: {cfg['music']['track']}")
         cfg["totalMs"] = max(s["endMs"] for s in scenes) + 300
         cfg["hasAudio"] = True
         CONFIG.write_text(json.dumps(cfg, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -325,20 +384,30 @@ def main() -> None:
         speech = detect_speech_windows(clip, d)
         s["startMs"] = cursor
         s["endMs"] = cursor + d
+        estimated = align_words(s["text"], marks, d, speech)
+        measured, source = (estimated, "estimate")
+        if aligner is not None:
+            measured, source = aligner.timings(s["text"], clip, estimated, d)
+        s["alignSource"] = source
         s["words"] = [{"t": w["t"], "s": cursor + w["s"], "e": cursor + w["e"]}
-                      for w in align_words(s["text"], marks, d, speech)]
+                      for w in measured]
         cursor += d + GAP
         clips.append(clip)
 
     if not concat(clips, MP3):
         raise RuntimeError("could not build voiceover.mp3")
+    if mix_music(MP3, cfg):
+        print(f"Mixed music bed: {cfg['music']['track']}")
 
     cfg["totalMs"] = cursor - GAP + 300
     cfg["hasAudio"] = True
     CONFIG.write_text(json.dumps(cfg, ensure_ascii=False, indent=2), encoding="utf-8")
 
     wc = sum(len(s.get("words", [])) for s in scenes)
+    measured = sum(1 for s in scenes if s.get("alignSource") == "whisper")
     print(f"Prepared {len(scenes)} scenes / {wc} timed words, totalMs={cfg['totalMs']}")
+    print(f"Timings: {measured}/{len(scenes)} scenes measured from audio, "
+          f"{len(scenes) - measured} estimated")
 
     for c in clips:
         c.unlink(missing_ok=True)

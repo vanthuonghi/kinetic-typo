@@ -16,6 +16,9 @@ jobs:
     env:
       TTS_VOICE: vi-VN-HoaiMyNeural
       ARK_API_KEY: ${{ secrets.ARK_API_KEY }}
+      # Whisper model used to measure word timings; "base" is enough when the
+      # text is already known, "small" is slower but more accurate.
+      ALIGN_MODEL: base
 
     steps:
       - name: Checkout code
@@ -38,8 +41,14 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install Edge TTS
-        run: pip install edge-tts==7.3.1
+      - name: Install Edge TTS + forced aligner
+        run: pip install edge-tts==7.3.1 faster-whisper==1.1.1
+
+      - name: Cache alignment model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-ct2-${{ env.ALIGN_MODEL }}
 
       - name: Set TTS voice in config
         run: python3 -c "import json; p='src/video-config.json'; d=json.load(open(p)); d['voice']='${{ env.TTS_VOICE }}'; json.dump(d, open(p,'w'), ensure_ascii=False, indent=2)"
@@ -55,6 +64,27 @@ jobs:
 
       - name: Prepare audio + timings
         run: python3 scripts/prepare.py
+
+      # Diagnostic only: configs with audioMode "pre_timed" already ship exact
+      # timings, but this proves the aligner still works for edge-tts configs.
+      - name: Probe forced aligner
+        run: |
+          python3 scripts/align.py --selftest
+          python3 - <<'PY'
+          import glob, sys
+          sys.path.insert(0, "scripts")
+          clips = sorted(glob.glob("public/_ts/*.mp3") + glob.glob("public/_tts/*.mp3"))
+          if not clips:
+              print("PROBE: no scene clips in this config (nothing to measure)")
+              raise SystemExit(0)
+          try:
+              import align
+              words = align.heard_words(clips[0])
+              print(f"PROBE: {clips[0]} -> {len(words)} words",
+                    [(w['t'], w['s'], w['e']) for w in words[:5]])
+          except Exception as exc:
+              print(f"PROBE FAILED: {type(exc).__name__}: {exc}")
+          PY
 
       - name: Quality gate
         run: python3 scripts/check_quality.py
@@ -73,5 +103,5 @@ jobs:
         if: success()
         run: |
           echo "✅ Video rendered successfully!"
-          python3 -c "import json; d=json.load(open('src/video-config.json')); print('Scenes:', len(d['scenes']), 'TotalMs:', d['totalMs'], f'({d[\"totalMs\"]/1000:.1f}s)')"
+          python3 -c "import json; d=json.load(open('src/video-config.json')); print('Scenes:', len(d['scenes']), 'TotalMs:', d['totalMs'], f'({d[\"totalMs\"]/1000:.1f}s)'); print('Measured timings:', sum(1 for s in d['scenes'] if s.get('alignSource')=='whisper'), '/', len(d['scenes'])); print('Music:', (d.get('music') or {}).get('track', 'none'))"
           ls -lh out/video.mp4

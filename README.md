@@ -1,8 +1,10 @@
 # 🎬 Kinetic Typography Video Generator
 
 Video short (9:16 / 4:5 / 1:1) chỉ từ **text + giọng đọc**: không footage, chữ là nhân vật chính.
-Chữ hiện theo nhịp nói thật (karaoke / spotlight), **nền ảnh mờ** chuyển cảnh mượt +
-gradient động, 9 hiệu ứng chữ, 4 kiểu chuyển cảnh, brand chip và progress bar segmented.
+Chữ hiện theo nhịp nói thật (karaoke / spotlight, timing **đo từ audio**), **nền ảnh mờ**
+chuyển cảnh mượt + gradient động, 9 hiệu ứng chữ (chọn được theo từng scene),
+4 kiểu chuyển cảnh, brand chip, progress bar segmented, nhạc nền tự ducking theo
+giọng và SFX chuyển cảnh.
 
 ## Yêu cầu
 
@@ -11,6 +13,7 @@ gradient động, 9 hiệu ứng chữ, 4 kiểu chuyển cảnh, brand chip và
 | Node.js | 22 | npm 10+ |
 | FFmpeg | 8.0 | cần `ffmpeg`, `ffprobe` trong PATH |
 | Python | 3.11+ | `pip install edge-tts==7.3.1` |
+| faster-whisper | 1.1.1 (tuỳ chọn) | `pip install faster-whisper` — đo word timing từ audio thật |
 
 ```bash
 npm ci                      # hoặc npm install
@@ -45,7 +48,7 @@ trường đó.
     "accent": "#ff006e",
     "muted": "#ffffff"
   },
-  "effect": "karaoke",              // xem bảng hiệu ứng bên dưới
+  "effect": "auto",                 // auto: hook→slam, body→karaoke, cta→pop
   "brand": "Văn Hỉ Official",       // watermark góc trên + nút CTA
   "voice": "vi-VN-NamMinhNeural",   // hoặc vi-VN-HoaiMyNeural (nữ)
   "width": 1080,                    // đổi tỉ lệ khung ở đây
@@ -60,10 +63,19 @@ trường đó.
     "grain": 0.06                    // hạt phim, 0 = tắt
   },
   "chrome": { "brand": true, "counter": true, "progress": true },
+  "music": {                         // bỏ "track" -> video chỉ có giọng đọc
+    "track": "music/bed-warm.mp3",
+    "gainDb": -20,                   // mức nhạc so với giọng
+    "fadeInMs": 900,
+    "fadeOutMs": 1800
+  },
+  "sfx": { "whoosh": true, "click": true, "volume": 0.35 },
   "transition": "auto",             // auto | fade | slide-up | wipe | punch
   "scenes": [
     { "text": "AI phân tích 10", "highlight": "", "kind": "hook" },
     { "text": "000 báo cáo mỗi giây", "highlight": "báo cáo", "kind": "body" },
+    // effect của riêng scene này, đè lên "effect" toàn video
+    { "text": "Nấu cùng táo đỏ", "highlight": "táo đỏ", "kind": "body", "effect": "spotlight" },
     { "text": "Đăng ký để học ngay", "highlight": "Đăng ký", "kind": "cta" }
   ],
   "totalMs": 15000,
@@ -88,6 +100,23 @@ Thứ tự lớp: gradient theme → ảnh mờ → quầng sáng accent → scr
 vignette → hạt phim, nên chữ vẫn đọc rõ trên ảnh sáng hay nhiều chi tiết.
 
 Ảnh càng nét càng đẹp, nhưng file 1000–2000px là đủ vì đằng nào cũng bị làm mờ.
+
+### Nhạc nền & SFX
+
+`music.track` là một file trong `public/music/`. `prepare.py` loop nhạc cho dài
+bằng giọng đọc, fade in/out, rồi **ducking bằng `sidechaincompress`**: nhạc tự
+nhỏ lại mỗi khi có giọng, nên không phải hạ volume tay. Mix cuối được chuẩn hoá
+−14 LUFS / −1.5 dBTP — mức các nền tảng short-form chuẩn hoá về.
+
+Hai bản nhạc có sẵn (`bed-warm`, `bed-neon`) và hai SFX (`whoosh` khi chuyển
+scene, `click` khi CTA vào) được **sinh bằng code**, không dùng sample:
+
+```bash
+python3 scripts/make_music.py   # ~3 phút, chỉ cần chạy lại khi muốn đổi nhạc
+```
+
+SFX không trộn vào MP3 mà phát bằng `<Audio>` trong composition, nên khớp
+frame tuyệt đối. Tắt bằng `sfx.whoosh` / `sfx.click`, hoặc bỏ cả cụm `sfx`.
 
 ### Tỉ lệ khung
 
@@ -116,6 +145,11 @@ không bị lệch bố cục:
 
 `karaoke`, `spotlight` và `pop` tô nền accent mờ (marker) cho từ highlight —
 đọc tốt hơn trên ảnh nền so với chỉ đổi màu chữ.
+
+Đặt `"effect": "auto"` để mỗi scene tự chọn theo `kind` (hook → `slam`,
+body → `karaoke`, cta → `pop`) — video có nhịp thay vì một điệu từ đầu đến cuối.
+Muốn khác thì thêm `"effect"` vào **một scene** bất kỳ; scene đó dùng effect riêng,
+các scene còn lại vẫn theo `effect` toàn video.
 
 Chuyển cảnh (`fade`, `slide-up`, `wipe`, `punch`) tự luân phiên theo thứ tự
 scene, lệch pha theo `effect` đang chọn. Đặt `"transition": "fade"` để cố định
@@ -157,6 +191,12 @@ thu nhỏ chữ cho vừa một dòng — chữ to hơn hẳn trên điện tho�
    về thời gian thực — nên chữ không "chạy" trong lúc người nói ngừng nghỉ.
    Giọng Anh có WordBoundary từ Edge thì dùng thẳng số đo của Edge.
 5. Nối các clip, ghi `public/voiceover.mp3` và timing vào config.
+6. Nếu có `faster-whisper`, `scripts/align.py` **nghe lại từng clip** và lấy
+   timestamp thật của từng từ, rồi ghép với câu gốc bằng `difflib`: từ nào
+   Whisper nghe đúng thì dùng số đo, từ bị nghe sai thì lấy ước lượng âm tiết
+   và kẹp giữa hai từ đo được. Đây là lý do số ("12 tiếng") và tên riêng không
+   còn lệch dần về cuối câu. Không cài Whisper thì pipeline vẫn chạy như cũ;
+   `alignSource` trong config cho biết scene nào là `whisper`, scene nào `estimate`.
 
 ## Quality gate
 
@@ -172,9 +212,13 @@ kinetic-typo/
 ├── .github/workflows/render.yml  # CI: render khi push (cần secret ARK_API_KEY)
 ├── public/fonts/                 # Be Vietnam Pro (self-host)
 ├── public/backgrounds/           # ảnh nền mờ (bg-bokeh, bg-paper)
+├── public/music/                 # nhạc nền sinh bởi make_music.py
+├── public/sfx/                   # whoosh + click sinh bởi make_music.py
 ├── public/voiceover.mp3          # sinh bởi prepare.py (gitignore)
 ├── scripts/
-│   ├── prepare.py                # TTS + timing + trộn audio
+│   ├── prepare.py                # TTS + timing + mix nhạc
+│   ├── align.py                  # đo word timing bằng faster-whisper (tuỳ chọn)
+│   ├── make_music.py             # sinh nhạc nền + SFX (stdlib, không sample)
 │   ├── check_quality.py          # quality gate
 │   ├── generate_script.py        # sinh kịch bản mới bằng model (tuỳ chọn, CI dùng)
 │   └── generate-tts.py           # đường cũ: chỉ đọc script.txt -> voiceover.mp3
@@ -197,6 +241,9 @@ kinetic-typo/
 | `Chữ bị tràn khung` | Quality gate báo `won't fit the frame` → rút ngắn text hoặc tách thêm scene |
 | `Render chậm` | Giảm `width`/`height`, giảm `--concurrency`, hoặc tăng `--crf` |
 | `Nền đen, không thấy ảnh` | Sai đường dẫn `background.image` (tính từ `public/`); quality gate báo lỗi này |
+| `Không có nhạc trong video` | `music.track` sai đường dẫn, hoặc thiếu file — quality gate chặn; xem dòng `Mixed music bed` khi chạy `prepare.py` |
+| `Nhạc lấn giọng` | Giảm `music.gainDb` (ví dụ −24), hoặc tăng `sfx.volume` nếu chỉ thiếu tiếng động |
+| `Timing vẫn lệch dù đã cài whisper` | Model `base` nghe tiếng Việt ở mức khá; đặt `ALIGN_MODEL=small`. Xem `alignSource` trong config: `estimate` nghĩa là Whisper bị bỏ qua (thiếu package, hoặc transcript khớp < 50%) |
 | `Render chậm bất thường` | Hạ `background.blur` xuống 20–24; blur lớn là thứ đắt nhất trong khung hình |
 | `Browser ... not found` | `npx remotion browser ensure` |
 | `Failed to launch the browser process` + lỗi `VideoToolbox` trên macOS 12 | Chrome headless-shell mới không chạy trên macOS 12; render trên CI, hoặc tải Chrome for Testing 120 và truyền `--browser-executable=.../chrome-headless-shell` |

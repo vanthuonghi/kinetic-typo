@@ -12,11 +12,15 @@ export type Scene = {
   text: string;
   highlight?: string;
   kind?: SceneKind;
+  /** Overrides the video-wide effect for this scene only. */
+  effect?: EffectName;
   /** Optional background photo for this scene (path below `public/`). */
   image?: string;
   startMs: number;
   endMs: number;
   words?: Word[];
+  /** "whisper" when the timings were measured from the audio. */
+  alignSource?: "whisper" | "estimate";
 };
 
 export type Theme = {
@@ -39,6 +43,9 @@ export type EffectName =
   | "pop";
 
 export type TransitionName = "fade" | "slide-up" | "wipe" | "punch";
+
+/** "auto" picks an effect per scene from its `kind`. */
+export type EffectChoice = EffectName | "auto";
 
 /**
  * Photographic backdrop: a still image, blurred and slowly pushed in, sitting
@@ -68,9 +75,29 @@ export type ChromeConfig = {
   progress?: boolean;
 };
 
+/**
+ * Music bed mixed under the voice by `prepare.py` (via ffmpeg), ducked while
+ * the narrator speaks. `track` is a path below `public/`.
+ */
+export type MusicConfig = {
+  track?: string;
+  /** Bed level relative to the voice, in dB. -20 is a safe starting point. */
+  gainDb?: number;
+  fadeInMs?: number;
+  fadeOutMs?: number;
+  /** Optional per-theme alternative, chosen by hand in the config. */
+};
+
+/** Short transition sounds played by the composition, not mixed into the MP3. */
+export type SfxConfig = {
+  whoosh?: boolean;
+  click?: boolean;
+  volume?: number;
+};
+
 export type VideoConfig = {
   theme: Theme;
-  effect: EffectName;
+  effect: EffectChoice;
   brand: string;
   voice?: string;
   width?: number;
@@ -78,6 +105,8 @@ export type VideoConfig = {
   fps?: number;
   background?: BackgroundConfig;
   chrome?: ChromeConfig;
+  music?: MusicConfig;
+  sfx?: SfxConfig;
   /** "auto" alternates transitions per scene. */
   transition?: TransitionName | "auto";
   scenes: Scene[];
@@ -93,6 +122,7 @@ const RAW = rawConfig as unknown as VideoConfig;
 
 export const CFG = RAW;
 export const THEME: Theme = RAW.theme;
+export const EFFECT: EffectChoice = RAW.effect || "word-rise";
 export const BRAND = RAW.brand || "Văn Hỉ Official";
 export const SCENES: Scene[] = RAW.scenes;
 
@@ -113,6 +143,27 @@ export const CHROME: Required<ChromeConfig> = {
   ...RAW.chrome,
 };
 
+export const MUSIC: MusicConfig = {
+  gainDb: -20,
+  fadeInMs: 900,
+  fadeOutMs: 1800,
+  ...RAW.music,
+};
+
+export const SFX: Required<SfxConfig> = {
+  whoosh: true,
+  click: true,
+  volume: 0.35,
+  ...RAW.sfx,
+};
+
+/**
+ * Effect chosen from the scene's role when `effect` is "auto": the hook hits,
+ * the body tracks the voice word by word, the call to action springs in.
+ */
+export const effectForKind = (kind?: SceneKind): EffectName =>
+  kind === "hook" ? "slam" : kind === "cta" ? "pop" : "karaoke";
+
 /** Stable ordering so transition offsets never depend on object key order. */
 export const EFFECTS_ORDER: EffectName[] = [
   "karaoke",
@@ -129,6 +180,10 @@ export const EFFECTS_ORDER: EffectName[] = [
 /** Image for one scene, falling back to the global background photo. */
 export const imageForScene = (scene?: Scene): string | undefined =>
   scene?.image || BG.image;
+
+/** Resolve the effect for one scene: explicit override, then "auto", then global. */
+export const effectForScene = (scene: Scene): EffectName =>
+  scene.effect ?? (EFFECT === "auto" ? effectForKind(scene.kind) : EFFECT);
 
 /** True when prepare.py has written real timings into the config. */
 export const hasTimings = (scenes: Scene[]): boolean =>

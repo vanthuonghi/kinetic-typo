@@ -15,9 +15,11 @@ import {
   CFG,
   CHROME,
   EFFECTS_ORDER,
+  effectForScene,
   EffectName,
   hasTimings,
   Scene,
+  SFX,
   THEME,
   TransitionName,
 } from "./config";
@@ -724,9 +726,24 @@ const EFFECTS: Record<EffectName, React.FC<EffectProps>> = {
 
 const TRANSITIONS: TransitionName[] = ["slide-up", "wipe", "fade", "punch"];
 
-const transitionFor = (index: number): TransitionName => {
-  const offset = Math.max(0, EFFECTS_ORDER.indexOf(CFG.effect));
+const transitionFor = (index: number, effect: EffectName): TransitionName => {
+  const offset = Math.max(0, EFFECTS_ORDER.indexOf(effect));
   return TRANSITIONS[(index + offset) % TRANSITIONS.length];
+};
+
+/**
+ * Transition sounds: a whoosh into every scene after the first, and a click
+ * when the call to action lands. Rendered as audio in the composition (not
+ * mixed into voiceover.mp3) so they stay frame-accurate.
+ */
+const SceneSfx: React.FC<{ index: number; isCta: boolean }> = ({ index, isCta }) => {
+  if (index > 0 && SFX.whoosh) {
+    return <Audio src={staticFile("sfx/whoosh.mp3")} volume={SFX.volume} />;
+  }
+  if (isCta && SFX.click) {
+    return <Audio src={staticFile("sfx/click.mp3")} volume={SFX.volume} />;
+  }
+  return null;
 };
 
 const CtaScene: React.FC<EffectProps> = ({ scene, fontSize }) => {
@@ -837,8 +854,11 @@ const SceneLayer: React.FC<{ scene: Scene; index: number; total: number }> = ({
   const enter = spring({ frame, fps, config: { damping: 18, stiffness: 130, mass: 0.8 } });
   const outFrames = Math.min(8, Math.max(3, Math.round(lengthFrames * 0.12)));
   const exit = total > 1 && index < total - 1 ? ease(frame, lengthFrames - outFrames, lengthFrames) : 0;
+  const effectName = effectForScene(scene);
   const kind: TransitionName =
-    CFG.transition && CFG.transition !== "auto" ? CFG.transition : transitionFor(index);
+    CFG.transition && CFG.transition !== "auto"
+      ? CFG.transition
+      : transitionFor(index, effectName);
 
   let opacity = 1;
   let transform = "none";
@@ -862,12 +882,13 @@ const SceneLayer: React.FC<{ scene: Scene; index: number; total: number }> = ({
     extrapolateRight: "clamp",
   });
 
-  const Effect = EFFECTS[CFG.effect] ?? WordRise;
+  const Effect = EFFECTS[effectName] ?? WordRise;
   const isHook = scene.kind === "hook" || index === 0;
   const fontSize = fitFontSize(scene.text) * (isHook ? 1.06 : 1) * stage.scale;
 
   return (
     <AbsoluteFill style={{ opacity: opacity * (1 - exit), transform, clipPath }}>
+      <SceneSfx index={index} isCta={scene.kind === "cta"} />
       <AbsoluteFill style={{ transform: `scale(${drift})` }}>
         {scene.kind === "cta" ? (
           <CtaScene scene={scene} fontSize={fontSize} />
