@@ -7,6 +7,7 @@ or word timings that don't cover the audio. Hard errors exit 1; taste issues
 only warn, so a borderline video still ships.
 """
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -61,10 +62,37 @@ def main() -> int:
     elif ratio < MIN_CONTRAST:
         warnings.append(f"low text contrast {ratio:.1f}:1")
 
+    # Background photos: a wrong path renders a black frame, and a huge blur
+    # radius makes the render crawl for no visible gain.
+    bg_cfg = cfg.get("background") or {}
+    public = ROOT / "public"
+    if bg_cfg.get("image"):
+        image = public / bg_cfg["image"]
+        if not image.exists():
+            errors.append(f"background image not found: public/{bg_cfg['image']}")
+    blur = bg_cfg.get("blur", 24)
+    if isinstance(blur, (int, float)) and blur > 60:
+        warnings.append(f"background blur {blur}px is expensive to render (24-30 is plenty)")
+
     for i, s in enumerate(scenes):
         dur = (s["endMs"] - s["startMs"]) / 1000
         n = len(s["text"])
         tag = f"scene {i + 1}"
+        if s.get("image") and not (ROOT / "public" / s["image"]).exists():
+            errors.append(f"{tag}: image not found: public/{s['image']}")
+
+        # The renderer matches highlight as a whole phrase, so a highlight that
+        # is not literally in the sentence silently highlights nothing.
+        hl = (s.get("highlight") or "").strip()
+        if hl:
+            clean = lambda t: [re.sub(r'[.,!?;:…"\'()]', "", w).lower() for w in t.split()]
+            text_words, hl_words = clean(s["text"]), clean(hl)
+            hit = any(
+                text_words[i:i + len(hl_words)] == hl_words
+                for i in range(max(0, len(text_words) - len(hl_words) + 1))
+            )
+            if not hit:
+                warnings.append(f"{tag}: highlight {hl!r} is not in the sentence (nothing lights up)")
         if dur < MIN_SCENE_S:
             errors.append(f"{tag}: {dur:.2f}s is too quick to read")
         if dur > MAX_SCENE_S:

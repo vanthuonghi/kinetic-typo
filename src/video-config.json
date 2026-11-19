@@ -13,6 +13,8 @@
   "effect": "word-rise",
   "brand": "Văn Hỉ Official",
   "voice": "vi-VN-HoaiMyNeural",
+  "width": 1080,
+  "height": 1920,
   "scenes": [
     {
       "text": "Tối thứ Ba 20 giờ, bạn đang ngồi soạn bài cho ngày mai?",
@@ -964,5 +966,19 @@
   "audioMode": "pre_timed",
   "clipsDir": "_ts",
   "totalMs": 53620,
-  "hasAudio": true
+  "hasAudio": true,
+  "background": {
+    "image": "backgrounds/bg-bokeh.jpg",
+    "blur": 24,
+    "zoom": 1.14,
+    "kenBurns": true,
+    "darken": 0.35,
+    "vignette": 0.55,
+    "grain": 0.06
+  },
+  "chrome": {
+    "brand": true,
+    "counter": true,
+    "progress": true
+  }
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import {
   AbsoluteFill,
   Audio,
@@ -9,46 +9,19 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
-import rawConfig from "./video-config.json";
+import { Background } from "./Background";
+import {
+  BRAND,
+  CFG,
+  CHROME,
+  EFFECTS_ORDER,
+  EffectName,
+  hasTimings,
+  Scene,
+  THEME,
+  TransitionName,
+} from "./config";
 import { FONT_FAMILY } from "./fonts";
-
-/* ------------------------------------------------------------------ */
-/* Types                                                               */
-/* ------------------------------------------------------------------ */
-
-type Word = { t: string; s: number; e: number };
-
-type Scene = {
-  text: string;
-  highlight?: string;
-  startMs: number;
-  endMs: number;
-  kind?: "hook" | "body" | "cta";
-  words?: Word[];
-};
-
-type Theme = { id: string; bg: string[]; text: string; accent: string; muted: string };
-type EffectName =
-  | "word-rise"
-  | "line-mask"
-  | "slam"
-  | "wave"
-  | "typewriter"
-  | "sweep"
-  | "karaoke";
-
-type VideoConfig = {
-  theme: Theme;
-  effect: EffectName;
-  brand: string;
-  scenes: Scene[];
-  totalMs: number;
-  hasAudio?: boolean;
-};
-
-const CFG = rawConfig as unknown as VideoConfig;
-const THEME = CFG.theme;
-const BRAND = CFG.brand || "Văn Hỉ Official";
 
 /* ------------------------------------------------------------------ */
 /* Helpers                                                             */
@@ -61,6 +34,16 @@ const ease = (f: number, from: number, to: number, a = 0, b = 1) =>
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
+
+/** `#00d4ff` + 0.34 -> `rgba(0, 212, 255, 0.34)`, so themes can dim text. */
+const withAlpha = (hex: string, alpha: number): string => {
+  const h = (hex || "").replace("#", "");
+  const full = h.length === 3 ? h.split("").map((c) => c + c).join("") : h;
+  if (full.length !== 6) return hex;
+  const n = parseInt(full, 16);
+  if (Number.isNaN(n)) return hex;
+  return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${alpha})`;
+};
 
 /** Font size tuned so Vietnamese lines stay readable on a phone screen. */
 const fitFontSize = (text: string): number => {
@@ -77,8 +60,33 @@ const fitFontSize = (text: string): number => {
 
 const stripMarks = (w: string) => w.replace(/[.,!?;:…"'()]/g, "").toLowerCase();
 const splitWords = (text: string) => text.trim().split(/\s+/).filter(Boolean);
-const highlightSet = (highlight?: string) =>
-  new Set(splitWords(highlight || "").map(stripMarks).filter(Boolean));
+
+/**
+ * Word indexes covered by every occurrence of the highlight phrase.
+ *
+ * Matching the phrase (not single words) matters: with highlight "giảm độ
+ * sáng", the word "độ" inside "chế độ" used to light up as well. Requiring the
+ * whole phrase in order removes that false positive.
+ */
+const highlightIndexes = (text: string, highlight?: string): Set<number> => {
+  const words = splitWords(text).map(stripMarks);
+  const phrase = splitWords(highlight || "").map(stripMarks).filter(Boolean);
+  const out = new Set<number>();
+  if (!phrase.length) return out;
+  for (let i = 0; i + phrase.length <= words.length; i++) {
+    let match = true;
+    for (let j = 0; j < phrase.length; j++) {
+      if (words[i + j] !== phrase[j]) {
+        match = false;
+        break;
+      }
+    }
+    if (match) {
+      for (let j = 0; j < phrase.length; j++) out.add(i + j);
+    }
+  }
+  return out;
+};
 
 /*
  * All sizes below are authored on a 1080x1920 reference frame and scaled by
@@ -189,9 +197,17 @@ const splitPhrases = (text: string): string[][] => {
 
 /**
  * Lay out a scene: break at punctuation first (a colon is a real pause in
- * speech), shrink the type a little if one phrase still overflows, and only
- * wrap inside a phrase as a last resort.
+ * speech), then keep the type as large as possible while the sentence still
+ * fits in at most three lines. A long sentence therefore gets a big two- or
+ * three-line block instead of one small line — the old code shrank the type
+ * until the whole line fit, which made long Vietnamese sentences tiny on a
+ * phone.
  */
+const MAX_LINES = 3;
+
+const countLines = (blocks: string[][], fontSize: number, usable: number) =>
+  blocks.reduce((n, block) => n + wrapToWidth(block, fontSize, usable).length, 0);
+
 const layoutScene = (
   text: string,
   base: number,
@@ -200,39 +216,36 @@ const layoutScene = (
   const phrases = splitPhrases(text);
   const blocks = phrases.length ? phrases : [splitWords(text)];
 
-  // Measure the widest phrase at the base size, then scale the type down
-  // exactly as far as needed. Width scales linearly with font size, so one
-  // measurement is enough.
-  let longestText = "";
-  for (const block of blocks) {
-    const joined = block.join(" ");
-    if (joined.length > longestText.length) longestText = joined;
+  // Step down 4px at a time until the wrapped sentence fits MAX_LINES. The
+  // measurement cache makes each step a map lookup.
+  let fontSize = MIN_FONT_SIZE;
+  for (let candidate = Math.max(MIN_FONT_SIZE, base); candidate >= MIN_FONT_SIZE; candidate -= 4) {
+    if (countLines(blocks, candidate, usable) <= MAX_LINES) {
+      fontSize = candidate;
+      break;
+    }
   }
-
-  const needed = measureWidth(longestText, base);
-  const fontSize = Math.max(
-    Math.min(MIN_FONT_SIZE, base),
-    Math.min(base, Math.floor((base * usable) / Math.max(1, needed))),
-  );
 
   const lines: string[][] = [];
   for (const block of blocks) {
-    if (measureWidth(block.join(" "), fontSize) <= usable) {
-      lines.push(block);
-    } else {
-      lines.push(...wrapToWidth(block, fontSize, usable));
-    }
+    lines.push(...wrapToWidth(block, fontSize, usable));
   }
   return { lines, fontSize };
 };
 
-/** layoutScene measured against the real stage width of this render. */
+/**
+ * layoutScene measured against the real stage width of this render. Memoised
+ * because layoutScene re-walks every word and runs on every single frame.
+ */
 const useSceneLayout = (text: string, base: number) => {
   const stage = useStage();
-  return layoutScene(text, base, stage.usable);
+  return useMemo(
+    () => layoutScene(text, base, stage.usable),
+    [text, base, stage.usable],
+  );
 };
 
-/** Heavy weight, tight tracking, thin dark edge: stays crisp on a phone. */
+/** Heavy weight, tight tracking, soft shadow: stays crisp on a phone. */
 const textStyle = (fontSize: number, color: string): React.CSSProperties => ({
   fontSize,
   fontWeight: 900,
@@ -241,70 +254,10 @@ const textStyle = (fontSize: number, color: string): React.CSSProperties => ({
   color,
   textAlign: "center",
   fontFamily: FONT_FAMILY,
-  WebkitTextStroke: "1.5px rgba(0,0,0,0.45)",
+  WebkitTextStroke: "1.5px rgba(0,0,0,0.4)",
   paintOrder: "stroke fill",
-  textShadow: "0 2px 6px rgba(0,0,0,0.5)",
+  textShadow: "0 4px 18px rgba(0,0,0,0.55), 0 2px 4px rgba(0,0,0,0.55)",
 });
-
-/* ------------------------------------------------------------------ */
-/* Background                                                          */
-/* ------------------------------------------------------------------ */
-
-const Background: React.FC = () => {
-  const frame = useCurrentFrame();
-  const { durationInFrames, fps } = useVideoConfig();
-  const stage = useStage();
-  const t = frame / Math.max(1, durationInFrames);
-
-  const orbA = interpolate(t, [0, 1], [0.9, 1.08]);
-  const orbB = interpolate(t, [0, 1], [1.08, 0.92]);
-  const drift = Math.sin(frame / (fps * 3)) * 18;
-
-  const c0 = THEME.bg[0] ?? "#000000";
-  const c1 = THEME.bg[1] ?? c0;
-  const c2 = THEME.bg[2] ?? c1;
-
-  return (
-    <AbsoluteFill style={{ backgroundColor: c0, overflow: "hidden" }}>
-      <AbsoluteFill
-        style={{ background: `linear-gradient(160deg, ${c0} 0%, ${c1} 52%, ${c2} 100%)` }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          width: Math.round(760 * stage.scale),
-          height: Math.round(760 * stage.scale),
-          borderRadius: "50%",
-          left: "50%",
-          top: "18%",
-          transform: `translate(-50%, 0) translateY(${drift}px) scale(${orbA})`,
-          // No CSS blur filter here: it was re-rasterised every frame and was
-          // the single most expensive thing in the render. A radial gradient
-          // with a soft alpha falloff looks the same and costs nothing.
-          background: `radial-gradient(circle, ${THEME.accent}44 0%, transparent 72%)`,
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          width: Math.round(620 * stage.scale),
-          height: Math.round(620 * stage.scale),
-          borderRadius: "50%",
-          right: "-14%",
-          bottom: "12%",
-          transform: `scale(${orbB})`,
-          background: `radial-gradient(circle, ${THEME.muted}2e 0%, transparent 74%)`,
-        }}
-      />
-      <AbsoluteFill
-        style={{
-          background:
-            "radial-gradient(120% 90% at 50% 45%, transparent 45%, rgba(0,0,0,0.55) 100%)",
-        }}
-      />
-    </AbsoluteFill>
-  );
-};
 
 /* ------------------------------------------------------------------ */
 /* Text shell                                                          */
@@ -372,11 +325,12 @@ const wordSpan = (word: string, style: React.CSSProperties, extra?: React.ReactN
       display: "inline-block",
       marginRight: "0.26em",
       position: "relative",
+      isolation: "isolate",
       ...style,
     }}
   >
-    {word}
     {extra}
+    {word}
   </span>
 );
 
@@ -385,7 +339,7 @@ const Underline: React.FC<{ p: number }> = ({ p }) => (
     style={{
       position: "absolute",
       left: 0,
-      right: 0,
+      right: "0.16em",
       bottom: "-0.06em",
       height: "0.08em",
       borderRadius: 99,
@@ -397,14 +351,36 @@ const Underline: React.FC<{ p: number }> = ({ p }) => (
   />
 );
 
+/** Soft accent block behind a highlighted word (karaoke / spotlight). */
+const Marker: React.FC<{ p: number; opacity?: number }> = ({ p, opacity = 1 }) => (
+  <span
+    style={{
+      position: "absolute",
+      left: "-0.08em",
+      right: "0.12em",
+      top: "0.08em",
+      bottom: "0.1em",
+      borderRadius: "0.16em",
+      background: withAlpha(THEME.accent, 0.22),
+      boxShadow: `0 0 26px ${withAlpha(THEME.accent, 0.35)}`,
+      transform: `scaleX(${clamp(p, 0, 1)})`,
+      transformOrigin: "left center",
+      opacity,
+      zIndex: -1,
+    }}
+  />
+);
+
 /* ------------------------------------------------------------------ */
 /* Effects                                                             */
 /* ------------------------------------------------------------------ */
 
-const WordRise: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
+type EffectProps = { scene: Scene; fontSize: number };
+
+const WordRise: React.FC<EffectProps> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const hi = highlightSet(scene.highlight);
+  const hi = highlightIndexes(scene.text, scene.highlight);
   const { lines, fontSize: fs } = useSceneLayout(scene.text, fontSize);
 
   return (
@@ -419,7 +395,7 @@ const WordRise: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSiz
             config: { damping: 14, stiffness: 130, mass: 0.7 },
           });
           const y = Math.round(interpolate(enter, [0, 1], [38, 0]));
-          const isHi = hi.has(stripMarks(word));
+          const isHi = hi.has(i);
           return wordSpan(
             word,
             {
@@ -427,7 +403,7 @@ const WordRise: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSiz
               transform: `translateY(${y}px)`,
               color: isHi ? THEME.accent : undefined,
             },
-            isHi ? <Underline p={ease(frame, 10 + i * 3, 24 + i * 3)} /> : null
+            isHi ? <Underline p={ease(frame, 10 + i * 3, 24 + i * 3)} /> : null,
           );
         }}
       />
@@ -435,12 +411,12 @@ const WordRise: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSiz
   );
 };
 
-const LineMask: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
+const LineMask: React.FC<EffectProps> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
   const p = ease(frame, 0, 20);
   const y = Math.round(interpolate(p, [0, 1], [26, 0]));
   const reveal = interpolate(p, [0, 1], [100, 0]);
-  const hi = highlightSet(scene.highlight);
+  const hi = highlightIndexes(scene.text, scene.highlight);
   const { lines, fontSize: fs } = useSceneLayout(scene.text, fontSize);
 
   return (
@@ -451,25 +427,27 @@ const LineMask: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSiz
     >
       <LineRows
         lines={lines}
-        renderWord={(word) =>
-          wordSpan(word, { color: hi.has(stripMarks(word)) ? THEME.accent : undefined })
+        renderWord={(word, i) =>
+          wordSpan(word, {
+            color: hi.has(i) ? THEME.accent : undefined,
+          })
         }
       />
     </TextShell>
   );
 };
 
-const Slam: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
+const Slam: React.FC<EffectProps> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const drop = spring({ frame, fps, config: { damping: 11, stiffness: 150, mass: 1.1 } });
   const y = Math.round(interpolate(drop, [0, 1], [-380, 0]));
   const sc = interpolate(drop, [0, 0.85, 1], [1.14, 1.14, 1]);
-  const flash = interpolate(frame, [5, 9, 16], [0, 0.14, 0], {
+  const flash = interpolate(frame, [5, 9, 16], [0, 0.12, 0], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
-  const hi = highlightSet(scene.highlight);
+  const hi = highlightIndexes(scene.text, scene.highlight);
   const { lines, fontSize: fs } = useSceneLayout(scene.text, fontSize);
 
   return (
@@ -478,8 +456,10 @@ const Slam: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize })
       <TextShell fontSize={fs} transform={`translateY(${y}px) scale(${sc})`}>
         <LineRows
           lines={lines}
-          renderWord={(word) =>
-            wordSpan(word, { color: hi.has(stripMarks(word)) ? THEME.accent : undefined })
+          renderWord={(word, i) =>
+            wordSpan(word, {
+              color: hi.has(i) ? THEME.accent : undefined,
+            })
           }
         />
       </TextShell>
@@ -487,7 +467,7 @@ const Slam: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize })
   );
 };
 
-const Wave: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
+const Wave: React.FC<EffectProps> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const { lines, fontSize: fs } = useSceneLayout(scene.text, fontSize);
@@ -515,7 +495,7 @@ const Wave: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize })
                       display: "inline-block",
                       opacity: enter,
                       transform: `translateY(${base + wobble}px)`,
-                      color: THEME.accent,
+                      color: THEME.text,
                     }}
                   >
                     {ch}
@@ -530,7 +510,7 @@ const Wave: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize })
   );
 };
 
-const Typewriter: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
+const Typewriter: React.FC<EffectProps> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
   const chars = Math.floor(ease(frame, 2, 2 + scene.text.length * 1.5, 0, scene.text.length));
   const caretOn = Math.floor(frame / 12) % 2 === 0;
@@ -568,9 +548,9 @@ const Typewriter: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontS
   );
 };
 
-const Sweep: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
+const Sweep: React.FC<EffectProps> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
-  const hi = highlightSet(scene.highlight);
+  const hi = highlightIndexes(scene.text, scene.highlight);
   const { lines, fontSize: fs } = useSceneLayout(scene.text, fontSize);
   const totalWords = lines.reduce((n, l) => n + l.length, 0);
   const cursor = Math.floor(ease(frame, 4, 4 + totalWords * 6, -1, totalWords - 0.01));
@@ -581,7 +561,7 @@ const Sweep: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }
         lines={lines}
         renderWord={(word, i) => {
           const active = i <= cursor;
-          const isHi = hi.has(stripMarks(word));
+          const isHi = hi.has(i);
           return wordSpan(
             word,
             {
@@ -589,7 +569,7 @@ const Sweep: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }
               color: active && isHi ? THEME.accent : undefined,
               transform: active ? "translateY(0px)" : "translateY(4px)",
             },
-            active && isHi ? <Underline p={ease(frame, i * 6, i * 6 + 10)} /> : null
+            active && isHi ? <Underline p={ease(frame, i * 6, i * 6 + 10)} /> : null,
           );
         }}
       />
@@ -599,14 +579,17 @@ const Sweep: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }
 
 /**
  * Karaoke: the whole line sits dim on screen and each word lights up at the
- * moment the voice reaches it (timings come from prepare.py).
+ * moment the voice reaches it (timings come from prepare.py). The highlighted
+ * words get a soft accent marker at the same time, which reads much better on
+ * a photo background than colour alone.
  */
-const Karaoke: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
+const Karaoke: React.FC<EffectProps> = ({ scene, fontSize }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const { lines, fontSize: fs } = useSceneLayout(scene.text, fontSize);
   const nowMs = (frame / fps) * 1000 + scene.startMs;
   const words = scene.words && scene.words.length ? scene.words : [];
+  const hi = highlightIndexes(scene.text, scene.highlight);
 
   return (
     <TextShell fontSize={fs}>
@@ -614,22 +597,116 @@ const Karaoke: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize
         lines={lines}
         renderWord={(word, i) => {
           const w = words[i];
-          const p = w ? clamp((nowMs - w.s) / Math.max(70, w.e - w.s), 0, 1) : 1;
+          const p = w
+            ? clamp((nowMs - w.s) / Math.max(90, w.e - w.s), 0, 1)
+            : clamp((frame - i * 4) / 12, 0, 1);
           const active = p > 0 && p < 1;
-          return wordSpan(word, {
-            color: `rgba(255,255,255,${0.34 + 0.66 * p})`,
-            transform: `translateY(${active ? -3 : 0}px) scale(${1 + 0.05 * Math.sin(p * Math.PI)})`,
-            textShadow: active
-              ? `0 0 18px ${THEME.accent}, 0 2px 6px rgba(0,0,0,0.5)`
-              : "0 2px 6px rgba(0,0,0,0.5)",
-          });
+          const isHi = hi.has(i);
+          const lit = isHi && p > 0.55;
+          return wordSpan(
+            word,
+            {
+              color: lit ? THEME.accent : withAlpha(THEME.text, 0.32 + 0.68 * p),
+              transform: `translateY(${active ? -3 : 0}px) scale(${1 + 0.055 * Math.sin(p * Math.PI)})`,
+              textShadow: active
+                ? `0 0 22px ${withAlpha(THEME.accent, 0.55)}, 0 4px 18px rgba(0,0,0,0.55)`
+                : undefined,
+            },
+            isHi ? (
+              <Marker
+                p={ease(p, 0.05, 0.5)}
+                opacity={clamp(p / 0.2, 0, 1) * (1 - clamp((p - 0.7) / 0.3, 0, 1))}
+              />
+            ) : null,
+          );
         }}
       />
     </TextShell>
   );
 };
 
-const EFFECTS: Record<EffectName, React.FC<{ scene: Scene; fontSize: number }>> = {
+/**
+ * Spotlight: only the word being spoken is fully lit; the rest recedes. Uses
+ * the same word timings as karaoke, so it stays locked to the voice.
+ */
+const Spotlight: React.FC<EffectProps> = ({ scene, fontSize }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const { lines, fontSize: fs } = useSceneLayout(scene.text, fontSize);
+  const words = scene.words && scene.words.length ? scene.words : [];
+  const nowMs = (frame / fps) * 1000 + scene.startMs;
+  const count = lines.reduce((n, l) => n + l.length, 0);
+  const hi = highlightIndexes(scene.text, scene.highlight);
+
+  let current = words.findIndex((w) => nowMs >= w.s && nowMs <= w.e);
+  if (current < 0) {
+    current = words.reduce((last, w, i) => (nowMs >= w.s ? i : last), -1);
+  }
+  if (!words.length) current = Math.min(count - 1, Math.floor((frame / 8) % Math.max(1, count)));
+
+  return (
+    <TextShell fontSize={fs}>
+      <LineRows
+        lines={lines}
+        renderWord={(word, i) => {
+          const distance = Math.abs(i - current);
+          const focus = distance === 0 ? 1 : distance === 1 ? 0.42 : 0.22;
+          const isHi = hi.has(i);
+          return wordSpan(
+            word,
+            {
+              opacity: focus,
+              transform: `translateY(${distance === 0 ? -6 : 0}px) scale(${distance === 0 ? 1.06 : 1})`,
+              color: isHi ? THEME.accent : THEME.text,
+              textShadow:
+                distance === 0
+                  ? `0 0 26px ${withAlpha(THEME.accent, 0.5)}, 0 4px 18px rgba(0,0,0,0.55)`
+                  : undefined,
+            },
+            isHi && distance === 0 ? <Marker p={ease(frame, 0, 6)} /> : null,
+          );
+        }}
+      />
+    </TextShell>
+  );
+};
+
+/** Pop: every word springs in with an overshoot; the highlight lands last. */
+const Pop: React.FC<EffectProps> = ({ scene, fontSize }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const { lines, fontSize: fs } = useSceneLayout(scene.text, fontSize);
+  const hi = highlightIndexes(scene.text, scene.highlight);
+
+  return (
+    <TextShell fontSize={fs}>
+      <LineRows
+        lines={lines}
+        renderWord={(word, i) => {
+          const enter = spring({
+            frame,
+            fps,
+            delay: i * 2.5,
+            config: { damping: 9, stiffness: 200, mass: 0.6 },
+          });
+          const scale = interpolate(enter, [0, 1], [0.45, 1]);
+          const isHi = hi.has(i);
+          return wordSpan(
+            word,
+            {
+              opacity: clamp(enter * 1.4, 0, 1),
+              transform: `scale(${scale})`,
+              color: isHi ? THEME.accent : undefined,
+            },
+            isHi ? <Underline p={ease(frame, i * 2.5 + 6, i * 2.5 + 14)} /> : null,
+          );
+        }}
+      />
+    </TextShell>
+  );
+};
+
+const EFFECTS: Record<EffectName, React.FC<EffectProps>> = {
   "word-rise": WordRise,
   "line-mask": LineMask,
   slam: Slam,
@@ -637,25 +714,32 @@ const EFFECTS: Record<EffectName, React.FC<{ scene: Scene; fontSize: number }>> 
   typewriter: Typewriter,
   sweep: Sweep,
   karaoke: Karaoke,
+  spotlight: Spotlight,
+  pop: Pop,
 };
 
 /* ------------------------------------------------------------------ */
 /* Scene wrapper + transitions                                         */
 /* ------------------------------------------------------------------ */
 
-type TransitionName = "fade" | "slide-up" | "wipe" | "punch";
-
 const TRANSITIONS: TransitionName[] = ["slide-up", "wipe", "fade", "punch"];
 
 const transitionFor = (index: number): TransitionName => {
-  const keys = Object.keys(EFFECTS);
-  const offset = Math.max(0, keys.indexOf(CFG.effect));
+  const offset = Math.max(0, EFFECTS_ORDER.indexOf(CFG.effect));
   return TRANSITIONS[(index + offset) % TRANSITIONS.length];
 };
 
-const CtaScene: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSize }) => {
+const CtaScene: React.FC<EffectProps> = ({ scene, fontSize }) => {
   const stage = useStage();
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
   const { lines, fontSize: fs } = layoutScene(scene.text, fontSize * 0.62, stage.usable);
+
+  // Sheen that crosses the button every 2.6s.
+  const period = Math.max(1, Math.round(fps * 2.6));
+  const sweep = (frame % period) / period;
+  const sheenX = interpolate(sweep, [0, 1], [-160, 260]);
+  const pulse = 0.5 + 0.5 * Math.sin(frame / 9);
 
   return (
     <AbsoluteFill
@@ -666,7 +750,7 @@ const CtaScene: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSiz
         paddingRight: stage.padX,
         paddingTop: stage.padTop,
         paddingBottom: Math.round(stage.padBottom * (470 / 520)),
-        gap: Math.round(44 * stage.scale),
+        gap: Math.round(48 * stage.scale),
       }}
     >
       <div style={{ maxWidth: stage.usable, ...textStyle(fs, THEME.text) }}>
@@ -679,27 +763,60 @@ const CtaScene: React.FC<{ scene: Scene; fontSize: number }> = ({ scene, fontSiz
 
       <div
         style={{
-          display: "flex",
-          alignItems: "center",
-          gap: Math.round(18 * stage.scale),
-          padding: `${Math.round(26 * stage.scale)}px ${Math.round(46 * stage.scale)}px`,
-          borderRadius: 999,
-          background: `linear-gradient(135deg, ${THEME.accent}, ${THEME.muted})`,
-          boxShadow: `0 18px 60px ${THEME.accent}55`,
+          position: "relative",
+          transform: `scale(${1 + 0.012 * pulse})`,
         }}
       >
-        <div style={{ fontSize: fs * 0.72, lineHeight: 1 }}>▶</div>
         <div
           style={{
-            fontSize: fs * 0.62,
-            fontWeight: 900,
-            letterSpacing: "0.01em",
-            color: "#0b0b0b",
-            fontFamily: FONT_FAMILY,
-            whiteSpace: "nowrap",
+            position: "absolute",
+            inset: Math.round(-8 * stage.scale),
+            borderRadius: 999,
+            border: `2px solid ${withAlpha(THEME.accent, 0.35 + 0.25 * pulse)}`,
+            opacity: 0.8,
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            overflow: "hidden",
+            display: "flex",
+            alignItems: "center",
+            gap: Math.round(18 * stage.scale),
+            padding: `${Math.round(26 * stage.scale)}px ${Math.round(50 * stage.scale)}px`,
+            borderRadius: 999,
+            background: `linear-gradient(135deg, ${THEME.accent}, ${THEME.muted})`,
+            boxShadow: `0 ${Math.round(18 * stage.scale)}px ${Math.round(64 * stage.scale)}px ${withAlpha(
+              THEME.accent,
+              0.45,
+            )}`,
           }}
         >
-          Theo dõi {BRAND}
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              bottom: 0,
+              width: "40%",
+              left: `${sheenX}%`,
+              background:
+                "linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.55) 50%, rgba(255,255,255,0) 100%)",
+            }}
+          />
+          <div style={{ fontSize: fs * 0.72, lineHeight: 1, color: "#0b0b0b" }}>▶</div>
+          <div
+            style={{
+              position: "relative",
+              fontSize: fs * 0.6,
+              fontWeight: 900,
+              letterSpacing: "0.01em",
+              color: "#0b0b0b",
+              fontFamily: FONT_FAMILY,
+              whiteSpace: "nowrap",
+            }}
+          >
+            Theo dõi {BRAND}
+          </div>
         </div>
       </div>
     </AbsoluteFill>
@@ -718,8 +835,10 @@ const SceneLayer: React.FC<{ scene: Scene; index: number; total: number }> = ({
   const lengthFrames = Math.max(1, Math.round((lengthMs / 1000) * fps));
 
   const enter = spring({ frame, fps, config: { damping: 18, stiffness: 130, mass: 0.8 } });
-  const exit = total > 1 && index < total - 1 ? ease(frame, lengthFrames - 6, lengthFrames) : 0;
-  const kind = transitionFor(index);
+  const outFrames = Math.min(8, Math.max(3, Math.round(lengthFrames * 0.12)));
+  const exit = total > 1 && index < total - 1 ? ease(frame, lengthFrames - outFrames, lengthFrames) : 0;
+  const kind: TransitionName =
+    CFG.transition && CFG.transition !== "auto" ? CFG.transition : transitionFor(index);
 
   let opacity = 1;
   let transform = "none";
@@ -748,9 +867,7 @@ const SceneLayer: React.FC<{ scene: Scene; index: number; total: number }> = ({
   const fontSize = fitFontSize(scene.text) * (isHook ? 1.06 : 1) * stage.scale;
 
   return (
-    <AbsoluteFill
-      style={{ opacity: opacity * (1 - exit), transform, clipPath }}
-    >
+    <AbsoluteFill style={{ opacity: opacity * (1 - exit), transform, clipPath }}>
       <AbsoluteFill style={{ transform: `scale(${drift})` }}>
         {scene.kind === "cta" ? (
           <CtaScene scene={scene} fontSize={fontSize} />
@@ -763,71 +880,152 @@ const SceneLayer: React.FC<{ scene: Scene; index: number; total: number }> = ({
 };
 
 /* ------------------------------------------------------------------ */
-/* Chrome: brand + progress                                            */
+/* Chrome: brand + counter + progress                                  */
 /* ------------------------------------------------------------------ */
+
+const Equalizer: React.FC<{ frame: number; scale: number }> = ({ frame, scale }) => (
+  <div style={{ display: "flex", alignItems: "flex-end", gap: Math.round(3 * scale), height: Math.round(22 * scale) }}>
+    {[0, 1, 2].map((i) => {
+      const h = 0.35 + 0.65 * Math.abs(Math.sin(frame / 7 + i * 1.7));
+      return (
+        <div
+          key={i}
+          style={{
+            width: Math.max(2, Math.round(4 * scale)),
+            height: Math.round(22 * scale * h),
+            borderRadius: 99,
+            background: THEME.accent,
+            opacity: 0.95,
+          }}
+        />
+      );
+    })}
+  </div>
+);
 
 const Chrome: React.FC = () => {
   const frame = useCurrentFrame();
-  const { durationInFrames } = useVideoConfig();
+  const { fps, durationInFrames } = useVideoConfig();
   const stage = useStage();
-  const p = clamp(frame / Math.max(1, durationInFrames - 1), 0, 1);
+  const scenes = CFG.scenes;
+  const timed = hasTimings(scenes);
+  const ms = (frame / fps) * 1000;
+  const totalMs = CFG.totalMs || (durationInFrames / fps) * 1000;
+  const overall = clamp(ms / Math.max(1, totalMs), 0, 1);
+
+  let index = 0;
+  if (timed) {
+    const found = scenes.findIndex((s) => ms >= s.startMs && ms < s.endMs);
+    index = found >= 0 ? found : ms < scenes[0].startMs ? 0 : scenes.length - 1;
+  }
+
+  const top = Math.round(stage.padTop * 0.5);
+  const barBottom = Math.round(stage.padBottom * (420 / 520));
+  const chipStyle: React.CSSProperties = {
+    display: "flex",
+    alignItems: "center",
+    gap: Math.round(12 * stage.scale),
+    padding: `${Math.round(10 * stage.scale)}px ${Math.round(18 * stage.scale)}px`,
+    borderRadius: 999,
+    backgroundColor: "rgba(255,255,255,0.08)",
+    border: "1px solid rgba(255,255,255,0.14)",
+  };
 
   return (
     <>
-      <div
-        style={{
-          position: "absolute",
-          top: Math.round(stage.padTop * 0.5),
-          left: stage.padX,
-          display: "flex",
-          alignItems: "center",
-          gap: Math.round(14 * stage.scale),
-          opacity: 0.92,
-        }}
-      >
+      {CHROME.brand && (
+        <div style={{ position: "absolute", top, left: stage.padX, ...chipStyle }}>
+          <Equalizer frame={frame} scale={stage.scale} />
+          <div
+            style={{
+              fontSize: Math.round(28 * stage.scale),
+              fontWeight: 700,
+              letterSpacing: "0.02em",
+              color: "rgba(255,255,255,0.9)",
+              fontFamily: FONT_FAMILY,
+            }}
+          >
+            {BRAND}
+          </div>
+        </div>
+      )}
+
+      {CHROME.counter && (
         <div
           style={{
-            width: Math.round(10 * stage.scale),
-            height: Math.round(10 * stage.scale),
-            borderRadius: 99,
-            background: THEME.accent,
-            boxShadow: `0 0 12px ${THEME.accent}`,
-          }}
-        />
-        <div
-          style={{
-            fontSize: Math.round(30 * stage.scale),
-            fontWeight: 700,
-            letterSpacing: "0.02em",
-            color: "rgba(255,255,255,0.82)",
-            fontFamily: FONT_FAMILY,
+            position: "absolute",
+            top,
+            right: stage.padX,
+            ...chipStyle,
           }}
         >
-          {BRAND}
+          <div
+            style={{
+              fontSize: Math.round(24 * stage.scale),
+              fontWeight: 800,
+              letterSpacing: "0.08em",
+              color: "rgba(255,255,255,0.78)",
+              fontFamily: FONT_FAMILY,
+              fontVariantNumeric: "tabular-nums",
+            }}
+          >
+            {String(index + 1).padStart(2, "0")}
+            <span style={{ opacity: 0.5 }}> / {String(scenes.length).padStart(2, "0")}</span>
+          </div>
         </div>
-      </div>
+      )}
 
-      <div
-        style={{
-          position: "absolute",
-          left: stage.padX,
-          right: stage.padX,
-          bottom: Math.round(stage.padBottom * (420 / 520)),
-          height: Math.max(2, Math.round(6 * stage.scale)),
-          borderRadius: 99,
-          background: "rgba(255,255,255,0.16)",
-          overflow: "hidden",
-        }}
-      >
+      {CHROME.progress && (
         <div
           style={{
-            width: `${p * 100}%`,
-            height: "100%",
-            borderRadius: 99,
-            background: `linear-gradient(90deg, ${THEME.accent}, ${THEME.muted})`,
+            position: "absolute",
+            left: stage.padX,
+            right: stage.padX,
+            bottom: barBottom,
+            display: "flex",
+            gap: Math.round(6 * stage.scale),
+            height: Math.max(3, Math.round(6 * stage.scale)),
           }}
-        />
-      </div>
+        >
+          {timed ? (
+            scenes.map((s, i) => {
+              const fill =
+                i < index ? 1 : i > index ? 0 : clamp((ms - s.startMs) / Math.max(1, s.endMs - s.startMs), 0, 1);
+              return (
+                <div
+                  key={i}
+                  style={{
+                    flex: Math.max(1, s.endMs - s.startMs),
+                    borderRadius: 99,
+                    background: "rgba(255,255,255,0.16)",
+                    overflow: "hidden",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: `${fill * 100}%`,
+                      height: "100%",
+                      borderRadius: 99,
+                      background: `linear-gradient(90deg, ${THEME.accent}, ${THEME.muted})`,
+                    }}
+                  />
+                </div>
+              );
+            })
+          ) : (
+            <div style={{ flex: 1, borderRadius: 99, background: "rgba(255,255,255,0.16)", overflow: "hidden" }}>
+              <div
+                style={{
+                  width: `${overall * 100}%`,
+                  height: "100%",
+                  borderRadius: 99,
+                  background: `linear-gradient(90deg, ${THEME.accent}, ${THEME.muted})`,
+                }}
+              />
+            </div>
+          )}
+        </div>
+      )}
     </>
   );
 };
@@ -843,7 +1041,7 @@ export const Video: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
       {CFG.hasAudio !== false && <Audio src={staticFile("voiceover.mp3")} />}
-      <Background />
+      <Background scenes={scenes} />
       {scenes.map((scene, i) => {
         const from = Math.round((scene.startMs / 1000) * fps);
         const to = Math.round((scene.endMs / 1000) * fps);

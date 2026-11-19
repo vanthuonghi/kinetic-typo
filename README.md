@@ -1,8 +1,8 @@
 # 🎬 Kinetic Typography Video Generator
 
-Video short (9:16 / 4:5 / 1:1) chỉ từ **text + giọng đọc**: không ảnh, không footage.
-Chữ hiện theo nhịp nói thật (karaoke), nền gradient động, có sẵn 7 hiệu ứng và
-4 kiểu chuyển cảnh.
+Video short (9:16 / 4:5 / 1:1) chỉ từ **text + giọng đọc**: không footage, chữ là nhân vật chính.
+Chữ hiện theo nhịp nói thật (karaoke / spotlight), **nền ảnh mờ** chuyển cảnh mượt +
+gradient động, 9 hiệu ứng chữ, 4 kiểu chuyển cảnh, brand chip và progress bar segmented.
 
 ## Yêu cầu
 
@@ -50,6 +50,17 @@ trường đó.
   "voice": "vi-VN-NamMinhNeural",   // hoặc vi-VN-HoaiMyNeural (nữ)
   "width": 1080,                    // đổi tỉ lệ khung ở đây
   "height": 1920,
+  "background": {                    // ảnh nền mờ; bỏ "image" -> dùng gradient
+    "image": "backgrounds/bg-bokeh.jpg",
+    "blur": 24,                      // px trên khung 1080, 20-30 là đủ
+    "zoom": 1.14,                    // phóng nhẹ để giấu mép mờ
+    "kenBurns": true,                // đẩy chậm vào trong mỗi scene
+    "darken": 0.35,                  // lớp tối phẳng phủ lên ảnh
+    "vignette": 0.55,               // tối 4 góc
+    "grain": 0.06                    // hạt phim, 0 = tắt
+  },
+  "chrome": { "brand": true, "counter": true, "progress": true },
+  "transition": "auto",             // auto | fade | slide-up | wipe | punch
   "scenes": [
     { "text": "AI phân tích 10", "highlight": "", "kind": "hook" },
     { "text": "000 báo cáo mỗi giây", "highlight": "báo cáo", "kind": "body" },
@@ -61,8 +72,22 @@ trường đó.
 ```
 
 - `kind`: `hook` (scene đầu, chữ to hơn 6%), `body`, `cta` (kèm nút "Theo dõi …").
-- `highlight`: từ (hoặc cụm) sẽ tô màu accent. Không phân biệt dấu.
+- `highlight`: từ (hoặc cụm) sẽ tô màu accent. Không phân biệt dấu, và được
+  khớp theo **cả cụm theo thứ tự** — `"giảm độ sáng"` sẽ không làm sáng chữ
+  `độ` nằm trong `chế độ`. Quality gate cảnh báo nếu cụm này không có trong câu.
 - `scenes[].text` là **một câu mỗi scene** — prosody tự nhiên hơn là cắt vụn.
+- `scenes[].image` (tuỳ chọn): đổi ảnh nền riêng cho scene đó, ví dụ cảnh nói về
+  đọc giấy thì dùng ảnh bàn giấy. Hai ảnh khác nhau tự cross-fade trong 0,5s.
+
+### Hình nền mờ
+
+`background.image` là đường dẫn trong `public/` (ví dụ `backgrounds/bg-bokeh.jpg`).
+Ảnh được phủ `object-fit: cover`, làm mờ theo `blur`, phóng `zoom`, rồi đẩy chậm
+vào trong (Ken Burns, đổi hướng mỗi scene) để khung hình không bị "chết".
+Thứ tự lớp: gradient theme → ảnh mờ → quầng sáng accent → scrim tối giữa khung →
+vignette → hạt phim, nên chữ vẫn đọc rõ trên ảnh sáng hay nhiều chi tiết.
+
+Ảnh càng nét càng đẹp, nhưng file 1000–2000px là đủ vì đằng nào cũng bị làm mờ.
 
 ### Tỉ lệ khung
 
@@ -86,9 +111,22 @@ không bị lệch bố cục:
 | `wave` | Từng ký tự nhún sóng |
 | `typewriter` | Gõ từng ký tự, có con trỏ nhấp nháy |
 | `sweep` | Quét sáng dần từng từ |
+| `spotlight` | Chỉ từ đang đọc sáng rõ, các từ còn lại chìm xuống (cần `words`) |
+| `pop` | Từng từ bật lên có độ nảy, từ highlight nổi bật nhất |
+
+`karaoke`, `spotlight` và `pop` tô nền accent mờ (marker) cho từ highlight —
+đọc tốt hơn trên ảnh nền so với chỉ đổi màu chữ.
 
 Chuyển cảnh (`fade`, `slide-up`, `wipe`, `punch`) tự luân phiên theo thứ tự
-scene, lệch pha theo `effect` đang chọn.
+scene, lệch pha theo `effect` đang chọn. Đặt `"transition": "fade"` để cố định
+một kiểu cho cả video.
+
+## Chrome
+
+`chrome.brand` bật chip brand góc trên trái (kèm equalizer nhún theo nhịp),
+`chrome.counter` bật số scene `03 / 12` góc phải, `chrome.progress` bật thanh
+tiến trình chia đoạn theo từng scene — nhìn chuyên nghiệp hơn một thanh trơn.
+Tắt từng cái bằng `false`. Nút CTA ở scene `cta` có sheen chạy qua và viền pulse.
 
 ## Font
 
@@ -103,6 +141,9 @@ vendored cũng bảo đảm render không phụ thuộc mạng.
 Cỡ chữ được fit bằng `canvas.measureText` (`layoutScene` trong `src/Video.tsx`),
 không dùng ước lượng "trung bình mỗi ký tự rộng 0.545em" nữa — ước lượng đó vừa
 tràn khung với glyph rộng, vừa thu nhỏ chữ vô ích với câu nhiều chữ hẹp.
+
+Câu dài giờ được xuống tối đa 3 dòng ở cỡ chữ lớn nhất còn vừa khung, thay vì
+thu nhỏ chữ cho vừa một dòng — chữ to hơn hẳn trên điện thoại.
 
 ## Đồng bộ chữ với giọng đọc
 
@@ -130,6 +171,7 @@ cảnh báo về gu thẩm mỹ chỉ in ra.
 kinetic-typo/
 ├── .github/workflows/render.yml  # CI: render khi push (cần secret ARK_API_KEY)
 ├── public/fonts/                 # Be Vietnam Pro (self-host)
+├── public/backgrounds/           # ảnh nền mờ (bg-bokeh, bg-paper)
 ├── public/voiceover.mp3          # sinh bởi prepare.py (gitignore)
 ├── scripts/
 │   ├── prepare.py                # TTS + timing + trộn audio
@@ -138,7 +180,9 @@ kinetic-typo/
 │   └── generate-tts.py           # đường cũ: chỉ đọc script.txt -> voiceover.mp3
 ├── src/
 │   ├── Root.tsx                  # đăng ký composition, đọc width/height/fps
-│   ├── Video.tsx                 # scene, hiệu ứng, transitions, brand
+│   ├── config.ts                 # type + giá trị mặc định của theme/background/chrome
+│   ├── Background.tsx            # ảnh nền mờ, cross-fade, scrim, vignette, grain
+│   ├── Video.tsx                 # scene, hiệu ứng, transitions, chrome
 │   ├── fonts.ts                  # nạp font local
 │   └── video-config.json         # ⬅ NỘI DUNG VIDEO
 ├── script.txt                    # chỉ còn dùng cho generate-tts.py (đường cũ)
@@ -152,7 +196,10 @@ kinetic-typo/
 | `edge-tts produced no audio` | Edge đổi API/rate limit → chạy lại; kiểm tra `voice` có đúng tên không |
 | `Chữ bị tràn khung` | Quality gate báo `won't fit the frame` → rút ngắn text hoặc tách thêm scene |
 | `Render chậm` | Giảm `width`/`height`, giảm `--concurrency`, hoặc tăng `--crf` |
+| `Nền đen, không thấy ảnh` | Sai đường dẫn `background.image` (tính từ `public/`); quality gate báo lỗi này |
+| `Render chậm bất thường` | Hạ `background.blur` xuống 20–24; blur lớn là thứ đắt nhất trong khung hình |
 | `Browser ... not found` | `npx remotion browser ensure` |
+| `Failed to launch the browser process` + lỗi `VideoToolbox` trên macOS 12 | Chrome headless-shell mới không chạy trên macOS 12; render trên CI, hoặc tải Chrome for Testing 120 và truyền `--browser-executable=.../chrome-headless-shell` |
 | `Module not found` | `npm ci` |
 
 ## Ghi chú
