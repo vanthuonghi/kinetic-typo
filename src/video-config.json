@@ -1,78 +1,61 @@
 {
   "theme": {
-    "id": "neon-blue",
+    "id": "warm-orange",
     "bg": [
-      "#000814",
-      "#000814",
-      "#000814"
+      "#1a0000",
+      "#2d1b00",
+      "#1a0f00"
     ],
-    "text": "#00d4ff",
-    "accent": "#ff006e",
+    "text": "#ffcc80",
+    "accent": "#ff9800",
     "muted": "#ffffff"
   },
-  "effect": "karaoke",
-  "brand": "Văn Hỉ Official",
+  "effect": "word-rise",
+  "brand": "Tiệm nhà tiểu tiểu",
   "voice": "vi-VN-HoaiMyNeural",
+  "width": 1080,
+  "height": 1920,
   "scenes": [
     {
-      "text": "Đọc màn hình chậm hơn giấy 25%?",
-      "highlight": "chậm hơn",
+      "text": "Bánh flan ngoài kia vài chục nghìn. Bên Tiệm đắt hơn.",
+      "highlight": "đắt hơn",
       "kind": "hook"
     },
     {
-      "text": "Nghiên cứu từ ĐH Copenhagen 2018.",
-      "highlight": "Nghiên cứu",
+      "text": "Nhưng Tiệm mời ăn thử rồi hãy so giá.",
+      "highlight": "ăn thử",
       "kind": "body"
     },
     {
-      "text": "Mắt bạn di chuyển khác trên màn hình.",
-      "highlight": "di chuyển khác",
+      "text": "Nguyên liệu cũng chỉ trứng, sữa, đường.",
+      "highlight": "trứng, sữa, đường",
       "kind": "body"
     },
     {
-      "text": "Ánh sáng xanh gây mỏi cơ mắt nhanh hơn.",
-      "highlight": "ánh sáng xanh",
+      "text": "Khác ở chỗ: hấp lửa nhỏ suốt 40 phút.",
+      "highlight": "40 phút",
       "kind": "body"
     },
     {
-      "text": "Đọc giấy giúp ghi nhớ sâu hơn 30%.",
-      "highlight": "ghi nhớ sâu",
+      "text": "Canh cho mặt bánh mịn, không rỗ, không khô.",
+      "highlight": "không rỗ",
       "kind": "body"
     },
     {
-      "text": "Lý do là không có sự phân tán kỹ thuật số.",
-      "highlight": "phân tán",
+      "text": "Caramel nấu vừa tới, thơm chứ không gắt.",
+      "highlight": "vừa tới",
       "kind": "body"
     },
     {
-      "text": "Cách thích nghi điều chỉnh cỡ chữ lớn hơn.",
-      "highlight": "cỡ chữ lớn",
+      "text": "Mỗi mẻ chỉ vài chục phần. Không nhanh, nhưng ăn là biết.",
+      "highlight": "ăn là biết",
       "kind": "body"
     },
     {
-      "text": "Giảm độ sáng màn hình và dùng chế độ đọc.",
-      "highlight": "giảm độ sáng",
-      "kind": "body"
-    },
-    {
-      "text": "Tập đọc lướt theo đường zic zac trên màn.",
-      "highlight": "đọc lướt",
-      "kind": "body"
-    },
-    {
-      "text": "Dùng ngón tay dẫn đường để tăng tốc độ.",
-      "highlight": "ngón tay dẫn",
-      "kind": "body"
-    },
-    {
-      "text": "Thực hành 10 phút mỗi ngày cải thiện 50%.",
-      "highlight": "cải thiện 50%",
-      "kind": "body"
-    },
-    {
-      "text": "Bắt đầu ngay hôm nay, thử thách 7 ngày.",
-      "highlight": "thử thách 7 ngày",
+      "text": "Nhắn Tiệm nhé, làm theo đơn để bánh luôn tươi.",
+      "highlight": "Tiệm",
       "kind": "cta"
     }
-  ]
+  ],
+  "totalMs": 40000
 }
