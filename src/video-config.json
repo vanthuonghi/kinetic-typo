@@ -12,48 +12,48 @@
   },
   "effect": "word-rise",
   "brand": "Tiệm nhà tiểu tiểu",
-  "voice": "vi-VN-HoaiMyNeural",
+  "voice": "vi-VN-NamMinhNeural",
   "width": 1080,
   "height": 1920,
   "scenes": [
     {
-      "text": "Bánh flan ngoài kia vài chục nghìn. Bên Tiệm đắt hơn.",
-      "highlight": "đắt hơn",
+      "text": "Trời nắng 40 độ, có gì mát hơn một ly chè tuyết yến?",
+      "highlight": "chè tuyết yến",
       "kind": "hook"
     },
     {
-      "text": "Nhưng Tiệm mời ăn thử rồi hãy so giá.",
-      "highlight": "ăn thử",
+      "text": "Tuyết yến là nhựa từ lõi cây Gum, người xưa gọi là tổ yến thực vật.",
+      "highlight": "tổ yến thực vật",
       "kind": "body"
     },
     {
-      "text": "Nguyên liệu cũng chỉ trứng, sữa, đường.",
-      "highlight": "trứng, sữa, đường",
+      "text": "Ngâm nước 12 tiếng cho nở trắng trong, rồi mới nấu — đừng bỏ bước này.",
+      "highlight": "nước 12 tiếng",
       "kind": "body"
     },
     {
-      "text": "Khác ở chỗ: hấp lửa nhỏ suốt 40 phút.",
-      "highlight": "40 phút",
+      "text": "Trong tuyết yến có collagen và axit hyaluronic giúp da căng ẩm mịn hơn.",
+      "highlight": "collagen",
       "kind": "body"
     },
     {
-      "text": "Canh cho mặt bánh mịn, không rỗ, không khô.",
-      "highlight": "không rỗ",
+      "text": "Nấu cùng táo đỏ, kỷ tử, nhựa đào thành chè dưỡng nhan thanh nhiệt.",
+      "highlight": "táo đỏ, kỷ tử",
       "kind": "body"
     },
     {
-      "text": "Caramel nấu vừa tới, thơm chứ không gắt.",
-      "highlight": "vừa tới",
+      "text": "Mỗi ngày chỉ nên ăn 3-5g tuyết yến khô — ngon nhưng đừng lạm dụng.",
+      "highlight": "3-5g",
       "kind": "body"
     },
     {
-      "text": "Mỗi mẻ chỉ vài chục phần. Không nhanh, nhưng ăn là biết.",
-      "highlight": "ăn là biết",
+      "text": "Ăn lạnh ngày nóng thì mát, ăn ấm buổi tối lại dễ ngủ hơn.",
+      "highlight": "Ăn lạnh",
       "kind": "body"
     },
     {
-      "text": "Nhắn Tiệm nhé, làm theo đơn để bánh luôn tươi.",
-      "highlight": "Tiệm",
+      "text": "Tiệm nhà tiểu tiểu nấu chè tuyết yến mỗi sáng — nhắn tin đặt nhé!",
+      "highlight": "Tiệm nhà tiểu tiểu",
       "kind": "cta"
     }
   ],
