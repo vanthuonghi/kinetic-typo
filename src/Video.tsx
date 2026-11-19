@@ -19,7 +19,6 @@ import {
   EffectName,
   hasTimings,
   Scene,
-  SFX,
   THEME,
   TransitionName,
 } from "./config";
@@ -731,21 +730,6 @@ const transitionFor = (index: number, effect: EffectName): TransitionName => {
   return TRANSITIONS[(index + offset) % TRANSITIONS.length];
 };
 
-/**
- * Transition sounds: a whoosh into every scene after the first, and a click
- * when the call to action lands. Rendered as audio in the composition (not
- * mixed into voiceover.mp3) so they stay frame-accurate.
- */
-const SceneSfx: React.FC<{ index: number; isCta: boolean }> = ({ index, isCta }) => {
-  if (index > 0 && SFX.whoosh) {
-    return <Audio src={staticFile("sfx/whoosh.mp3")} volume={SFX.volume} />;
-  }
-  if (isCta && SFX.click) {
-    return <Audio src={staticFile("sfx/click.mp3")} volume={SFX.volume} />;
-  }
-  return null;
-};
-
 const CtaScene: React.FC<EffectProps> = ({ scene, fontSize }) => {
   const stage = useStage();
   const frame = useCurrentFrame();
@@ -888,7 +872,6 @@ const SceneLayer: React.FC<{ scene: Scene; index: number; total: number }> = ({
 
   return (
     <AbsoluteFill style={{ opacity: opacity * (1 - exit), transform, clipPath }}>
-      <SceneSfx index={index} isCta={scene.kind === "cta"} />
       <AbsoluteFill style={{ transform: `scale(${drift})` }}>
         {scene.kind === "cta" ? (
           <CtaScene scene={scene} fontSize={fontSize} />

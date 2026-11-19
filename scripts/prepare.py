@@ -12,6 +12,7 @@ then goes word by word.
 import asyncio
 import json
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -36,6 +37,18 @@ GAP = 110  # ms of air between scenes
 SILENCE_DB = -35      # anything quieter than this counts as a pause
 SILENCE_MIN_S = 0.18  # ...if it lasts at least this long
 VOWELS = "aeiouyàáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ"
+
+
+def spoken(text: str) -> str:
+    """Expand the shorthand a speaker would say out loud, for the TTS input.
+
+    Edge reads "8h30" letter by letter ("tam h ba muoi"), which is the one thing
+    that makes an otherwise good Vietnamese voice sound wrong. Writing the time
+    out fixes the pronunciation; the on-screen text keeps the short form.
+    """
+    out = re.sub(r"\b(\d{1,2})h(\d{2})\b", r"\1 giờ \2", text, flags=re.IGNORECASE)
+    out = re.sub(r"\b(\d{1,2})h\b", r"\1 giờ", out, flags=re.IGNORECASE)
+    return out
 
 
 def syllables(word: str) -> int:
@@ -376,7 +389,7 @@ def main() -> None:
     cursor = 0
     for i, s in enumerate(scenes):
         clip = tmp / f"scene_{i}.mp3"
-        ok, marks = scene_speech(s["text"], voice, clip, tmp, f"s{i}")
+        ok, marks = scene_speech(spoken(s["text"]), voice, clip, tmp, f"s{i}")
         if not ok:
             raise RuntimeError(f"edge-tts produced no audio for scene {i}: {s['text']!r}")
 

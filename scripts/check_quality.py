@@ -77,19 +77,12 @@ def main() -> int:
     if isinstance(blur, (int, float)) and blur > 60:
         warnings.append(f"background blur {blur}px is expensive to render (24-30 is plenty)")
 
-    # A missing music bed or SFX file only shows up as a silent video after a
-    # 6-minute render, so catch it here.
+    # A missing music bed only shows up as a silent video after a 6-minute
+    # render, so catch it here.
     music = cfg.get("music") or {}
     track = (music.get("track") or "").strip()
     if track and not (public / track).exists():
         errors.append(f"music track not found: public/{track}")
-    sfx = cfg.get("sfx") or {}
-    for flag, name in (("whoosh", "sfx/whoosh.mp3"), ("click", "sfx/click.mp3")):
-        if sfx.get(flag, True) and not (public / name).exists():
-            errors.append(
-                f"sound effect not found: public/{name} "
-                f"(set sfx.{flag}=false or run python3 scripts/make_music.py)"
-            )
 
     effect = cfg.get("effect", "word-rise")
     if effect != "auto" and effect not in EFFECTS:

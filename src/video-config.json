@@ -963,8 +963,6 @@
       ]
     }
   ],
-  "audioMode": "pre_timed",
-  "clipsDir": "_ts",
   "totalMs": 53620,
   "hasAudio": true,
   "background": {
@@ -986,10 +984,5 @@
     "gainDb": -20,
     "fadeInMs": 900,
     "fadeOutMs": 1800
-  },
-  "sfx": {
-    "whoosh": true,
-    "click": true,
-    "volume": 0.35
   }
 }

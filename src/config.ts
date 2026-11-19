@@ -88,13 +88,6 @@ export type MusicConfig = {
   /** Optional per-theme alternative, chosen by hand in the config. */
 };
 
-/** Short transition sounds played by the composition, not mixed into the MP3. */
-export type SfxConfig = {
-  whoosh?: boolean;
-  click?: boolean;
-  volume?: number;
-};
-
 export type VideoConfig = {
   theme: Theme;
   effect: EffectChoice;
@@ -106,7 +99,6 @@ export type VideoConfig = {
   background?: BackgroundConfig;
   chrome?: ChromeConfig;
   music?: MusicConfig;
-  sfx?: SfxConfig;
   /** "auto" alternates transitions per scene. */
   transition?: TransitionName | "auto";
   scenes: Scene[];
@@ -148,13 +140,6 @@ export const MUSIC: MusicConfig = {
   fadeInMs: 900,
   fadeOutMs: 1800,
   ...RAW.music,
-};
-
-export const SFX: Required<SfxConfig> = {
-  whoosh: true,
-  click: true,
-  volume: 0.35,
-  ...RAW.sfx,
 };
 
 /**

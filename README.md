@@ -4,7 +4,8 @@ Video short (9:16 / 4:5 / 1:1) chỉ từ **text + giọng đọc**: không foot
 Chữ hiện theo nhịp nói thật (karaoke / spotlight, timing **đo từ audio**), **nền ảnh mờ**
 chuyển cảnh mượt + gradient động, 9 hiệu ứng chữ (chọn được theo từng scene),
 4 kiểu chuyển cảnh, brand chip, progress bar segmented, nhạc nền tự ducking theo
-giọng và SFX chuyển cảnh.
+giọng. Giọng đọc là edge-tts neural của Microsoft — chuẩn tiếng Việt, miễn phí,
+không cần API key.
 
 ## Yêu cầu
 
@@ -69,7 +70,6 @@ trường đó.
     "fadeInMs": 900,
     "fadeOutMs": 1800
   },
-  "sfx": { "whoosh": true, "click": true, "volume": 0.35 },
   "transition": "auto",             // auto | fade | slide-up | wipe | punch
   "scenes": [
     { "text": "AI phân tích 10", "highlight": "", "kind": "hook" },
@@ -101,22 +101,40 @@ vignette → hạt phim, nên chữ vẫn đọc rõ trên ảnh sáng hay nhi�
 
 Ảnh càng nét càng đẹp, nhưng file 1000–2000px là đủ vì đằng nào cũng bị làm mờ.
 
-### Nhạc nền & SFX
+### Nhạc nền
 
 `music.track` là một file trong `public/music/`. `prepare.py` loop nhạc cho dài
 bằng giọng đọc, fade in/out, rồi **ducking bằng `sidechaincompress`**: nhạc tự
 nhỏ lại mỗi khi có giọng, nên không phải hạ volume tay. Mix cuối được chuẩn hoá
 −14 LUFS / −1.5 dBTP — mức các nền tảng short-form chuẩn hoá về.
 
-Hai bản nhạc có sẵn (`bed-warm`, `bed-neon`) và hai SFX (`whoosh` khi chuyển
-scene, `click` khi CTA vào) được **sinh bằng code**, không dùng sample:
+Hai bản nhạc có sẵn (`bed-warm`, `bed-neon`) được **sinh bằng code**, không dùng
+sample:
 
 ```bash
 python3 scripts/make_music.py   # ~3 phút, chỉ cần chạy lại khi muốn đổi nhạc
 ```
 
-SFX không trộn vào MP3 mà phát bằng `<Audio>` trong composition, nên khớp
-frame tuyệt đối. Tắt bằng `sfx.whoosh` / `sfx.click`, hoặc bỏ cả cụm `sfx`.
+Chỉ có giọng đọc và nhạc nền — không có tiếng động chuyển cảnh, vì whoosh/click
+kéo sự chú ý khỏi câu nói.
+
+### Giọng đọc
+
+Mặc định dùng **edge-tts** (neural voice của Microsoft, miễn phí, không cần key):
+
+| `voice` | Giọng |
+|---|---|
+| `vi-VN-HoaiMyNeural` | Nữ, Hà Nội, giọng đọc tin tức — mặc định |
+| `vi-VN-NamMinhNeural` | Nam, trầm và chậm hơn |
+
+`words` (timing từng từ) và `alignSource` được đo lại mỗi lần chạy `prepare.py`,
+nên đổi `voice` là đủ — không phải sửa tay gì khác. Số viết tắt được đọc đúng:
+`8h30` → "8 giờ 30", `3h chiều` → "3 giờ chiều" (chỉ khi đưa vào TTS; chữ trên
+màn hình vẫn giữ nguyên).
+
+Nếu bạn tự có bản thu khác (ElevenLabs, thu tay…), đặt `"audioMode": "pre_timed"`
++ `"clipsDir": "_ts"` trong config và bỏ `public/_ts/scene_<i>.mp3` vào — chế độ
+này dùng đúng timing có sẵn trong config và bỏ qua edge-tts.
 
 ### Tỉ lệ khung
 
@@ -184,7 +202,8 @@ thu nhỏ chữ cho vừa một dòng — chữ to hơn hẳn trên điện tho�
 `scripts/prepare.py`:
 
 1. Gọi edge-tts cho từng scene (tự thử lại với biến thể dấu câu, rồi chia đôi,
-   rồi từng từ nếu Edge không trả audio).
+   rồi từng từ nếu Edge không trả audio). Số viết tắt như `8h30` được mở thành
+   "8 giờ 30" trước khi đưa vào TTS để giọng đọc không đánh vần từng ký tự.
 2. Chuẩn hoá loudness từng clip về −15 LUFS.
 3. Dò khoảng lặng bằng `ffmpeg silencedetect` (`-35dB`, dài ≥ 0.18s).
 4. Rải từ theo trọng số âm tiết **trên tổng thời lượng có tiếng**, rồi map ngược
@@ -213,12 +232,11 @@ kinetic-typo/
 ├── public/fonts/                 # Be Vietnam Pro (self-host)
 ├── public/backgrounds/           # ảnh nền mờ (bg-bokeh, bg-paper)
 ├── public/music/                 # nhạc nền sinh bởi make_music.py
-├── public/sfx/                   # whoosh + click sinh bởi make_music.py
 ├── public/voiceover.mp3          # sinh bởi prepare.py (gitignore)
 ├── scripts/
 │   ├── prepare.py                # TTS + timing + mix nhạc
 │   ├── align.py                  # đo word timing bằng faster-whisper (tuỳ chọn)
-│   ├── make_music.py             # sinh nhạc nền + SFX (stdlib, không sample)
+│   ├── make_music.py             # sinh nhạc nền (stdlib, không sample)
 │   ├── check_quality.py          # quality gate
 │   ├── generate_script.py        # sinh kịch bản mới bằng model (tuỳ chọn, CI dùng)
 │   └── generate-tts.py           # đường cũ: chỉ đọc script.txt -> voiceover.mp3
@@ -242,7 +260,7 @@ kinetic-typo/
 | `Render chậm` | Giảm `width`/`height`, giảm `--concurrency`, hoặc tăng `--crf` |
 | `Nền đen, không thấy ảnh` | Sai đường dẫn `background.image` (tính từ `public/`); quality gate báo lỗi này |
 | `Không có nhạc trong video` | `music.track` sai đường dẫn, hoặc thiếu file — quality gate chặn; xem dòng `Mixed music bed` khi chạy `prepare.py` |
-| `Nhạc lấn giọng` | Giảm `music.gainDb` (ví dụ −24), hoặc tăng `sfx.volume` nếu chỉ thiếu tiếng động |
+| `Nhạc lấn giọng` | Giảm `music.gainDb` (ví dụ −24) |
 | `Timing vẫn lệch dù đã cài whisper` | Model `base` nghe tiếng Việt ở mức khá; đặt `ALIGN_MODEL=small`. Xem `alignSource` trong config: `estimate` nghĩa là Whisper bị bỏ qua (thiếu package, hoặc transcript khớp < 50%) |
 | `Render chậm bất thường` | Hạ `background.blur` xuống 20–24; blur lớn là thứ đắt nhất trong khung hình |
 | `Browser ... not found` | `npx remotion browser ensure` |

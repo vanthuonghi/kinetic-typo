@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Synthesise the music beds and transition SFX from scratch.
+"""Synthesise the music beds from scratch.
 
 No samples, no downloads, no licence to track: a bed is a chord progression of
 detuned sine partials with a slow swell, a little stereo width and a cheap
@@ -8,8 +8,7 @@ under a spoken voice for 40 seconds without fighting it.
 
     python3 scripts/make_music.py
 
-Writes public/music/bed-warm.mp3, public/music/bed-neon.mp3,
-public/sfx/whoosh.mp3 and public/sfx/click.mp3.
+Writes public/music/bed-warm.mp3 and public/music/bed-neon.mp3.
 """
 import math
 import random
@@ -22,7 +21,6 @@ from pathlib import Path
 RATE = 44100
 ROOT = Path(__file__).resolve().parent.parent
 MUSIC_DIR = ROOT / "public" / "music"
-SFX_DIR = ROOT / "public" / "sfx"
 
 CHORD_S = 8.0  # one chord per 8s; four chords -> a 32s loop
 
@@ -154,43 +152,8 @@ def encode(wav_path: Path, out_path: Path) -> None:
     print(f"  {out_path.relative_to(ROOT)}  {out_path.stat().st_size // 1024} KB")
 
 
-def make_whoosh(duration=0.6) -> tuple:
-    """Noise swept through a rising lowpass with a fast tail: a scene change."""
-    n = int(duration * RATE)
-    left, right = [0.0] * n, [0.0] * n
-    rnd = random.Random(7)
-    lp_l = lp_r = 0.0
-    for i in range(n):
-        t = i / RATE
-        p = t / duration
-        env = math.sin(math.pi * min(1.0, p * 0.85)) ** 2 * (1 - p) ** 0.6
-        cutoff = 0.02 + 0.55 * p  # one-pole coefficient
-        lp_l += cutoff * (rnd.uniform(-1, 1) - lp_l)
-        lp_r += cutoff * (rnd.uniform(-1, 1) - lp_r)
-        pan = p  # sweeps left -> right
-        left[i] = lp_l * env * (1 - 0.5 * pan)
-        right[i] = lp_r * env * (0.5 + 0.5 * pan)
-    peak = max(1e-9, max(max(map(abs, left)), max(map(abs, right))))
-    g = 0.7 / peak
-    return [v * g for v in left], [v * g for v in right]
-
-
-def make_click(duration=0.11) -> tuple:
-    """Short pitched blip for a highlight landing."""
-    n = int(duration * RATE)
-    left, right = [0.0] * n, [0.0] * n
-    for i in range(n):
-        t = i / RATE
-        env = math.exp(-t * 55)
-        body = math.sin(2 * math.pi * 1320 * t) * 0.7 + math.sin(2 * math.pi * 2640 * t) * 0.25
-        left[i] = body * env
-        right[i] = body * env * 0.92
-    return left, right
-
-
 def main() -> None:
     MUSIC_DIR.mkdir(parents=True, exist_ok=True)
-    SFX_DIR.mkdir(parents=True, exist_ok=True)
     beds = {
         # Am7 - Fmaj7 - Cmaj7 - G6: warm, sits under a food/lifestyle read.
         "bed-warm.mp3": (["A2", "C4", "E4", "G4"], ["F2", "A3", "C4", "E4"],
@@ -208,12 +171,6 @@ def main() -> None:
             wav = Path(td) / "bed.wav"
             write_wav(left, right, wav)
             encode(wav, MUSIC_DIR / name)
-
-    for name, (l, r) in (("whoosh.mp3", make_whoosh()), ("click.mp3", make_click())):
-        with tempfile.TemporaryDirectory() as td:
-            wav = Path(td) / "sfx.wav"
-            write_wav(l, r, wav)
-            encode(wav, SFX_DIR / name)
 
 
 if __name__ == "__main__":
