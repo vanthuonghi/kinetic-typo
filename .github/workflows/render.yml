@@ -42,7 +42,9 @@ jobs:
           python-version: "3.11"
 
       - name: Install Edge TTS + forced aligner
-        run: pip install edge-tts==7.3.1 faster-whisper==1.1.1
+        # requests is imported by faster_whisper.utils but no longer pulled in
+        # by huggingface-hub 2.x, so it has to be requested explicitly.
+        run: pip install edge-tts==7.3.1 faster-whisper==1.1.1 requests
 
       - name: Cache alignment model
         uses: actions/cache@v4
