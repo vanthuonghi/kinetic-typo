@@ -17,42 +17,42 @@
   "height": 1920,
   "scenes": [
     {
-      "text": "Bữa cơm ngon mà thiếu tráng miệng thì như câu chuyện thiếu cái kết.",
-      "highlight": "thiếu cái kết",
+      "text": "Giáng sinh năm nay, bạn tặng gì cho người thân?",
+      "highlight": "Giáng sinh",
       "kind": "hook"
     },
     {
-      "text": "Mọi người nhớ món chính vì no, nhưng nhớ tráng miệng vì vui.",
-      "highlight": "nhớ tráng miệng vì vui",
+      "text": "Một hộp bánh handmade nhỏ xinh có thể nói hộ điều bạn khó nói.",
+      "highlight": "hộp bánh handmade",
       "kind": "body"
     },
     {
-      "text": "Một chén chè nhỏ cũng đủ đổi không khí bàn ăn từ no nê sang thư thái.",
-      "highlight": "thư thái",
+      "text": "Set quà đỏ xanh: flan, kem chuối, rau câu, xếp hộp nhỏ thắt nơ.",
+      "highlight": "Set quà đỏ xanh",
       "kind": "body"
     },
     {
-      "text": "Tráng miệng không cần cầu kỳ, chỉ cần mát, vừa miệng và đúng lúc.",
-      "highlight": "đúng lúc",
+      "text": "Màu đỏ xanh không chỉ là màu lễ, mà là cảm giác được nhớ đến.",
+      "highlight": "được nhớ đến",
       "kind": "body"
     },
     {
-      "text": "Bữa tiệc gia đình thường khép lại bằng miếng bánh flan mát lạnh.",
-      "highlight": "bánh flan mát lạnh",
+      "text": "Bạn có thể đặt riêng tên người nhận và một tấm thiệp viết tay.",
+      "highlight": "tấm thiệp viết tay",
       "kind": "body"
     },
     {
-      "text": "Kem chuối, rau câu, chè — món nào cũng là câu kết dịu dàng cho bữa ăn.",
-      "highlight": "câu kết dịu dàng",
+      "text": "Món ngọt tự làm luôn ấm hơn món mua vội ở đâu đó.",
+      "highlight": "ấm hơn",
       "kind": "body"
     },
     {
-      "text": "Chọn món tráng miệng phù hợp là cách bạn chăm sóc người ngồi cùng bàn.",
-      "highlight": "chăm sóc người ngồi cùng bàn",
+      "text": "Đặt trước hai tuần để tiệm chuẩn bị kỹ, khỏi chen ngày cận lễ.",
+      "highlight": "trước hai tuần",
       "kind": "body"
     },
     {
-      "text": "Để tiệm lo phần kết ngọt ngào cho bữa cơm nhà bạn nhé — Tiệm nhà tiểu tiểu.",
+      "text": "Tiệm nhà tiểu tiểu nhận set quà Giáng sinh, nhắn tiệm nhé.",
       "highlight": "Tiệm nhà tiểu tiểu",
       "kind": "cta"
     }
