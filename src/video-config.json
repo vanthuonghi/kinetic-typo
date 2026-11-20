@@ -17,42 +17,42 @@
   "height": 1920,
   "scenes": [
     {
-      "text": "Có người hỏi: bánh nhà làm mà sao đắt hơn bánh ngoài chợ?",
-      "highlight": "đắt hơn bánh ngoài chợ",
+      "text": "Bữa cơm ngon mà thiếu tráng miệng thì như câu chuyện thiếu cái kết.",
+      "highlight": "thiếu cái kết",
       "kind": "hook"
     },
     {
-      "text": "Bánh ngoài chợ làm 500 cái một mẻ. Nhà làm 20 cái, từng cái một tay.",
-      "highlight": "từng cái một tay",
+      "text": "Mọi người nhớ món chính vì no, nhưng nhớ tráng miệng vì vui.",
+      "highlight": "nhớ tráng miệng vì vui",
       "kind": "body"
     },
     {
-      "text": "Nguyên liệu chỉ chiếm một phần nhỏ. Phần lớn còn lại là thời gian đứng bếp.",
-      "highlight": "thời gian đứng bếp",
+      "text": "Một chén chè nhỏ cũng đủ đổi không khí bàn ăn từ no nê sang thư thái.",
+      "highlight": "thư thái",
       "kind": "body"
     },
     {
-      "text": "Trứng gà ta, sữa tươi, vani thật — không phẩm màu, không chất bảo quản.",
-      "highlight": "không chất bảo quản",
+      "text": "Tráng miệng không cần cầu kỳ, chỉ cần mát, vừa miệng và đúng lúc.",
+      "highlight": "đúng lúc",
       "kind": "body"
     },
     {
-      "text": "Flan phải hấp đúng lửa. Lệch một phút là mặt bánh rỗ, phải bỏ cả mẻ.",
-      "highlight": "Lệch một phút",
+      "text": "Bữa tiệc gia đình thường khép lại bằng miếng bánh flan mát lạnh.",
+      "highlight": "bánh flan mát lạnh",
       "kind": "body"
     },
     {
-      "text": "Kem chuối phải chọn chuối vừa chín, dẻo thơm, không được chua.",
-      "highlight": "chuối vừa chín",
+      "text": "Kem chuối, rau câu, chè — món nào cũng là câu kết dịu dàng cho bữa ăn.",
+      "highlight": "câu kết dịu dàng",
       "kind": "body"
     },
     {
-      "text": "Người làm thức khuya dậy sớm, để bánh tới tay bạn vẫn còn tươi ngon.",
-      "highlight": "vẫn còn tươi ngon",
+      "text": "Chọn món tráng miệng phù hợp là cách bạn chăm sóc người ngồi cùng bàn.",
+      "highlight": "chăm sóc người ngồi cùng bàn",
       "kind": "body"
     },
     {
-      "text": "Giá không trả cho cái bánh — mà trả cho sự tỉ mỉ. Ghé Tiệm nhà tiểu tiểu!",
+      "text": "Để tiệm lo phần kết ngọt ngào cho bữa cơm nhà bạn nhé — Tiệm nhà tiểu tiểu.",
       "highlight": "Tiệm nhà tiểu tiểu",
       "kind": "cta"
     }
