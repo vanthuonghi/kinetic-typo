@@ -17,42 +17,42 @@
   "height": 1920,
   "scenes": [
     {
-      "text": "Có một âm thanh nhỏ khiến cả căn bếp nín thở chờ đợi.",
-      "highlight": "âm thanh nhỏ",
+      "text": "Bạn có biết món ăn để được cả tuần thường chứa gì không?",
+      "highlight": "cả tuần",
       "kind": "hook"
     },
     {
-      "text": "Đó là tiếng lách tách của đường khi vừa chạm đáy nồi nóng.",
-      "highlight": "tiếng lách tách",
+      "text": "Đồ ăn giữ lâu nhờ chất bảo quản, nhưng cơ thể phải gánh thay bạn.",
+      "highlight": "chất bảo quản",
       "kind": "body"
     },
     {
-      "text": "Đường tan dần, đổi màu từ trắng trong sang vàng nâu óng ánh.",
-      "highlight": "vàng nâu óng ánh",
+      "text": "Bánh flan nhà làm chỉ để được 1-2 ngày trong ngăn mát, rất mau hỏng.",
+      "highlight": "1-2 ngày",
       "kind": "body"
     },
     {
-      "text": "Chỉ lệch vài giây thôi, caramel sẽ đắng ngắt thay vì thơm dịu.",
-      "highlight": "lệch vài giây",
+      "text": "Chính vì không có phụ gia nên bạn phải ăn tươi, và đó là điều tốt.",
+      "highlight": "ăn tươi",
       "kind": "body"
     },
     {
-      "text": "Người thợ quen tay, nghe tiếng nổ nhỏ là biết lửa đã đủ chưa.",
-      "highlight": "nghe tiếng nổ",
+      "text": "Kem chuối, rau câu, chè nhà làm cũng vậy: ngon nhất trong ngày.",
+      "highlight": "trong ngày",
       "kind": "body"
     },
     {
-      "text": "Caramel chảy thành dòng mật, phủ lên bánh flan mềm mịn màng.",
-      "highlight": "phủ lên bánh flan",
+      "text": "Trẻ nhỏ và người già nên tránh xa đồ ăn nhiều phụ gia công nghiệp.",
+      "highlight": "tránh xa",
       "kind": "body"
     },
     {
-      "text": "Mỗi chiếc bánh mang theo cả sự kiên nhẫn của người làm ra nó.",
-      "highlight": "kiên nhẫn",
+      "text": "Món tươi không để lâu, đổi lại vị thật và sự an tâm cho cả nhà.",
+      "highlight": "an tâm",
       "kind": "body"
     },
     {
-      "text": "Ghé Tiệm nhà tiểu tiểu nếm thử vị caramel nhà làm bạn nhé!",
+      "text": "Tiệm nhà tiểu tiểu - bánh handmade tươi mới mỗi ngày, an toàn cho bé.",
       "highlight": "Tiệm nhà tiểu tiểu",
       "kind": "cta"
     }
