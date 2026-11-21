@@ -17,42 +17,42 @@
   "height": 1920,
   "scenes": [
     {
-      "text": "Giáng sinh năm nay, bạn tặng gì cho người thân?",
-      "highlight": "Giáng sinh",
+      "text": "Có một âm thanh nhỏ khiến cả căn bếp nín thở chờ đợi.",
+      "highlight": "âm thanh nhỏ",
       "kind": "hook"
     },
     {
-      "text": "Một hộp bánh handmade nhỏ xinh có thể nói hộ điều bạn khó nói.",
-      "highlight": "hộp bánh handmade",
+      "text": "Đó là tiếng lách tách của đường khi vừa chạm đáy nồi nóng.",
+      "highlight": "tiếng lách tách",
       "kind": "body"
     },
     {
-      "text": "Set quà đỏ xanh: flan, kem chuối, rau câu, xếp hộp nhỏ thắt nơ.",
-      "highlight": "Set quà đỏ xanh",
+      "text": "Đường tan dần, đổi màu từ trắng trong sang vàng nâu óng ánh.",
+      "highlight": "vàng nâu óng ánh",
       "kind": "body"
     },
     {
-      "text": "Màu đỏ xanh không chỉ là màu lễ, mà là cảm giác được nhớ đến.",
-      "highlight": "được nhớ đến",
+      "text": "Chỉ lệch vài giây thôi, caramel sẽ đắng ngắt thay vì thơm dịu.",
+      "highlight": "lệch vài giây",
       "kind": "body"
     },
     {
-      "text": "Bạn có thể đặt riêng tên người nhận và một tấm thiệp viết tay.",
-      "highlight": "tấm thiệp viết tay",
+      "text": "Người thợ quen tay, nghe tiếng nổ nhỏ là biết lửa đã đủ chưa.",
+      "highlight": "nghe tiếng nổ",
       "kind": "body"
     },
     {
-      "text": "Món ngọt tự làm luôn ấm hơn món mua vội ở đâu đó.",
-      "highlight": "ấm hơn",
+      "text": "Caramel chảy thành dòng mật, phủ lên bánh flan mềm mịn màng.",
+      "highlight": "phủ lên bánh flan",
       "kind": "body"
     },
     {
-      "text": "Đặt trước hai tuần để tiệm chuẩn bị kỹ, khỏi chen ngày cận lễ.",
-      "highlight": "trước hai tuần",
+      "text": "Mỗi chiếc bánh mang theo cả sự kiên nhẫn của người làm ra nó.",
+      "highlight": "kiên nhẫn",
       "kind": "body"
     },
     {
-      "text": "Tiệm nhà tiểu tiểu nhận set quà Giáng sinh, nhắn tiệm nhé.",
+      "text": "Ghé Tiệm nhà tiểu tiểu nếm thử vị caramel nhà làm bạn nhé!",
       "highlight": "Tiệm nhà tiểu tiểu",
       "kind": "cta"
     }
