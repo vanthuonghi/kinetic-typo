@@ -17,42 +17,42 @@
   "height": 1920,
   "scenes": [
     {
-      "text": "Tết Đinh Mùi mùng 1 rơi đúng 6/2/2027. Đặt quà muộn là tự làm khó mình.",
-      "highlight": "Đặt quà muộn",
+      "text": "Đêm cuối năm, món ngọt là thứ khách nhớ nhất sau khi tiệc tan.",
+      "highlight": "món ngọt",
       "kind": "hook"
     },
     {
-      "text": "Đỉnh đặt quà rơi vào 2-3 tuần trước Tết, lúc đó tiệm nào cũng kín chỗ.",
-      "highlight": "2-3 tuần trước Tết",
+      "text": "Tiệc nhỏ 8-10 người không cần mâm cao cỗ đầy, chỉ cần bàn tráng miệng gọn mắt.",
+      "highlight": "bàn tráng miệng gọn",
       "kind": "body"
     },
     {
-      "text": "Đơn quà biếu công ty, đối tác cần 3-4 tuần: chọn mẫu, duyệt logo, đóng gói.",
-      "highlight": "3-4 tuần",
+      "text": "Chia sẵn từng phần để khách tự lấy, chủ nhà rảnh tay tiếp khách và dọn dẹp.",
+      "highlight": "Chia sẵn từng phần",
       "kind": "body"
     },
     {
-      "text": "Đơn trên 1.000 hộp có in logo cần 25-27 ngày, nên chốt trước Noel.",
-      "highlight": "chốt trước Noel",
+      "text": "Ba vị là đủ: một vị béo như flan, một vị chua thanh, một vị trái cây.",
+      "highlight": "Ba vị là đủ",
       "kind": "body"
     },
     {
-      "text": "Đặt sớm mới kịp thiệp viết tay và mẫu hộp riêng theo ý người nhận.",
-      "highlight": "thiệp viết tay",
+      "text": "Rau câu và kem chuối ăn lạnh rất hợp tiệc đêm, lại nhẹ bụng sau món chính.",
+      "highlight": "rất hợp tiệc đêm",
       "kind": "body"
     },
     {
-      "text": "Cách tính dễ nhất: lấy ngày bạn muốn trao quà, rồi đếm ngược lại.",
-      "highlight": "đếm ngược lại",
+      "text": "Đặt trước 3-5 ngày, nêu rõ số người và giờ dùng để tiệm tính đủ, không dư.",
+      "highlight": "trước 3-5 ngày",
       "kind": "body"
     },
     {
-      "text": "Chốt sớm thì giữ được giá cũ; càng sát Tết nguyên liệu càng lên giá.",
-      "highlight": "giữ được giá cũ",
+      "text": "Cuối tháng 12 tiệm kín lịch, đơn sát ngày thường phải từ chối, nên chốt sớm.",
+      "highlight": "chốt sớm",
       "kind": "body"
     },
     {
-      "text": "Tiệm nhà tiểu tiểu nhận đặt quà Tết từ tháng 11. Nhắn tiệm giữ chỗ nhé.",
+      "text": "Tiệm nhà tiểu tiểu nhận set tráng miệng cho tiệc cuối năm. Nhắn tiệm nhé.",
       "highlight": "Tiệm nhà tiểu tiểu",
       "kind": "cta"
     }
