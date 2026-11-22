@@ -17,42 +17,42 @@
   "height": 1920,
   "scenes": [
     {
-      "text": "Bạn có biết món ăn để được cả tuần thường chứa gì không?",
-      "highlight": "cả tuần",
+      "text": "Tết Đinh Mùi mùng 1 rơi đúng 6/2/2027. Đặt quà muộn là tự làm khó mình.",
+      "highlight": "Đặt quà muộn",
       "kind": "hook"
     },
     {
-      "text": "Đồ ăn giữ lâu nhờ chất bảo quản, nhưng cơ thể phải gánh thay bạn.",
-      "highlight": "chất bảo quản",
+      "text": "Đỉnh đặt quà rơi vào 2-3 tuần trước Tết, lúc đó tiệm nào cũng kín chỗ.",
+      "highlight": "2-3 tuần trước Tết",
       "kind": "body"
     },
     {
-      "text": "Bánh flan nhà làm chỉ để được 1-2 ngày trong ngăn mát, rất mau hỏng.",
-      "highlight": "1-2 ngày",
+      "text": "Đơn quà biếu công ty, đối tác cần 3-4 tuần: chọn mẫu, duyệt logo, đóng gói.",
+      "highlight": "3-4 tuần",
       "kind": "body"
     },
     {
-      "text": "Chính vì không có phụ gia nên bạn phải ăn tươi, và đó là điều tốt.",
-      "highlight": "ăn tươi",
+      "text": "Đơn trên 1.000 hộp có in logo cần 25-27 ngày, nên chốt trước Noel.",
+      "highlight": "chốt trước Noel",
       "kind": "body"
     },
     {
-      "text": "Kem chuối, rau câu, chè nhà làm cũng vậy: ngon nhất trong ngày.",
-      "highlight": "trong ngày",
+      "text": "Đặt sớm mới kịp thiệp viết tay và mẫu hộp riêng theo ý người nhận.",
+      "highlight": "thiệp viết tay",
       "kind": "body"
     },
     {
-      "text": "Trẻ nhỏ và người già nên tránh xa đồ ăn nhiều phụ gia công nghiệp.",
-      "highlight": "tránh xa",
+      "text": "Cách tính dễ nhất: lấy ngày bạn muốn trao quà, rồi đếm ngược lại.",
+      "highlight": "đếm ngược lại",
       "kind": "body"
     },
     {
-      "text": "Món tươi không để lâu, đổi lại vị thật và sự an tâm cho cả nhà.",
-      "highlight": "an tâm",
+      "text": "Chốt sớm thì giữ được giá cũ; càng sát Tết nguyên liệu càng lên giá.",
+      "highlight": "giữ được giá cũ",
       "kind": "body"
     },
     {
-      "text": "Tiệm nhà tiểu tiểu - bánh handmade tươi mới mỗi ngày, an toàn cho bé.",
+      "text": "Tiệm nhà tiểu tiểu nhận đặt quà Tết từ tháng 11. Nhắn tiệm giữ chỗ nhé.",
       "highlight": "Tiệm nhà tiểu tiểu",
       "kind": "cta"
     }
