@@ -17,42 +17,42 @@
   "height": 1920,
   "scenes": [
     {
-      "text": "Trời trở lạnh, người Việt không ăn kem, họ ăn chè nóng.",
-      "highlight": "chè nóng",
+      "text": "Tháng 12 đang tới gần. Công ty bạn đã chốt quà tất niên chưa?",
+      "highlight": "chốt quà tất niên",
       "kind": "hook"
     },
     {
-      "text": "Từ tháng 11 đến tháng 2, chè trôi nước nóng bán chạy nhất.",
-      "highlight": "chè trôi nước nóng",
+      "text": "Đừng đợi tới 20 tháng Chạp mới hỏi, lúc đó tiệm nào cũng kín lịch.",
+      "highlight": "kín lịch",
       "kind": "body"
     },
     {
-      "text": "Linh hồn món này không phải phần bột, mà là nước đường gừng.",
-      "highlight": "nước đường gừng",
+      "text": "Một hộp tráng miệng nhỏ đặt đúng tên người nhận được nhớ lâu hơn phong bì.",
+      "highlight": "đúng tên người nhận",
       "kind": "body"
     },
     {
-      "text": "Đường thốt nốt cho vị thơm sâu, ngọt hậu; đường cát không thay được.",
-      "highlight": "Đường thốt nốt",
+      "text": "Chốt từ đầu tháng 12 để kịp duyệt mẫu, in logo và chốt danh sách giao.",
+      "highlight": "đầu tháng 12",
       "kind": "body"
     },
     {
-      "text": "Cho gừng từ từ rồi nếm lại, gừng nhiều quá sẽ hăng và cay gắt.",
-      "highlight": "gừng nhiều quá",
+      "text": "Đơn số lượng lớn nên chọn món chịu được 4 đến 6 tiếng ngoài trời mát.",
+      "highlight": "4 đến 6 tiếng",
       "kind": "body"
     },
     {
-      "text": "Thả viên chè vào nồi nước sôi lăn tăn, viên nổi lên là đã chín.",
-      "highlight": "nước sôi lăn tăn",
+      "text": "Hỏi trước ba việc: hóa đơn, nhiều điểm giao, và giờ nhận hàng chính xác.",
+      "highlight": "ba việc",
       "kind": "body"
     },
     {
-      "text": "Vớt ra âu nước lạnh ngay: viên chè trong hơn, dẻo, không bị nhão.",
-      "highlight": "âu nước lạnh",
+      "text": "Thiệp viết tay thêm 2-3 ngày công, nhưng món quà khác hẳn nhau ngay.",
+      "highlight": "Thiệp viết tay",
       "kind": "body"
     },
     {
-      "text": "Tiệm nhà tiểu tiểu nấu chè nóng theo mẻ nhỏ, gừng thơm vừa miệng.",
+      "text": "Nhắn Tiệm nhà tiểu tiểu trong tháng 11 để giữ lịch tất niên cho công ty.",
       "highlight": "Tiệm nhà tiểu tiểu",
       "kind": "cta"
     }
