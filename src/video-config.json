@@ -17,42 +17,42 @@
   "height": 1920,
   "scenes": [
     {
-      "text": "Đêm cuối năm, món ngọt là thứ khách nhớ nhất sau khi tiệc tan.",
-      "highlight": "món ngọt",
+      "text": "Trời trở lạnh, người Việt không ăn kem, họ ăn chè nóng.",
+      "highlight": "chè nóng",
       "kind": "hook"
     },
     {
-      "text": "Tiệc nhỏ 8-10 người không cần mâm cao cỗ đầy, chỉ cần bàn tráng miệng gọn mắt.",
-      "highlight": "bàn tráng miệng gọn",
+      "text": "Từ tháng 11 đến tháng 2, chè trôi nước nóng bán chạy nhất.",
+      "highlight": "chè trôi nước nóng",
       "kind": "body"
     },
     {
-      "text": "Chia sẵn từng phần để khách tự lấy, chủ nhà rảnh tay tiếp khách và dọn dẹp.",
-      "highlight": "Chia sẵn từng phần",
+      "text": "Linh hồn món này không phải phần bột, mà là nước đường gừng.",
+      "highlight": "nước đường gừng",
       "kind": "body"
     },
     {
-      "text": "Ba vị là đủ: một vị béo như flan, một vị chua thanh, một vị trái cây.",
-      "highlight": "Ba vị là đủ",
+      "text": "Đường thốt nốt cho vị thơm sâu, ngọt hậu; đường cát không thay được.",
+      "highlight": "Đường thốt nốt",
       "kind": "body"
     },
     {
-      "text": "Rau câu và kem chuối ăn lạnh rất hợp tiệc đêm, lại nhẹ bụng sau món chính.",
-      "highlight": "rất hợp tiệc đêm",
+      "text": "Cho gừng từ từ rồi nếm lại, gừng nhiều quá sẽ hăng và cay gắt.",
+      "highlight": "gừng nhiều quá",
       "kind": "body"
     },
     {
-      "text": "Đặt trước 3-5 ngày, nêu rõ số người và giờ dùng để tiệm tính đủ, không dư.",
-      "highlight": "trước 3-5 ngày",
+      "text": "Thả viên chè vào nồi nước sôi lăn tăn, viên nổi lên là đã chín.",
+      "highlight": "nước sôi lăn tăn",
       "kind": "body"
     },
     {
-      "text": "Cuối tháng 12 tiệm kín lịch, đơn sát ngày thường phải từ chối, nên chốt sớm.",
-      "highlight": "chốt sớm",
+      "text": "Vớt ra âu nước lạnh ngay: viên chè trong hơn, dẻo, không bị nhão.",
+      "highlight": "âu nước lạnh",
       "kind": "body"
     },
     {
-      "text": "Tiệm nhà tiểu tiểu nhận set tráng miệng cho tiệc cuối năm. Nhắn tiệm nhé.",
+      "text": "Tiệm nhà tiểu tiểu nấu chè nóng theo mẻ nhỏ, gừng thơm vừa miệng.",
       "highlight": "Tiệm nhà tiểu tiểu",
       "kind": "cta"
     }
