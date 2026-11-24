@@ -17,42 +17,42 @@
   "height": 1920,
   "scenes": [
     {
-      "text": "Tháng 12 đang tới gần. Công ty bạn đã chốt quà tất niên chưa?",
-      "highlight": "chốt quà tất niên",
+      "text": "Bánh ngọt không phải thủ phạm. Thời điểm ăn mới là điều quyết định.",
+      "highlight": "Thời điểm ăn",
       "kind": "hook"
     },
     {
-      "text": "Đừng đợi tới 20 tháng Chạp mới hỏi, lúc đó tiệm nào cũng kín lịch.",
-      "highlight": "kín lịch",
+      "text": "Ăn tráng miệng ngay sau bữa chính là lúc cơ thể xử lý đường tốt nhất.",
+      "highlight": "ngay sau bữa chính",
       "kind": "body"
     },
     {
-      "text": "Một hộp tráng miệng nhỏ đặt đúng tên người nhận được nhớ lâu hơn phong bì.",
-      "highlight": "đúng tên người nhận",
+      "text": "Nếu bữa chính đã xong từ lâu, chờ khoảng 30 phút rồi hãy ăn món ngọt.",
+      "highlight": "30 phút",
       "kind": "body"
     },
     {
-      "text": "Chốt từ đầu tháng 12 để kịp duyệt mẫu, in logo và chốt danh sách giao.",
-      "highlight": "đầu tháng 12",
+      "text": "Khẩu phần vừa đủ một chén nhỏ ngon hơn ăn thật nhiều rồi hối hận.",
+      "highlight": "một chén nhỏ",
       "kind": "body"
     },
     {
-      "text": "Đơn số lượng lớn nên chọn món chịu được 4 đến 6 tiếng ngoài trời mát.",
-      "highlight": "4 đến 6 tiếng",
+      "text": "Tránh ăn sát giờ ngủ, vì năng lượng dư thừa dễ tích lại thành mỡ.",
+      "highlight": "sát giờ ngủ",
       "kind": "body"
     },
     {
-      "text": "Hỏi trước ba việc: hóa đơn, nhiều điểm giao, và giờ nhận hàng chính xác.",
-      "highlight": "ba việc",
+      "text": "Chọn món ngọt thanh, làm từ nguyên liệu thật, ít đường công nghiệp.",
+      "highlight": "nguyên liệu thật",
       "kind": "body"
     },
     {
-      "text": "Thiệp viết tay thêm 2-3 ngày công, nhưng món quà khác hẳn nhau ngay.",
-      "highlight": "Thiệp viết tay",
+      "text": "Nhai chậm và cảm nhận vị ngọt, bạn sẽ đủ vui mà không cần ăn nhiều.",
+      "highlight": "Nhai chậm",
       "kind": "body"
     },
     {
-      "text": "Nhắn Tiệm nhà tiểu tiểu trong tháng 11 để giữ lịch tất niên cho công ty.",
+      "text": "Tiệm nhà tiểu tiểu - ngọt vừa đủ, an tâm cho từng chén.",
       "highlight": "Tiệm nhà tiểu tiểu",
       "kind": "cta"
     }
