@@ -17,42 +17,42 @@
   "height": 1920,
   "scenes": [
     {
-      "text": "Bánh ngọt không phải thủ phạm. Thời điểm ăn mới là điều quyết định.",
-      "highlight": "Thời điểm ăn",
+      "text": "Đi chợ đầu tuần mà không có danh sách: mất tiền, mất thời gian.",
+      "highlight": "danh sách",
       "kind": "hook"
     },
     {
-      "text": "Ăn tráng miệng ngay sau bữa chính là lúc cơ thể xử lý đường tốt nhất.",
-      "highlight": "ngay sau bữa chính",
+      "text": "Bí quyết của tiệm bánh nhỏ: mua theo mẻ, không mua theo cảm hứng.",
+      "highlight": "mua theo mẻ",
       "kind": "body"
     },
     {
-      "text": "Nếu bữa chính đã xong từ lâu, chờ khoảng 30 phút rồi hãy ăn món ngọt.",
-      "highlight": "30 phút",
+      "text": "Trứng, sữa tươi, đường, bột năng — 4 món nền cho flan, rau câu, chè.",
+      "highlight": "4 món nền",
       "kind": "body"
     },
     {
-      "text": "Khẩu phần vừa đủ một chén nhỏ ngon hơn ăn thật nhiều rồi hối hận.",
-      "highlight": "một chén nhỏ",
+      "text": "Sữa tươi mở nắp 3 ngày là tách nước: chỉ mua đủ xài trong tuần.",
+      "highlight": "đủ xài trong tuần",
       "kind": "body"
     },
     {
-      "text": "Tránh ăn sát giờ ngủ, vì năng lượng dư thừa dễ tích lại thành mỡ.",
-      "highlight": "sát giờ ngủ",
+      "text": "Trái cây theo mùa vừa rẻ vừa ngon: chuối, dừa, xoài, bơ chín tới.",
+      "highlight": "theo mùa",
       "kind": "body"
     },
     {
-      "text": "Chọn món ngọt thanh, làm từ nguyên liệu thật, ít đường công nghiệp.",
-      "highlight": "nguyên liệu thật",
+      "text": "Chuối chín quá đừng bỏ — đó là nguyên liệu kem chuối ngon nhất.",
+      "highlight": "kem chuối",
       "kind": "body"
     },
     {
-      "text": "Nhai chậm và cảm nhận vị ngọt, bạn sẽ đủ vui mà không cần ăn nhiều.",
-      "highlight": "Nhai chậm",
+      "text": "Ghi giá vào sổ 3 tuần liền, bạn sẽ biết món nào thật sự sinh lời.",
+      "highlight": "sinh lời",
       "kind": "body"
     },
     {
-      "text": "Tiệm nhà tiểu tiểu - ngọt vừa đủ, an tâm cho từng chén.",
+      "text": "Lưu lại để tuần sau đi chợ nhẹ nhàng hơn — Tiệm nhà tiểu tiểu.",
       "highlight": "Tiệm nhà tiểu tiểu",
       "kind": "cta"
     }
