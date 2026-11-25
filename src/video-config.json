@@ -17,42 +17,42 @@
   "height": 1920,
   "scenes": [
     {
-      "text": "Đi chợ đầu tuần mà không có danh sách: mất tiền, mất thời gian.",
-      "highlight": "danh sách",
+      "text": "Đừng ngạc nhiên nếu tiệm báo hết bánh log giữa tháng 12.",
+      "highlight": "hết bánh log",
       "kind": "hook"
     },
     {
-      "text": "Bí quyết của tiệm bánh nhỏ: mua theo mẻ, không mua theo cảm hứng.",
-      "highlight": "mua theo mẻ",
+      "text": "Mỗi mùa tiệm chỉ nhận 20 chiếc, khách hỏi thêm cũng xin chịu.",
+      "highlight": "chỉ nhận 20 chiếc",
       "kind": "body"
     },
     {
-      "text": "Trứng, sữa tươi, đường, bột năng — 4 món nền cho flan, rau câu, chè.",
-      "highlight": "4 món nền",
+      "text": "Bánh log cuộn tay phải cuộn lúc bánh còn nóng, nguội là nứt.",
+      "highlight": "cuộn lúc bánh còn nóng",
       "kind": "body"
     },
     {
-      "text": "Sữa tươi mở nắp 3 ngày là tách nước: chỉ mua đủ xài trong tuần.",
-      "highlight": "đủ xài trong tuần",
+      "text": "Một chiếc tốn gần một tiếng: nướng, cuộn, chờ nguội, phết kem.",
+      "highlight": "gần một tiếng",
       "kind": "body"
     },
     {
-      "text": "Trái cây theo mùa vừa rẻ vừa ngon: chuối, dừa, xoài, bơ chín tới.",
-      "highlight": "theo mùa",
+      "text": "Làm 50 chiếc một tối thì chiếc thứ 40 đã khác chiếc đầu tiên.",
+      "highlight": "khác chiếc đầu tiên",
       "kind": "body"
     },
     {
-      "text": "Chuối chín quá đừng bỏ — đó là nguyên liệu kem chuối ngon nhất.",
-      "highlight": "kem chuối",
+      "text": "Tiệm thà nhận ít để chiếc nào cũng mềm ẩm, cắt ra không vụn.",
+      "highlight": "mềm ẩm",
       "kind": "body"
     },
     {
-      "text": "Ghi giá vào sổ 3 tuần liền, bạn sẽ biết món nào thật sự sinh lời.",
-      "highlight": "sinh lời",
+      "text": "Hết 20 chiếc là đóng sổ, khách quen thường chốt từ đầu tháng.",
+      "highlight": "chốt từ đầu tháng",
       "kind": "body"
     },
     {
-      "text": "Lưu lại để tuần sau đi chợ nhẹ nhàng hơn — Tiệm nhà tiểu tiểu.",
+      "text": "Muốn giữ một chiếc cho đêm Giáng sinh? Nhắn Tiệm nhà tiểu tiểu.",
       "highlight": "Tiệm nhà tiểu tiểu",
       "kind": "cta"
     }
