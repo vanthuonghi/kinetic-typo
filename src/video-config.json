@@ -17,42 +17,42 @@
   "height": 1920,
   "scenes": [
     {
-      "text": "Đừng ngạc nhiên nếu tiệm báo hết bánh log giữa tháng 12.",
-      "highlight": "hết bánh log",
+      "text": "Sai 2 gram đường, cả mẻ rau câu phải đổ đi.",
+      "highlight": "2 gram đường",
       "kind": "hook"
     },
     {
-      "text": "Mỗi mùa tiệm chỉ nhận 20 chiếc, khách hỏi thêm cũng xin chịu.",
-      "highlight": "chỉ nhận 20 chiếc",
+      "text": "Ngày mới vào tiệm, tôi nghĩ chuyện cân đo là nhỏ nhặt.",
+      "highlight": "nhỏ nhặt",
       "kind": "body"
     },
     {
-      "text": "Bánh log cuộn tay phải cuộn lúc bánh còn nóng, nguội là nứt.",
-      "highlight": "cuộn lúc bánh còn nóng",
+      "text": "Chị chủ đưa chiếc cân tiểu ly, bắt cân từng gram một.",
+      "highlight": "từng gram",
       "kind": "body"
     },
     {
-      "text": "Một chiếc tốn gần một tiếng: nướng, cuộn, chờ nguội, phết kem.",
-      "highlight": "gần một tiếng",
+      "text": "Tôi làm ẩu, rau câu dai, ngọt gắt, khách nhăn mặt trả lại.",
+      "highlight": "ngọt gắt",
       "kind": "body"
     },
     {
-      "text": "Làm 50 chiếc một tối thì chiếc thứ 40 đã khác chiếc đầu tiên.",
-      "highlight": "khác chiếc đầu tiên",
+      "text": "Chị chỉ nói: bánh handmade sống bằng sự chính xác, không cảm tính.",
+      "highlight": "sự chính xác",
       "kind": "body"
     },
     {
-      "text": "Tiệm thà nhận ít để chiếc nào cũng mềm ẩm, cắt ra không vụn.",
-      "highlight": "mềm ẩm",
+      "text": "Từ đó tôi cân đủ, ghi chép từng mẻ, ghi cả ngày làm.",
+      "highlight": "ghi chép từng mẻ",
       "kind": "body"
     },
     {
-      "text": "Hết 20 chiếc là đóng sổ, khách quen thường chốt từ đầu tháng.",
-      "highlight": "chốt từ đầu tháng",
+      "text": "Vị bánh vì thế mà đều, khách ăn lần đầu rồi quay lại.",
+      "highlight": "quay lại",
       "kind": "body"
     },
     {
-      "text": "Muốn giữ một chiếc cho đêm Giáng sinh? Nhắn Tiệm nhà tiểu tiểu.",
+      "text": "Tiệm nhà tiểu tiểu làm bánh bằng cái tâm và chiếc cân.",
       "highlight": "Tiệm nhà tiểu tiểu",
       "kind": "cta"
     }
