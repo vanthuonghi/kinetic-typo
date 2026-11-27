@@ -17,42 +17,42 @@
   "height": 1920,
   "scenes": [
     {
-      "text": "Đám cưới nhỏ: bàn tráng miệng gọn mà đẹp là thứ khách nhớ nhất.",
-      "highlight": "bàn tráng miệng",
+      "text": "Có anh đặt bánh tặng vợ, tới lúc viết thiệp mới giật mình.",
+      "highlight": "giật mình",
       "kind": "hook"
     },
     {
-      "text": "Bày 10 loại bánh cho tiệc 50 khách là sai. Tốn công, dễ thừa, dễ nguội.",
-      "highlight": "10 loại bánh",
+      "text": "Anh ghi tên người nhận, tiệm thấy lạ nên hỏi lại cho chắc.",
+      "highlight": "hỏi lại cho chắc",
       "kind": "body"
     },
     {
-      "text": "Con số dễ nhớ: 4-6 loại bánh, mỗi khách 3-5 phần nếu bàn là món ngọt chính.",
-      "highlight": "4-6 loại bánh",
+      "text": "Hoá ra anh vừa đổi tên lưu trong máy, suýt gửi nhầm người.",
+      "highlight": "suýt gửi nhầm",
       "kind": "body"
     },
     {
-      "text": "Đã có bánh cưới cắt thì chỉ cần 2-3 phần mỗi khách. Đừng bày trùng vai.",
-      "highlight": "2-3 phần mỗi khách",
+      "text": "Một cái tên sai, cả món quà đổi ý nghĩa. Nhỏ thôi mà hệ trọng.",
+      "highlight": "đổi ý nghĩa",
       "kind": "body"
     },
     {
-      "text": "Chọn bánh ăn một hai miếng: flan mini, rau câu, kem chuối, tart nhỏ.",
-      "highlight": "một hai miếng",
+      "text": "Nên tiệm luôn hỏi: tặng ai, dịp gì, có muốn ghi lời gì không.",
+      "highlight": "tặng ai, dịp gì",
       "kind": "body"
     },
     {
-      "text": "Xen vị: một món chua nhẹ, một món béo, còn lại ít ngọt cho khách ăn được nhiều.",
-      "highlight": "ít ngọt",
+      "text": "Thiệp viết tay đúng tên, đúng lời — món quà mới trọn vẹn.",
+      "highlight": "viết tay",
       "kind": "body"
     },
     {
-      "text": "Rau câu, flan, kem phải nằm khay đá. Nắng cuối buổi là kẻ thù của bàn ngọt.",
-      "highlight": "khay đá",
+      "text": "Khách về khoe: vợ đọc thiệp xong cười, còn giữ lại làm kỷ niệm.",
+      "highlight": "giữ lại làm kỷ niệm",
       "kind": "body"
     },
     {
-      "text": "Tiệm nhà tiểu tiểu nhận set tráng miệng tiệc cưới, tính phần vừa đủ, không phí.",
+      "text": "Tiệm nhà tiểu tiểu — đặt bánh, ghi thiệp, gói trọn yêu thương.",
       "highlight": "Tiệm nhà tiểu tiểu",
       "kind": "cta"
     }
