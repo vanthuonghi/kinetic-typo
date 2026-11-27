@@ -17,42 +17,42 @@
   "height": 1920,
   "scenes": [
     {
-      "text": "Sai 2 gram đường, cả mẻ rau câu phải đổ đi.",
-      "highlight": "2 gram đường",
+      "text": "Đám cưới nhỏ: bàn tráng miệng gọn mà đẹp là thứ khách nhớ nhất.",
+      "highlight": "bàn tráng miệng",
       "kind": "hook"
     },
     {
-      "text": "Ngày mới vào tiệm, tôi nghĩ chuyện cân đo là nhỏ nhặt.",
-      "highlight": "nhỏ nhặt",
+      "text": "Bày 10 loại bánh cho tiệc 50 khách là sai. Tốn công, dễ thừa, dễ nguội.",
+      "highlight": "10 loại bánh",
       "kind": "body"
     },
     {
-      "text": "Chị chủ đưa chiếc cân tiểu ly, bắt cân từng gram một.",
-      "highlight": "từng gram",
+      "text": "Con số dễ nhớ: 4-6 loại bánh, mỗi khách 3-5 phần nếu bàn là món ngọt chính.",
+      "highlight": "4-6 loại bánh",
       "kind": "body"
     },
     {
-      "text": "Tôi làm ẩu, rau câu dai, ngọt gắt, khách nhăn mặt trả lại.",
-      "highlight": "ngọt gắt",
+      "text": "Đã có bánh cưới cắt thì chỉ cần 2-3 phần mỗi khách. Đừng bày trùng vai.",
+      "highlight": "2-3 phần mỗi khách",
       "kind": "body"
     },
     {
-      "text": "Chị chỉ nói: bánh handmade sống bằng sự chính xác, không cảm tính.",
-      "highlight": "sự chính xác",
+      "text": "Chọn bánh ăn một hai miếng: flan mini, rau câu, kem chuối, tart nhỏ.",
+      "highlight": "một hai miếng",
       "kind": "body"
     },
     {
-      "text": "Từ đó tôi cân đủ, ghi chép từng mẻ, ghi cả ngày làm.",
-      "highlight": "ghi chép từng mẻ",
+      "text": "Xen vị: một món chua nhẹ, một món béo, còn lại ít ngọt cho khách ăn được nhiều.",
+      "highlight": "ít ngọt",
       "kind": "body"
     },
     {
-      "text": "Vị bánh vì thế mà đều, khách ăn lần đầu rồi quay lại.",
-      "highlight": "quay lại",
+      "text": "Rau câu, flan, kem phải nằm khay đá. Nắng cuối buổi là kẻ thù của bàn ngọt.",
+      "highlight": "khay đá",
       "kind": "body"
     },
     {
-      "text": "Tiệm nhà tiểu tiểu làm bánh bằng cái tâm và chiếc cân.",
+      "text": "Tiệm nhà tiểu tiểu nhận set tráng miệng tiệc cưới, tính phần vừa đủ, không phí.",
       "highlight": "Tiệm nhà tiểu tiểu",
       "kind": "cta"
     }
