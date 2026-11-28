@@ -17,42 +17,42 @@
   "height": 1920,
   "scenes": [
     {
-      "text": "Có anh đặt bánh tặng vợ, tới lúc viết thiệp mới giật mình.",
-      "highlight": "giật mình",
+      "text": "Công thức kem chuối của bà chưa từng được viết ra giấy.",
+      "highlight": "chưa từng được viết ra giấy",
       "kind": "hook"
     },
     {
-      "text": "Anh ghi tên người nhận, tiệm thấy lạ nên hỏi lại cho chắc.",
-      "highlight": "hỏi lại cho chắc",
+      "text": "Bà dạy bằng tay: sờ chuối chín tới đâu, ngửi cốt dừa đã thơm chưa.",
+      "highlight": "dạy bằng tay",
       "kind": "body"
     },
     {
-      "text": "Hoá ra anh vừa đổi tên lưu trong máy, suýt gửi nhầm người.",
-      "highlight": "suýt gửi nhầm",
+      "text": "Chuối sứ chín vừa, bóc vỏ, cắt dọc rồi ép dẹp bằng lòng bàn tay.",
+      "highlight": "Chuối sứ chín vừa",
       "kind": "body"
     },
     {
-      "text": "Một cái tên sai, cả món quà đổi ý nghĩa. Nhỏ thôi mà hệ trọng.",
-      "highlight": "đổi ý nghĩa",
+      "text": "Bí quyết chống dăm đá: nấu cốt dừa với bột năng tới khi sền sệt.",
+      "highlight": "bột năng",
       "kind": "body"
     },
     {
-      "text": "Nên tiệm luôn hỏi: tặng ai, dịp gì, có muốn ghi lời gì không.",
-      "highlight": "tặng ai, dịp gì",
+      "text": "Xếp một lớp cốt dừa, một lớp chuối, rồi rắc đậu phộng giã dập.",
+      "highlight": "đậu phộng giã dập",
       "kind": "body"
     },
     {
-      "text": "Thiệp viết tay đúng tên, đúng lời — món quà mới trọn vẹn.",
-      "highlight": "viết tay",
+      "text": "Bà bảo: món ngon không ở cân đo, mà ở chỗ mình cho thật lòng.",
+      "highlight": "cho thật lòng",
       "kind": "body"
     },
     {
-      "text": "Khách về khoe: vợ đọc thiệp xong cười, còn giữ lại làm kỷ niệm.",
-      "highlight": "giữ lại làm kỷ niệm",
+      "text": "Đậy kín, để ngăn đá qua đêm, sáng ra cắt miếng mời cả nhà.",
+      "highlight": "qua đêm",
       "kind": "body"
     },
     {
-      "text": "Tiệm nhà tiểu tiểu — đặt bánh, ghi thiệp, gói trọn yêu thương.",
+      "text": "Muốn nếm lại vị tuổi thơ? Ghé Tiệm nhà tiểu tiểu nhé!",
       "highlight": "Tiệm nhà tiểu tiểu",
       "kind": "cta"
     }
