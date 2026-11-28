@@ -17,42 +17,42 @@
   "height": 1920,
   "scenes": [
     {
-      "text": "Công thức kem chuối của bà chưa từng được viết ra giấy.",
-      "highlight": "chưa từng được viết ra giấy",
+      "text": "Bánh flan ngon thật, nhưng ăn miếng thứ ba là đã thấy ngán?",
+      "highlight": "ngán",
       "kind": "hook"
     },
     {
-      "text": "Bà dạy bằng tay: sờ chuối chín tới đâu, ngửi cốt dừa đã thơm chưa.",
-      "highlight": "dạy bằng tay",
+      "text": "Nhiều khách nói vậy với tiệm, nên tiệm thử mang trà ô long vào flan.",
+      "highlight": "trà ô long",
       "kind": "body"
     },
     {
-      "text": "Chuối sứ chín vừa, bóc vỏ, cắt dọc rồi ép dẹp bằng lòng bàn tay.",
-      "highlight": "Chuối sứ chín vừa",
+      "text": "Trà ủ vừa tay cho vị thơm thanh, hậu ngọt dịu, không gắt như cà phê.",
+      "highlight": "hậu ngọt dịu",
       "kind": "body"
     },
     {
-      "text": "Bí quyết chống dăm đá: nấu cốt dừa với bột năng tới khi sền sệt.",
-      "highlight": "bột năng",
+      "text": "Có vị trà đỡ lại, tiệm giảm được đường mà bánh vẫn béo, vẫn thơm.",
+      "highlight": "giảm được đường",
       "kind": "body"
     },
     {
-      "text": "Xếp một lớp cốt dừa, một lớp chuối, rồi rắc đậu phộng giã dập.",
-      "highlight": "đậu phộng giã dập",
+      "text": "Trứng sữa lọc qua rây hai lần, đổ nhẹ tay để mặt bánh phẳng, không rỗ.",
+      "highlight": "lọc qua rây hai lần",
       "kind": "body"
     },
     {
-      "text": "Bà bảo: món ngon không ở cân đo, mà ở chỗ mình cho thật lòng.",
-      "highlight": "cho thật lòng",
+      "text": "Khách quen vị cũ vẫn có flan caramel; ai ngán ngọt thì đổi sang vị trà.",
+      "highlight": "flan caramel",
       "kind": "body"
     },
     {
-      "text": "Đậy kín, để ngăn đá qua đêm, sáng ra cắt miếng mời cả nhà.",
-      "highlight": "qua đêm",
+      "text": "Bánh để ngăn mát vài giờ rồi mới bán, nên miếng flan mát, mịn, thơm trà.",
+      "highlight": "mát, mịn",
       "kind": "body"
     },
     {
-      "text": "Muốn nếm lại vị tuổi thơ? Ghé Tiệm nhà tiểu tiểu nhé!",
+      "text": "Muốn thử một hũ flan trà ô long, nhắn Tiệm nhà tiểu tiểu là có ngay.",
       "highlight": "Tiệm nhà tiểu tiểu",
       "kind": "cta"
     }
